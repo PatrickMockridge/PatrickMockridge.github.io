@@ -89,9 +89,9 @@ export function MudraTab() {
               A hash on Arweave proves a file existed. It does not prove the math inside it was
               right. Regulated work still moves as spreadsheets and sealed models, and the
               counterparty has to trust the vendor’s black box. Mudra replaces that trust with
-              a receipt the other side can verify. I wanted what a regulator or counterparty
-              actually needs: not “here is our file hash”, but “here is proof this calculation
-              produced this number, and you can check it without seeing our model.”
+              a receipt the other side can verify. What a regulator or counterparty needs is
+              not “here is our file hash”, but “here is proof this calculation produced this
+              number, and you can check it without seeing our model.”
             </>
           }
           combination={

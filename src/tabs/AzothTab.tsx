@@ -109,8 +109,7 @@ export function AzothTab() {
               library that returns a bare float is optimised for that failure. Azoth makes a
               number unable to be anonymous: it carries its source and verification state, and
               a calculation that cannot be supported refuses instead of returning a plausible
-              default. I spent nine years in process safety; I wanted a library where the
-              unsourced number could not exist.
+              default. The library is built so the unsourced number cannot exist.
             </>
           }
           combination={

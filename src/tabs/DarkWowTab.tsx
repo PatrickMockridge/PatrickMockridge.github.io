@@ -64,9 +64,8 @@ const TIMELINE_NOTE = (
     (ENTCS 2005, doi:10.1016/j.entcs.2005.05.016). <a href={darkWow.halo2}>Halo 2 code</a> was
     released by ECC on 1 September 2020; Zcash activated it in NU5 in 2021. DarkWow is a
     research prototype; the shipping wallet implements a subset of the ρ-calculus
-    specification (see Limits). The combination is recent; I have not found another design
-    that uses the ρ-calculus as the authority model, Halo 2 for private proofs, and a native
-    capability wallet as one system. That is a survey claim, not a theorem.
+    specification (see Limits). The combination is recent; this note treats it as a survey
+    observation, not a theorem.
   </>
 )
 
@@ -112,10 +111,8 @@ export function DarkWowTab() {
               gives auditability but exposes membership and strategy; a private chain gives
               confidentiality but asks members to trust an operator. DarkWow tries to get both
               without a single privileged key: authority is a name you hold, not an identity
-              you assert, and supply is checked outside the proof. I wanted to know whether an
-              organisation could run in public without publishing its member list or trusting
-              an administrator, and whether authority, privacy, and supply could be one design
-              rather than three products bolted together.
+              you assert, and supply is checked outside the proof. I could see that the basis
+              of what DarkFi had could achieve this, but DarkFi had no interest in doing so.
             </>
           }
           combination={

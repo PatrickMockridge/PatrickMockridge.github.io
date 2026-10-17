@@ -188,16 +188,14 @@ export function RnodeRustTab() {
           }
           why={
             <>
-              In the chains I know, concurrency is a runtime feature and authority is a
-              permission check. RChain’s language makes both structural: processes compose
-              concurrently with <code>|</code>, and an unforgeable <code>new</code> name is the
-              authority. The interesting part is not the token; it is a concurrent, replicated
-              state machine whose nodes must agree, and RChain makes that shape explicit. That
-              is a different way to build a distributed system, closer to the shape of a
-              network, and it is the reason to keep an implementation alive. I did not want the
-              implementation to disappear because the organisation around it did; the port is
-              how I could keep it running and find out which claims survive contact with a
-              machine.
+              The common pattern puts concurrency in the runtime and authority in a permission
+              check. RChain’s language makes both structural: processes compose concurrently
+              with <code>|</code>, and an unforgeable <code>new</code> name is the authority.
+              The interesting part is not the token; it is a concurrent, replicated state
+              machine whose nodes must agree, and RChain makes that shape explicit. That is a
+              different way to build a distributed system, closer to the shape of a network.
+              The organisation dissolved in 2022; the port keeps the implementation running and
+              tests the claims against a machine.
             </>
           }
           combination={
