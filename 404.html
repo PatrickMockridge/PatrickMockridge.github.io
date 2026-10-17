@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Not found — Patrick Mockridge</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      :root {
+        --ink: #1a1a1a;
+        --paper: #fcfbf7;
+        --desk: #f5f3ed;
+        --muted: #66635c;
+        --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
+          monospace;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 2rem 1.25rem;
+        background: var(--desk);
+        color: var(--ink);
+        font-family: var(--mono);
+        font-size: 1rem;
+        line-height: 1.65;
+      }
+      .window {
+        width: 100%;
+        max-width: 760px;
+        background: var(--paper);
+        border: 1px solid var(--ink);
+        border-radius: 4px 4px 0 0;
+      }
+      .head {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.75rem 1.25rem;
+        border-bottom: 1px solid var(--ink);
+        font-size: 0.75rem;
+      }
+      .head a {
+        color: var(--ink);
+        text-decoration: none;
+      }
+      .head span {
+        color: var(--muted);
+      }
+      .body {
+        padding: 4rem 4.5rem;
+      }
+      .label {
+        margin: 0 0 0.75rem;
+        font-size: 0.6875rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      h1 {
+        margin: 0 0 1.5rem;
+        font-size: 1.75rem;
+        line-height: 1.2;
+        font-weight: 500;
+      }
+      a {
+        color: var(--ink);
+        text-underline-offset: 0.18em;
+      }
+      @media (max-width: 720px) {
+        .body {
+          padding: 2.5rem 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="window">
+      <div class="head">
+        <a href="/">Patrick Mockridge</a>
+        <span>404</span>
+      </div>
+      <div class="body">
+        <p class="label">Not found</p>
+        <h1>The requested item could not be found.</h1>
+        <p><a href="/">Return to the index</a>.</p>
+      </div>
+    </main>
+  </body>
+</html>
