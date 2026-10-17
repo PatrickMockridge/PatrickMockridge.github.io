@@ -37,6 +37,7 @@ export const rchain = {
   coverage: `${rchainBase}/spec/COVERAGE-LEDGER.md`,
   testCoverage: `${rchainBase}/spec/TEST-COVERAGE.md`,
   qucalc: `${rchainBase}/docs/src/qucalc`,
+  methodology: `${SITE.links.rchainRepo}/tree/dev/docs/src/methodology`,
   arweave: 'https://arweave.net/MK4WA8w3NTIIFd6iaD06EPyxVbFhoV9MtfhMNcHWWMw',
   legacy: `${SITE.links.rchainRepo}/tree/1b7583649/legacy`,
 }

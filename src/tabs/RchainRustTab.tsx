@@ -43,7 +43,7 @@ export function RchainRustTab() {
           {
             label: 'Role',
             value:
-              'RChain token originator; multi-signature DAO contract task force; reconstruction and verification',
+              'Scala-to-Rust port of the RChain node; law-first conformance and agentic assurance',
           },
           { label: 'Period', value: '2026' },
           {
@@ -68,10 +68,10 @@ export function RchainRustTab() {
 
       <Section number="1" title="Claim" id="rchain-claim">
         <p className="lede">
-          rchain-rust is a reconstruction of the RChain node: the Scala implementation
-          preserved at a pinned commit and rebuilt in Rust, crate by crate, after the
-          cooperative dissolved in 2022 and the network was left without a steward. The
-          work is a rescue in the plain sense — the code was preserved, the protocol
+          rchain-rust is a Scala-to-Rust port of the RChain node: the Scala
+          implementation preserved at a pinned commit and ported crate by crate, after
+          the cooperative dissolved in 2022 and the network was left without a steward.
+          The work is a rescue in the plain sense — the code was preserved, the protocol
           continued, and ownership is not claimed. Rholang, the language the node
           executes, is the part that can be checked: 77 laws are machine-checked in Lean
           4, and 23 entries are tied to the running node by conformance corpora, so the
@@ -153,8 +153,7 @@ export function RchainRustTab() {
         </p>
         <div className="prose">
           <p>
-            I did not design RChain; this record covers the reconstruction and
-            verification.
+            I did not design RChain; this record covers the port and verification.
           </p>
         </div>
       </Section>
@@ -163,8 +162,7 @@ export function RchainRustTab() {
         <ul className="prose">
           <li>
             <strong>The rescue is auditable.</strong> Upstream is pinned and restorable
-            before the rewrite, so the reconstruction can be compared with what it
-            replaced.
+            before the port, so the port can be compared with what it replaced.
           </li>
           <li>
             <strong>The Scala implementation is a differential oracle, not an
@@ -172,9 +170,10 @@ export function RchainRustTab() {
             reference is evidence, not the standard.
           </li>
           <li>
-            <strong>Language laws are stated and machine-checked first.</strong> The
-            laws are then tied to the running node by conformance corpora, so the proof
-            is about the code and not only the model.
+            <strong>The law register is the oracle, not the Scala implementation.</strong>{' '}
+            The 77 laws are machine-checked first, and conformance corpora emitted from
+            the register are run 1:1 through the node; the reference contributes vectors,
+            not truth.
           </li>
           <li>
             <strong>Assurance is written and gated.</strong> HAZOP, bow-tie analysis, a
@@ -196,8 +195,8 @@ export function RchainRustTab() {
             AGPL-3.0; upstream Scala is Apache-2.0. No ownership is claimed.
           </p>
           <p>
-            The reconstruction is a rescue in the plain sense: the code was preserved and
-            the protocol continued.
+            The port is a rescue in the plain sense: the code was preserved and the
+            protocol continued.
           </p>
           <p>
             <a href={rchain.arweave}>Arweave snapshot</a> ·{' '}
@@ -278,6 +277,11 @@ export function RchainRustTab() {
           </li>
           <li>
             <a href={rchain.audit}>spec/AUDIT.md</a>
+          </li>
+          <li>
+            <a href={rchain.methodology}>
+              Methodology: law-first port and agentic assurance
+            </a>
           </li>
           <li>
             <a href={rchain.hazop}>HAZOP record</a>

@@ -37,7 +37,7 @@ export function CVTab() {
             The projects are instances of that method. DarkWow is containment: private
             coordination on a public chain, with authority held as an object capability
             rather than a public administrator. rchain-rust is rescue: a dissolved
-            network’s node rebuilt in Rust, with its language laws machine-checked at the
+            network’s node ported to Rust, with its language laws machine-checked at the
             model level and conformance-tested at the node. Azoth is provenance:
             chemical-engineering calculations where every number carries its source and
             verification state, and unsupported answers are refused. Mudra is
@@ -139,9 +139,7 @@ export function CVTab() {
               body: (
                 <>
                   Independent work: protocol software, formal verification, numerical
-                  systems. RChain token originator; multi-signature DAO contract task
-                  force. Earlier advisory work includes Enjin, IEBC/CoEngineers,
-                  Synsapien, CubeSpawn, and ECP24.
+                  systems. Current records: DarkWow, rchain-rust, Azoth, Mudra.
                 </>
               ),
             },
