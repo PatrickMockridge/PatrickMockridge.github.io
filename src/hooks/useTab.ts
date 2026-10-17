@@ -6,6 +6,7 @@ const TITLES: Record<TabId, string> = {
   darkwow: 'DarkWow — Patrick Mockridge',
   'rchain-rust': 'rchain-rust — Patrick Mockridge',
   azoth: 'Azoth — Patrick Mockridge',
+  mudra: 'Mudra — Patrick Mockridge',
   research: 'Research & Writing — Patrick Mockridge',
   contact: 'Enquiries — Patrick Mockridge',
 }

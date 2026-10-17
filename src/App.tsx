@@ -7,6 +7,7 @@ import { AzothTab } from './tabs/AzothTab'
 import { ContactTab } from './tabs/ContactTab'
 import { CVTab } from './tabs/CVTab'
 import { DarkWowTab } from './tabs/DarkWowTab'
+import { MudraTab } from './tabs/MudraTab'
 import { RchainRustTab } from './tabs/RchainRustTab'
 import { ResearchTab } from './tabs/ResearchTab'
 
@@ -34,6 +35,9 @@ export default function App() {
             </TabPanel>
             <TabPanel id="azoth" active={tab === 'azoth'}>
               <AzothTab />
+            </TabPanel>
+            <TabPanel id="mudra" active={tab === 'mudra'}>
+              <MudraTab />
             </TabPanel>
             <TabPanel id="research" active={tab === 'research'}>
               <ResearchTab />

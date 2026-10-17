@@ -1,10 +1,18 @@
-export type TabId = 'cv' | 'darkwow' | 'rchain-rust' | 'azoth' | 'research' | 'contact'
+export type TabId =
+  | 'cv'
+  | 'darkwow'
+  | 'rchain-rust'
+  | 'azoth'
+  | 'mudra'
+  | 'research'
+  | 'contact'
 
 export const TABS: { id: TabId; label: string }[] = [
   { id: 'cv', label: 'CV' },
   { id: 'darkwow', label: 'DarkWow' },
   { id: 'rchain-rust', label: 'rchain-rust' },
   { id: 'azoth', label: 'Azoth' },
+  { id: 'mudra', label: 'Mudra' },
   { id: 'research', label: 'Research' },
   { id: 'contact', label: 'Contact' },
 ]
@@ -21,6 +29,7 @@ export const SITE = {
     darkwowRepo: 'https://github.com/PatrickMockridge/DarkWow',
     rchainRepo: 'https://github.com/rchain-community/rchain-rust',
     azothRepo: 'https://github.com/PatrickMockridge/Azoth',
+    mudraRepo: 'https://github.com/PatrickMockridge/Mudra',
     romeoArchive:
       'https://app.ardrive.io/#/drives/3783e4d5-2ce0-405c-854a-94eb5a4f4b1a?name=Romeo+Juliet+Framework',
     romeoPlaylist:

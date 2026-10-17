@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { TABS, type TabId } from '../data/site'
 
 interface TabIndexProps {
@@ -8,6 +8,11 @@ interface TabIndexProps {
 
 export function TabIndex({ active, onChange }: TabIndexProps) {
   const refs = useRef<Array<HTMLButtonElement | null>>([])
+
+  useEffect(() => {
+    const index = TABS.findIndex((tab) => tab.id === active)
+    refs.current[index]?.scrollIntoView({ block: 'nearest', inline: 'nearest' })
+  }, [active])
 
   const onKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>, index: number) => {
     let next = index

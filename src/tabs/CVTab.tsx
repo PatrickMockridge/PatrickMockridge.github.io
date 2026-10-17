@@ -18,11 +18,11 @@ export function CVTab() {
         <p>Process safety engineer, 2006–2015; chartered 2013.</p>
         <p>Protocol engineer, 2016–present.</p>
         <p>Aberystwyth, Wales.</p>
-        <p className="cv-work-index">DarkWow · rchain-rust · Azoth</p>
+        <p className="cv-work-index">DarkWow · rchain-rust · Azoth · Mudra</p>
       </header>
 
       <Section number="1" title="Profile and method" id="profile">
-        <div className="prose">
+        <div className="prose screen-only">
           <p>
             Process safety taught me that a plausible number is not a safe number — so
             every result here is either proved or carries its limits. I was a process
@@ -34,13 +34,29 @@ export function CVTab() {
             limits.
           </p>
           <p>
-            The three projects are three instances of that method. DarkWow is
-            containment: private coordination on a public chain, with authority held as an
-            object capability rather than a public administrator. rchain-rust is rescue:
-            a dissolved network’s node rebuilt in Rust, with its language laws
-            machine-checked at the model level and conformance-tested at the node. Azoth
-            is provenance: chemical-engineering calculations where every number carries
-            its source and verification state, and unsupported answers are refused.
+            The projects are instances of that method. DarkWow is containment: private
+            coordination on a public chain, with authority held as an object capability
+            rather than a public administrator. rchain-rust is rescue: a dissolved
+            network’s node rebuilt in Rust, with its language laws machine-checked at the
+            model level and conformance-tested at the node. Azoth is provenance:
+            chemical-engineering calculations where every number carries its source and
+            verification state, and unsupported answers are refused. Mudra is
+            verification in a familiar form: a spreadsheet calculation proved correct
+            without revealing the sheet.
+          </p>
+        </div>
+        <div className="prose print-only">
+          <p>
+            Process safety taught me that a plausible number is not a safe number — so
+            every result here is either proved or carries its limits. Process safety
+            engineer, 2006–2015; chartered 2013; independent protocol and verification
+            work since 2016.
+          </p>
+          <p>
+            The method: specify the failure mode before the architecture; prove what can
+            be proved; contain what cannot; record provenance with every result. DarkWow
+            is containment; rchain-rust is rescue; Azoth is provenance; Mudra is
+            verification in a familiar form.
           </p>
         </div>
       </Section>
@@ -93,10 +109,25 @@ export function CVTab() {
               Record →
             </a>
           </li>
+          <li className="work-row">
+            <div className="work-main">
+              <span className="work-title">Mudra</span>
+              <span className="work-subtitle">
+                Prove a calculation was done correctly without revealing the spreadsheet
+              </span>
+            </div>
+            <div className="work-meta">
+              <span>2026</span>
+              <span>Research build; v1.0.x</span>
+            </div>
+            <a className="work-link" href="?tab=mudra">
+              Record →
+            </a>
+          </li>
         </ul>
         <p className="print-only print-urls">
           Records: patrickmockridge.github.io/?tab=darkwow · /?tab=rchain-rust ·
-          /?tab=azoth
+          /?tab=azoth · /?tab=mudra
         </p>
       </Section>
 

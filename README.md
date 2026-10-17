@@ -14,7 +14,7 @@ npm run lint
 
 ## Content
 
-- `src/tabs/` — page content: CV, DarkWow, rchain-rust, Azoth, Research, Contact.
+- `src/tabs/` — page content: CV, DarkWow, rchain-rust, Azoth, Mudra, Research, Contact.
 - `src/data/` — links, evidence rows, research posts.
 - `src/styles/` — tokens, global styles, window chrome, casework, print.
 - `public/` — fonts, favicon, social image, printable CV, 404 page.

@@ -49,6 +49,21 @@ export const azoth = {
   issues: SITE.links.neqsimIssues,
 }
 
+export const mudra = {
+  repo: SITE.links.mudraRepo,
+  docs: `${SITE.links.mudraRepo}/tree/master/docs`,
+  executive: `${SITE.links.mudraRepo}/blob/master/docs/executive-summary.md`,
+  unique: `${SITE.links.mudraRepo}/blob/master/docs/UNIQUE.md`,
+  architecture: `${SITE.links.mudraRepo}/blob/master/docs/ARCHITECTURE.md`,
+  future: `${SITE.links.mudraRepo}/blob/master/docs/future-work.md`,
+  arweave: `${SITE.links.mudraRepo}/blob/master/docs/arweave-verification.md`,
+  lean: `${SITE.links.mudraRepo}/tree/master/lean`,
+  demos: `${SITE.links.mudraRepo}/tree/master/demo`,
+  npm: 'https://www.npmjs.com/package/mudra-zkvm',
+  insurance: `${SITE.links.mudraRepo}/blob/master/docs/case-study-insurance-brokering.md`,
+  fiscal: `${SITE.links.mudraRepo}/blob/master/docs/case-study-fiscal-metering.md`,
+}
+
 export const manifestExcerpt = `[contract]
 name = "example_contract"
 category = "Example"
@@ -175,5 +190,43 @@ export const azothEvidence: EvidenceRow[] = [
     measure: 'Provenance tests',
     value: '216',
     source: { label: 'Azoth repository', href: azoth.repo },
+  },
+]
+
+export const mudraEvidence: EvidenceRow[] = [
+  {
+    measure: 'Proof size',
+    value: '~6 KB, constant',
+    source: { label: 'README', href: mudra.repo },
+  },
+  {
+    measure: 'Circuit',
+    value: '21 field elements; one verifying key for every program',
+    source: { label: 'Architecture', href: mudra.architecture },
+  },
+  {
+    measure: 'VM',
+    value: '32 BigInt registers; 64 KB memory; 21 instructions',
+    source: { label: 'README', href: mudra.repo },
+  },
+  {
+    measure: 'Demos',
+    value: '4 spreadsheets, 105–722 instructions',
+    source: { label: 'Demos', href: mudra.demos },
+  },
+  {
+    measure: 'Verifier',
+    value: 'WASM; browser, phone, CLI',
+    source: { label: 'README', href: mudra.repo },
+  },
+  {
+    measure: 'Audit trail',
+    value: 'Arweave receipt (TXID)',
+    source: { label: 'Arweave verification', href: mudra.arweave },
+  },
+  {
+    measure: 'Formal specification',
+    value: 'Lean 4',
+    source: { label: 'Lean specification', href: mudra.lean },
   },
 ]
