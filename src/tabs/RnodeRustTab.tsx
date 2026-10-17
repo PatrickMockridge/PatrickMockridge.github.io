@@ -44,20 +44,8 @@ const CALCULUS_ROWS: ComparisonRow[] = [
   matrixRow('ρ-calculus', [true, true, true, true, true, true]),
 ]
 
-const CALCULUS_NOTE = (
-  <>
-    The Desktop figure's “Complexity” axis is not defined in its source, so this table uses
-    mobility, the property the π-calculus adds. If the figure is reproduced literally, Turing
-    is 2/6 and Petri nets 3/6; with mobility they are 1/6 and 2/6. ρ stays 6/6. A filled cell
-    means the property is native, not that it cannot be encoded. Completeness depends on the
-    variant; plain Petri nets are not Turing-complete without extensions. ρ-calculus:
-    Meredith &amp; Radestock,{' '}
-    <a href={rnode.whyRholang}>A Reflective Higher-Order Calculus</a> (ENTCS 2005,{' '}
-    <a href={rnode.whyRholang}>doi:10.1016/j.entcs.2005.05.016</a>). See the{' '}
-    <a href={rnode.whyRholang}>Rholang model</a> and the{' '}
-    <a href={rnode.typeSystem}>type system</a>.
-  </>
-)
+const CALCULUS_NOTE =
+  'Mobility replaces the Desktop figure’s undefined “Complexity” axis; the scores follow that substitution.'
 
 const CLAIM_COLUMNS = [
   { label: 'Claim' },
@@ -72,20 +60,16 @@ const CLAIM_ROWS: ComparisonRow[] = [
     header: 'Horizontal scale-out',
     cells: [
       <>
-        Shard ids and deploy routing; cross-shard invoke; two-phase commit with idempotent
-        legs and a durable decision record (Laws 26–29); merge and conflict resolution (Laws
-        9, 17); concurrent replay of dependency-free blocks.
+        Shard routing; cross-shard invoke; two-phase commit (Laws 26–29); merge (Laws 9, 17);
+        concurrent replay of dependency-free blocks.
       </>,
       <>
-        The mechanisms exist in code and are modelled in Lean. Cross-shard atomicity is stated
-        as a 2PC decision; it is not an end-to-end distributed run.
+        The mechanisms exist in code and are modelled in Lean; this is not an end-to-end
+        distributed run.
       </>,
       <>
-        Ships single-shard (<code>/root</code>); the transaction API is off by default; no
-        production benchmark. ~60–160 deploys/s on one shard is a derived order of magnitude,
-        not a capacity plan. Sharding multiplies shards; it does not make one shard faster.
-        DAG residency is Θ(N²); at a 2 s block interval, 16 GB is roughly twelve hours away.{' '}
-        <code>relaxed</code> effect scheduling is off-chain only.
+        Single-shard default; transaction API off; no production benchmark. 60–160 deploys/s
+        is derived, not measured. Residency Θ(N²): 16 GB ≈ 12 h at 2 s blocks.
       </>,
     ],
   },
@@ -94,20 +78,16 @@ const CLAIM_ROWS: ComparisonRow[] = [
     header: 'Native object capabilities',
     cells: [
       <>
-        Unforgeable <code>new</code> names; <code>bundle+</code>/<code>bundle-</code>/
-        <code>bundle0</code> facets; attenuating forwarders; revocation; sealer/unsealer;
-        reflection (<code>@P</code>, <code>*x</code>); OCapN/CapTP.
+        Unforgeable <code>new</code> names; <code>bundle</code> facets; forwarders;
+        revocation; sealer/unsealer; reflection; OCapN.
       </>,
       <>
-        Possession is authority: no syntax writes a private name. Capture-avoiding
-        substitution is proved over the model (Law 3); the o-cap patterns are language
-        constructs, not a library convention.
+        Possession is authority; capture-avoiding substitution is proved over the model (Law
+        3); the patterns are language constructs.
       </>,
       <>
-        Forge-resistance alone is not unique: Move/Sui also make references unforgeable. The
-        distinctive part is the combination of proved capture-resistance, the standard o-cap
-        patterns, and reflection. The language does not make every delegation graph safe; that
-        remains a discipline.
+        Move/Sui also make references unforgeable. The difference is proved capture-resistance,
+        the o-cap patterns, and reflection; delegation safety remains a discipline.
       </>,
     ],
   },
@@ -116,36 +96,20 @@ const CLAIM_ROWS: ComparisonRow[] = [
     header: 'Correct by construction',
     cells: [
       <>
-        No <code>unsafe</code> in the fourteen first-party crates; ρ embedded as the base sort
-        of a CoC; 70 of 77 laws proved non-vacuously; 19 tied to the running node by
-        conformance corpora.
+        No <code>unsafe</code> in the 14 first-party crates; ρ as the base sort of a CoC;
+        70/77 laws non-vacuous; 19 node-tied by conformance corpora.
       </>,
       <>
-        Memory-unsafety is unwritable in first-party code; the laws that are proved are
-        machine-checked and, where marked, run against the node.
+        Memory-unsafety is unwritable in first-party code; proved laws are machine-checked
+        and, where marked, run against the node.
       </>,
       <>
-        Not a whole-node end-to-end proof. Dependencies, leaks, logic errors, denial of
-        service, and consensus bugs remain. Two proved laws are vacuous; five laws are named
-        or open. Law 19 is the cryptographic boundary, axiomatized by design.
+        Not a whole-node proof. Dependencies, leaks, logic errors, denial of service, and
+        consensus bugs remain. 2 laws vacuous; 5 named or open; law 19 axiomatized.
       </>,
     ],
   },
 ]
-
-const CLAIMS_NOTE = (
-  <>
-    As of October 2026, 72 of 77 laws are proved at all: 19 tied to the node by conformance
-    corpora and 53 over the model. Two of the 72 are vacuous, leaving 70 non-vacuous; five
-    laws are named or open (law 63a is the open one). The register is authoritative and counts
-    drift. Sources:{' '}
-    <a href={rnode.scaling}>scaling</a> · <a href={rnode.crossShard}>cross-shard</a> ·{' '}
-    <a href={rnode.concurrency}>concurrency</a> ·{' '}
-    <a href={rnode.objectCapabilities}>object capabilities</a> ·{' '}
-    <a href={rnode.whyRholang}>why Rholang</a> · <a href={rnode.laws}>laws</a> ·{' '}
-    <a href={rnode.inventory}>register</a>.
-  </>
-)
 
 export function RnodeRustTab() {
   return (
@@ -219,12 +183,9 @@ export function RnodeRustTab() {
         />
         <div className="prose">
           <p>
-            The ladder is λ → π → ρ → CoC. λ is substitution; π adds concurrency and channel
-            mobility; ρ makes a name a quoted process (<code>@P</code>) and lets a process
-            recover a process from a name (<code>*x</code>); CoC is the dependent type theory
-            in which ρ is embedded as a base sort. RChain embeds ρ as the base sort of a
-            Calculus of Constructions; the Lean/Coq development models the node and is not a
-            whole-node proof.
+            λ is substitution; π adds concurrency and mobility; ρ makes a name a quoted
+            process (<code>@P</code>/<code>*x</code>); CoC is where ρ is embedded as a base
+            sort.
           </p>
         </div>
         <ComparisonTable
@@ -233,7 +194,6 @@ export function RnodeRustTab() {
           subtitle="The claim as it is usually put, the mechanism behind it, and the boundary the record supports."
           columns={CLAIM_COLUMNS}
           rows={CLAIM_ROWS}
-          note={CLAIMS_NOTE}
         />
       </Section>
 
