@@ -1,7 +1,7 @@
 export type TabId =
   | 'cv'
   | 'darkwow'
-  | 'rchain-rust'
+  | 'rnode-rust'
   | 'azoth'
   | 'mudra'
   | 'research'
@@ -10,12 +10,16 @@ export type TabId =
 export const TABS: { id: TabId; label: string }[] = [
   { id: 'cv', label: 'CV' },
   { id: 'darkwow', label: 'DarkWow' },
-  { id: 'rchain-rust', label: 'rchain-rust' },
+  { id: 'rnode-rust', label: 'rnode-rust' },
   { id: 'azoth', label: 'Azoth' },
   { id: 'mudra', label: 'Mudra' },
   { id: 'research', label: 'Research' },
   { id: 'contact', label: 'Contact' },
 ]
+
+export const LEGACY_TAB_ALIASES: Record<string, TabId> = {
+  'rchain-rust': 'rnode-rust',
+}
 
 export const SITE = {
   name: 'Patrick Mockridge',
@@ -27,7 +31,7 @@ export const SITE = {
     github: 'https://github.com/PatrickMockridge',
     substack: 'https://technologytruth.substack.com/',
     darkwowRepo: 'https://github.com/PatrickMockridge/DarkWow',
-    rchainRepo: 'https://github.com/rchain-community/rchain-rust',
+    rnodeRepo: 'https://github.com/rchain-community/rchain-rust',
     azothRepo: 'https://github.com/PatrickMockridge/Azoth',
     mudraRepo: 'https://github.com/PatrickMockridge/Mudra',
     romeoArchive:

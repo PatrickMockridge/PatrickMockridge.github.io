@@ -211,3 +211,17 @@
     break-inside: avoid;
   }
 }
+
+@media print {
+  .comparison {
+    break-inside: avoid;
+  }
+
+  .comparison-scroll {
+    overflow: visible;
+  }
+
+  .comparison-table {
+    font-size: 9pt;
+  }
+}

@@ -14,9 +14,13 @@ npm run lint
 
 ## Content
 
-- `src/tabs/` — page content: CV, DarkWow, rchain-rust, Azoth, Mudra, Research, Contact.
+- `src/tabs/` — page content: CV, DarkWow, rnode-rust, Azoth, Mudra, Research, Contact.
 - `src/data/` — links, evidence rows, research posts.
 - `src/styles/` — tokens, global styles, window chrome, casework, print.
+
+Project naming: the RChain node record is displayed as **rnode-rust**; the repository URL
+remains `rchain-community/rchain-rust`. The legacy query `?tab=rchain-rust` resolves to
+`?tab=rnode-rust` and canonicalises the URL.
 - `public/` — fonts, favicon, social image, printable CV, 404 page.
 
 ## CV PDF
@@ -52,7 +56,7 @@ If the site is ever hosted under a project path, change `base` in
 
 - Claims are dated and linked to repositories or artifacts.
 - DarkWow is a DarkFi fork; fork-original layers are named explicitly.
-- rchain-rust proof scope is stated: Lean 4 laws, conformance-tied entries,
+- rnode-rust proof scope is stated: Lean 4 laws, conformance-tied entries,
   model-level proofs, and named axioms.
 - RChain public record is attributed; no individuals are named and no court
   opinion is linked.

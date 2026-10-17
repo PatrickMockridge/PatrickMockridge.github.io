@@ -1,10 +1,74 @@
+import { ComparisonTable, type ComparisonRow } from '../components/ComparisonTable'
 import { EvidenceTable } from '../components/EvidenceTable'
 import { Figure } from '../components/Figure'
 import { Listing } from '../components/Listing'
 import { MethodRefrain } from '../components/MethodRefrain'
 import { Section } from '../components/Section'
 import { TitleBlock } from '../components/TitleBlock'
+import { WhatWhy } from '../components/WhatWhy'
 import { darkWow, darkWowEvidence, manifestExcerpt } from '../data/projects'
+
+const TIMELINE_COLUMNS = [
+  { label: 'Year' },
+  { label: 'Advance' },
+  { label: 'What it changed here' },
+]
+
+const TIMELINE_ROWS: ComparisonRow[] = [
+  {
+    key: '2005',
+    header: '2005',
+    cells: [
+      <>
+        Meredith &amp; Radestock publish <em>A Reflective Higher-Order Calculus</em>: a name
+        is a quoted process (<code>@P</code>), and a process can recover a process from a name
+        (<code>*x</code>).
+      </>,
+      <>
+        Authority can be a first-class, unforgeable value. An object capability can be named,
+        passed, attenuated, and revoked without a permission table.
+      </>,
+    ],
+  },
+  {
+    key: '2020',
+    header: '2020',
+    cells: [
+      <>ECC releases Halo 2 code (1 September 2020); Zcash activates it in NU5 (2021).</>,
+      <>
+        Private proofs over general circuits become practical in Rust. A state transition can
+        be proved without revealing the state.
+      </>,
+    ],
+  },
+  {
+    key: '2026',
+    header: '2026',
+    cells: [
+      <>
+        DarkWow’s fork-era work: governance, genesis, Uncle Merkle consensus, manifest/ABI,
+        capability wallet, supply audit.
+      </>,
+      <>
+        The calculus, the proof system, and the wallet are one design: capabilities are
+        composed from scanned state, and supply is checked outside the proof.
+      </>,
+    ],
+  },
+]
+
+const TIMELINE_NOTE = (
+  <>
+    Dates are publication and release dates, not claims of first use. ρ-calculus: Meredith
+    &amp; Radestock, <a href={darkWow.rhoPaper}>A Reflective Higher-Order Calculus</a>{' '}
+    (ENTCS 2005, doi:10.1016/j.entcs.2005.05.016). <a href={darkWow.halo2}>Halo 2 code</a> was
+    released by ECC on 1 September 2020; Zcash activated it in NU5 in 2021. DarkWow is a
+    research prototype; the shipping wallet implements a subset of the ρ-calculus
+    specification (see Limits). The combination is recent; I have not found another design
+    that uses the ρ-calculus as the authority model, Halo 2 for private proofs, and a native
+    capability wallet as one system. That is a survey claim, not a theorem.
+  </>
+)
 
 export function DarkWowTab() {
   return (
@@ -33,33 +97,56 @@ export function DarkWowTab() {
             value: <a href={darkWow.docs}>doc/src</a>,
           },
         ]}
+      >
+        <WhatWhy
+          what={
+            <>
+              A Layer 1 design for private organisations on a public chain. Members coordinate,
+              hold assets, and audit supply without a public administrator, a public member
+              list, or a voter roll.
+            </>
+          }
+          why={
+            <>
+              An organisation needs privacy and accountability at the same time. A public chain
+              gives auditability but exposes membership and strategy; a private chain gives
+              confidentiality but asks members to trust an operator. DarkWow tries to get both
+              without a single privileged key: authority is a name you hold, not an identity
+              you assert, and supply is checked outside the proof. I wanted to know whether an
+              organisation could run in public without publishing its member list or trusting
+              an administrator, and whether authority, privacy, and supply could be one design
+              rather than three products bolted together.
+            </>
+          }
+          combination={
+            <>
+              ρ-calculus (2005) for authority as a name + Halo 2 (2020) for private state
+              transitions + a native capability wallet that composes capability types from
+              scanned state (2026) + a Pedersen supply audit outside the proof.
+            </>
+          }
+        />
+      </TitleBlock>
+
+      <ComparisonTable
+        variant="timeline"
+        caption="Table 1. Three dates make the design possible."
+        subtitle="The calculus, the proof system, and the wallet became combinable in this window."
+        columns={TIMELINE_COLUMNS}
+        rows={TIMELINE_ROWS}
+        note={TIMELINE_NOTE}
       />
 
       <MethodRefrain />
 
-      <Section number="1" title="Claim" id="darkwow-claim">
-        <p className="lede">
-          DarkWow is a Layer 1 design for private organisations on a public chain,
-          intended to let members coordinate, hold assets, and audit supply without a
-          public administrator, a public member list, or a voter roll. Authority is
-          designed so that it is not asserted by an identity or a privileged key but
-          represented as an object capability: holding the capability is what permits
-          the action. The fork-original work is the governance layer and genesis set, a
-          deterministic Uncle Merkle consensus, self-describing contracts with on-chain
-          manifests, and a wallet that composes capability types from scanned state. The
-          distinctive claim is the integration — privacy, accountability, and supply
-          audit designed as one system rather than traded against one another. It is a
-          research prototype, not a production chain: there is no third-party audit, but
-          all 39 zkVM opcodes and all 120 contract circuits are Lean-verified, eight
-          axioms remain, and the HAZOP review grades every circuit with numbered actions
-          and remediations. Each block also carries a Pedersen mass balance and a
-          cumulative supply commitment; an over-mint cannot be accepted — the
-          Orchard-style failure this design excludes.
-        </p>
-      </Section>
-
-      <Section number="2" title="Design" id="darkwow-design">
+      <Section number="1" title="Design" id="darkwow-design">
         <ul className="prose">
+          <li>
+            <strong>Names are processes, and authority is a name.</strong> The ρ-calculus
+            makes a name a quoted process (<code>@P</code>) and lets a process recover a
+            process from a name (<code>*x</code>). Bundles give read/write facets, forwarders
+            attenuate, and revocation is a language pattern. Authority is held, not asserted.
+          </li>
           <li>
             <strong>Authority can be held without a public roll.</strong> Governance is
             built from composable object-capability primitives — a purse, a box, an
@@ -93,7 +180,7 @@ export function DarkWowTab() {
         </ul>
       </Section>
 
-      <Section number="3" title="Provenance" id="darkwow-provenance">
+      <Section number="2" title="Provenance" id="darkwow-provenance">
         <div className="prose">
           <p>
             DarkWow is a fork of DarkFi. The zkVM, ZKAS circuit language, P2P stack, WASM
@@ -111,7 +198,7 @@ export function DarkWowTab() {
         </div>
       </Section>
 
-      <Section number="4" title="Evidence" id="darkwow-evidence">
+      <Section number="3" title="Evidence" id="darkwow-evidence">
         <EvidenceTable
           rows={darkWowEvidence}
           caption="DarkWow evidence"
@@ -172,7 +259,7 @@ export function DarkWowTab() {
         <Listing caption="Listing 1. DeployParamsV1 manifest, abridged." code={manifestExcerpt} />
       </Section>
 
-      <Section number="5" title="Limits" id="darkwow-limits">
+      <Section number="4" title="Limits" id="darkwow-limits">
         <ul className="prose">
           <li>
             Nine genesis contracts are labelled proven; the 23 post-genesis contracts
@@ -196,7 +283,7 @@ export function DarkWowTab() {
         </ul>
       </Section>
 
-      <Section number="6" title="Links" id="darkwow-links">
+      <Section number="5" title="Links" id="darkwow-links">
         <ul className="link-list">
           <li>
             <a href={darkWow.repo}>Repository</a>
@@ -218,6 +305,12 @@ export function DarkWowTab() {
           </li>
           <li>
             <a href={darkWow.obligations}>Verification obligation register</a>
+          </li>
+          <li>
+            <a href={darkWow.rhoPaper}>ρ-calculus paper</a>
+          </li>
+          <li>
+            <a href={darkWow.halo2}>Halo 2 release</a>
           </li>
         </ul>
       </Section>

@@ -9,7 +9,7 @@ export interface EvidenceRow {
 }
 
 const darkWowBase = `${SITE.links.darkwowRepo}/blob/linear-master`
-const rchainBase = `${SITE.links.rchainRepo}/blob/dev`
+const rnodeBase = `${SITE.links.rnodeRepo}/blob/dev`
 
 export const darkWow = {
   repo: SITE.links.darkwowRepo,
@@ -22,26 +22,34 @@ export const darkWow = {
   proofs: `${darkWowBase}/proofs/README.md`,
   contracts: `${darkWowBase}/doc/src/contracts.md`,
   obligations: `${darkWowBase}/doc/src/arch/verification-hazop.md`,
+  rhoPaper: 'https://doi.org/10.1016/j.entcs.2005.05.016',
+  halo2: 'https://z.cash/ecc-releases-code-for-halo-2/',
 }
 
-export const rchain = {
-  repo: SITE.links.rchainRepo,
-  docs: `${SITE.links.rchainRepo}/tree/dev/docs/src`,
-  laws: `${rchainBase}/spec/LAWS.md`,
-  inventory: `${rchainBase}/spec/INVENTORY.md`,
-  coq: `${rchainBase}/spec/coq/README.md`,
-  audit: `${rchainBase}/spec/AUDIT.md`,
-  passes: `${rchainBase}/spec/audit/passes.md`,
-  hazop: `${rchainBase}/docs/src/spec/failure-hazop.md`,
-  adversary: `${rchainBase}/docs/src/spec/adversary.md`,
-  rustVsScala: `${rchainBase}/spec/RUST-VS-SCALA.md`,
-  coverage: `${rchainBase}/spec/COVERAGE-LEDGER.md`,
-  testCoverage: `${rchainBase}/spec/TEST-COVERAGE.md`,
-  qucalc: `${rchainBase}/docs/src/qucalc`,
-  methodology: `${SITE.links.rchainRepo}/tree/dev/docs/src/methodology`,
-  securityAudit: `${SITE.links.rchainRepo}/blob/dev/docs/src/node/security-audit.md`,
+export const rnode = {
+  repo: SITE.links.rnodeRepo,
+  docs: `${SITE.links.rnodeRepo}/tree/dev/docs/src`,
+  laws: `${rnodeBase}/spec/LAWS.md`,
+  inventory: `${rnodeBase}/spec/INVENTORY.md`,
+  coq: `${rnodeBase}/spec/coq/README.md`,
+  audit: `${rnodeBase}/spec/AUDIT.md`,
+  passes: `${rnodeBase}/spec/audit/passes.md`,
+  hazop: `${rnodeBase}/docs/src/spec/failure-hazop.md`,
+  adversary: `${rnodeBase}/docs/src/spec/adversary.md`,
+  rustVsScala: `${rnodeBase}/spec/RUST-VS-SCALA.md`,
+  coverage: `${rnodeBase}/spec/COVERAGE-LEDGER.md`,
+  testCoverage: `${rnodeBase}/spec/TEST-COVERAGE.md`,
+  qucalc: `${rnodeBase}/docs/src/qucalc`,
+  methodology: `${SITE.links.rnodeRepo}/tree/dev/docs/src/methodology`,
+  securityAudit: `${SITE.links.rnodeRepo}/blob/dev/docs/src/node/security-audit.md`,
+  whyRholang: `${rnodeBase}/docs/src/rholang/why-rholang.md`,
+  objectCapabilities: `${rnodeBase}/docs/src/rholang/object-capabilities.md`,
+  scaling: `${rnodeBase}/docs/src/node/scaling.md`,
+  crossShard: `${rnodeBase}/docs/src/formal/cross-shard-transactions.md`,
+  concurrency: `${rnodeBase}/docs/src/formal/concurrency.md`,
+  typeSystem: `${rnodeBase}/spec/TYPE-SYSTEM.md`,
   arweave: 'https://arweave.net/MK4WA8w3NTIIFd6iaD06EPyxVbFhoV9MtfhMNcHWWMw',
-  legacy: `${SITE.links.rchainRepo}/tree/1b7583649/legacy`,
+  legacy: `${SITE.links.rnodeRepo}/tree/1b7583649/legacy`,
 }
 
 export const azoth = {
@@ -140,61 +148,71 @@ export const darkWowEvidence: EvidenceRow[] = [
   },
 ]
 
-export const rchainEvidence: EvidenceRow[] = [
+export const rnodeEvidence: EvidenceRow[] = [
   {
     measure: 'Rholang laws',
-    value: '77 machine-checked in Lean 4',
-    source: { label: 'spec/LAWS.md', href: rchain.laws },
+    value: '72 of 77 proved at all',
+    source: { label: 'spec/LAWS.md', href: rnode.laws },
+  },
+  {
+    measure: 'Non-vacuous proofs',
+    value: '70',
+    source: { label: 'spec/LAWS.md', href: rnode.laws },
   },
   {
     measure: 'Entries tied to the node',
-    value: '23, by conformance corpora',
-    source: { label: 'spec/INVENTORY.md', href: rchain.inventory },
+    value: '19, by conformance corpora',
+    source: { label: 'spec/INVENTORY.md', href: rnode.inventory },
   },
   {
-    measure: 'Named axioms',
-    value: '10 (9 cryptographic by design)',
-    source: { label: 'spec/INVENTORY.md', href: rchain.inventory },
+    measure: 'Model proofs',
+    value: '53',
+    source: { label: 'spec/INVENTORY.md', href: rnode.inventory },
   },
   {
-    measure: 'Open obligations',
-    value: '1 (law 63a)',
-    source: { label: 'spec/INVENTORY.md', href: rchain.inventory },
+    measure: 'Vacuous proofs',
+    value: '2',
+    source: { label: 'spec/LAWS.md', href: rnode.laws },
+  },
+  {
+    measure: 'Named or open laws',
+    value: '5; law 63a is open',
+    source: { label: 'spec/INVENTORY.md', href: rnode.inventory },
   },
   {
     measure: 'First-party crates',
     value: '14; 0 unsafe',
-    source: { label: 'README', href: rchain.repo },
+    source: { label: 'README', href: rnode.repo },
   },
   {
     measure: 'Rust lines / files',
     value: '203,173 / 474',
-    source: { label: 'README', href: rchain.repo },
+    source: { label: 'README', href: rnode.repo },
   },
   {
     measure: 'Tests',
     value: '2,281 (15 Oct 2026)',
-    source: { label: 'Test coverage', href: rchain.testCoverage },
+    source: { label: 'Test coverage', href: rnode.testCoverage },
   },
   {
     measure: 'Coverage floor',
     value: '87% (89.97% measured)',
-    source: { label: 'Coverage ledger', href: rchain.coverage },
+    source: { label: 'Coverage ledger', href: rnode.coverage },
   },
   {
     measure: 'Adversarial audit',
     value: 'No P0; 3 P1, 4 P2, 14 P3 confirmed and closed',
-    source: { label: 'Security audit', href: rchain.securityAudit },
+    source: { label: 'Security audit', href: rnode.securityAudit },
   },
   {
     measure: 'Findings register',
     value: '204/204 rows done; 137 sections',
-    source: { label: 'Audit record', href: rchain.audit },
+    source: { label: 'Audit record', href: rnode.audit },
   },
   {
     measure: 'Upstream corpus',
     value: '165 files, run 1:1',
-    source: { label: 'Rust vs Scala', href: rchain.rustVsScala },
+    source: { label: 'Rust vs Scala', href: rnode.rustVsScala },
   },
 ]
 

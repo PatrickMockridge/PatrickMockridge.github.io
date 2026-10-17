@@ -8,7 +8,7 @@ import { ContactTab } from './tabs/ContactTab'
 import { CVTab } from './tabs/CVTab'
 import { DarkWowTab } from './tabs/DarkWowTab'
 import { MudraTab } from './tabs/MudraTab'
-import { RchainRustTab } from './tabs/RchainRustTab'
+import { RnodeRustTab } from './tabs/RnodeRustTab'
 import { ResearchTab } from './tabs/ResearchTab'
 
 export default function App() {
@@ -30,8 +30,8 @@ export default function App() {
             <TabPanel id="darkwow" active={tab === 'darkwow'}>
               <DarkWowTab />
             </TabPanel>
-            <TabPanel id="rchain-rust" active={tab === 'rchain-rust'}>
-              <RchainRustTab />
+            <TabPanel id="rnode-rust" active={tab === 'rnode-rust'}>
+              <RnodeRustTab />
             </TabPanel>
             <TabPanel id="azoth" active={tab === 'azoth'}>
               <AzothTab />

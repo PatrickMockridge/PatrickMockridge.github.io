@@ -529,3 +529,169 @@
     transform: rotate(90deg);
   }
 }
+
+/* What / Why / The combination */
+.what-why {
+  max-width: var(--measure);
+  margin: 0 0 var(--space-4);
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.what-why-row {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.what-why-row:last-child {
+  border-bottom: 0;
+}
+
+.what-why dt {
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 0.15rem;
+}
+
+.what-why dd {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.what-why-combination dd {
+  font-weight: 500;
+}
+
+/* Comparison tables */
+.comparison {
+  max-width: 100%;
+  margin: 2rem 0;
+}
+
+.comparison-scroll {
+  overflow-x: auto;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.comparison-scroll:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+}
+
+.comparison-head {
+  padding-bottom: 0.75rem;
+}
+
+.comparison-caption {
+  display: block;
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.comparison-subtitle {
+  display: block;
+  margin-top: 0.35rem;
+  max-width: var(--measure);
+  font-size: 0.9375rem;
+  color: var(--ink);
+}
+
+.comparison-table thead th {
+  padding: 0.6rem 0.75rem 0.6rem 0;
+  border-bottom: 1px solid var(--ink);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 0.6rem 0.75rem 0.6rem 0;
+  border-bottom: 1px solid var(--hairline);
+  vertical-align: top;
+}
+
+.comparison-table tbody tr:last-child th,
+.comparison-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.comparison-table tbody th {
+  text-align: left;
+  font-weight: 500;
+}
+
+.comparison--matrix .comparison-table {
+  min-width: 44rem;
+}
+
+.comparison--matrix .comparison-table td {
+  text-align: center;
+}
+
+.comparison--matrix .comparison-table thead th:first-child,
+.comparison--matrix .comparison-table tbody th {
+  position: sticky;
+  left: 0;
+  background: var(--paper);
+  box-shadow: 1px 0 0 var(--hairline);
+}
+
+.comparison--claims .comparison-table {
+  min-width: 52rem;
+}
+
+.comparison--claims .comparison-table th:first-child {
+  width: 11rem;
+}
+
+.comparison--timeline .comparison-table {
+  min-width: 40rem;
+}
+
+.comparison--timeline .comparison-table tbody th {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.comparison--contrast .comparison-table {
+  min-width: 40rem;
+}
+
+.comparison--contrast .comparison-table th:first-child {
+  width: 9rem;
+}
+
+@media (max-width: 720px) {
+  .what-why-row {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .comparison-table {
+    font-size: 0.75rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.5rem 0.6rem 0.5rem 0;
+  }
+}

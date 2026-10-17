@@ -1,9 +1,52 @@
+import { ComparisonTable, type ComparisonRow } from '../components/ComparisonTable'
 import { EvidenceTable } from '../components/EvidenceTable'
 import { Figure } from '../components/Figure'
 import { MethodRefrain } from '../components/MethodRefrain'
 import { Section } from '../components/Section'
 import { TitleBlock } from '../components/TitleBlock'
+import { WhatWhy } from '../components/WhatWhy'
 import { azoth, azothEvidence } from '../data/projects'
+
+const CONTRAST_COLUMNS = [
+  { label: 'Measure' },
+  { label: 'A plain calculation' },
+  { label: 'An Azoth result' },
+]
+
+const CONTRAST_ROWS: ComparisonRow[] = [
+  {
+    key: 'value',
+    header: 'Value',
+    cells: [
+      'A float.',
+      'A float plus its identity, source, verification state, skipped checks, and kernel hashes.',
+    ],
+  },
+  {
+    key: 'implementation',
+    header: 'Implementation',
+    cells: [
+      'One code path.',
+      'Two independently generated kernels (Rust and Python) from one specification, compared in CI.',
+    ],
+  },
+  {
+    key: 'disagreement',
+    header: 'Disagreement',
+    cells: ['A fallback, or unnoticed.', 'Recorded as a finding.'],
+  },
+  {
+    key: 'refusal',
+    header: 'Unsupported input',
+    cells: [
+      'A plausible default, or an exception with no field.',
+      'A typed refusal naming the field.',
+    ],
+  },
+]
+
+const CONTRAST_NOTE =
+  'Design intent, not current coverage: v0.1.1, not on PyPI, not for design work yet; everything ported ships as unverified.'
 
 const NEQSIM_ISSUES = [
   {
@@ -50,28 +93,47 @@ export function AzothTab() {
             value: <a href={azoth.docs}>docs/src</a>,
           },
         ]}
-      />
+      >
+        <WhatWhy
+          what={
+            <>
+              A chemical-engineering calculation library in Python and Rust, generated from
+              one specification into two independent kernels, where every result carries its
+              provenance.
+            </>
+          }
+          why={
+            <>
+              In process safety, the dangerous number is rarely obviously wrong. It is
+              reasonable, it is in the right units, and it has no history — so it gets used. A
+              library that returns a bare float is optimised for that failure. Azoth makes a
+              number unable to be anonymous: it carries its source and verification state, and
+              a calculation that cannot be supported refuses instead of returning a plausible
+              default. I spent nine years in process safety; I wanted a library where the
+              unsourced number could not exist.
+            </>
+          }
+          combination={
+            <>
+              One specification → two independently generated kernels (Rust and Python)
+              compared in CI → per-result provenance → typed refusal as a first-class outcome;
+              a disagreement is a finding, not a fallback.
+            </>
+          }
+        />
+      </TitleBlock>
 
       <MethodRefrain />
 
-      <Section number="1" title="Claim" id="azoth-claim">
-        <p className="lede">
-          Azoth is a chemical-engineering calculation library in Python and Rust built
-          for one failure mode: a number that looks reasonable and has no history. Each
-          calculation is declared once in a specification and generated into two
-          implementations that are compared in CI; a disagreement is recorded as a
-          finding, not resolved by a fallback. Every result carries its identity, source,
-          verification state, skipped checks, and kernel hashes, and a calculation that
-          cannot be supported refuses with a typed error naming the field rather than
-          returning a plausible default. The distinctive asset is not the number of
-          upstream defects found but the combination: dual independently generated
-          implementations from one specification, per-result provenance, and refusal as a
-          first-class outcome. Porting NeqSim to that discipline has so far produced 77
-          upstream issues (57 closed, 20 open), including a Gibbs minimisation routine
-          that performed no minimisation and a zero-filled vapour-pressure row given a
-          synthetic curve. Azoth is v0.1.1, is not on PyPI, and is not for design work
-          yet.
-        </p>
+      <Section number="1" title="The difference" id="azoth-difference">
+        <ComparisonTable
+          variant="contrast"
+          caption="Table 1. A number, with and without a record."
+          subtitle="What changes when the result carries its own history."
+          columns={CONTRAST_COLUMNS}
+          rows={CONTRAST_ROWS}
+          note={CONTRAST_NOTE}
+        />
       </Section>
 
       <Section number="2" title="Design" id="azoth-design">

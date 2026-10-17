@@ -1,9 +1,55 @@
+import { ComparisonTable, type ComparisonRow } from '../components/ComparisonTable'
 import { EvidenceTable } from '../components/EvidenceTable'
 import { Figure } from '../components/Figure'
 import { MethodRefrain } from '../components/MethodRefrain'
 import { Section } from '../components/Section'
 import { TitleBlock } from '../components/TitleBlock'
+import { WhatWhy } from '../components/WhatWhy'
 import { mudra, mudraEvidence } from '../data/projects'
+
+const CONTRAST_COLUMNS = [
+  { label: 'Measure' },
+  { label: 'Hash + timestamp' },
+  { label: 'Mudra' },
+]
+
+const CONTRAST_ROWS: ComparisonRow[] = [
+  {
+    key: 'proved',
+    header: 'What is proved',
+    cells: [
+      'A file existed at a time.',
+      'A specific program, its inputs, its output, and the step count are bound in one proof.',
+    ],
+  },
+  {
+    key: 'private',
+    header: 'What stays private',
+    cells: [
+      'Usually nothing; the file is revealed to check it.',
+      'The formulas, inputs, and business logic; the proof carries fingerprints.',
+    ],
+  },
+  {
+    key: 'needed',
+    header: 'What the verifier needs',
+    cells: [
+      'The file and its hash.',
+      'The proof (~6 KB), the verifying key, and the program digest.',
+    ],
+  },
+  {
+    key: 'not',
+    header: 'What it does not prove',
+    cells: [
+      'That the math inside the file is right.',
+      'That the spreadsheet is a good model, or that every instruction is constrained.',
+    ],
+  },
+]
+
+const CONTRAST_NOTE =
+  'The circuit seals a hash chain, not every instruction; per-instruction correctness relies on deterministic replay.'
 
 export function MudraTab() {
   return (
@@ -29,27 +75,45 @@ export function MudraTab() {
             value: <a href={mudra.docs}>docs/</a>,
           },
         ]}
-      />
+      >
+        <WhatWhy
+          what={
+            <>
+              A proof-of-computation system for spreadsheets and small programs: it binds a
+              specific program, its inputs, its output, and the step count in a constant-size
+              proof, without revealing the formulas or the data.
+            </>
+          }
+          why={
+            <>
+              A hash on Arweave proves a file existed. It does not prove the math inside it was
+              right. Regulated work still moves as spreadsheets and sealed models, and the
+              counterparty has to trust the vendor’s black box. Mudra replaces that trust with
+              a receipt the other side can verify. I wanted what a regulator or counterparty
+              actually needs: not “here is our file hash”, but “here is proof this calculation
+              produced this number, and you can check it without seeing our model.”
+            </>
+          }
+          combination={
+            <>
+              A BigInt-native ZK VM + a constant-size Halo2 hash-chain seal (~6 KB; one
+              verifying key for every program) + an Arweave receipt with an entropy beacon.
+            </>
+          }
+        />
+      </TitleBlock>
 
       <MethodRefrain />
 
-      <Section number="1" title="Claim" id="mudra-claim">
-        <p className="lede">
-          A hash on Arweave proves a file existed. It does not prove the math inside it
-          was right. Mudra closes that gap: a spreadsheet or program runs locally,
-          produces a constant-size proof that a specific program ran on specific inputs
-          to a specific output, and posts a permanent receipt to Arweave. The verifier
-          checks the proof without seeing the formulas or the data. The trust problem is
-          concrete: an insurance broker cannot hand a ten-year model to a regulator, and
-          an offshore operator cannot prove a custody-transfer reading without trusting
-          a vendor’s sealed black box. Mudra lets either post a receipt the other side
-          can verify. The VM is BigInt-native, so there is no overflow; the Halo2 circuit
-          seals a Poseidon hash chain across 21 field elements, so one verifying key
-          covers every program; the verifier runs in WASM in a browser, on a phone, or
-          from the CLI. It is a research build, not a production audit system: the
-          circuit seals the hash chain, and per-instruction correctness relies on
-          deterministic replay.
-        </p>
+      <Section number="1" title="The difference" id="mudra-difference">
+        <ComparisonTable
+          variant="contrast"
+          caption="Table 1. What a hash proves, and what a proof of computation adds."
+          subtitle="The difference is the calculation, not the file."
+          columns={CONTRAST_COLUMNS}
+          rows={CONTRAST_ROWS}
+          note={CONTRAST_NOTE}
+        />
       </Section>
 
       <Section number="2" title="Design" id="mudra-design">

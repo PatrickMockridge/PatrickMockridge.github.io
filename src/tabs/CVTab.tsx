@@ -18,7 +18,7 @@ export function CVTab() {
         <p>Process safety engineer, 2006–2015; chartered 2013.</p>
         <p>Protocol engineer, 2016–present.</p>
         <p>Aberystwyth, Wales.</p>
-        <p className="cv-work-index">DarkWow · rchain-rust · Azoth · Mudra</p>
+        <p className="cv-work-index">DarkWow · rnode-rust · Azoth · Mudra</p>
       </header>
 
       <Section number="1" title="Profile and method" id="profile">
@@ -36,7 +36,7 @@ export function CVTab() {
           <p>
             The projects are instances of that method. DarkWow is containment: private
             coordination on a public chain, with authority held as an object capability
-            rather than a public administrator. rchain-rust is rescue: a dissolved
+            rather than a public administrator. rnode-rust is continuity: a dissolved
             network’s node ported to Rust, with its language laws machine-checked at the
             model level and conformance-tested at the node. Azoth is provenance:
             chemical-engineering calculations where every number carries its source and
@@ -55,7 +55,7 @@ export function CVTab() {
           <p>
             The method: specify the failure mode before the architecture; prove what can
             be proved; contain what cannot; record provenance with every result. DarkWow
-            is containment; rchain-rust is rescue; Azoth is provenance; Mudra is
+            is containment; rnode-rust is continuity; Azoth is provenance; Mudra is
             verification in a familiar form.
           </p>
         </div>
@@ -81,16 +81,17 @@ export function CVTab() {
           </li>
           <li className="work-row">
             <div className="work-main">
-              <span className="work-title">rchain-rust</span>
+              <span className="work-title">rnode-rust</span>
               <span className="work-subtitle">
-                A rescued blockchain node whose language laws are machine-checked
+                A Rust node for the ρ-calculus: native object capabilities and
+                machine-checked laws
               </span>
             </div>
             <div className="work-meta">
               <span>2026</span>
               <span>Pre-release</span>
             </div>
-            <a className="work-link" href="?tab=rchain-rust">
+            <a className="work-link" href="?tab=rnode-rust">
               Record →
             </a>
           </li>
@@ -126,7 +127,7 @@ export function CVTab() {
           </li>
         </ul>
         <p className="print-only print-urls">
-          Records: patrickmockridge.github.io/?tab=darkwow · /?tab=rchain-rust ·
+          Records: patrickmockridge.github.io/?tab=darkwow · /?tab=rnode-rust ·
           /?tab=azoth · /?tab=mudra
         </p>
       </Section>
@@ -139,7 +140,7 @@ export function CVTab() {
               body: (
                 <>
                   Independent work: protocol software, formal verification, numerical
-                  systems. Current records: DarkWow, rchain-rust, Azoth, Mudra.
+                  systems. Current records: DarkWow, rnode-rust, Azoth, Mudra.
                 </>
               ),
             },
