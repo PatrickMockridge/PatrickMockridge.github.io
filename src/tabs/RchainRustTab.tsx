@@ -161,24 +161,19 @@ export function RchainRustTab() {
       <Section number="3" title="Design" id="rchain-design">
         <ul className="prose">
           <li>
-            <strong>The rescue is auditable.</strong> Upstream is pinned and restorable
-            before the port, so the port can be compared with what it replaced.
+            <strong>The law register is the oracle.</strong> 77 laws are machine-checked
+            in Lean 4; corpora emitted from the register run 1:1 through the node. The
+            Scala reference contributes vectors, not truth.
           </li>
           <li>
-            <strong>The Scala implementation is a differential oracle, not an
-            authority.</strong> Behaviour is compared 1:1 rather than trusted; the
-            reference is evidence, not the standard.
+            <strong>Provenance is fixed before the port.</strong> Upstream is pinned and
+            restorable, and its 165-file differential corpus is the reference’s surviving
+            authority — as data, not specification.
           </li>
           <li>
-            <strong>The law register is the oracle, not the Scala implementation.</strong>{' '}
-            The 77 laws are machine-checked first, and conformance corpora emitted from
-            the register are run 1:1 through the node; the reference contributes vectors,
-            not truth.
-          </li>
-          <li>
-            <strong>Assurance is written and gated.</strong> HAZOP, bow-tie analysis, a
-            bounded-adversary tabletop, fuzzing, and a coverage floor leave a record that
-            does not depend on the author being in the room.
+            <strong>Assurance is written and gated.</strong> Findings have one home and
+            close by construction; HAZOP, bow-tie, a bounded-adversary tabletop, fuzzing,
+            and a coverage floor leave a record that does not depend on the author.
           </li>
         </ul>
       </Section>
@@ -186,17 +181,16 @@ export function RchainRustTab() {
       <Section number="4" title="Provenance and rescue" id="rchain-provenance">
         <div className="prose">
           <p>
-            Original to this work: the Rust node, the Lean law development, the
-            conformance corpora, and the assurance record. Inherited: the RChain protocol
-            and the upstream Scala implementation. The upstream Scala is preserved at
-            commit <code>1b7583649</code> and restorable with{' '}
-            <code>git checkout 1b7583649 -- legacy</code>; a code snapshot at commit{' '}
+            Original: the Rust node, the Lean laws, the conformance corpora, and the
+            assurance record. Inherited: the RChain protocol and the upstream Scala,
+            pinned at <code>1b7583649</code> and restorable with{' '}
+            <code>git checkout 1b7583649 -- legacy</code>. A code snapshot at{' '}
             <code>14b8b77</code> is timestamped on Arweave, 22 August 2026. Rust is
-            AGPL-3.0; upstream Scala is Apache-2.0. No ownership is claimed.
+            AGPL-3.0; upstream Scala is Apache-2.0.
           </p>
           <p>
             The port is a rescue in the plain sense: the code was preserved and the
-            protocol continued.
+            protocol continued. No ownership is claimed.
           </p>
           <p>
             <a href={rchain.arweave}>Arweave snapshot</a> ·{' '}
