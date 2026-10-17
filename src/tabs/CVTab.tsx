@@ -73,7 +73,7 @@ export function CVTab() {
             </div>
             <div className="work-meta">
               <span>2026–</span>
-              <span>Research prototype, unaudited</span>
+              <span>Research prototype; Lean-verified circuits; HAZOP-reviewed</span>
             </div>
             <a className="work-link" href="?tab=darkwow">
               Record →

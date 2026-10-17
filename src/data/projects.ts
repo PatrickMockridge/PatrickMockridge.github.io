@@ -18,6 +18,7 @@ export const darkWow = {
   ocap: `${darkWowBase}/doc/src/arch/ocap.md`,
   wallet: `${darkWowBase}/doc/src/arch/wallet.md`,
   uncleMerkle: `${darkWowBase}/doc/src/arch/consensus/uncle_merkle.md`,
+  consensus: `${darkWowBase}/doc/src/arch/consensus/consensus.md`,
   proofs: `${darkWowBase}/proofs/README.md`,
   contracts: `${darkWowBase}/doc/src/contracts.md`,
   obligations: `${darkWowBase}/doc/src/arch/verification-hazop.md`,
@@ -97,9 +98,24 @@ export const darkWowEvidence: EvidenceRow[] = [
     source: { label: 'Manifest specification', href: darkWow.manifest },
   },
   {
-    measure: 'Added ZK gadgets proved',
-    value: '3, with 8 declared axioms',
+    measure: 'Lean 4 verification',
+    value: '39 zkVM opcodes; 120 contract circuits',
     source: { label: 'Proofs', href: darkWow.proofs },
+  },
+  {
+    measure: 'Declared axioms',
+    value: '8',
+    source: { label: 'Proofs', href: darkWow.proofs },
+  },
+  {
+    measure: 'HAZOP review',
+    value: '120 circuits graded; 15 high-risk fixed',
+    source: { label: 'Verification register', href: darkWow.obligations },
+  },
+  {
+    measure: 'Supply audit',
+    value: 'Pedersen mass balance per block; cumulative supply chain',
+    source: { label: 'Consensus and supply audit', href: darkWow.consensus },
   },
   {
     measure: 'Open formal obligation',

@@ -19,7 +19,11 @@ export function DarkWowTab() {
             value: 'Protocol, consensus, contracts, wallet (fork-original layers)',
           },
           { label: 'Period', value: '2026–present (fork-era)' },
-          { label: 'Status', value: 'Research prototype; unaudited; mainnet TBD' },
+          {
+            label: 'Status',
+            value:
+              'Research prototype; mainnet TBD; no third-party audit; Lean-verified circuits; HAZOP-reviewed',
+          },
           {
             label: 'Repository',
             value: <a href={darkWow.repo}>github.com/PatrickMockridge/DarkWow</a>,
@@ -44,10 +48,13 @@ export function DarkWowTab() {
           deterministic Uncle Merkle consensus, self-describing contracts with on-chain
           manifests, and a wallet that composes capability types from scanned state. The
           distinctive claim is the integration — privacy, accountability, and supply
-          audit designed as one system rather than traded against one another. It is an
-          unaudited research prototype: 9 of 32 contract codebases are genesis, three
-          added gadgets are proved in Lean 4 with eight declared axioms, and the
-          supply-audit verifier components are designed but not yet wired.
+          audit designed as one system rather than traded against one another. It is a
+          research prototype, not a production chain: there is no third-party audit, but
+          all 39 zkVM opcodes and all 120 contract circuits are Lean-verified, eight
+          axioms remain, and the HAZOP review grades every circuit with numbered actions
+          and remediations. Each block also carries a Pedersen mass balance and a
+          cumulative supply commitment; an over-mint cannot be accepted — the
+          Orchard-style failure this design excludes.
         </p>
       </Section>
 
@@ -75,6 +82,13 @@ export function DarkWowTab() {
             <strong>The wallet bounds authority by what was scanned.</strong> Capability
             types are composed at scan time; key material stays in the account manager
             and never reaches the daemon.
+          </li>
+          <li>
+            <strong>Supply is checked outside the proof.</strong> Every block carries a
+            Pedersen mass balance and a cumulative supply commitment; the check is pure
+            Pedersen arithmetic, not a ZK verification. An over-mint fails the block; a
+            protocol-level failure halts the chain rather than minting, and the repair is
+            a protocol change rather than a quiet patch.
           </li>
         </ul>
       </Section>
@@ -161,23 +175,19 @@ export function DarkWowTab() {
       <Section number="5" title="Limits" id="darkwow-limits">
         <ul className="prose">
           <li>
-            Only nine genesis contracts are labelled proven; the 23 post-genesis
-            contracts are experimental.
+            Nine genesis contracts are labelled proven; the 23 post-genesis contracts
+            remain experimental, even where their circuits are verified.
           </li>
           <li>
-            Formal verification is partial: three opcodes have machine-checked soundness
-            proofs with stated hypotheses; contract-circuit review is a manual audit;
-            eight axioms are declared; <code>OBL-Z12</code> and other obligations
-            remain open.
+            Lean 4 covers all 39 zkVM opcodes and all 120 contract circuits, plus
+            cross-cutting Pedersen and value-conservation theorems; eight axioms remain,
+            and <code>OBL-Z12</code> and other obligations are open.
           </li>
           <li>
-            Supply is designed to be auditable without a trusted auditor; the verifier
-            components are not yet wired into the node.
-          </li>
-          <li>
-            Dual finality is partial: Caribina anchors are published but its verifier is
-            not wired into the node; the Monero anchoring gadget has not been enabled;
-            Monero merge mining is live.
+            The per-block Pedersen mass balance and cumulative supply chain are active;
+            an over-mint cannot be accepted. External anchoring is partial: Caribina
+            anchors are published but its verifier is not wired into the node; the Monero
+            anchoring gadget has not been enabled; merge mining is live.
           </li>
           <li>On-chain manifest hashing is pending.</li>
           <li>
@@ -199,6 +209,9 @@ export function DarkWowTab() {
           </li>
           <li>
             <a href={darkWow.ocap}>O-Cap model</a>
+          </li>
+          <li>
+            <a href={darkWow.consensus}>Consensus and supply audit</a>
           </li>
           <li>
             <a href={darkWow.proofs}>Proofs</a>
