@@ -39,6 +39,7 @@ export const rchain = {
   testCoverage: `${rchainBase}/spec/TEST-COVERAGE.md`,
   qucalc: `${rchainBase}/docs/src/qucalc`,
   methodology: `${SITE.links.rchainRepo}/tree/dev/docs/src/methodology`,
+  securityAudit: `${SITE.links.rchainRepo}/blob/dev/docs/src/node/security-audit.md`,
   arweave: 'https://arweave.net/MK4WA8w3NTIIFd6iaD06EPyxVbFhoV9MtfhMNcHWWMw',
   legacy: `${SITE.links.rchainRepo}/tree/1b7583649/legacy`,
 }
@@ -181,8 +182,13 @@ export const rchainEvidence: EvidenceRow[] = [
     source: { label: 'Coverage ledger', href: rchain.coverage },
   },
   {
-    measure: 'Internal review',
-    value: '137 sections; 383-row register',
+    measure: 'Adversarial audit',
+    value: 'No P0; 3 P1, 4 P2, 14 P3 confirmed and closed',
+    source: { label: 'Security audit', href: rchain.securityAudit },
+  },
+  {
+    measure: 'Findings register',
+    value: '204/204 rows done; 137 sections',
     source: { label: 'Audit record', href: rchain.audit },
   },
   {

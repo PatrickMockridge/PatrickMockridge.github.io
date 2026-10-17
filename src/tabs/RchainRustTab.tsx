@@ -78,9 +78,10 @@ export function RchainRustTab() {
           assurance is machine-checked at the model level and conformance-tested at the
           node. Ten named axioms remain, with one obligation open. A process-safety
           assurance record — HAZOP, bow-tie analysis, a bounded-adversary tabletop —
-          applied to a blockchain node is the uncommon part. The node is a pre-release:
-          an early community testnet is live, with no declared stable testnet and no
-          production release.
+          applied to a blockchain node is the uncommon part. The September 2026
+          adversarial review found no P0 (chain split, fund loss, or remote code
+          execution). The node is a pre-release: an early community testnet is live,
+          with no declared stable testnet and no production release.
         </p>
       </Section>
 
@@ -223,31 +224,35 @@ export function RchainRustTab() {
       <Section number="6" title="Limits" id="rchain-limits">
         <ul className="prose">
           <li>
-            No independent third-party audit. The “adversarial audit” is an internal,
-            written, gated review programme.
+            <strong>No external audit firm.</strong> The security record is a written,
+            gated adversarial programme: the September 2026 pass found no P0 (chain
+            split, fund loss, or remote code execution); three P1s, four P2s, and
+            fourteen P3s were confirmed and closed.
           </li>
           <li>
-            Formal assurance is model-level, not end-to-end: 77 laws are machine-checked
-            in Lean 4; 23 entries are tied to the node by conformance corpora; 10 are
-            named axioms (9 cryptographic by design); 1 is open (law 63a). The Coq track
-            states laws as axioms and proves nothing yet.
+            <strong>Formal assurance is layered.</strong> 77 laws are machine-checked in
+            Lean 4; 23 register entries are tied to the running node by conformance
+            corpora; the rest are model proofs or named axioms, with one law still open.
+            The Coq track defines the α-equivalence metatheory but states its laws as
+            axioms.
           </li>
           <li>
-            Memory safety covers first-party crates only; dependencies, leaks, logic
-            errors, denial of service, and consensus bugs remain.
+            <strong>Memory safety is first-party only.</strong> No <code>unsafe</code>{' '}
+            covers the fourteen crates, not their dependencies; it rules out the
+            memory-unsafety class, not leaks, logic errors, denial of service, or
+            consensus bugs.
           </li>
           <li>
-            “Commodity laptop” is an estimate, not a benchmark; storage and RAM scale
-            with chain length.
+            <strong>Sizing is an estimate.</strong> The node is storage- and uptime-bound,
+            not CPU-bound; RAM and start-up time scale with chain length. The hardware
+            page carries measured start-up figures, not a production benchmark.
           </li>
           <li>
-            No throughput claim; a block carries at most 255 deploys. QuCalc is research,
-            not production.
-          </li>
-          <li>
-            No validator count is stated; there are no tagged GitHub releases, and
-            testnet builds are distributed by digest. AGPL-3.0 constrains proprietary
-            forks. There is no production incident history.
+            <strong>Throughput is bounded and residency is superlinear.</strong> A block
+            carries at most 255 deploys; the scaling page derives roughly 60–160
+            deploys/s on one shard and 6–20 s finality. Residency is Θ(N²): at a
+            two-second block interval, 16 GB of memory is roughly twelve hours away, and
+            sharding is untested at scale.
           </li>
         </ul>
       </Section>
@@ -271,6 +276,9 @@ export function RchainRustTab() {
           </li>
           <li>
             <a href={rchain.audit}>spec/AUDIT.md</a>
+          </li>
+          <li>
+            <a href={rchain.securityAudit}>Security audit</a>
           </li>
           <li>
             <a href={rchain.methodology}>
