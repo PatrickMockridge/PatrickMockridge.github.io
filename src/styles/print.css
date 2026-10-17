@@ -1,0 +1,213 @@
+@media print {
+  :root,
+  :root[data-theme="dark"] {
+    color-scheme: light;
+    --ink: #000;
+    --paper: #fff;
+    --desk: #fff;
+    --muted: #000;
+    --hairline: #ccc;
+    --wash: #fff;
+    --focus: #000;
+  }
+
+  @page {
+    size: A4;
+    margin: 16mm 18mm;
+    @bottom-right {
+      content: "Patrick Mockridge — Curriculum Vitae · " counter(page) " / " counter(pages);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 8pt;
+    }
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  body {
+    font-size: 9.5pt;
+    line-height: 1.4;
+  }
+
+  .site {
+    display: block;
+    padding: 0;
+    min-height: 0;
+  }
+
+  .window {
+    border: 0;
+    border-radius: 0;
+    max-width: none;
+    width: auto;
+  }
+
+  .window-header,
+  .tab-index,
+  .window-footer,
+  .skip-link,
+  .print-hide,
+  .screen-only {
+    display: none !important;
+  }
+
+  .panel {
+    display: none !important;
+    padding: 0 !important;
+  }
+
+  #panel-cv {
+    display: block !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-header {
+    border-bottom: 1px solid #000;
+    padding-bottom: 6pt;
+    margin-bottom: 12pt;
+  }
+
+  .print-header .print-name {
+    font-size: 20pt;
+    font-weight: 500;
+    line-height: 1.1;
+  }
+
+  .print-header .print-contact {
+    font-size: 8.5pt;
+    margin-top: 4pt;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: #000;
+  }
+
+  .section {
+    display: grid;
+    grid-template-columns: 26mm 1fr;
+    column-gap: 8mm;
+    margin-top: 10pt;
+    break-inside: auto;
+  }
+
+  .section:first-of-type {
+    margin-top: 0;
+  }
+
+  .section-heading {
+    grid-column: 1;
+    grid-row: 1;
+    display: block;
+    font-size: 7.5pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #000;
+    margin: 0;
+    padding-top: 1pt;
+  }
+
+  .section-number {
+    display: none;
+  }
+
+  .section > :not(.section-heading) {
+    grid-column: 2;
+  }
+
+  .case-title {
+    font-size: 18pt;
+  }
+
+  .prose,
+  .lede {
+    max-width: none;
+  }
+
+  .work-list {
+    border-top: 1px solid #000;
+  }
+
+  .work-row {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 8pt;
+    padding: 4pt 0;
+    border-bottom: 1px solid #ccc;
+    break-inside: avoid;
+  }
+
+  .work-title {
+    font-size: 9.5pt;
+  }
+
+  .work-subtitle {
+    font-size: 8pt;
+  }
+
+  .work-meta {
+    display: block;
+    font-size: 7.5pt;
+  }
+
+  .work-meta span {
+    display: inline;
+  }
+
+  .work-meta span + span::before {
+    content: " · ";
+  }
+
+  .work-link {
+    display: none;
+  }
+
+  .chronology,
+  .record-table,
+  .evidence-table {
+    font-size: 9pt;
+  }
+
+  .chronology td,
+  .record-table td,
+  .evidence-table td {
+    padding: 3pt 0;
+  }
+
+  .chronology tr,
+  .record-table tr,
+  .evidence-table tr,
+  .work-row {
+    break-inside: avoid;
+  }
+
+  .source-note {
+    font-size: 8pt;
+  }
+
+  .print-urls {
+    display: block;
+    font-size: 8pt;
+    margin-top: 4pt;
+  }
+
+  .enquiries {
+    display: none !important;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .figure,
+  .listing {
+    break-inside: avoid;
+  }
+}
