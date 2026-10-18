@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkWow — Patrick Mockridge</title>
+    <meta name="description" content="A Layer 1 design for private organisations on a public chain: object-capability governance, Uncle Merkle consensus, a capability wallet, and a supply audit.">
+    <meta name="author" content="Patrick Mockridge">
+    <meta name="theme-color" content="#fcfbf7">
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light';
+          document.documentElement.dataset.theme = theme;
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) {
+            meta.setAttribute('content', theme === 'dark' ? '#151513' : '#fcfbf7');
+          }
+        } catch (error) {
+          // Default to the light palette.
+        }
+      })();
+    </script>
+    <link rel="canonical" href="https://patrickmockridge.github.io/darkwow/">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link
+      rel="preload"
+      href="/fonts/ibm-plex-mono-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+   >
+    <link
+      rel="preload"
+      href="/fonts/ibm-plex-mono-500.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+   >
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="DarkWow — Patrick Mockridge">
+    <meta property="og:description" content="A Layer 1 design for private organisations on a public chain: object-capability governance, Uncle Merkle consensus, a capability wallet, and a supply audit.">
+    <meta property="og:url" content="https://patrickmockridge.github.io/darkwow/">
+    <meta property="og:image" content="https://patrickmockridge.github.io/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta
+      property="og:image:alt"
+      content="Patrick Mockridge — a record of work in privacy protocols, consensus systems, and formal verification."
+   >
+    <meta property="profile:first_name" content="Patrick">
+    <meta property="profile:last_name" content="Mockridge">
+    <meta property="profile:username" content="PatrickMockridge">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DarkWow — Patrick Mockridge">
+    <meta name="twitter:description" content="A Layer 1 design for private organisations on a public chain: object-capability governance, Uncle Merkle consensus, a capability wallet, and a supply audit.">
+    <meta name="twitter:image" content="https://patrickmockridge.github.io/og.png">
+    <style>.noscript{color:#1a1a1a;background:#fcfbf7;max-width:68ch;margin:3rem auto;padding:0 1.25rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;line-height:1.65}.noscript h1{font-size:2rem;font-weight:500}</style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "url": "https://patrickmockridge.github.io/",
+        "name": "Patrick Mockridge — Protocol engineer and formal verification",
+        "dateModified": "2026-10-18",
+        "mainEntity": {
+          "@type": "Person",
+          "@id": "https://patrickmockridge.github.io/#person",
+          "name": "Patrick Mockridge",
+          "url": "https://patrickmockridge.github.io/",
+          "jobTitle": "Protocol engineer",
+          "description": "Independent protocol engineer working on privacy protocols, consensus systems, formal verification, and numerical provenance.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Aberystwyth",
+            "addressRegion": "Wales",
+            "addressCountry": "GB"
+          },
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Edinburgh"
+          },
+          "sameAs": [
+            "https://github.com/PatrickMockridge",
+            "https://technologytruth.substack.com/",
+            "https://www.youtube.com/playlist?list=PLS0PrDysL4A3r9Ntdb159vsT2lmQK3zAW"
+          ],
+          "knowsAbout": [
+            "Privacy protocols",
+            "Consensus systems",
+            "Formal verification",
+            "Rust",
+            "Zero-knowledge proofs",
+            "Process safety",
+            "Rholang",
+            "RChain",
+            "Lean 4",
+            "Halo 2",
+            "OCapN",
+            "Distributed systems",
+            "HAZOP"
+          ]
+        },
+        "hasPart": {
+          "@type": "ItemList",
+          "name": "Selected work",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "DarkWow",
+                "description": "A Layer 1 design for private organisations on a public chain, with object-capability governance, Uncle Merkle consensus, a capability wallet, and a supply audit.",
+                "codeRepository": "https://github.com/PatrickMockridge/DarkWow",
+                "programmingLanguage": "Rust",
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "rnode-rust",
+                "description": "A Rust node for the rho-calculus: native object capabilities, horizontal scale-out by design, and laws proved at the model and tied to the node.",
+                "codeRepository": "https://github.com/rchain-community/rchain-rust",
+                "programmingLanguage": "Rust",
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "Azoth",
+                "description": "Chemical-engineering calculations in Python and Rust, where every number carries its provenance.",
+                "codeRepository": "https://github.com/PatrickMockridge/Azoth",
+                "programmingLanguage": ["Rust", "Python"],
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "Mudra",
+                "description": "A proof-of-trace system for spreadsheets and small programs: a constant-size proof that a committed calculation trace is unchanged.",
+                "codeRepository": "https://github.com/PatrickMockridge/Mudra",
+                "programmingLanguage": "Rust",
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            }
+          ]
+        }
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-DyeUb_VR.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DthdtTa0.css">
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"DarkWow","description":"A Layer 1 design for private organisations on a public chain, with object-capability governance, Uncle Merkle consensus, a capability wallet, and a supply audit.","url":"https://patrickmockridge.github.io/darkwow/","codeRepository":"https://github.com/PatrickMockridge/DarkWow","programmingLanguage":"Rust","license":"https://www.gnu.org/licenses/agpl-3.0.html","author":{"@type":"Person","@id":"https://patrickmockridge.github.io/#person"}}</script>
+  </head>
+  <body>
+    <div id="root"><a class="skip-link" href="#main">Skip to content</a><div class="site"><div class="window"><header class="window-header"><a class="brand" href="/">Patrick Mockridge</a><nav class="header-links" aria-label="Contact and links"><a href="https://github.com/PatrickMockridge">GitHub</a><a href="https://technologytruth.substack.com/">Substack</a><a href="mailto:patrickmockridge@gmail.com">Email</a><a href="/cv.pdf">CV (PDF)</a><span class="header-date">October 2026</span><button type="button" class="theme-toggle" aria-label="Switch to dark theme">Dark</button></nav></header><nav class="tab-index" aria-label="Sections"><a class="tab" id="tab-cv" href="/">CV</a><a class="tab" id="tab-darkwow" href="/darkwow/" aria-current="page">DarkWow</a><a class="tab" id="tab-rnode-rust" href="/rnode-rust/">rnode-rust</a><a class="tab" id="tab-azoth" href="/azoth/">Azoth</a><a class="tab" id="tab-mudra" href="/mudra/">Mudra</a><a class="tab" id="tab-research" href="/research/">Research</a><a class="tab" id="tab-contact" href="/contact/">Contact</a></nav><main id="main"><section class="panel" id="panel-darkwow" aria-labelledby="tab-darkwow"><header class="title-block"><p class="descriptor">Invention record</p><h1 class="case-title">DarkWow</h1><p class="case-subtitle">A Layer 1 design for private organisations on a public chain, where authority is represented as an object capability rather than asserted as an identity.</p><dl class="what-why"><div class="what-why-row"><dt>What</dt><dd>A Layer 1 design for private organisations on a public chain. Members coordinate, hold assets, and audit supply without a public administrator, a public member list, or a voter roll.</dd></div><div class="what-why-row"><dt>Why</dt><dd>An organisation needs privacy and accountability at the same time. A public chain gives auditability but exposes membership and strategy; a private chain gives confidentiality but asks members to trust an operator. DarkWow tries to get both without a single privileged key: authority is a name you hold, not an identity you assert, and supply is checked outside the proof. I could see that the basis of what DarkFi had could achieve this, but DarkFi had no interest in doing so.</dd></div><div class="what-why-row what-why-combination"><dt>The combination</dt><dd>ρ-calculus (2005) for authority as a name + Halo 2 (2020) for private state transitions + a native capability wallet that composes capability types from scanned state (2026) + a Pedersen supply audit outside the proof.</dd></div></dl><dl class="metadata"><div class="metadata-row"><dt>Role</dt><dd>Protocol, consensus, contracts, wallet (fork-original layers)</dd></div><div class="metadata-row"><dt>Period</dt><dd>2026–present (fork-era); redesign April–October 2026</dd></div><div class="metadata-row"><dt>Status</dt><dd>Research prototype; mainnet TBD; no third-party audit; Lean-modelled opcodes/gadgets (partial; 8 axioms; OBL-Z12 open); manual circuit audit; HAZOP tabletop</dd></div><div class="metadata-row"><dt>Repository</dt><dd><a href="https://github.com/PatrickMockridge/DarkWow">github.com/PatrickMockridge/DarkWow</a></dd></div><div class="metadata-row"><dt>Documentation</dt><dd><a href="https://github.com/PatrickMockridge/DarkWow/tree/linear-master/doc/src">doc/src</a></dd></div></dl></header><div class="comparison comparison--timeline"><div class="comparison-head"><span class="comparison-caption">Table 1. Three dates make the design possible.</span><span class="comparison-subtitle">The calculus, the proof system, and the wallet became combinable in this window.</span></div><div class="comparison-scroll" role="region" aria-label="Table 1. Three dates make the design possible." tabindex="0"><table class="comparison-table"><caption class="visually-hidden">Table 1. Three dates make the design possible.</caption><thead><tr><th scope="col">Year</th><th scope="col">Advance</th><th scope="col">What it changed here</th></tr></thead><tbody><tr><th scope="row">2005</th><td>Meredith &amp; Radestock publish <em>A Reflective Higher-Order Calculus</em>: a name is a quoted process (<code>@P</code>), and a process can recover a process from a name (<code>*x</code>).</td><td>Authority can be a first-class, unforgeable value. An object capability can be named, passed, attenuated, and revoked without a permission table.</td></tr><tr><th scope="row">2020</th><td>ECC releases Halo 2 code (1 September 2020); Zcash activates it in NU5 (2022).</td><td>Private proofs over general circuits become practical in Rust. A state transition can be proved without revealing the state.</td></tr><tr><th scope="row">2026</th><td>DarkWow’s fork-era work: governance, genesis, Uncle Merkle consensus, manifest/ABI, capability wallet, supply audit.</td><td>The calculus, the proof system, and the wallet are one design: capabilities are composed from scanned state, and supply is checked outside the proof.</td></tr></tbody></table></div><p class="source-note">Dates are publication and release dates, not claims of first use. ρ-calculus: Meredith &amp; Radestock, <a href="https://doi.org/10.1016/j.entcs.2005.05.016">A Reflective Higher-Order Calculus</a> <!-- -->(ENTCS 2005, doi:10.1016/j.entcs.2005.05.016). <a href="https://z.cash/ecc-releases-code-for-halo-2/">Halo 2 code</a> was released by ECC on 1 September 2020; Zcash activated it in NU5 in 2022. DarkWow is a research prototype; the shipping wallet implements a subset of the ρ-calculus specification (see Limits). The combination is recent; this note treats it as a survey observation, not a theorem.</p></div><aside class="method-refrain" aria-label="Method"><span class="method-label">Method</span><p>Specify the failure mode before the architecture; prove what can be proved; contain what cannot; record provenance with every result. Where proof stops is stated in the limits.</p></aside><section class="section" id="darkwow-design" aria-labelledby="darkwow-design-heading"><h2 class="section-heading" id="darkwow-design-heading"><span class="section-number" aria-hidden="true">1</span><span>Design</span></h2><ul class="prose"><li><strong>Names are processes, and authority is a name.</strong> The ρ-calculus makes a name a quoted process (<code>@P</code>) and lets a process recover a process from a name (<code>*x</code>). Bundles give read/write facets, forwarders attenuate, and revocation is a language pattern. Authority is held, not asserted.</li><li><strong>Authority can be held without a public roll.</strong> Governance is built from composable object-capability primitives — a purse, a box, an identity, an oracle, an attestation, a multisig — rather than a monolithic DAO or a privileged key. Holding the capability is what permits the action; the member list need not be public.</li><li><strong>Competing histories resolve deterministically.</strong> Same-height blocks become uncles and share rewards; verification is stateless; there is no speculative execution and no operator-privileged reorg path.</li><li><strong>Contracts describe their own interfaces.</strong> Each contract declares a TOML manifest in its deployment instructions — WASM exports, ZK circuits, state schema, capability requirements — so wallets and reviewers do not depend on an external registry; the on-chain manifest hash is pending.</li><li><strong>The wallet bounds authority by what was scanned.</strong> Capability types are composed at scan time; key material stays in the account manager and never reaches the daemon.</li><li><strong>Supply is checked outside the proof.</strong> Every block with native-token calls carries a Pedersen mass balance and a cumulative supply commitment; the check is pure Pedersen arithmetic, not a ZK verification. A block whose commitments violate the mass balance is rejected; the guarantee rests on Pedersen binding and a correct implementation. A protocol-level failure halts the chain rather than minting, and the repair is a protocol change rather than a quiet patch.</li></ul></section><section class="section" id="darkwow-provenance" aria-labelledby="darkwow-provenance-heading"><h2 class="section-heading" id="darkwow-provenance-heading"><span class="section-number" aria-hidden="true">2</span><span>Provenance</span></h2><div class="prose"><p>DarkWow is a fork of DarkFi. The zkVM, ZKAS circuit language, P2P stack, WASM runtime, and Halo2 backend are inherited. The fork-original work is the object-capability governance layer and genesis set, Uncle Merkle consensus, the TOML manifest/ABI, the capability wallet architecture, and three new ZK opcodes plus the supply audit. The code is AGPL-3.0.</p><p>The fork-era work was built by one primary developer with AI as a co-architect. The architecture is designed to contain what generated code can reach: capability boundaries, deterministic tests, and manifest-first integration. The formal record is in the obligation register.</p></div></section><section class="section" id="darkwow-evidence" aria-labelledby="darkwow-evidence-heading"><h2 class="section-heading" id="darkwow-evidence-heading"><span class="section-number" aria-hidden="true">3</span><span>Evidence</span></h2><div class="evidence"><table class="evidence-table"><caption class="visually-hidden">DarkWow evidence</caption><thead><tr><th scope="col">Measure</th><th scope="col">Value</th><th scope="col">Source</th></tr></thead><tbody><tr><td>Contract codebases</td><td class="numeric">32 (9 genesis, 23 experimental)</td><td><a href="https://github.com/PatrickMockridge/DarkWow/blob/linear-master/doc/src/contracts.md">Contract catalog</a></td></tr><tr><td>Manifests</td><td class="numeric">32; on-chain hash pending</td><td><a href="https://github.com/PatrickMockridge/DarkWow/blob/linear-master/doc/src/arch/manifest.md">Manifest specification</a></td></tr><tr><td>Lean 4 coverage</td><td class="numeric">32 opcodes + 10 gadgets (partial); 166/179 circuits manually audited</td><td><a href="https://github.com/PatrickMockridge/DarkWow/blob/linear-master/doc/src/arch/zk/opcodes.md">Opcode and circuit status</a></td></tr><tr><td>Declared axioms</td><td class="numeric">8</td><td><a href="https://github.com/PatrickMockridge/DarkWow/blob/linear-master/proofs/lean/src/DarkFi/Axioms.lean">Axiom boundary</a></td></tr><tr><td>HAZOP tabletop</td><td class="numeric">120 circuits at the time; 15 high-risk fixed</td><td><a href="https://github.com/PatrickMockridge/DarkWow/blob/linear-master/doc/src/arch/verification-hazop.md">Verification register</a></td></tr><tr><td>Supply audit</td><td class="numeric">Pedersen mass balance per native-token call; cumulative supply chain</td><td><a href="https://github.com/PatrickMockridge/DarkWow/blob/linear-master/doc/src/arch/consensus/consensus.md">Consensus and supply audit</a></td></tr><tr><td>Open formal obligation</td><td class="numeric">OBL-Z12</td><td><a href="https://github.com/PatrickMockridge/DarkWow/blob/linear-master/doc/src/arch/verification-hazop.md">Obligation register</a></td></tr><tr><td>Premine</td><td class="numeric">0</td><td><a href="https://github.com/PatrickMockridge/DarkWow">Repository</a></td></tr></tbody></table><p class="source-note">Sources: repository README and architecture documents, as of October 2026. Counts drift; the linked artifact is authoritative.</p></div><figure class="figure" aria-labelledby="darkwow-architecture-caption"><svg viewBox="0 0 700 300" role="img" aria-labelledby="darkwow-architecture-title darkwow-architecture-desc"><title id="darkwow-architecture-title">DarkWow architecture</title><desc id="darkwow-architecture-desc">Consensus and node feed contracts with on-chain manifests. The wallet composes capabilities from scanned state. Halo2 circuits and Lean obligations support the contracts and wallet.</desc><g fill="none" stroke="currentColor" stroke-width="1"><rect x="40" y="16" width="620" height="48"></rect><rect x="40" y="96" width="620" height="48"></rect><rect x="40" y="176" width="300" height="56"></rect><rect x="360" y="176" width="300" height="56"></rect><path d="M350 64v32"></path><path d="M350 96l-4-7h8z" fill="currentColor" stroke="none"></path><path d="M190 144v32"></path><path d="M190 176l-4-7h8z" fill="currentColor" stroke="none"></path><path d="M510 144v32"></path><path d="M510 176l-4-7h8z" fill="currentColor" stroke="none"></path></g><g fill="currentColor" text-anchor="middle"><text x="350" y="37" font-size="12">Consensus and node</text><text x="350" y="53" font-size="10">Uncle Merkle · deterministic execution</text><text x="350" y="117" font-size="12">Contracts and on-chain manifests</text><text x="350" y="133" font-size="10">WASM exports · ZK circuits · capability requirements</text><text x="190" y="197" font-size="12">Wallet capability engine</text><text x="190" y="213" font-size="10">scan-time composition · trust tiers</text><text x="510" y="197" font-size="12">ZK circuits and Lean obligations</text><text x="510" y="213" font-size="10">Halo2 · 3 fork-original proofs (10 total)</text></g></svg><figcaption id="darkwow-architecture-caption">Figure 1. DarkWow architecture, abridged.</figcaption></figure><figure class="listing"><div class="listing-header"><figcaption>Listing 1. DeployParamsV1 manifest, abridged.</figcaption><button type="button" class="copy-button">Copy</button></div><pre><code>[contract]
+name = &quot;example_contract&quot;
+category = &quot;Example&quot;
+version = &quot;1.0.0&quot;
+
+[[functions]]
+name = &quot;create_thing&quot;
+code = 0x00
+requires_proof = true
+proof_circuit = &quot;create_thing_v1&quot;
+
+[[capabilities]]
+discriminant = 0x00
+name = &quot;creator&quot;
+
+[[actions]]
+function = &quot;create_thing&quot;
+requires = { type = &quot;none&quot; }
+produces = [{ name = &quot;creator&quot; }]</code></pre></figure></section><section class="section" id="darkwow-limits" aria-labelledby="darkwow-limits-heading"><h2 class="section-heading" id="darkwow-limits-heading"><span class="section-number" aria-hidden="true">4</span><span>Limits</span></h2><ul class="prose"><li>Nine genesis contracts are labelled proven; the 23 post-genesis contracts remain experimental, even where their circuits pass the manual instance-derivation audit.</li><li>Lean 4 models 32 zkVM opcodes and 10 gadgets; that layer is partial, with four assumptions. The 166/179 contract circuits have a manual instance-derivation audit, not Lean proofs. Value conservation and the Pedersen homomorphism are proved from the Pallas curve; the only surviving arithmetic assumption is <code>pallasPrime</code>. Eight axioms remain, and<!-- --> <code>OBL-Z12</code> and other obligations are open.</li><li>The per-block Pedersen mass balance and cumulative supply chain are active; a block that violates the mass balance is rejected. External anchoring is partial: Caribina anchors are published but its verifier is not wired into the node; the Monero anchoring gadget has not been enabled; merge mining is live on the devnet/testnet, with mainnet TBD.</li><li>On-chain manifest hashing is pending.</li><li>The shipping wallet implements a subset of the ρ-calculus specification.</li></ul></section><section class="section" id="darkwow-links" aria-labelledby="darkwow-links-heading"><h2 class="section-heading" id="darkwow-links-heading"><span class="section-number" aria-hidden="true">5</span><span>Links</span></h2><ul class="link-list"><li><a href="https://github.com/PatrickMockridge/DarkWow">Repository</a></li><li><a href="https://github.com/PatrickMockridge/DarkWow/tree/linear-master/doc/src">Documentation tree</a></li><li><a href="https://github.com/PatrickMockridge/DarkWow/blob/linear-master/doc/src/arch/manifest.md">Manifest specification</a></li><li><a href="https://github.com/PatrickMockridge/DarkWow/blob/linear-master/doc/src/arch/ocap.md">O-Cap model</a></li><li><a href="https://github.com/PatrickMockridge/DarkWow/blob/linear-master/doc/src/arch/consensus/consensus.md">Consensus and supply audit</a></li><li><a href="https://github.com/PatrickMockridge/DarkWow/blob/linear-master/doc/src/arch/zk/opcodes.md">Opcode and circuit status</a></li><li><a href="https://github.com/PatrickMockridge/DarkWow/blob/linear-master/proofs/lean/src/DarkFi/Axioms.lean">Axiom boundary</a></li><li><a href="https://github.com/PatrickMockridge/DarkWow/blob/linear-master/doc/src/arch/verification-hazop.md">Verification obligation register</a></li><li><a href="https://doi.org/10.1016/j.entcs.2005.05.016">ρ-calculus paper</a></li><li><a href="https://z.cash/ecc-releases-code-for-halo-2/">Halo 2 release</a></li></ul></section></section></main><footer class="window-footer"><span>Patrick Mockridge<!-- --> · <!-- -->Aberystwyth, Wales</span><span><a href="mailto:patrickmockridge@gmail.com">Enquiries</a> · <a href="/cv.pdf">CV (PDF)</a></span></footer></div></div></div>
+    <noscript>
+        <div class="noscript">
+          <h1>Patrick Mockridge</h1>
+          <p>
+            Independent protocol engineer working on privacy protocols, consensus
+            systems, formal verification, and numerical provenance.
+          </p>
+          <p>
+            Selected work: <a href="/darkwow/">DarkWow</a> ·
+            <a href="/rnode-rust/">rnode-rust</a> ·
+            <a href="/azoth/">Azoth</a> · <a href="/mudra/">Mudra</a>.
+          </p>
+          <p>
+            <a href="/cv.pdf">CV (PDF)</a> ·
+            <a href="mailto:patrickmockridge@gmail.com">patrickmockridge@gmail.com</a>
+          </p>
+          <p>
+            <a href="https://github.com/PatrickMockridge">GitHub</a> ·
+            <a href="https://technologytruth.substack.com/">Substack</a>
+          </p>
+        </div>
+    </noscript>
+  </body>
+</html>
