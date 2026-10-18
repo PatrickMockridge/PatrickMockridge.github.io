@@ -19,7 +19,7 @@
 
 ## Research
 
-- [Research and writing](https://patrickmockridge.github.io/research/): UNISS/Ingenesist simulations of influence, secrecy, and layered compromise; the Romeo-Juliet failure-mode framework; the Ingenesist archive.
+- [Research and writing](https://patrickmockridge.github.io/research/): the Romeo-Juliet critical risk-analysis framework for coordinated systems under information asymmetry — AI, blockchains, politics, business, engineering; UNISS/Ingenesist simulations of influence, secrecy, and layered compromise; the Ingenesist archive.
 - [Ingenesist archive](https://app.ardrive.io/#/drives/57a3e07f-7adb-4bcf-b013-154869c56e33?name=Ingenesist+Project): Dan Roble's presentations and papers.
 
 ## Notes
