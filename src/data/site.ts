@@ -34,7 +34,7 @@ export const PAGE_META: Record<
   darkwow: {
     title: 'DarkWow — Patrick Mockridge',
     description:
-      'A Layer 1 design for private organisations on a public chain: ZK-only Box and Purse, fully ZK identity/oracle/attestation/stablecoin, a promissory note, an object-capability bridge, and a supply audit.',
+      'A Layer 1 design for private organisations on a public chain: ZK-only Box and Purse, fully ZK identity/oracle/attestation/stablecoin, a promissory note, an object-capability bridge, a Pedersen block mass balance, and a Lean 4 proof-status ledger.',
     path: '/darkwow/',
   },
   'rnode-rust': {

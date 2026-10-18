@@ -101,6 +101,19 @@ const NOVEL_ROWS: ComparisonRow[] = [
     ],
   },
   {
+    key: 'pedersen',
+    header: 'Pedersen block mass balance',
+    cells: [
+      <>
+        I designed the block-level Pedersen mass balance after the Orchard-class exploit
+        was announced. Every block with native-token calls carries a mass balance and a
+        cumulative supply commitment; the Halo2 gadgets cover the ZK side, and the block
+        proof closes phantom counterfeit minting at the block boundary.
+      </>,
+      'Active; a violating block is rejected. The guarantee rests on Pedersen binding and a correct implementation; external anchoring is partial.',
+    ],
+  },
+  {
     key: 'bridge',
     header: 'Object-capability bridge',
     cells: [
@@ -135,6 +148,17 @@ const NOVEL_ROWS: ComparisonRow[] = [
         redemption model.
       </>,
       'Gadget-level proofs are in place; OBL-Z12 (the circuit-to-theorem step) is partly open.',
+    ],
+  },
+  {
+    key: 'ledger',
+    header: 'Lean 4 proof-status ledger',
+    cells: [
+      <>
+        Each opcode and contract circuit is listed as proved, assumed, manually audited,
+        or not modelled. The boundary is part of the deliverable, not a footnote.
+      </>,
+      'The ledger is only as good as its last reconciliation; the counts drift and must be re-run.',
     ],
   },
   {
@@ -230,6 +254,12 @@ export function DarkWowTab() {
           rows={NOVEL_ROWS}
           note="Maturity follows the contract catalog. 'To my knowledge' marks a publication claim, not a theorem."
         />
+        <div className="prose">
+          <p>
+            The ledger is the point: it separates proved from assumed, manually audited,
+            and open. That is what removes the trust-me-bro claim.
+          </p>
+        </div>
       </Section>
 
       <Section number="2" title="Design" id="darkwow-design">
