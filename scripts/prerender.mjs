@@ -21,7 +21,7 @@ const PROJECTS = {
   darkwow: {
     name: 'DarkWow',
     description:
-      'A Layer 1 design for private organisations on a public chain, with object-capability governance, Uncle Merkle consensus, a capability wallet, and a supply audit.',
+      'A Layer 1 design for private organisations on a public chain, with ZK-only Box and Purse, fully ZK identity/oracle/attestation/stablecoin, a promissory note, an object-capability bridge, Uncle Merkle consensus, and a supply audit.',
     codeRepository: 'https://github.com/PatrickMockridge/DarkWow',
     programmingLanguage: 'Rust',
     license: 'https://www.gnu.org/licenses/agpl-3.0.html',

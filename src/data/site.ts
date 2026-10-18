@@ -34,7 +34,7 @@ export const PAGE_META: Record<
   darkwow: {
     title: 'DarkWow — Patrick Mockridge',
     description:
-      'A Layer 1 design for private organisations on a public chain: object-capability governance, Uncle Merkle consensus, a capability wallet, and a supply audit.',
+      'A Layer 1 design for private organisations on a public chain: ZK-only Box and Purse, fully ZK identity/oracle/attestation/stablecoin, a promissory note, an object-capability bridge, and a supply audit.',
     path: '/darkwow/',
   },
   'rnode-rust': {

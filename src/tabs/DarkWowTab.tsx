@@ -69,6 +69,88 @@ const TIMELINE_NOTE = (
   </>
 )
 
+const NOVEL_COLUMNS = [
+  { label: 'Work' },
+  { label: 'What is new' },
+  { label: 'Boundary' },
+]
+
+const NOVEL_ROWS: ComparisonRow[] = [
+  {
+    key: 'box-purse',
+    header: 'ZK-only Box and Purse',
+    cells: [
+      <>
+        Box is linear capability delegation: Put/Take with nullifier consumption. Purse is a
+        fungible capability container with hidden balances via Pedersen commitments. Both are
+        fork-original and ZK-only: I designed them as capability primitives whose state is
+        proved, not merely stored.
+      </>,
+      'Genesis contracts, labelled proven.',
+    ],
+  },
+  {
+    key: 'zk-contracts',
+    header: 'Fully ZK contract set',
+    cells: [
+      <>
+        Fully ZK versions of Identity, Oracle, Attestation, and Stablecoin. To my knowledge,
+        this is the first published set of its kind.
+      </>,
+      'Identity, Oracle, and Attestation are genesis-proven; Stablecoin is experimental.',
+    ],
+  },
+  {
+    key: 'bridge',
+    header: 'Object-capability bridge',
+    cells: [
+      <>
+        The bridge is fork-original: cross-chain transfers composed from o-caps, with no third
+        party custodian holding keys. Custody stays inside the capability graph.
+      </>,
+      'Experimental.',
+    ],
+  },
+  {
+    key: 'promissory',
+    header: 'Promissory Note',
+    cells: [
+      <>
+        The universal DeFi primitive: tokens, transfers, swaps, and redemption in one
+        contract. Redemption is the contract’s responsibility, not a member’s or
+        administrator’s. Upstream DarkFi authorization is ACL-based; the design moves the
+        security model from membership and turnstiling to contract-enforced governance.
+      </>,
+      'Genesis-proven; the governance claim is the design argument.',
+    ],
+  },
+  {
+    key: 'opcodes',
+    header: 'Enabling opcode proofs',
+    cells: [
+      <>
+        <code>is_not_equal</code> is the first fully constrained Boolean operator;{' '}
+        <code>less_than_or_equal</code> and <code>base_div</code> are proved sound in Lean 4.
+        Comparison and division are the enabling layer for the ZK-only contracts and the
+        redemption model.
+      </>,
+      'Gadget-level proofs are in place; OBL-Z12 (the circuit-to-theorem step) is partly open.',
+    ],
+  },
+  {
+    key: 'lineage',
+    header: 'Rholang/RChain lineage',
+    cells: [
+      <>
+        The contract design comes from the Rholang/RChain work: a name is authority,
+        capabilities compose, and the constraints have to be enforced from the beginning. The
+        rnode-rust port is the other side of that lineage.
+      </>,
+      'Design lineage, not a code dependency.',
+    ],
+  },
+]
+
 export function DarkWowTab() {
   return (
     <>
@@ -139,7 +221,18 @@ export function DarkWowTab() {
 
       <MethodRefrain />
 
-      <Section number="1" title="Design" id="darkwow-design">
+      <Section number="1" title="What is new here" id="darkwow-novel">
+        <ComparisonTable
+          variant="claims"
+          caption="Table 2. Fork-original work and its boundaries."
+          subtitle="Fork-original contracts, the enabling proofs, and the lineage that produced them."
+          columns={NOVEL_COLUMNS}
+          rows={NOVEL_ROWS}
+          note="Maturity follows the contract catalog. 'To my knowledge' marks a publication claim, not a theorem."
+        />
+      </Section>
+
+      <Section number="2" title="Design" id="darkwow-design">
         <ul className="prose">
           <li>
             <strong>Names are processes, and authority is a name.</strong> The ρ-calculus
@@ -182,7 +275,7 @@ export function DarkWowTab() {
         </ul>
       </Section>
 
-      <Section number="2" title="Provenance" id="darkwow-provenance">
+      <Section number="3" title="Provenance" id="darkwow-provenance">
         <div className="prose">
           <p>
             DarkWow is a fork of DarkFi. The zkVM, ZKAS circuit language, P2P stack, WASM
@@ -190,6 +283,13 @@ export function DarkWowTab() {
             object-capability governance layer and genesis set, Uncle Merkle consensus,
             the TOML manifest/ABI, the capability wallet architecture, and three new ZK
             opcodes plus the supply audit. The code is AGPL-3.0.
+          </p>
+          <p>
+            The contract design is a direct descendant of the Rholang/RChain work: a name
+            is authority, capabilities compose, and the constraints have to be enforced
+            from the beginning. The rnode-rust port is the other side of that lineage; the
+            lessons of what happens when those constraints are not enforced are part of
+            why this contract set is ZK-only.
           </p>
           <p>
             The fork-era work was built by one primary developer with AI as a
@@ -200,7 +300,7 @@ export function DarkWowTab() {
         </div>
       </Section>
 
-      <Section number="3" title="Evidence" id="darkwow-evidence">
+      <Section number="4" title="Evidence" id="darkwow-evidence">
         <EvidenceTable
           rows={darkWowEvidence}
           caption="DarkWow evidence"
@@ -261,7 +361,7 @@ export function DarkWowTab() {
         <Listing caption="Listing 1. DeployParamsV1 manifest, abridged." code={manifestExcerpt} />
       </Section>
 
-      <Section number="4" title="Limits" id="darkwow-limits">
+      <Section number="5" title="Limits" id="darkwow-limits">
         <ul className="prose">
           <li>
             Nine genesis contracts are labelled proven; the 23 post-genesis contracts
@@ -290,7 +390,7 @@ export function DarkWowTab() {
         </ul>
       </Section>
 
-      <Section number="5" title="Links" id="darkwow-links">
+      <Section number="6" title="Links" id="darkwow-links">
         <ul className="link-list">
           <li>
             <a href={darkWow.repo}>Repository</a>
