@@ -68,9 +68,9 @@ export function ResearchTab() {
             <em>Capital as Power</em>.
           </p>
           <p>
-            The framework grew out of the CoEngineers experience (2017–2019), including a
-            $25k personal investment; it is the attempt to specify that failure mode before
-            the next project.
+            The framework grew out of the CoEngineers experience (2017–2019), where I was
+            an early investor; it is the attempt to specify that failure mode before the
+            next project.
           </p>
           <p>
             <a href={SITE.links.romeoArchive}>Romeo–Juliet Framework archive</a>{' '}

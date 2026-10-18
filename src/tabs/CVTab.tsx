@@ -177,8 +177,8 @@ export function CVTab() {
               body: (
                 <>
                   Treehouse AI and Robotics software nanodegrees; early ERC-1155 context
-                  at Enjin (2016); named advisor, Enjin Coin ICO (2017); CoEngineers, with
-                  $25k of own capital (2017–2019).
+                  at Enjin (2016); named advisor, Enjin Coin ICO (2017); CoEngineers, early
+                  investor (2017–2019).
                 </>
               ),
             },
