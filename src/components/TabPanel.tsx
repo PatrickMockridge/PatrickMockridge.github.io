@@ -12,7 +12,6 @@ export function TabPanel({ id, active, children }: TabPanelProps) {
     <section
       className="panel"
       id={`panel-${id}`}
-      role="tabpanel"
       aria-labelledby={`tab-${id}`}
       hidden={!active}
     >

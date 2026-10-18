@@ -1,0 +1,28 @@
+# Patrick Mockridge
+
+> Independent protocol engineer and formal-verification specialist working on privacy protocols, consensus systems, formal verification, and numerical provenance. The method is to specify the failure mode before the architecture, prove what can be proved, contain what cannot, and record provenance with every result.
+
+## Profiles
+
+- [CV](https://patrickmockridge.github.io/): current identity, selected work, chronology.
+- [CV (PDF)](https://patrickmockridge.github.io/cv.pdf): one-page PDF.
+- [GitHub](https://github.com/PatrickMockridge): code.
+- [Substack](https://technologytruth.substack.com/): research and writing.
+- [Contact](mailto:patrickmockridge@gmail.com): protocol review, rescue, verification, advisory.
+
+## Selected work
+
+- [DarkWow](https://patrickmockridge.github.io/darkwow/): a Layer 1 design for private organisations on a public chain. Object-capability governance, Uncle Merkle consensus, a capability wallet, and a Pedersen supply audit. Research prototype; mainnet TBD; no third-party audit; Lean-modelled opcodes and gadgets are partial; contract circuits have a manual instance-derivation audit; eight axioms remain and OBL-Z12 is open.
+- [rnode-rust](https://patrickmockridge.github.io/rnode-rust/): a Rust node for the rho-calculus, ported from the preserved RChain Scala reference. Native object capabilities, horizontal scale-out by design, and a law register tied to the node by conformance corpora. Pre-release; pre-testnet with a community testnet; 72 of 77 laws proved; 19 laws (23 entries) tied to the node; no external audit firm.
+- [Azoth](https://patrickmockridge.github.io/azoth/): chemical-engineering calculations in Python and Rust, written twice by hand from one TOML declaration, where every result carries its provenance and unsupported answers are refused. v0.1.1; not on PyPI; not for design work yet.
+- [Mudra](https://patrickmockridge.github.io/mudra/): a proof-of-trace system for spreadsheets and small programs. A constant-size Halo2 proof binds a program digest, input/output hashes, return value, and step count. It does not constrain each instruction; per-instruction correctness relies on deterministic replay with the witness. Research build.
+
+## Research
+
+- [Research and writing](https://patrickmockridge.github.io/research/): UNISS/Ingenesist simulations of influence, secrecy, and layered compromise; the Romeo-Juliet failure-mode framework; the Ingenesist archive.
+- [Ingenesist archive](https://app.ardrive.io/#/drives/57a3e07f-7adb-4bcf-b013-154869c56e33?name=Ingenesist+Project): Dan Roble's presentations and papers.
+
+## Notes
+
+- The site uses no analytics, cookies, or third-party scripts.
+- Counts drift; the linked repository artifact is authoritative.

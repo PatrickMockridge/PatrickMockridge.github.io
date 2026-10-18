@@ -13,12 +13,7 @@
 
   @page {
     size: A4;
-    margin: 16mm 18mm;
-    @bottom-right {
-      content: "Patrick Mockridge — Curriculum Vitae · " counter(page) " / " counter(pages);
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 8pt;
-    }
+    margin: 15mm 18mm;
   }
 
   html,
@@ -28,8 +23,9 @@
   }
 
   body {
-    font-size: 9.5pt;
-    line-height: 1.4;
+    font-size: 9pt;
+    line-height: 1.35;
+    zoom: 0.98;
   }
 
   .site {
@@ -69,8 +65,8 @@
 
   .print-header {
     border-bottom: 1px solid #000;
-    padding-bottom: 6pt;
-    margin-bottom: 12pt;
+    padding-bottom: 5pt;
+    margin-bottom: 9pt;
   }
 
   .print-header .print-name {
@@ -94,7 +90,7 @@
     display: grid;
     grid-template-columns: 26mm 1fr;
     column-gap: 8mm;
-    margin-top: 10pt;
+    margin-top: 8pt;
     break-inside: auto;
   }
 
@@ -139,7 +135,7 @@
     display: grid;
     grid-template-columns: 1.4fr 1fr;
     gap: 8pt;
-    padding: 4pt 0;
+    padding: 3pt 0;
     border-bottom: 1px solid #ccc;
     break-inside: avoid;
   }
@@ -154,11 +150,15 @@
 
   .work-meta {
     display: block;
-    font-size: 7.5pt;
+    font-size: 7pt;
   }
 
   .work-meta span {
     display: inline;
+  }
+
+  .work-meta span:nth-child(3) {
+    display: none;
   }
 
   .work-meta span + span::before {
@@ -172,13 +172,13 @@
   .chronology,
   .record-table,
   .evidence-table {
-    font-size: 9pt;
+    font-size: 8.5pt;
   }
 
   .chronology td,
   .record-table td,
   .evidence-table td {
-    padding: 3pt 0;
+    padding: 2.5pt 0;
   }
 
   .chronology tr,

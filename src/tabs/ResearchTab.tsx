@@ -32,6 +32,12 @@ export function ResearchTab() {
           attempts to specify those failure modes before there is code — the method
           applied before the projects can apply it.
         </p>
+        <p>
+          UNISS did not begin as a simulation. It grew out of a live security dispute and
+          an evidence-archiving effort: first the archive, then the question of how
+          influence, secrecy, and compromise move through a network. The simulator is the
+          attempt to model that system rather than narrate it.
+        </p>
       </div>
 
       <Section number="1" title="UNISS / Ingenesist" id="uniss">
@@ -42,6 +48,12 @@ export function ResearchTab() {
             and layered compromise move through networked communities. The series extends
             through ESN, GX, GX-SD, and Ingenesist scenarios, including the
             Darkweave-Ingenesist endowment model.
+          </p>
+          <p>
+            The Ingenesist archive preserves Dan Roble’s presentations and papers
+            published with NAIC, ASME, ASCE, NSPE, and others. The “blockchain for
+            engineers” line is the lineage for UNISS.{' '}
+            <a href={SITE.links.ingenesistArchive}>Ingenesist archive</a>.
           </p>
         </div>
         <PostList posts={unissPosts} />
@@ -54,6 +66,11 @@ export function ResearchTab() {
             hype, and Sybil attacks can stop a sound project from finishing. The
             framework draws on Peter Thiel, Diego Gambetta, and Nitzan &amp; Bichler’s{' '}
             <em>Capital as Power</em>.
+          </p>
+          <p>
+            The framework grew out of the CoEngineers experience (2017–2019), including a
+            $25k personal investment; it is the attempt to specify that failure mode before
+            the next project.
           </p>
           <p>
             <a href={SITE.links.romeoArchive}>Romeo–Juliet Framework archive</a>{' '}

@@ -8,6 +8,10 @@ export function Enquiries() {
         describing the system and the question is sufficient.
       </p>
       <p>
+        Engagements begin with a bounded triage: written findings and a go/no-go, then a
+        scoped remediation.
+      </p>
+      <p>
         {SITE.location} · <a href={SITE.links.github}>GitHub</a> ·{' '}
         <a href={SITE.links.substack}>Substack</a> · <a href="/cv.pdf">CV (PDF)</a>
       </p>

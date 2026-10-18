@@ -8,10 +8,10 @@ import { rnode, rnodeEvidence } from '../data/projects'
 
 const THE_BLOCK_2018 =
   'https://www.theblock.co/news/markets/2018-12-20-rchain-cooperative-functionally-bankrupt-after-questionable-deals-with-investors-and-developers-losing-faith-5244'
-const THE_BLOCK_2019_YAHOO =
-  'https://finance.yahoo.com/news/rchain-cooperative-hit-scam-tokens-143930190.html'
 const GEEKWIRE_2019 =
   'https://www.geekwire.com/2019/boom-bust-blockchain-rchain-cooperatives-cryptocurrency-dreams-dissolve-controversy/'
+const MAINNET_2020 =
+  'https://rholang.github.io/blog/2020/02/25/rchain-announcement/'
 const DISSOLUTION =
   'https://web.archive.org/web/2022/https://rchain.coop/home.html'
 
@@ -23,7 +23,7 @@ const CALCULUS_COLUMNS = [
   { label: 'Mobile' },
   { label: 'Reflective' },
   { label: 'Behavioural types' },
-  { label: 'Score' },
+  { label: 'Capabilities (of 6)' },
 ]
 
 function matrixRow(model: string, flags: boolean[]): ComparisonRow {
@@ -39,13 +39,13 @@ const CALCULUS_ROWS: ComparisonRow[] = [
   matrixRow('Turing machines', [true, false, false, false, false, false]),
   matrixRow('λ-calculus', [true, true, false, false, false, false]),
   matrixRow('CCS', [true, true, true, false, false, false]),
-  matrixRow('Petri nets', [true, false, true, false, false, false]),
+  matrixRow('Petri nets (plain P/T)', [false, false, true, false, false, false]),
   matrixRow('π-calculus', [true, true, true, true, false, true]),
   matrixRow('ρ-calculus', [true, true, true, true, true, true]),
 ]
 
 const CALCULUS_NOTE =
-  'Mobility replaces the Desktop figure’s undefined “Complexity” axis; the scores follow that substitution.'
+  'Adapted from the rnode-rust README table; Mobility replaces Complexity; the score is an equal-weight capability count, not a ranking. Petri is plain P/T (extensions make Complete true); π/ρ behavioural-type marks denote existing systems, not maturity.'
 
 const CLAIM_COLUMNS = [
   { label: 'Claim' },
@@ -97,7 +97,8 @@ const CLAIM_ROWS: ComparisonRow[] = [
     cells: [
       <>
         No <code>unsafe</code> in the 14 first-party crates; ρ as the base sort of a CoC;
-        70/77 laws non-vacuous; 19 node-tied by conformance corpora.
+        70 of 77 laws non-vacuous; 19 laws (23 entries) tied to the node by conformance
+        corpora.
       </>,
       <>
         Memory-unsafety is unwritable in first-party code; proved laws are machine-checked
@@ -105,7 +106,8 @@ const CLAIM_ROWS: ComparisonRow[] = [
       </>,
       <>
         Not a whole-node proof. Dependencies, leaks, logic errors, denial of service, and
-        consensus bugs remain. 2 laws vacuous; 5 named or open; law 19 axiomatized.
+        consensus bugs remain. 2 laws vacuous; 5 not counted as proved (law 19 axiomatized,
+        law 63a open, 3 retired/orphaned).
       </>,
     ],
   },
@@ -124,11 +126,21 @@ export function RnodeRustTab() {
             value:
               'Scala-to-Rust port of the RChain node; law-first conformance and agentic assurance',
           },
-          { label: 'Period', value: '2026' },
+          {
+            label: 'Period',
+            value:
+              '2026; port started August 2026; community testnet October 2026',
+          },
           {
             label: 'Status',
-            value:
-              'Pre-release; an early community testnet is live; no declared stable testnet; no production release',
+            value: (
+              <>
+                Pre-release; a community testnet is live at{' '}
+                <a href={rnode.testnetStatus}>testnet.rhobot.net/status</a>; the project
+                calls itself pre-testnet because no stable testnet is declared; no
+                production release.
+              </>
+            ),
           },
           {
             label: 'Repository',
@@ -153,13 +165,10 @@ export function RnodeRustTab() {
           why={
             <>
               The common pattern puts concurrency in the runtime and authority in a permission
-              check. RChain’s language makes both structural: processes compose concurrently
-              with <code>|</code>, and an unforgeable <code>new</code> name is the authority.
-              The interesting part is not the token; it is a concurrent, replicated state
-              machine whose nodes must agree, and RChain makes that shape explicit. That is a
-              different way to build a distributed system, closer to the shape of a network.
-              The organisation dissolved in 2022; the port keeps the implementation running and
-              tests the claims against a machine.
+              check. RChain makes both structural: processes compose with <code>|</code>, and
+              an unforgeable <code>new</code> name is the authority. The port keeps that
+              concurrent, replicated state machine running and tests its laws against a
+              machine; the organisation dissolved in 2022.
             </>
           }
           combination={
@@ -176,7 +185,7 @@ export function RnodeRustTab() {
         <ComparisonTable
           variant="matrix"
           caption="Table 1. Models of computation, by capability."
-          subtitle="Six formal models scored on six properties. ρ is the only model in this comparison with all six; the ladder continues into the Calculus of Constructions, where ρ is embedded as a base sort."
+          subtitle="Six formal models scored on six properties. ρ is the only row marked for all six capabilities in this table; the ladder continues into the Calculus of Constructions, where RChain embeds ρ as a base sort."
           columns={CALCULUS_COLUMNS}
           rows={CALCULUS_ROWS}
           note={CALCULUS_NOTE}
@@ -184,8 +193,8 @@ export function RnodeRustTab() {
         <div className="prose">
           <p>
             λ is substitution; π adds concurrency and mobility; ρ makes a name a quoted
-            process (<code>@P</code>/<code>*x</code>); CoC is where ρ is embedded as a base
-            sort.
+            process (<code>@P</code>/<code>*x</code>); RChain embeds ρ as a base sort of a
+            Calculus of Constructions (<a href={rnode.typeSystem}>type system</a>).
           </p>
         </div>
         <ComparisonTable
@@ -219,7 +228,7 @@ export function RnodeRustTab() {
           <li>
             <strong>Assurance is written and gated.</strong> Findings have one home and close
             by construction; HAZOP, bow-tie, a bounded-adversary tabletop, fuzzing, and a
-            coverage floor leave a record that does not depend on the author.
+            coverage floor leave a re-runnable record; it is not independent review.
           </li>
         </ul>
       </Section>
@@ -269,21 +278,10 @@ export function RnodeRustTab() {
               </td>
             </tr>
             <tr>
-              <td>2019</td>
-              <td>
-                The Block reports (republished by Yahoo Finance) that an OTC RHOC trade was hit
-                by a scam involving counterfeit money in escrow; no amount was disclosed. The
-                launch slips.
-              </td>
-              <td>
-                <a href={THE_BLOCK_2019_YAHOO}>The Block via Yahoo Finance (2019)</a>
-              </td>
-            </tr>
-            <tr>
               <td>Feb 2020</td>
               <td>Mainnet launches with cooperative validators.</td>
               <td>
-                <a href={DISSOLUTION}>RChain Cooperative (Wayback)</a>
+                <a href={MAINNET_2020}>RChain announcement (2020)</a>
               </td>
             </tr>
             <tr>
@@ -293,16 +291,21 @@ export function RnodeRustTab() {
                 logistical issues; the network is left without a steward.
               </td>
               <td>
-                <a href={DISSOLUTION}>Dissolution notice (Wayback)</a>
+                <a href={DISSOLUTION}>RChain Cooperative (Wayback, 2022)</a>
               </td>
             </tr>
           </tbody>
         </table>
-        <p className="source-note">
-          Litigation continued over membership/arbitration and director indemnification; it is
-          context, not a finding. No individuals are named on this site.
-        </p>
+        <p className="source-note">No individuals are named in this record.</p>
         <div className="prose">
+          <p>
+            Earlier continuity work: in 2024 I co-authored the{' '}
+            <a href={rnode.rgovPost}>RGov/Rhobot recovery proposal</a> for REV/RChain with
+            Jim Whitescarver; the old RNode was forked into the Gorki/BigSur project. The{' '}
+            <a href={rnode.gorki}>Gorki organisation</a>, the{' '}
+            <a href={rnode.gorkiLegacy}>old node fork</a>, and the{' '}
+            <a href={rnode.rgov}>RGov repository</a> are public.
+          </p>
           <p>
             I did not design RChain; this record covers the port and verification.{' '}
             <a href={rnode.arweave}>Arweave snapshot</a> ·{' '}
@@ -353,15 +356,18 @@ export function RnodeRustTab() {
         <ul className="prose">
           <li>
             <strong>No external audit firm.</strong> The security record is a written, gated
-            adversarial programme: the September 2026 pass found no P0 (chain split, fund loss,
-            or remote code execution); three P1s, four P2s, and fourteen P3s were confirmed and
-            closed.
+            self-adversarial programme: the September 2026 pass found no P0 (chain split, fund
+            loss, or remote code execution); three P1s, four P2s, and fourteen P3s were
+            confirmed and closed. The review ledger still carries 507 deferred rows of 626,
+            and the September pass read the T1 roster, not the whole tree.
           </li>
           <li>
             <strong>Formal assurance is layered.</strong> 72 of 77 laws are proved at all — 19
-            tied to the running node by conformance corpora, 53 over the model. Two of the 72
-            are vacuous, leaving 70 non-vacuous; five laws are named or open (law 63a). The Coq
-            track defines the α-equivalence metatheory but states its laws as axioms.
+            laws (23 entries) tied to the running node by conformance corpora, 53 laws (69
+            entries) over the model. Two of the 72 are vacuous, leaving 70 non-vacuous. Five
+            laws are not counted as proved: law 19 is axiomatized by design, law 63a is open,
+            and three are retired or orphaned. The <a href={rnode.coq}>Coq track</a> defines
+            the α-equivalence metatheory but states its laws as axioms.
           </li>
           <li>
             <strong>Memory safety is first-party only.</strong> No <code>unsafe</code> covers
@@ -386,6 +392,9 @@ export function RnodeRustTab() {
         <ul className="link-list">
           <li>
             <a href={rnode.repo}>Repository</a>
+          </li>
+          <li>
+            <a href={rnode.testnetStatus}>Testnet status</a>
           </li>
           <li>
             <a href={rnode.laws}>spec/LAWS.md</a>

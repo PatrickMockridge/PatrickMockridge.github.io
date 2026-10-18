@@ -13,6 +13,10 @@ export function ContactTab() {
           review, rescue work, and verification, including numerical systems where the
           failure mode is a plausible number rather than a crash.
         </p>
+        <p>
+          Engagements begin with a bounded triage: written findings and a go/no-go, then a
+          scoped remediation. Remote from Aberystwyth, Wales.
+        </p>
       </div>
       <Enquiries />
     </>

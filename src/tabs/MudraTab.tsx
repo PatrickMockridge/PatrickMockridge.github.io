@@ -27,7 +27,7 @@ const CONTRAST_ROWS: ComparisonRow[] = [
     header: 'What stays private',
     cells: [
       'Usually nothing; the file is revealed to check it.',
-      'The formulas, inputs, and business logic; the proof carries fingerprints.',
+      'The formulas, inputs, and business logic; the proof carries fingerprints. Replay requires the witness, optionally shared encrypted.',
     ],
   },
   {
@@ -35,7 +35,7 @@ const CONTRAST_ROWS: ComparisonRow[] = [
     header: 'What the verifier needs',
     cells: [
       'The file and its hash.',
-      'The proof (~6 KB), the verifying key, and the program digest.',
+      'The proof (~6 KB), the verifying key, and the program digest; replay requires the witness.',
     ],
   },
   {
@@ -43,7 +43,7 @@ const CONTRAST_ROWS: ComparisonRow[] = [
     header: 'What it does not prove',
     cells: [
       'That the math inside the file is right.',
-      'That the spreadsheet is a good model, or that every instruction is constrained.',
+      'That the spreadsheet is a good model, that every instruction is constrained, or that a proof-only verifier can check execution.',
     ],
   },
 ]
@@ -57,7 +57,7 @@ export function MudraTab() {
       <TitleBlock
         descriptor="Proof of computation"
         title="Mudra"
-        subtitle="Prove a calculation was done correctly without revealing the spreadsheet or its inputs."
+        subtitle="Prove that a committed calculation trace is unchanged — and, when the witness is shared for replay, that it was executed correctly — without revealing the model."
         metadata={[
           {
             label: 'Role',
@@ -79,9 +79,10 @@ export function MudraTab() {
         <WhatWhy
           what={
             <>
-              A proof-of-computation system for spreadsheets and small programs: it binds a
-              specific program, its inputs, its output, and the step count in a constant-size
-              proof, without revealing the formulas or the data.
+              A proof-of-trace system: it binds a program digest, input/output hashes, the
+              return value, and the step count in a constant-size proof. It does not
+              constrain each instruction; per-instruction correctness comes from
+              deterministic replay with the witness, or from trusting the prover.
             </>
           }
           why={
@@ -119,9 +120,10 @@ export function MudraTab() {
       <Section number="2" title="Design" id="mudra-design">
         <ul className="prose">
           <li>
-            <strong>Prove the calculation, not just the file.</strong> The proof binds a
+            <strong>Prove the trace, not just the file.</strong> The proof binds a
             program digest, input and output hashes, the return value, the step count,
-            and the specification digest into one seal; a file hash cannot.
+            and the specification digest into one seal; a file hash cannot. It does not
+            constrain each instruction; replay does that.
           </li>
           <li>
             <strong>Keep the formulas private.</strong> The proof contains fingerprints,
@@ -200,8 +202,10 @@ export function MudraTab() {
           </li>
           <li>
             The circuit seals a hash chain, not every instruction. Per-instruction
-            correctness relies on deterministic replay; if you need per-opcode
-            constraints, use RISC Zero, SP1, or zkWASM.
+            correctness relies on deterministic replay; a verifier with only the proof
+            and public inputs cannot check it without the witness. The encrypted-witness
+            path is how that can be shared without publishing the model. If you need
+            per-opcode constraints, use RISC Zero, SP1, or zkWASM.
           </li>
           <li>
             Proving runs on a single machine and needs the ~2 MB Halo2 parameters for

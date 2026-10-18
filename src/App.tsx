@@ -1,7 +1,8 @@
+import type { ReactNode } from 'react'
 import { HeaderLine } from './components/HeaderLine'
 import { TabIndex } from './components/TabIndex'
 import { TabPanel } from './components/TabPanel'
-import { MAILTO, SITE } from './data/site'
+import { MAILTO, SITE, type TabId } from './data/site'
 import { useTab } from './hooks/useTab'
 import { AzothTab } from './tabs/AzothTab'
 import { ContactTab } from './tabs/ContactTab'
@@ -11,8 +12,24 @@ import { MudraTab } from './tabs/MudraTab'
 import { RnodeRustTab } from './tabs/RnodeRustTab'
 import { ResearchTab } from './tabs/ResearchTab'
 
-export default function App() {
-  const { tab, setTab } = useTab()
+const PANELS: { id: TabId; node: ReactNode }[] = [
+  { id: 'cv', node: <CVTab /> },
+  { id: 'darkwow', node: <DarkWowTab /> },
+  { id: 'rnode-rust', node: <RnodeRustTab /> },
+  { id: 'azoth', node: <AzothTab /> },
+  { id: 'mudra', node: <MudraTab /> },
+  { id: 'research', node: <ResearchTab /> },
+  { id: 'contact', node: <ContactTab /> },
+]
+
+export default function App({
+  initialTab,
+  prerender = false,
+}: {
+  initialTab?: TabId
+  prerender?: boolean
+}) {
+  const { tab, setTab } = useTab(initialTab)
 
   return (
     <>
@@ -24,27 +41,13 @@ export default function App() {
           <HeaderLine />
           <TabIndex active={tab} onChange={setTab} />
           <main id="main">
-            <TabPanel id="cv" active={tab === 'cv'}>
-              <CVTab />
-            </TabPanel>
-            <TabPanel id="darkwow" active={tab === 'darkwow'}>
-              <DarkWowTab />
-            </TabPanel>
-            <TabPanel id="rnode-rust" active={tab === 'rnode-rust'}>
-              <RnodeRustTab />
-            </TabPanel>
-            <TabPanel id="azoth" active={tab === 'azoth'}>
-              <AzothTab />
-            </TabPanel>
-            <TabPanel id="mudra" active={tab === 'mudra'}>
-              <MudraTab />
-            </TabPanel>
-            <TabPanel id="research" active={tab === 'research'}>
-              <ResearchTab />
-            </TabPanel>
-            <TabPanel id="contact" active={tab === 'contact'}>
-              <ContactTab />
-            </TabPanel>
+            {PANELS.map(({ id, node }) =>
+              prerender && id !== tab ? null : (
+                <TabPanel key={id} id={id} active={tab === id}>
+                  {node}
+                </TabPanel>
+              ),
+            )}
           </main>
           <footer className="window-footer">
             <span>

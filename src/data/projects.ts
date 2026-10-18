@@ -20,6 +20,8 @@ export const darkWow = {
   uncleMerkle: `${darkWowBase}/doc/src/arch/consensus/uncle_merkle.md`,
   consensus: `${darkWowBase}/doc/src/arch/consensus/consensus.md`,
   proofs: `${darkWowBase}/proofs/README.md`,
+  opcodes: `${darkWowBase}/doc/src/arch/zk/opcodes.md`,
+  axioms: `${darkWowBase}/proofs/lean/src/DarkFi/Axioms.lean`,
   contracts: `${darkWowBase}/doc/src/contracts.md`,
   obligations: `${darkWowBase}/doc/src/arch/verification-hazop.md`,
   rhoPaper: 'https://doi.org/10.1016/j.entcs.2005.05.016',
@@ -50,6 +52,11 @@ export const rnode = {
   typeSystem: `${rnodeBase}/spec/TYPE-SYSTEM.md`,
   arweave: 'https://arweave.net/MK4WA8w3NTIIFd6iaD06EPyxVbFhoV9MtfhMNcHWWMw',
   legacy: `${SITE.links.rnodeRepo}/tree/1b7583649/legacy`,
+  testnetStatus: SITE.links.testnetStatus,
+  rgovPost: SITE.links.rgovPost,
+  gorki: SITE.links.gorki,
+  gorkiLegacy: SITE.links.gorkiLegacy,
+  rgov: SITE.links.rgov,
 }
 
 export const azoth = {
@@ -102,28 +109,28 @@ export const darkWowEvidence: EvidenceRow[] = [
     source: { label: 'Contract catalog', href: darkWow.contracts },
   },
   {
-    measure: 'On-chain manifests',
-    value: '32',
+    measure: 'Manifests',
+    value: '32; on-chain hash pending',
     source: { label: 'Manifest specification', href: darkWow.manifest },
   },
   {
-    measure: 'Lean 4 verification',
-    value: '39 zkVM opcodes; 120 contract circuits',
-    source: { label: 'Proofs', href: darkWow.proofs },
+    measure: 'Lean 4 coverage',
+    value: '32 opcodes + 10 gadgets (partial); 166/179 circuits manually audited',
+    source: { label: 'Opcode and circuit status', href: darkWow.opcodes },
   },
   {
     measure: 'Declared axioms',
     value: '8',
-    source: { label: 'Proofs', href: darkWow.proofs },
+    source: { label: 'Axiom boundary', href: darkWow.axioms },
   },
   {
-    measure: 'HAZOP review',
-    value: '120 circuits graded; 15 high-risk fixed',
+    measure: 'HAZOP tabletop',
+    value: '120 circuits at the time; 15 high-risk fixed',
     source: { label: 'Verification register', href: darkWow.obligations },
   },
   {
     measure: 'Supply audit',
-    value: 'Pedersen mass balance per block; cumulative supply chain',
+    value: 'Pedersen mass balance per native-token call; cumulative supply chain',
     source: { label: 'Consensus and supply audit', href: darkWow.consensus },
   },
   {
@@ -135,16 +142,6 @@ export const darkWowEvidence: EvidenceRow[] = [
     measure: 'Premine',
     value: '0',
     source: { label: 'Repository', href: darkWow.repo },
-  },
-  {
-    measure: 'Fork-era commits',
-    value: '1,610 of 2,085 since 23 Jul 2026',
-    source: { label: 'Repository', href: darkWow.repo },
-  },
-  {
-    measure: 'Documentation',
-    value: '2,014 A4 pages (Sep 2026)',
-    source: { label: 'Documentation tree', href: darkWow.docs },
   },
 ]
 
@@ -160,13 +157,13 @@ export const rnodeEvidence: EvidenceRow[] = [
     source: { label: 'spec/LAWS.md', href: rnode.laws },
   },
   {
-    measure: 'Entries tied to the node',
-    value: '19, by conformance corpora',
+    measure: 'Laws tied to the node',
+    value: '19 (23 entries)',
     source: { label: 'spec/INVENTORY.md', href: rnode.inventory },
   },
   {
-    measure: 'Model proofs',
-    value: '53',
+    measure: 'Laws proved over the model',
+    value: '53 (69 entries)',
     source: { label: 'spec/INVENTORY.md', href: rnode.inventory },
   },
   {
@@ -175,8 +172,8 @@ export const rnodeEvidence: EvidenceRow[] = [
     source: { label: 'spec/LAWS.md', href: rnode.laws },
   },
   {
-    measure: 'Named or open laws',
-    value: '5; law 63a is open',
+    measure: 'Laws not counted as proved',
+    value: '5: law 19 axiomatized, law 63a open, 3 retired/orphaned',
     source: { label: 'spec/INVENTORY.md', href: rnode.inventory },
   },
   {
@@ -185,13 +182,13 @@ export const rnodeEvidence: EvidenceRow[] = [
     source: { label: 'README', href: rnode.repo },
   },
   {
-    measure: 'Rust lines / files',
-    value: '203,173 / 474',
+    measure: 'Tests',
+    value: '2,281 test functions (README, 15 Oct 2026)',
     source: { label: 'README', href: rnode.repo },
   },
   {
-    measure: 'Tests',
-    value: '2,281 (15 Oct 2026)',
+    measure: 'Test ledger',
+    value: '1,481 unit + 130 integration',
     source: { label: 'Test coverage', href: rnode.testCoverage },
   },
   {
@@ -200,36 +197,26 @@ export const rnodeEvidence: EvidenceRow[] = [
     source: { label: 'Coverage ledger', href: rnode.coverage },
   },
   {
-    measure: 'Adversarial audit',
-    value: 'No P0; 3 P1, 4 P2, 14 P3 confirmed and closed',
+    measure: 'Self-adversarial review (T1 scope)',
+    value: 'No P0; 3 P1, 4 P2, 14 P3 closed; 204/204 filed findings',
     source: { label: 'Security audit', href: rnode.securityAudit },
   },
   {
-    measure: 'Findings register',
-    value: '204/204 rows done; 137 sections',
-    source: { label: 'Audit record', href: rnode.audit },
-  },
-  {
     measure: 'Upstream corpus',
-    value: '165 files, run 1:1',
-    source: { label: 'Rust vs Scala', href: rnode.rustVsScala },
+    value: '165 files, run 1:1 (README)',
+    source: { label: 'README', href: rnode.repo },
   },
 ]
 
 export const azothEvidence: EvidenceRow[] = [
   {
     measure: 'Upstream issues filed',
-    value: '77 (57 closed, 20 open)',
-    source: { label: 'NeqSim issue search', href: azoth.issues },
-  },
-  {
-    measure: 'Defect reports',
-    value: 'at least 73',
+    value: '94 (72 closed, 22 open)',
     source: { label: 'NeqSim issue search', href: azoth.issues },
   },
   {
     measure: 'Provenance tests',
-    value: '216',
+    value: '217',
     source: { label: 'Azoth repository', href: azoth.repo },
   },
 ]
@@ -252,7 +239,7 @@ export const mudraEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Demos',
-    value: '4 spreadsheets, 105–722 instructions',
+    value: '4 spreadsheets, 100–632 instructions',
     source: { label: 'Demos', href: mudra.demos },
   },
   {

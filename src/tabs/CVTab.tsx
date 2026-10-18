@@ -1,7 +1,7 @@
 import { ChronologyTable } from '../components/ChronologyTable'
 import { Enquiries } from '../components/Enquiries'
 import { Section } from '../components/Section'
-import { SITE } from '../data/site'
+import { SITE, pathForTab } from '../data/site'
 
 export function CVTab() {
   return (
@@ -15,8 +15,11 @@ export function CVTab() {
 
       <header className="cv-hero screen-only">
         <h1>Patrick Mockridge</h1>
-        <p>Process safety engineer, 2006–2015; chartered 2013.</p>
-        <p>Protocol engineer, 2016–present.</p>
+        <p>Independent protocol engineer and formal-verification specialist.</p>
+        <p>
+          Process safety engineer, 2006–2015; chartered 2013. Protocol and research
+          work since 2016.
+        </p>
         <p>Aberystwyth, Wales.</p>
         <p className="cv-work-index">DarkWow · rnode-rust · Azoth · Mudra</p>
       </header>
@@ -47,10 +50,11 @@ export function CVTab() {
         </div>
         <div className="prose print-only">
           <p>
-            Process safety taught me that a plausible number is not a safe number — so
-            every result here is either proved or carries its limits. Process safety
-            engineer, 2006–2015; chartered 2013; independent protocol and verification
-            work since 2016.
+            Independent protocol engineer and formal-verification specialist. Process
+            safety taught me that a plausible number is not a safe number — so every
+            result here is either proved or carries its limits. Process safety engineer,
+            2006–2015; chartered 2013; independent protocol and verification work since
+            2016.
           </p>
           <p>
             The method: specify the failure mode before the architecture; prove what can
@@ -72,10 +76,14 @@ export function CVTab() {
               </span>
             </div>
             <div className="work-meta">
-              <span>2026–</span>
-              <span>Research prototype; Lean-verified circuits; HAZOP-reviewed</span>
+              <span>2026–; redesign April–October 2026</span>
+              <span>
+                Research prototype; Lean-modelled opcodes/gadgets (partial; 8 axioms;
+                OBL-Z12 open); manual circuit audit; HAZOP tabletop
+              </span>
+              <span>Protocol, consensus, contracts, wallet</span>
             </div>
-            <a className="work-link" href="?tab=darkwow">
+            <a className="work-link" href={pathForTab('darkwow')}>
               Record →
             </a>
           </li>
@@ -88,10 +96,14 @@ export function CVTab() {
               </span>
             </div>
             <div className="work-meta">
-              <span>2026</span>
-              <span>Pre-release</span>
+              <span>2026; port August–October 2026</span>
+              <span>
+                Pre-release; 72/77 laws; 19 laws (23 entries) node-tied; 14 crates, 0
+                unsafe
+              </span>
+              <span>Port lead and maintainer</span>
             </div>
-            <a className="work-link" href="?tab=rnode-rust">
+            <a className="work-link" href={pathForTab('rnode-rust')}>
               Record →
             </a>
           </li>
@@ -104,9 +116,12 @@ export function CVTab() {
             </div>
             <div className="work-meta">
               <span>2026</span>
-              <span>v0.1.x, not for design work</span>
+              <span>
+                v0.1.x; 94 upstream issues; 217 provenance tests; not for design work
+              </span>
+              <span>Author</span>
             </div>
-            <a className="work-link" href="?tab=azoth">
+            <a className="work-link" href={pathForTab('azoth')}>
               Record →
             </a>
           </li>
@@ -114,21 +129,28 @@ export function CVTab() {
             <div className="work-main">
               <span className="work-title">Mudra</span>
               <span className="work-subtitle">
-                Prove a calculation was done correctly without revealing the spreadsheet
+                Prove a committed calculation trace is unchanged without revealing the
+                spreadsheet
               </span>
             </div>
             <div className="work-meta">
               <span>2026</span>
-              <span>Research build; v1.0.x</span>
+              <span>
+                Research build; ~6 KB proof; 21 field elements; 100–632-instruction demos
+              </span>
+              <span>Author</span>
             </div>
-            <a className="work-link" href="?tab=mudra">
+            <a className="work-link" href={pathForTab('mudra')}>
               Record →
             </a>
           </li>
         </ul>
         <p className="print-only print-urls">
-          Records: patrickmockridge.github.io/?tab=darkwow · /?tab=rnode-rust ·
-          /?tab=azoth · /?tab=mudra
+          Records: patrickmockridge.github.io/darkwow/ · /rnode-rust/ · /azoth/ · /mudra/
+        </p>
+        <p className="print-only">
+          Engagements: protocol review, rescue, and verification; a bounded triage with
+          written findings, then a scoped remediation. Remote from Aberystwyth, Wales.
         </p>
       </Section>
 
@@ -136,21 +158,33 @@ export function CVTab() {
         <ChronologyTable
           rows={[
             {
-              period: '2016–present',
+              period: '2026',
+              body: 'Delivery: rnode-rust port (August–October), DarkWow redesign (April–October), Azoth, Mudra.',
+            },
+            {
+              period: '2022–2026',
               body: (
                 <>
-                  Independent work: protocol software, formal verification, numerical
-                  systems. Current records: DarkWow, rnode-rust, Azoth, Mudra.
+                  Independent research and writing: network analysis, evidence archiving,
+                  influence/secrecy simulation; RGov/Rhobot recovery proposal for
+                  REV/RChain with Jim Whitescarver (2024); UNISS/Ingenesist simulations
+                  (2026).
                 </>
               ),
             },
             {
-              period: '2011–2014',
-              body: 'Bitcoin since 2011; London Ethereum community, 2014.',
+              period: '2016–2019',
+              body: (
+                <>
+                  Treehouse AI and Robotics software nanodegrees; early ERC-1155 context
+                  at Enjin (2016); named advisor, Enjin Coin ICO (2017); CoEngineers, with
+                  $25k of own capital (2017–2019).
+                </>
+              ),
             },
             {
               period: '2006–2015',
-              body: 'Chemical engineer, process safety; UK and North Africa. Chartered Professional Chemical Engineer, 2013.',
+              body: 'Chemical engineer, process safety; UK and North Africa. Chartered 2013. Bitcoin since 2011; London Ethereum community, 2014.',
             },
             {
               period: '2002–2006',
@@ -164,7 +198,8 @@ export function CVTab() {
         <div className="prose">
           <p>
             UNISS / Ingenesist; Romeo–Juliet framework.{' '}
-            <a href="?tab=research">Selected writing</a>.
+            <a href={pathForTab('research')}>Selected writing</a> ·{' '}
+            <a href={SITE.links.ingenesistArchive}>Ingenesist archive</a>.
           </p>
         </div>
       </Section>

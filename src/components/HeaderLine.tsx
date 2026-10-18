@@ -1,10 +1,10 @@
-import { MAILTO, SITE } from '../data/site'
+import { MAILTO, SITE, pathForTab } from '../data/site'
 import { ThemeToggle } from './ThemeToggle'
 
 export function HeaderLine() {
   return (
     <header className="window-header">
-      <a className="brand" href="?tab=cv">
+      <a className="brand" href={pathForTab('cv')}>
         {SITE.name}
       </a>
       <nav className="header-links" aria-label="Contact and links">

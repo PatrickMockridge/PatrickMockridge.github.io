@@ -27,7 +27,7 @@ const CONTRAST_ROWS: ComparisonRow[] = [
     header: 'Implementation',
     cells: [
       'One code path.',
-      'Two independently generated kernels (Rust and Python) from one specification, compared in CI.',
+      'Two hand-written kernels (Rust and Python) from one declaration, compared in CI.',
     ],
   },
   {
@@ -97,9 +97,8 @@ export function AzothTab() {
         <WhatWhy
           what={
             <>
-              A chemical-engineering calculation library in Python and Rust, generated from
-              one specification into two independent kernels, where every result carries its
-              provenance.
+              A chemical-engineering calculation library in Python and Rust, written twice
+              by hand from one declaration, where every result carries its provenance.
             </>
           }
           why={
@@ -114,9 +113,9 @@ export function AzothTab() {
           }
           combination={
             <>
-              One specification → two independently generated kernels (Rust and Python)
-              compared in CI → per-result provenance → typed refusal as a first-class outcome;
-              a disagreement is a finding, not a fallback.
+              One declaration → two hand-written kernels (Rust and Python) compared in CI
+              → per-result provenance → typed refusal as a first-class outcome; a
+              disagreement is a finding, not a fallback.
             </>
           }
         />
@@ -138,9 +137,10 @@ export function AzothTab() {
       <Section number="2" title="Design" id="azoth-design">
         <ul className="prose">
           <li>
-            <strong>A disagreement is a finding, not a fallback.</strong> Two
-            independently generated kernels from one specification are compared in CI; a
-            difference is recorded rather than resolved by choosing one.
+            <strong>A disagreement is a finding, not a fallback.</strong> Two hand-written
+            kernels from one declaration are compared in CI; a difference is recorded
+            rather than resolved by choosing one. This catches implementation drift, not a
+            shared specification error.
           </li>
           <li>
             <strong>No result is anonymous.</strong> Each result carries its identity,

@@ -34,7 +34,7 @@ const TIMELINE_ROWS: ComparisonRow[] = [
     key: '2020',
     header: '2020',
     cells: [
-      <>ECC releases Halo 2 code (1 September 2020); Zcash activates it in NU5 (2021).</>,
+      <>ECC releases Halo 2 code (1 September 2020); Zcash activates it in NU5 (2022).</>,
       <>
         Private proofs over general circuits become practical in Rust. A state transition can
         be proved without revealing the state.
@@ -62,7 +62,7 @@ const TIMELINE_NOTE = (
     Dates are publication and release dates, not claims of first use. ρ-calculus: Meredith
     &amp; Radestock, <a href={darkWow.rhoPaper}>A Reflective Higher-Order Calculus</a>{' '}
     (ENTCS 2005, doi:10.1016/j.entcs.2005.05.016). <a href={darkWow.halo2}>Halo 2 code</a> was
-    released by ECC on 1 September 2020; Zcash activated it in NU5 in 2021. DarkWow is a
+    released by ECC on 1 September 2020; Zcash activated it in NU5 in 2022. DarkWow is a
     research prototype; the shipping wallet implements a subset of the ρ-calculus
     specification (see Limits). The combination is recent; this note treats it as a survey
     observation, not a theorem.
@@ -81,11 +81,14 @@ export function DarkWowTab() {
             label: 'Role',
             value: 'Protocol, consensus, contracts, wallet (fork-original layers)',
           },
-          { label: 'Period', value: '2026–present (fork-era)' },
+          {
+            label: 'Period',
+            value: '2026–present (fork-era); redesign April–October 2026',
+          },
           {
             label: 'Status',
             value:
-              'Research prototype; mainnet TBD; no third-party audit; Lean-verified circuits; HAZOP-reviewed',
+              'Research prototype; mainnet TBD; no third-party audit; Lean-modelled opcodes/gadgets (partial; 8 axioms; OBL-Z12 open); manual circuit audit; HAZOP tabletop',
           },
           {
             label: 'Repository',
@@ -154,13 +157,13 @@ export function DarkWowTab() {
           <li>
             <strong>Competing histories resolve deterministically.</strong> Same-height
             blocks become uncles and share rewards; verification is stateless; there is
-            no speculative execution and no privileged reorg.
+            no speculative execution and no operator-privileged reorg path.
           </li>
           <li>
             <strong>Contracts describe their own interfaces.</strong> Each contract
-            publishes a TOML manifest on-chain declaring the WASM exports, ZK circuits,
-            state schema, and capability requirements it exposes, so wallets and
-            reviewers do not depend on an external registry.
+            declares a TOML manifest in its deployment instructions — WASM exports, ZK
+            circuits, state schema, capability requirements — so wallets and reviewers do
+            not depend on an external registry; the on-chain manifest hash is pending.
           </li>
           <li>
             <strong>The wallet bounds authority by what was scanned.</strong> Capability
@@ -168,11 +171,13 @@ export function DarkWowTab() {
             and never reaches the daemon.
           </li>
           <li>
-            <strong>Supply is checked outside the proof.</strong> Every block carries a
-            Pedersen mass balance and a cumulative supply commitment; the check is pure
-            Pedersen arithmetic, not a ZK verification. An over-mint fails the block; a
-            protocol-level failure halts the chain rather than minting, and the repair is
-            a protocol change rather than a quiet patch.
+            <strong>Supply is checked outside the proof.</strong> Every block with
+            native-token calls carries a Pedersen mass balance and a cumulative supply
+            commitment; the check is pure Pedersen arithmetic, not a ZK verification. A
+            block whose commitments violate the mass balance is rejected; the guarantee
+            rests on Pedersen binding and a correct implementation. A protocol-level
+            failure halts the chain rather than minting, and the repair is a protocol
+            change rather than a quiet patch.
           </li>
         </ul>
       </Section>
@@ -248,7 +253,7 @@ export function DarkWowTab() {
                 ZK circuits and Lean obligations
               </text>
               <text x="510" y="213" fontSize="10">
-                Halo2 · three proved gadgets
+                Halo2 · 3 fork-original proofs (10 total)
               </text>
             </g>
           </svg>
@@ -260,18 +265,23 @@ export function DarkWowTab() {
         <ul className="prose">
           <li>
             Nine genesis contracts are labelled proven; the 23 post-genesis contracts
-            remain experimental, even where their circuits are verified.
+            remain experimental, even where their circuits pass the manual
+            instance-derivation audit.
           </li>
           <li>
-            Lean 4 covers all 39 zkVM opcodes and all 120 contract circuits, plus
-            cross-cutting Pedersen and value-conservation theorems; eight axioms remain,
-            and <code>OBL-Z12</code> and other obligations are open.
+            Lean 4 models 32 zkVM opcodes and 10 gadgets; that layer is partial, with
+            four assumptions. The 166/179 contract circuits have a manual
+            instance-derivation audit, not Lean proofs. Value conservation and the
+            Pedersen homomorphism are proved from the Pallas curve; the only surviving
+            arithmetic assumption is <code>pallasPrime</code>. Eight axioms remain, and{' '}
+            <code>OBL-Z12</code> and other obligations are open.
           </li>
           <li>
             The per-block Pedersen mass balance and cumulative supply chain are active;
-            an over-mint cannot be accepted. External anchoring is partial: Caribina
-            anchors are published but its verifier is not wired into the node; the Monero
-            anchoring gadget has not been enabled; merge mining is live.
+            a block that violates the mass balance is rejected. External anchoring is
+            partial: Caribina anchors are published but its verifier is not wired into
+            the node; the Monero anchoring gadget has not been enabled; merge mining is
+            live on the devnet/testnet, with mainnet TBD.
           </li>
           <li>On-chain manifest hashing is pending.</li>
           <li>
@@ -298,7 +308,10 @@ export function DarkWowTab() {
             <a href={darkWow.consensus}>Consensus and supply audit</a>
           </li>
           <li>
-            <a href={darkWow.proofs}>Proofs</a>
+            <a href={darkWow.opcodes}>Opcode and circuit status</a>
+          </li>
+          <li>
+            <a href={darkWow.axioms}>Axiom boundary</a>
           </li>
           <li>
             <a href={darkWow.obligations}>Verification obligation register</a>

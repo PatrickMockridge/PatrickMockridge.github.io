@@ -40,6 +40,11 @@ export const unissPosts: Post[] = [
     date: '2026-03-24',
     href: 'https://technologytruth.substack.com/p/the-darkweave-ingenesist-endowment',
   },
+  {
+    title: 'UNISS-GX-SD: How Strategic Transparency Bootstraps a Sovereign DEX',
+    date: '2026-03-17',
+    href: 'https://technologytruth.substack.com/p/uniss-gx-sd-how-strategic-transparency',
+  },
 ]
 
 export const romeoPosts: Post[] = [

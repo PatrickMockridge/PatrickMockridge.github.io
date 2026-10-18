@@ -82,6 +82,8 @@
 
 .tab {
   appearance: none;
+  display: flex;
+  align-items: center;
   background: transparent;
   border: 0;
   border-right: 1px solid var(--hairline);
@@ -91,6 +93,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  text-decoration: none;
   color: var(--muted);
   cursor: pointer;
   white-space: nowrap;
@@ -100,6 +103,7 @@
   color: var(--ink);
 }
 
+.tab[aria-current="page"],
 .tab[aria-selected="true"] {
   color: var(--ink);
   font-weight: 500;
