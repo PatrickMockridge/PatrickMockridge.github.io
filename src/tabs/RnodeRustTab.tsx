@@ -307,6 +307,10 @@ export function RnodeRustTab() {
             <a href={rnode.rgov}>RGov repository</a> are public.
           </p>
           <p>
+            The port is also a return to the RChain work I left unfinished in 2019–2022;
+            that is part of why it exists.
+          </p>
+          <p>
             I did not design RChain; this record covers the port and verification.{' '}
             <a href={rnode.arweave}>Arweave snapshot</a> ·{' '}
             <a href={rnode.legacy}>Legacy Scala tree</a> ·{' '}

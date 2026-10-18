@@ -181,6 +181,10 @@ export function CVTab() {
               ),
             },
             {
+              period: '2019–2022',
+              body: 'Created the Romeo–Juliet Framework; continued RChain work; independent research through COVID; property purchase and renovation; crypto investments.',
+            },
+            {
               period: '2016–2019',
               body: (
                 <>
