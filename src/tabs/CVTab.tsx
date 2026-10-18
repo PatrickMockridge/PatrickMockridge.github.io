@@ -84,8 +84,8 @@ export function CVTab() {
             <div className="work-meta">
               <span>2026–; redesign April–October 2026</span>
               <span>
-                Research prototype (mainnet TBD); genesis-set contracts; Lean-modelled
-                opcodes (6 assumptions); mechanized circuit gate; HAZOP tabletop
+                Research prototype (mainnet TBD); genesis-set contracts; one developer with
+                AI; mechanized circuit gate; HAZOP tabletop
               </span>
               <span>Protocol, consensus, contracts, wallet</span>
             </div>
@@ -102,10 +102,10 @@ export function CVTab() {
               </span>
             </div>
             <div className="work-meta">
-              <span>2026; port August–October 2026</span>
+              <span>2026; port August–October 2026 (about two months)</span>
               <span>
                 Pre-release; 72/77 laws; 19 laws (23 entries) node-tied; 14 crates, 0
-                unsafe
+                unsafe; community testnet live
               </span>
               <span>Port lead and maintainer</span>
             </div>
@@ -123,7 +123,8 @@ export function CVTab() {
             <div className="work-meta">
               <span>2026</span>
               <span>
-                v0.1.x; 94 upstream issues filed; 217 provenance tests; not for design work
+                v0.1.x; 94 upstream issues filed (72 closed); no-op Gibbs minimizer and
+                wrong-unit vapour-pressure curve; not for design work
               </span>
               <span>Author</span>
             </div>
@@ -142,7 +143,8 @@ export function CVTab() {
             <div className="work-meta">
               <span>2026</span>
               <span>
-                Research build; ~6 KB proof; 21 field elements; 100–632-instruction demos
+                Research build; ~6 KB proof; insurance brokering and fiscal metering case
+                studies
               </span>
               <span>Author</span>
             </div>
@@ -172,9 +174,9 @@ export function CVTab() {
               body: (
                 <>
                   Independent research and writing: network analysis, evidence archiving,
-                  influence/secrecy simulation; RGov/Rhobot recovery proposal for
-                  REV/RChain with Jim Whitescarver (2024); UNISS/Ingenesist simulations
-                  (2026).
+                  influence/secrecy simulation; RChain continuity: Gorki/BigSur old-node
+                  fork, RGov/Rhobot recovery proposal with Jim Whitescarver (2024);
+                  UNISS/Ingenesist simulations (2026).
                 </>
               ),
             },
@@ -204,7 +206,7 @@ export function CVTab() {
         <div className="prose">
           <p>
             Romeo–Juliet critical risk-analysis framework; UNISS/Ingenesist
-            simulations.{' '}
+            simulations; DarkFi stack analyses.{' '}
             <a href={pathForTab('research')}>Selected writing</a> ·{' '}
             <a href={SITE.links.ingenesistArchive}>Ingenesist archive</a>.
           </p>

@@ -92,7 +92,8 @@ export function MudraTab() {
               counterparty has to trust the vendor’s black box. Mudra replaces that trust with
               a receipt the other side can verify. What a regulator or counterparty needs is
               not “here is our file hash”, but “here is proof this calculation produced this
-              number, and you can check it without seeing our model.”
+              number, and you can check it without seeing our model.” The case studies are
+              insurance brokering and fiscal metering.
             </>
           }
           combination={

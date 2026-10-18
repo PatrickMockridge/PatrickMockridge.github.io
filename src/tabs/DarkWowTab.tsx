@@ -406,6 +406,11 @@ export function DarkWowTab() {
             shipping wallet implements a subset of the ρ-calculus specification; there is no
             third-party audit and mainnet is TBD.
           </li>
+          <li>
+            <strong>What stands between this and production.</strong> A third-party audit;
+            on-chain manifest hashing; bridge verifiers; closure of OBL-Z12/Z17/C21/C231.
+            Mainnet is TBD.
+          </li>
         </ul>
       </Section>
 
