@@ -58,7 +58,7 @@ export const PAGE_META: Record<
   research: {
     title: 'Research & Writing — Patrick Mockridge',
     description:
-      'Research and writing on network influence, secrecy, compromise, and the Ingenesist/UNISS simulations.',
+      'Research and writing on the Romeo–Juliet critical risk-analysis framework, network influence, secrecy, compromise, and the Ingenesist/UNISS simulations.',
     path: '/research/',
   },
   contact: {

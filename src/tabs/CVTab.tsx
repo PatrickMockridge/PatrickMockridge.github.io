@@ -197,7 +197,8 @@ export function CVTab() {
       <Section number="4" title="Research and writing" id="research">
         <div className="prose">
           <p>
-            UNISS / Ingenesist; Romeo–Juliet framework.{' '}
+            Romeo–Juliet critical risk-analysis framework; UNISS/Ingenesist
+            simulations.{' '}
             <a href={pathForTab('research')}>Selected writing</a> ·{' '}
             <a href={SITE.links.ingenesistArchive}>Ingenesist archive</a>.
           </p>

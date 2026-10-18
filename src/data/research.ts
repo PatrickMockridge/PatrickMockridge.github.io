@@ -59,6 +59,31 @@ export const romeoPosts: Post[] = [
     href: 'https://technologytruth.substack.com/p/the-unifying-grammar',
   },
   {
+    title: 'The Romeo-Juliet Four-Square Isomorphism',
+    date: '2025-11-09',
+    href: 'https://technologytruth.substack.com/p/the-romeo-juliet-four-square-isomorphism',
+  },
+  {
+    title: 'Strategic Theorems of the RJF Four-Square Isomorphism',
+    date: '2025-11-10',
+    href: 'https://technologytruth.substack.com/p/strategic-theorems-of-the-rjf-four',
+  },
+  {
+    title: 'The Romeo-Juliet Field Theory (RJF-∞)',
+    date: '2025-11-09',
+    href: 'https://technologytruth.substack.com/p/the-romeo-juliet-field-theory-rjf',
+  },
+  {
+    title: 'The Σ₁-Completeness of the RJF',
+    date: '2025-10-22',
+    href: 'https://technologytruth.substack.com/p/the-completeness-of-the-rjf',
+  },
+  {
+    title: 'The Evolution of RJF from Discrete States to Continuous Group Actions',
+    date: '2025-12-16',
+    href: 'https://technologytruth.substack.com/p/the-evolution-of-rjf-from-discrete',
+  },
+  {
     title: 'Quantum Romeo-Juliet Framework',
     date: '2025-11-07',
     href: 'https://technologytruth.substack.com/p/quantum-romeo-juliet-framework',
