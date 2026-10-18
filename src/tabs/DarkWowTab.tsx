@@ -81,15 +81,15 @@ const NOVEL_ROWS: ComparisonRow[] = [
     header: 'ZK Box and Purse',
     cells: [
       <>
-        The DarkWow contract implementations: Box is a linear Put/Take slot whose prior
-        state is consumed by a nullifier; Purse hides balances in a Pedersen commitment and
-        proves conservation homomorphically. I designed the ZK contract pair, its circuits,
-        and manifests for the fork.
+        The ZK versions: Box is a linear Put/Take slot whose prior state is consumed by a
+        nullifier; Purse hides balances in a Pedersen commitment and proves conservation
+        homomorphically. I designed the ZK contract pair, its circuits, and manifests for
+        the fork.
       </>,
       <>
-        The abstractions are prior art: Agoric’s Invitation and ERTP Purse, with
-        Zcash/Semaphore-style notes and nullifiers. The ZK contract pair is the
-        fork-original composition, not a new primitive. Genesis-proven.
+        The base abstractions are prior art: Agoric’s Invitation and ERTP Purse, with
+        Zcash/Semaphore-style notes and nullifiers. The ZK versions are the fork-original
+        work; the base abstractions are not. Genesis-proven.
       </>,
     ],
   },
@@ -150,30 +150,33 @@ const NOVEL_ROWS: ComparisonRow[] = [
     header: 'Promissory Note',
     cells: [
       <>
-        A privacy-preserving multi-token bearer-note contract with issue, transfer, OTC
-        swap, revoke, and redeem primitives, and proof-of-mint-secret authorization.
+        The no-freeze bearer note: the note is the asset, possession is authority, and no
+        administrator can freeze or confiscate it. The contract deliberately does not
+        enforce redemption; the issuer decides, and the holder prices that as counterparty
+        risk. This is the design, not a missing feature.
       </>,
       <>
         Bearer notes and contract-mediated redemption predate it: Arcade, BondBid, BIS
-        Project Promissa, ERC-3475/4626, Liquity, MakerDAO PSM. The contract does not
-        enforce redemption, collateral, or supply caps; the issuer contract decides and
-        remains the trust boundary. Genesis-proven.
+        Project Promissa, ERC-3475/4626, Liquity, MakerDAO PSM. The ZK-only, no-freeze
+        composition is the fork-original contribution. Genesis-proven.
       </>,
     ],
   },
   {
     key: 'authority',
-    header: 'Authority model',
+    header: 'No-freeze authority model',
     cells: [
       <>
-        Replaces upstream’s <code>mint_pubkey</code> signature gate with proof of knowledge
-        of a mint secret committed in the asset id.
+        No freeze authority. The issuer’s promise is the only counterparty; there is no
+        membership or turnstile to capture. Minting replaces the upstream signature gate
+        with proof of knowledge of a mint secret committed in the asset id. The trade-off
+        is counterparty risk, stated explicitly.
       </>,
       <>
         Upstream DarkFi gates WASM host imports with a contract-section ACL
-        (<code>acl_allow</code>); its DAO is already a contract with token-weighted ZK
-        voting. This is an authority-model change, not evidence of “true decentralised
-        governance.”
+        (<code>acl_allow</code>) and minting with <code>mint_pubkey</code>; its DAO is a
+        contract with token-weighted ZK voting. DarkWow removes the freeze authority and
+        replaces the mint signature with a mint-secret proof.
       </>,
     ],
   },
@@ -190,11 +193,11 @@ const NOVEL_ROWS: ComparisonRow[] = [
       </>,
       <>
         The opcodes are standard Halo 2/Fermat constructions; Lean 4 verification of ZK
-        gadgets exists elsewhere (halo2-formal, ArkLib, CLAP). <code>is_not_equal</code> is
-        not the first fully constrained Boolean operator. The proofs are evidence, not an
-        enabling layer: <code>less_than_or_equal</code> is used across the contract
-        circuits, but <code>is_not_equal</code> appears in zero contract circuits and PN
-        redemption does not use it. <code>OBL-Z12</code> is partly open.
+        gadgets exists elsewhere (halo2-formal, ArkLib, CLAP). The current contract circuits
+        use <code>less_than_or_equal</code> and <code>base_div</code>;{' '}
+        <code>is_not_equal</code> is a purity improvement and is not used by the current
+        contracts. The proofs are part of the assurance case; <code>OBL-Z12</code> is
+        partly open.
       </>,
     ],
   },
@@ -298,7 +301,16 @@ export function DarkWowTab() {
 
       <MethodRefrain />
 
-      <Section number="1" title="What is fork-original" id="darkwow-novel">
+      <Section number="1" title="What is new here" id="darkwow-novel">
+        <div className="prose">
+          <p>
+            The thesis is a private bearer note with no freeze authority. The note is the
+            asset; possession is authority. No administrator can freeze or confiscate it.
+            The issuer may redeem or not; the holder prices that as counterparty risk. That
+            is the difference from an ACL or membership system: there is no turnstile to
+            capture.
+          </p>
+        </div>
         <ComparisonTable
           variant="claims"
           caption="Table 2. Fork-original work and its boundaries."
@@ -310,8 +322,9 @@ export function DarkWowTab() {
         <div className="prose">
           <p>
             The table separates the fork’s implementation from the prior art it builds on.
-            The defensible claim is the composition and the contract set, not the invention
-            of the primitive. The proof-status ledger is what makes the boundary auditable.
+            The defensible claim is the concept and composition: a ZK bearer note with no
+            freeze authority, implemented in ZK Box and Purse, with no administrator in the
+            path. The proof-status ledger is what makes the boundary auditable.
           </p>
         </div>
       </Section>
