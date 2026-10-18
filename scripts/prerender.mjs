@@ -21,7 +21,7 @@ const PROJECTS = {
   darkwow: {
     name: 'DarkWow',
     description:
-      'A Layer 1 design for private organisations on a public chain, with ZK-only Box and Purse, fully ZK identity/oracle/attestation/stablecoin, a promissory note, an object-capability bridge, Uncle Merkle consensus, a Pedersen block mass balance, and a Lean 4 proof-status ledger.',
+      'A Layer 1 design for private organisations on a public chain, with ZK Box and Purse, a ZK-based identity/oracle/attestation/stablecoin suite, a promissory note, an object-capability bridge, Uncle Merkle consensus, a per-block Pedersen mass balance, and a Lean 4 proof-status ledger.',
     codeRepository: 'https://github.com/PatrickMockridge/DarkWow',
     programmingLanguage: 'Rust',
     license: 'https://www.gnu.org/licenses/agpl-3.0.html',

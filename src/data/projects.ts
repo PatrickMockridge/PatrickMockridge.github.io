@@ -115,12 +115,12 @@ export const darkWowEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Lean 4 coverage',
-    value: '32 opcodes + 10 gadgets (partial); 166/179 circuits manually audited',
+    value: '32 opcodes + 10 gadgets (partial); 167/179 circuits manually audited',
     source: { label: 'Opcode and circuit status', href: darkWow.opcodes },
   },
   {
-    measure: 'Declared axioms',
-    value: '8',
+    measure: 'Assumptions',
+    value: '6; pallasPrime the only arithmetic one',
     source: { label: 'Axiom boundary', href: darkWow.axioms },
   },
   {
@@ -130,7 +130,7 @@ export const darkWowEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Supply audit',
-    value: 'Pedersen mass balance per native-token call; cumulative supply chain',
+    value: 'Per-block Pedersen mass balance over native-token calls; cumulative supply audit chain',
     source: { label: 'Consensus and supply audit', href: darkWow.consensus },
   },
   {

@@ -71,46 +71,61 @@ const TIMELINE_NOTE = (
 
 const NOVEL_COLUMNS = [
   { label: 'Work' },
-  { label: 'What is new' },
-  { label: 'Boundary' },
+  { label: 'Fork-original contribution' },
+  { label: 'Prior art and boundary' },
 ]
 
 const NOVEL_ROWS: ComparisonRow[] = [
   {
     key: 'box-purse',
-    header: 'ZK-only Box and Purse',
+    header: 'ZK Box and Purse',
     cells: [
       <>
-        Box is linear capability delegation: Put/Take with nullifier consumption. Purse is a
-        fungible capability container with hidden balances via Pedersen commitments. Both are
-        fork-original and ZK-only: I invented them as capability primitives whose state is
-        proved, not merely stored.
+        The DarkWow contract implementations: Box is a linear Put/Take slot whose prior
+        state is consumed by a nullifier; Purse hides balances in a Pedersen commitment and
+        proves conservation homomorphically. I designed the ZK contract pair, its circuits,
+        and manifests for the fork.
       </>,
-      'Genesis contracts, labelled proven.',
+      <>
+        The abstractions are prior art: Agoric’s Invitation and ERTP Purse, with
+        Zcash/Semaphore-style notes and nullifiers. The ZK contract pair is the
+        fork-original composition, not a new primitive. Genesis-proven.
+      </>,
     ],
   },
   {
     key: 'zk-contracts',
-    header: 'Fully ZK contract set',
+    header: 'ZK contract suite',
     cells: [
       <>
-        Fully ZK versions of Identity, Oracle, Attestation, and Stablecoin. To my knowledge,
-        this is the first published set of its kind.
+        A single-chain suite with ZK circuits for the core state transitions of Identity,
+        Oracle, Attestation, and Stablecoin. To my knowledge, this combination is not
+        previously published as a set; I do not claim the first ZK implementation of any
+        individual component.
       </>,
-      'Identity, Oracle, and Attestation are genesis-proven; Stablecoin is experimental.',
+      <>
+        Each component has prior art: Semaphore (2019), Polygon ID/World ID (2023); DECO,
+        Axiom, HyperOracle (2019/2023); Reclaim, Anon Aadhaar, zkPass (2023); Aztec zkDAI
+        (2021), Taurus (2025), Aleo USAD/USDCx (2025). Some administrative and revocation
+        paths remain signature-authenticated; Stablecoin is experimental.
+      </>,
     ],
   },
   {
     key: 'pedersen',
-    header: 'Pedersen block mass balance',
+    header: 'Per-block Pedersen mass balance',
     cells: [
       <>
-        I invented the block-level Pedersen mass balance after the Orchard-class exploit
-        was announced. Every block with native-token calls carries a mass balance and a
-        cumulative supply commitment; the Halo2 gadgets cover the ZK side, and the block
-        proof closes phantom counterfeit minting at the block boundary.
+        I applied a Grin/Mimblewimble/ZIP 209-style per-block mass balance to a Halo2
+        privacy chain after the June 2026 Orchard disclosure: for every block, Σ outputs +
+        Σ burns + Σ fees = Σ inputs for the native token; a violating block is rejected. A
+        separate cumulative supply commitment chain is a passive audit.
       </>,
-      'Active; a violating block is rejected. The guarantee rests on Pedersen binding and a correct implementation; external anchoring is partial.',
+      <>
+        Pedersen value commitments and block-level balance checks are standard in Zcash,
+        Mimblewimble/Grin, and Monero. The check is host-side Pedersen arithmetic, not a ZK
+        block proof; it is defense-in-depth, not a proof of full supply integrity.
+      </>,
     ],
   },
   {
@@ -118,10 +133,16 @@ const NOVEL_ROWS: ComparisonRow[] = [
     header: 'Object-capability bridge',
     cells: [
       <>
-        The bridge is fork-original: cross-chain transfers composed from o-caps, with no third
-        party custodian holding keys. Custody stays inside the capability graph.
+        A fork-specific redesign using deterministic deposit addresses, user-held withdrawal
+        secrets, and nullifier-based withdrawals; no operator can spend user funds.
       </>,
-      'Experimental.',
+      <>
+        Non-custodial bridges (IBC, atomic swaps), threshold/MPC bridges (tBTC, RenVM), and
+        trustless ZK bridges (zkBridge, Telepathy) predate it. The o-cap layer is bearer
+        secrets, not classical object references. External-chain verification is feature-gated
+        (<code>bridge-verify</code>, default off); the default path checks structure and
+        anti-double-claim, not the external chain.
+      </>,
     ],
   },
   {
@@ -129,25 +150,52 @@ const NOVEL_ROWS: ComparisonRow[] = [
     header: 'Promissory Note',
     cells: [
       <>
-        The universal DeFi primitive: tokens, transfers, swaps, and redemption in one
-        contract. Redemption is the contract’s responsibility, not a member’s or
-        administrator’s. Upstream DarkFi authorization is ACL-based; the design moves the
-        security model from membership and turnstiling to contract-enforced governance.
+        A privacy-preserving multi-token bearer-note contract with issue, transfer, OTC
+        swap, revoke, and redeem primitives, and proof-of-mint-secret authorization.
       </>,
-      'Genesis-proven; the governance claim is the design argument.',
+      <>
+        Bearer notes and contract-mediated redemption predate it: Arcade, BondBid, BIS
+        Project Promissa, ERC-3475/4626, Liquity, MakerDAO PSM. The contract does not
+        enforce redemption, collateral, or supply caps; the issuer contract decides and
+        remains the trust boundary. Genesis-proven.
+      </>,
+    ],
+  },
+  {
+    key: 'authority',
+    header: 'Authority model',
+    cells: [
+      <>
+        Replaces upstream’s <code>mint_pubkey</code> signature gate with proof of knowledge
+        of a mint secret committed in the asset id.
+      </>,
+      <>
+        Upstream DarkFi gates WASM host imports with a contract-section ACL
+        (<code>acl_allow</code>); its DAO is already a contract with token-weighted ZK
+        voting. This is an authority-model change, not evidence of “true decentralised
+        governance.”
+      </>,
     ],
   },
   {
     key: 'opcodes',
-    header: 'Enabling opcode proofs',
+    header: 'Opcode proofs',
     cells: [
       <>
-        <code>is_not_equal</code> is the first fully constrained Boolean operator;{' '}
-        <code>less_than_or_equal</code> and <code>base_div</code> are proved sound in Lean 4.
-        Comparison and division are the enabling layer for the ZK-only contracts and the
-        redemption model.
+        Lean 4 gadget-level theorems for this fork’s <code>is_not_equal</code>,{' '}
+        <code>less_than_or_equal</code>, and <code>base_div</code> models.{' '}
+        <code>is_not_equal</code> adds a fourth gate pinning the auxiliary inverse when{' '}
+        <code>a=b</code>, making every witness determined — a purity improvement over the
+        inherited <code>is_equal</code> chip.
       </>,
-      'Gadget-level proofs are in place; OBL-Z12 (the circuit-to-theorem step) is partly open.',
+      <>
+        The opcodes are standard Halo 2/Fermat constructions; Lean 4 verification of ZK
+        gadgets exists elsewhere (halo2-formal, ArkLib, CLAP). <code>is_not_equal</code> is
+        not the first fully constrained Boolean operator. The proofs are evidence, not an
+        enabling layer: <code>less_than_or_equal</code> is used across the contract
+        circuits, but <code>is_not_equal</code> appears in zero contract circuits and PN
+        redemption does not use it. <code>OBL-Z12</code> is partly open.
+      </>,
     ],
   },
   {
@@ -155,10 +203,15 @@ const NOVEL_ROWS: ComparisonRow[] = [
     header: 'Lean 4 proof-status ledger',
     cells: [
       <>
-        Each opcode and contract circuit is listed as proved, assumed, manually audited,
-        or not modelled. The boundary is part of the deliverable, not a footnote.
+        A canonical status table (2026-10-18) with counts, audit type, status, and generating
+        command; a per-opcode table; and the assumption boundary. It separates proved,
+        assumed, manually audited, and not modelled.
       </>,
-      'The ledger is only as good as its last reconciliation; the counts drift and must be re-run.',
+      <>
+        Proof-status ledgers are a known practice (etheorem PROOF_LEDGER, concrete2 evidence
+        classes). The fork’s table is a project-specific instance, not a new verification
+        method; it makes the boundary auditable.
+      </>,
     ],
   },
   {
@@ -167,8 +220,8 @@ const NOVEL_ROWS: ComparisonRow[] = [
     cells: [
       <>
         The contract design comes from the Rholang/RChain work: a name is authority,
-        capabilities compose, and the constraints have to be enforced from the beginning. The
-        rnode-rust port is the other side of that lineage.
+        capabilities compose, and the constraints have to be enforced from the beginning.
+        rnode-rust is the other side of that lineage.
       </>,
       'Design lineage, not a code dependency.',
     ],
@@ -194,7 +247,7 @@ export function DarkWowTab() {
           {
             label: 'Status',
             value:
-              'Research prototype; mainnet TBD; no third-party audit; Lean-modelled opcodes/gadgets (partial; 8 axioms; OBL-Z12 open); manual circuit audit; HAZOP tabletop',
+              'Research prototype; mainnet TBD; no third-party audit; Lean-modelled opcodes/gadgets (partial; 6 assumptions; OBL-Z12 partly open); manual circuit audit; HAZOP tabletop',
           },
           {
             label: 'Repository',
@@ -245,19 +298,20 @@ export function DarkWowTab() {
 
       <MethodRefrain />
 
-      <Section number="1" title="What is new here" id="darkwow-novel">
+      <Section number="1" title="What is fork-original" id="darkwow-novel">
         <ComparisonTable
           variant="claims"
           caption="Table 2. Fork-original work and its boundaries."
-          subtitle="Fork-original contracts, the enabling proofs, and the lineage that produced them."
+          subtitle="The fork-original implementations, the prior art they build on, and the boundary of the claim."
           columns={NOVEL_COLUMNS}
           rows={NOVEL_ROWS}
-          note="Maturity follows the contract catalog. 'To my knowledge' marks a publication claim, not a theorem."
+          note="Maturity follows the contract catalog. Prior-art comparisons are cited in the cells; 'to my knowledge' marks an unverified combination claim, not a theorem."
         />
         <div className="prose">
           <p>
-            The ledger is the point: it separates proved from assumed, manually audited,
-            and open. That is what removes the trust-me-bro claim.
+            The table separates the fork’s implementation from the prior art it builds on.
+            The defensible claim is the composition and the contract set, not the invention
+            of the primitive. The proof-status ledger is what makes the boundary auditable.
           </p>
         </div>
       </Section>
@@ -294,13 +348,12 @@ export function DarkWowTab() {
             and never reaches the daemon.
           </li>
           <li>
-            <strong>Supply is checked outside the proof.</strong> Every block with
-            native-token calls carries a Pedersen mass balance and a cumulative supply
-            commitment; the check is pure Pedersen arithmetic, not a ZK verification. A
-            block whose commitments violate the mass balance is rejected; the guarantee
-            rests on Pedersen binding and a correct implementation. A protocol-level
-            failure halts the chain rather than minting, and the repair is a protocol
-            change rather than a quiet patch.
+            <strong>Supply is checked outside the proof.</strong> For every block, the node
+            checks a Pedersen mass balance over native-token calls; the check is pure
+            Pedersen arithmetic, not a ZK verification. A block that violates the mass
+            balance is rejected. A separate cumulative supply commitment chain is a passive
+            audit, not a block field. The guarantee rests on Pedersen binding and a correct
+            implementation; a protocol-level failure is a halt or repair, not a silent mint.
           </li>
         </ul>
       </Section>
@@ -399,12 +452,14 @@ export function DarkWowTab() {
             instance-derivation audit.
           </li>
           <li>
-            Lean 4 models 32 zkVM opcodes and 10 gadgets; that layer is partial, with
-            four assumptions. The 166/179 contract circuits have a manual
-            instance-derivation audit, not Lean proofs. Value conservation and the
-            Pedersen homomorphism are proved from the Pallas curve; the only surviving
-            arithmetic assumption is <code>pallasPrime</code>. Eight axioms remain, and{' '}
-            <code>OBL-Z12</code> and other obligations are open.
+            Lean 4 models 32 zkVM opcodes and 10 gadgets; that layer is mixed. Three of
+            the four former assumptions are now theorems;{' '}
+            <code>poseidon_collision_resistance</code> remains assumed. The 167 contract
+            circuits (179 by the gate) have a manual instance-derivation audit, not Lean
+            proofs. Value conservation and the Pedersen homomorphism are proved from the
+            Pallas curve; the only surviving arithmetic assumption is{' '}
+            <code>pallasPrime</code>. Six assumptions remain, and <code>OBL-Z12</code> is
+            partly open.
           </li>
           <li>
             The per-block Pedersen mass balance and cumulative supply chain are active;

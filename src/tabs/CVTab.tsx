@@ -78,8 +78,8 @@ export function CVTab() {
             <div className="work-meta">
               <span>2026–; redesign April–October 2026</span>
               <span>
-                Research prototype; Lean-modelled opcodes/gadgets (partial; 8 axioms;
-                OBL-Z12 open); manual circuit audit; HAZOP tabletop
+                Research prototype; Lean-modelled opcodes/gadgets (partial; 6
+                assumptions; OBL-Z12 partly open); manual circuit audit; HAZOP tabletop
               </span>
               <span>Protocol, consensus, contracts, wallet</span>
             </div>
