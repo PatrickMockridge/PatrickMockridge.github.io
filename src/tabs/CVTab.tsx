@@ -15,20 +15,9 @@ export function CVTab() {
 
       <header className="cv-hero screen-only">
         <h1>Patrick Mockridge</h1>
-        <p>
-          Protocol engineer. Process safety taught me that a plausible number is not a
-          safe number; I apply the same failure-mode discipline to private protocols,
-          consensus systems, and numerical software.
-        </p>
-        <p>
-          Process safety engineer, 2006–2015; chartered 2013. Independent protocol and
-          research work since 2016.
-        </p>
-        <p className="cv-work-index">
-          DarkWow (private bearer-note L1) · rnode-rust (RChain node ported to Rust,
-          community testnet) · Azoth · Mudra.
-        </p>
-        <p>Aberystwyth, Wales. Protocol review, rescue, and verification.</p>
+        <p>Protocol engineer</p>
+        <p className="cv-work-index">DarkWow · rnode-rust · Azoth · Mudra</p>
+        <p>Aberystwyth, Wales</p>
       </header>
 
       <Section number="1" title="Profile and method" id="profile">
@@ -57,10 +46,8 @@ export function CVTab() {
         </div>
         <div className="prose print-only">
           <p>
-            Protocol engineer. Process safety taught me that a plausible number is not a
-            safe number — so every result here is either proved or carries its limits.
-            Process safety engineer, 2006–2015; chartered 2013; independent protocol and
-            verification work since 2016.
+            Protocol engineer. Process safety engineer, 2006–2015; chartered 2013;
+            independent protocol and verification work since 2016.
           </p>
           <p>
             The method: specify the failure mode before the architecture; prove what can
