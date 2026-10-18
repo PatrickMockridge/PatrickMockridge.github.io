@@ -15,13 +15,20 @@ export function CVTab() {
 
       <header className="cv-hero screen-only">
         <h1>Patrick Mockridge</h1>
-        <p>Independent protocol engineer and formal-verification specialist.</p>
         <p>
-          Process safety engineer, 2006–2015; chartered 2013. Protocol and research
-          work since 2016.
+          Protocol engineer. Process safety taught me that a plausible number is not a
+          safe number; I apply the same failure-mode discipline to private protocols,
+          consensus systems, and numerical software.
         </p>
-        <p>Aberystwyth, Wales.</p>
-        <p className="cv-work-index">DarkWow · rnode-rust · Azoth · Mudra</p>
+        <p>
+          Process safety engineer, 2006–2015; chartered 2013. Independent protocol and
+          research work since 2016.
+        </p>
+        <p className="cv-work-index">
+          DarkWow (private bearer-note L1) · rnode-rust (RChain node ported to Rust,
+          community testnet) · Azoth · Mudra.
+        </p>
+        <p>Aberystwyth, Wales. Protocol review, rescue, and verification.</p>
       </header>
 
       <Section number="1" title="Profile and method" id="profile">
@@ -50,11 +57,10 @@ export function CVTab() {
         </div>
         <div className="prose print-only">
           <p>
-            Independent protocol engineer and formal-verification specialist. Process
-            safety taught me that a plausible number is not a safe number — so every
-            result here is either proved or carries its limits. Process safety engineer,
-            2006–2015; chartered 2013; independent protocol and verification work since
-            2016.
+            Protocol engineer. Process safety taught me that a plausible number is not a
+            safe number — so every result here is either proved or carries its limits.
+            Process safety engineer, 2006–2015; chartered 2013; independent protocol and
+            verification work since 2016.
           </p>
           <p>
             The method: specify the failure mode before the architecture; prove what can
@@ -78,8 +84,8 @@ export function CVTab() {
             <div className="work-meta">
               <span>2026–; redesign April–October 2026</span>
               <span>
-                Research prototype; Lean-modelled opcodes/gadgets (partial; 6
-                assumptions; OBL-Z12 partly open); manual circuit audit; HAZOP tabletop
+                Research prototype (mainnet TBD); genesis-set contracts; Lean-modelled
+                opcodes (6 assumptions); mechanized circuit gate; HAZOP tabletop
               </span>
               <span>Protocol, consensus, contracts, wallet</span>
             </div>
@@ -117,7 +123,7 @@ export function CVTab() {
             <div className="work-meta">
               <span>2026</span>
               <span>
-                v0.1.x; 94 upstream issues; 217 provenance tests; not for design work
+                v0.1.x; 94 upstream issues filed; 217 provenance tests; not for design work
               </span>
               <span>Author</span>
             </div>

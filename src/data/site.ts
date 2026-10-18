@@ -26,7 +26,7 @@ export const PAGE_META: Record<
   { title: string; description: string; path: string }
 > = {
   cv: {
-    title: 'Patrick Mockridge — Protocol engineer and formal verification',
+    title: 'Patrick Mockridge — Protocol engineer',
     description:
       'Independent protocol engineer working on privacy protocols, consensus systems, formal verification, and numerical provenance. Selected work: DarkWow, rnode-rust, Azoth, Mudra.',
     path: '/',
@@ -34,7 +34,7 @@ export const PAGE_META: Record<
   darkwow: {
     title: 'DarkWow — Patrick Mockridge',
     description:
-      'A Layer 1 design for private organisations on a public chain: ZK Box and Purse, a ZK-based identity/oracle/attestation/stablecoin suite, a no-freeze promissory note, an object-capability bridge, a per-block Pedersen mass balance, and a Lean 4 proof-status ledger.',
+      'A private bearer-note system: the note is the asset, possession is authority, and no protocol-level administrator can freeze or confiscate it. ZK Box and Purse, a ZK-based identity/oracle/attestation/stablecoin suite, a no-freeze Promissory Note, an o-cap bridge, a per-block Pedersen supply audit, and a Lean 4 proof-status ledger.',
     path: '/darkwow/',
   },
   'rnode-rust': {

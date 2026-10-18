@@ -115,7 +115,12 @@ export const darkWowEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Lean 4 coverage',
-    value: '32 opcodes + 10 gadgets (partial); 167/179 circuits manually audited',
+    value: '32 opcodes + 10 gadget files (partial); per-opcode verdicts, no blanket verdict',
+    source: { label: 'Opcode status', href: darkWow.opcodes },
+  },
+  {
+    measure: 'Circuit gate',
+    value: '167 contract circuits; 179 walked; instance derivation only, not circuit correctness',
     source: { label: 'Opcode and circuit status', href: darkWow.opcodes },
   },
   {
@@ -134,8 +139,8 @@ export const darkWowEvidence: EvidenceRow[] = [
     source: { label: 'Consensus and supply audit', href: darkWow.consensus },
   },
   {
-    measure: 'Open formal obligation',
-    value: 'OBL-Z12',
+    measure: 'Open obligations',
+    value: 'OBL-Z12 (partly open); OBL-Z17, OBL-C21, OBL-C231',
     source: { label: 'Obligation register', href: darkWow.obligations },
   },
   {
