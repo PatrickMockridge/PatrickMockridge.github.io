@@ -2,7 +2,7 @@ import type { EvidenceRow, SourceRef } from '../data/projects'
 
 function Source({ source }: { source: SourceRef }) {
   if (typeof source === 'string') return <>{source}</>
-  return <a href={source.href}>{source.label}</a>
+  return <a href={source.href} target="_blank" rel="noopener noreferrer">{source.label}</a>
 }
 
 interface EvidenceTableProps {

@@ -86,11 +86,11 @@ export function AzothTab() {
           },
           {
             label: 'Repository',
-            value: <a href={azoth.repo}>github.com/PatrickMockridge/Azoth</a>,
+            value: <a href={azoth.repo} target="_blank" rel="noopener noreferrer">github.com/PatrickMockridge/Azoth</a>,
           },
           {
             label: 'Documentation',
-            value: <a href={azoth.docs}>docs/src</a>,
+            value: <a href={azoth.docs} target="_blank" rel="noopener noreferrer">docs/src</a>,
           },
         ]}
       >
@@ -203,7 +203,7 @@ export function AzothTab() {
         <ul className="link-list">
           {NEQSIM_ISSUES.map((issue) => (
             <li key={issue.id}>
-              <a href={`https://github.com/equinor/neqsim/issues/${issue.id}`}>
+              <a href={`https://github.com/equinor/neqsim/issues/${issue.id}`} target="_blank" rel="noopener noreferrer">
                 #{issue.id}
               </a>{' '}
               — {issue.text}
@@ -241,16 +241,16 @@ export function AzothTab() {
       <Section number="6" title="Links" id="azoth-links">
         <ul className="link-list">
           <li>
-            <a href={azoth.repo}>Repository</a>
+            <a href={azoth.repo} target="_blank" rel="noopener noreferrer">Repository</a>
           </li>
           <li>
-            <a href={azoth.safety}>Safety record</a>
+            <a href={azoth.safety} target="_blank" rel="noopener noreferrer">Safety record</a>
           </li>
           <li>
-            <a href={azoth.issues}>NeqSim issue search</a>
+            <a href={azoth.issues} target="_blank" rel="noopener noreferrer">NeqSim issue search</a>
           </li>
           <li>
-            <a href={azoth.agents}>Agent guidance</a>
+            <a href={azoth.agents} target="_blank" rel="noopener noreferrer">Agent guidance</a>
           </li>
         </ul>
       </Section>

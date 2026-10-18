@@ -139,11 +139,11 @@ export function DarkWowTab() {
           },
           {
             label: 'Repository',
-            value: <a href={darkWow.repo}>github.com/PatrickMockridge/DarkWow</a>,
+            value: <a href={darkWow.repo} target="_blank" rel="noopener noreferrer">github.com/PatrickMockridge/DarkWow</a>,
           },
           {
             label: 'Documentation',
-            value: <a href={darkWow.docs}>doc/src</a>,
+            value: <a href={darkWow.docs} target="_blank" rel="noopener noreferrer">doc/src</a>,
           },
         ]}
       >
@@ -294,8 +294,8 @@ export function DarkWowTab() {
           </p>
           <p className="source-note">
             The design stands on the 2005 ρ-calculus paper (
-            <a href={darkWow.rhoPaper}>Meredith &amp; Radestock</a>), the 2020{' '}
-            <a href={darkWow.halo2}>Halo 2 release</a> (Zcash NU5 2022), and the 2026
+            <a href={darkWow.rhoPaper} target="_blank" rel="noopener noreferrer">Meredith &amp; Radestock</a>), the 2020{' '}
+            <a href={darkWow.halo2} target="_blank" rel="noopener noreferrer">Halo 2 release</a> (Zcash NU5 2022), and the 2026
             fork-era work. Dates are publication and release dates, not claims of first use.
           </p>
         </div>
@@ -387,7 +387,7 @@ export function DarkWowTab() {
             <code>OBL-Z12</code> is partly open; <code>OBL-Z17</code> (Identity capability
             verification), <code>OBL-C21</code> (bridge default), and{' '}
             <code>OBL-C231</code> (stablecoin model) are open or partly open. The{' '}
-            <a href={darkWow.obligations}>obligation register</a> is the authority.
+            <a href={darkWow.obligations} target="_blank" rel="noopener noreferrer">obligation register</a> is the authority.
           </li>
           <li>
             <strong>Known defects.</strong> The mass-balance check was inert until a
@@ -417,37 +417,37 @@ export function DarkWowTab() {
       <Section number="7" title="Links" id="darkwow-links">
         <ul className="link-list">
           <li>
-            <a href={darkWow.repo}>Repository</a>
+            <a href={darkWow.repo} target="_blank" rel="noopener noreferrer">Repository</a>
           </li>
           <li>
-            <a href={darkWow.docs}>Documentation tree</a>
+            <a href={darkWow.docs} target="_blank" rel="noopener noreferrer">Documentation tree</a>
           </li>
           <li>
-            <a href={darkWow.manifest}>Manifest specification</a>
+            <a href={darkWow.manifest} target="_blank" rel="noopener noreferrer">Manifest specification</a>
           </li>
           <li>
-            <a href={darkWow.ocap}>O-Cap model</a>
+            <a href={darkWow.ocap} target="_blank" rel="noopener noreferrer">O-Cap model</a>
           </li>
           <li>
-            <a href={darkWow.consensus}>Consensus and supply audit</a>
+            <a href={darkWow.consensus} target="_blank" rel="noopener noreferrer">Consensus and supply audit</a>
           </li>
           <li>
-            <a href={darkWow.opcodes}>Opcode and circuit status</a>
+            <a href={darkWow.opcodes} target="_blank" rel="noopener noreferrer">Opcode and circuit status</a>
           </li>
           <li>
-            <a href={darkWow.proofs}>Proof-status ledger</a>
+            <a href={darkWow.proofs} target="_blank" rel="noopener noreferrer">Proof-status ledger</a>
           </li>
           <li>
-            <a href={darkWow.axioms}>Axiom boundary</a>
+            <a href={darkWow.axioms} target="_blank" rel="noopener noreferrer">Axiom boundary</a>
           </li>
           <li>
-            <a href={darkWow.obligations}>Verification obligation register</a>
+            <a href={darkWow.obligations} target="_blank" rel="noopener noreferrer">Verification obligation register</a>
           </li>
           <li>
-            <a href={darkWow.rhoPaper}>ρ-calculus paper</a>
+            <a href={darkWow.rhoPaper} target="_blank" rel="noopener noreferrer">ρ-calculus paper</a>
           </li>
           <li>
-            <a href={darkWow.halo2}>Halo 2 release</a>
+            <a href={darkWow.halo2} target="_blank" rel="noopener noreferrer">Halo 2 release</a>
           </li>
         </ul>
       </Section>

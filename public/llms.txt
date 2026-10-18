@@ -19,7 +19,8 @@
 
 ## Research
 
-- [Research and writing](https://patrickmockridge.github.io/research/): the Romeo-Juliet critical risk-analysis framework for coordinated systems under information asymmetry — AI, blockchains, politics, business, engineering; UNISS/Ingenesist simulations of influence, secrecy, and layered compromise; the Ingenesist archive.
+- [Research and writing](https://patrickmockridge.github.io/research/): the Romeo-Juliet critical risk-analysis framework for coordinated systems under information asymmetry — AI, blockchains, politics, business, engineering; UNISS/Ingenesist simulations of influence, secrecy, and layered compromise; an NFL allocation-gap analysis for the Big Data Bowl 2027 showing that Combine movement predicts performance but not playing time or cap spending; the Ingenesist archive.
+- [NFL Big Data Bowl 2027](https://github.com/PatrickMockridge/nfl-big-data-bowl-2027): an RJF extension to the 2023-2025 NFL draft classes; the preregistered RJF archetype lens is a wide null, while Combine movement predicts performance (+0.299 SD per SD) but not playing time (-0.019) or pay.
 - [Ingenesist archive](https://app.ardrive.io/#/drives/57a3e07f-7adb-4bcf-b013-154869c56e33?name=Ingenesist+Project): Dan Roble's presentations and papers.
 
 ## Notes

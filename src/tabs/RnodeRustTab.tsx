@@ -136,7 +136,7 @@ export function RnodeRustTab() {
             value: (
               <>
                 Pre-release; a community testnet is live at{' '}
-                <a href={rnode.testnetStatus}>testnet.rhobot.net/status</a>; the project
+                <a href={rnode.testnetStatus} target="_blank" rel="noopener noreferrer">testnet.rhobot.net/status</a>; the project
                 calls itself pre-testnet because no stable testnet is declared; no
                 production release.
               </>
@@ -145,12 +145,12 @@ export function RnodeRustTab() {
           {
             label: 'Repository',
             value: (
-              <a href={rnode.repo}>github.com/rchain-community/rchain-rust</a>
+              <a href={rnode.repo} target="_blank" rel="noopener noreferrer">github.com/rchain-community/rchain-rust</a>
             ),
           },
           {
             label: 'Documentation',
-            value: <a href={rnode.docs}>docs/src</a>,
+            value: <a href={rnode.docs} target="_blank" rel="noopener noreferrer">docs/src</a>,
           },
         ]}
       >
@@ -194,7 +194,7 @@ export function RnodeRustTab() {
           <p>
             λ is substitution; π adds concurrency and mobility; ρ makes a name a quoted
             process (<code>@P</code>/<code>*x</code>); RChain embeds ρ as a base sort of a
-            Calculus of Constructions (<a href={rnode.typeSystem}>type system</a>).
+            Calculus of Constructions (<a href={rnode.typeSystem} target="_blank" rel="noopener noreferrer">type system</a>).
           </p>
         </div>
         <ComparisonTable
@@ -262,7 +262,7 @@ export function RnodeRustTab() {
               <td>2017</td>
               <td>The cooperative forms to steward the platform.</td>
               <td>
-                <a href={GEEKWIRE_2019}>GeekWire (2019)</a>
+                <a href={GEEKWIRE_2019} target="_blank" rel="noopener noreferrer">GeekWire (2019)</a>
               </td>
             </tr>
             <tr>
@@ -274,14 +274,14 @@ export function RnodeRustTab() {
                 not adjudicated findings.
               </td>
               <td>
-                <a href={THE_BLOCK_2018}>The Block (2018)</a>
+                <a href={THE_BLOCK_2018} target="_blank" rel="noopener noreferrer">The Block (2018)</a>
               </td>
             </tr>
             <tr>
               <td>Feb 2020</td>
               <td>Mainnet launches with cooperative validators.</td>
               <td>
-                <a href={MAINNET_2020}>RChain announcement (2020)</a>
+                <a href={MAINNET_2020} target="_blank" rel="noopener noreferrer">RChain announcement (2020)</a>
               </td>
             </tr>
             <tr>
@@ -291,7 +291,7 @@ export function RnodeRustTab() {
                 logistical issues; the network is left without a steward.
               </td>
               <td>
-                <a href={DISSOLUTION}>RChain Cooperative (Wayback, 2022)</a>
+                <a href={DISSOLUTION} target="_blank" rel="noopener noreferrer">RChain Cooperative (Wayback, 2022)</a>
               </td>
             </tr>
           </tbody>
@@ -300,11 +300,11 @@ export function RnodeRustTab() {
         <div className="prose">
           <p>
             Earlier continuity work: in 2024 I co-authored the{' '}
-            <a href={rnode.rgovPost}>RGov/Rhobot recovery proposal</a> for REV/RChain with
+            <a href={rnode.rgovPost} target="_blank" rel="noopener noreferrer">RGov/Rhobot recovery proposal</a> for REV/RChain with
             Jim Whitescarver; the old RNode was forked into the Gorki/BigSur project. The{' '}
-            <a href={rnode.gorki}>Gorki organisation</a>, the{' '}
-            <a href={rnode.gorkiLegacy}>old node fork</a>, and the{' '}
-            <a href={rnode.rgov}>RGov repository</a> are public.
+            <a href={rnode.gorki} target="_blank" rel="noopener noreferrer">Gorki organisation</a>, the{' '}
+            <a href={rnode.gorkiLegacy} target="_blank" rel="noopener noreferrer">old node fork</a>, and the{' '}
+            <a href={rnode.rgov} target="_blank" rel="noopener noreferrer">RGov repository</a> are public.
           </p>
           <p>
             The port is also a return to the RChain work I left unfinished in 2019–2022;
@@ -312,9 +312,9 @@ export function RnodeRustTab() {
           </p>
           <p>
             I did not design RChain; this record covers the port and verification.{' '}
-            <a href={rnode.arweave}>Arweave snapshot</a> ·{' '}
-            <a href={rnode.legacy}>Legacy Scala tree</a> ·{' '}
-            <a href={rnode.qucalc}>QuCalc research docs</a>.
+            <a href={rnode.arweave} target="_blank" rel="noopener noreferrer">Arweave snapshot</a> ·{' '}
+            <a href={rnode.legacy} target="_blank" rel="noopener noreferrer">Legacy Scala tree</a> ·{' '}
+            <a href={rnode.qucalc} target="_blank" rel="noopener noreferrer">QuCalc research docs</a>.
           </p>
         </div>
       </Section>
@@ -370,7 +370,7 @@ export function RnodeRustTab() {
             laws (23 entries) tied to the running node by conformance corpora, 53 laws (69
             entries) over the model. Two of the 72 are vacuous, leaving 70 non-vacuous. Five
             laws are not counted as proved: law 19 is axiomatized by design, law 63a is open,
-            and three are retired or orphaned. The <a href={rnode.coq}>Coq track</a> defines
+            and three are retired or orphaned. The <a href={rnode.coq} target="_blank" rel="noopener noreferrer">Coq track</a> defines
             the α-equivalence metatheory but states its laws as axioms.
           </li>
           <li>
@@ -395,39 +395,39 @@ export function RnodeRustTab() {
       <Section number="6" title="Links" id="rnode-links">
         <ul className="link-list">
           <li>
-            <a href={rnode.repo}>Repository</a>
+            <a href={rnode.repo} target="_blank" rel="noopener noreferrer">Repository</a>
           </li>
           <li>
-            <a href={rnode.testnetStatus}>Testnet status</a>
+            <a href={rnode.testnetStatus} target="_blank" rel="noopener noreferrer">Testnet status</a>
           </li>
           <li>
-            <a href={rnode.laws}>spec/LAWS.md</a>
+            <a href={rnode.laws} target="_blank" rel="noopener noreferrer">spec/LAWS.md</a>
           </li>
           <li>
-            <a href={rnode.inventory}>spec/INVENTORY.md</a>
+            <a href={rnode.inventory} target="_blank" rel="noopener noreferrer">spec/INVENTORY.md</a>
           </li>
           <li>
-            <a href={rnode.securityAudit}>Security audit</a>
+            <a href={rnode.securityAudit} target="_blank" rel="noopener noreferrer">Security audit</a>
           </li>
           <li>
-            <a href={rnode.methodology}>
+            <a href={rnode.methodology} target="_blank" rel="noopener noreferrer">
               Methodology: law-first port and agentic assurance
             </a>
           </li>
           <li>
-            <a href={rnode.whyRholang}>Why Rholang</a>
+            <a href={rnode.whyRholang} target="_blank" rel="noopener noreferrer">Why Rholang</a>
           </li>
           <li>
-            <a href={rnode.objectCapabilities}>Object capabilities</a>
+            <a href={rnode.objectCapabilities} target="_blank" rel="noopener noreferrer">Object capabilities</a>
           </li>
           <li>
-            <a href={rnode.scaling}>Scaling and performance limits</a>
+            <a href={rnode.scaling} target="_blank" rel="noopener noreferrer">Scaling and performance limits</a>
           </li>
           <li>
-            <a href={rnode.hazop}>HAZOP record</a>
+            <a href={rnode.hazop} target="_blank" rel="noopener noreferrer">HAZOP record</a>
           </li>
           <li>
-            <a href={rnode.rustVsScala}>Rust vs Scala corpus</a>
+            <a href={rnode.rustVsScala} target="_blank" rel="noopener noreferrer">Rust vs Scala corpus</a>
           </li>
         </ul>
       </Section>

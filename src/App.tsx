@@ -54,7 +54,7 @@ export default function App({
               {SITE.name} · {SITE.location}
             </span>
             <span>
-              <a href={MAILTO}>Enquiries</a> · <a href="/cv.pdf">CV (PDF)</a>
+              <a href={MAILTO}>Enquiries</a> · <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
             </span>
           </footer>
         </div>

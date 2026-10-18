@@ -199,7 +199,7 @@ export function CVTab() {
             Romeo–Juliet critical risk-analysis framework; UNISS/Ingenesist
             simulations; DarkFi stack analyses.{' '}
             <a href={pathForTab('research')}>Selected writing</a> ·{' '}
-            <a href={SITE.links.ingenesistArchive}>Ingenesist archive</a>.
+            <a href={SITE.links.ingenesistArchive} target="_blank" rel="noopener noreferrer">Ingenesist archive</a>.
           </p>
         </div>
       </Section>

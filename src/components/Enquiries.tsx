@@ -8,8 +8,8 @@ export function Enquiries() {
         describing the system and the question is sufficient.
       </p>
       <p>
-        {SITE.location} · <a href={SITE.links.github}>GitHub</a> ·{' '}
-        <a href={SITE.links.substack}>Substack</a> · <a href="/cv.pdf">CV (PDF)</a>
+        {SITE.location} · <a href={SITE.links.github} target="_blank" rel="noopener noreferrer">GitHub</a> ·{' '}
+        <a href={SITE.links.substack} target="_blank" rel="noopener noreferrer">Substack</a> · <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
       </p>
     </div>
   )

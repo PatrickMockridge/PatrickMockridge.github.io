@@ -58,7 +58,7 @@ export const PAGE_META: Record<
   research: {
     title: 'Research & Writing — Patrick Mockridge',
     description:
-      'Research and writing on the Romeo–Juliet critical risk-analysis framework, network influence, secrecy, compromise, and the Ingenesist/UNISS simulations.',
+      'Research and writing on the Romeo–Juliet critical risk-analysis framework, network influence, secrecy, compromise, the Ingenesist/UNISS simulations, and an NFL allocation-gap analysis for the Big Data Bowl 2027.',
     path: '/research/',
   },
   contact: {
@@ -106,6 +106,11 @@ export const SITE = {
     rgov: 'https://github.com/rchain-community/rgov',
     rgovPost: 'https://technologytruth.substack.com/p/rgov-and-rhobot',
     testnetStatus: 'https://testnet.rhobot.net/status',
+    nflBigDataBowl: 'https://github.com/PatrickMockridge/nfl-big-data-bowl-2027',
+    nflBigDataBowlWriteup:
+      'https://github.com/PatrickMockridge/nfl-big-data-bowl-2027/blob/main/writeup/submission.md',
+    nflBigDataBowlCompetition:
+      'https://www.kaggle.com/competitions/nfl-big-data-bowl-2027',
   },
 } as const
 

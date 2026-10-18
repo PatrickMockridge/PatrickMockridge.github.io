@@ -68,11 +68,11 @@ export function MudraTab() {
           { label: 'Status', value: 'Research build; v1.0.x; AGPL-3.0-only' },
           {
             label: 'Repository',
-            value: <a href={mudra.repo}>github.com/PatrickMockridge/Mudra</a>,
+            value: <a href={mudra.repo} target="_blank" rel="noopener noreferrer">github.com/PatrickMockridge/Mudra</a>,
           },
           {
             label: 'Documentation',
-            value: <a href={mudra.docs}>docs/</a>,
+            value: <a href={mudra.docs} target="_blank" rel="noopener noreferrer">docs/</a>,
           },
         ]}
       >
@@ -231,34 +231,34 @@ export function MudraTab() {
       <Section number="6" title="Links" id="mudra-links">
         <ul className="link-list">
           <li>
-            <a href={mudra.repo}>Repository</a>
+            <a href={mudra.repo} target="_blank" rel="noopener noreferrer">Repository</a>
           </li>
           <li>
-            <a href={mudra.executive}>Executive summary</a>
+            <a href={mudra.executive} target="_blank" rel="noopener noreferrer">Executive summary</a>
           </li>
           <li>
-            <a href={mudra.unique}>What makes it different</a>
+            <a href={mudra.unique} target="_blank" rel="noopener noreferrer">What makes it different</a>
           </li>
           <li>
-            <a href={mudra.architecture}>Architecture</a>
+            <a href={mudra.architecture} target="_blank" rel="noopener noreferrer">Architecture</a>
           </li>
           <li>
-            <a href={mudra.future}>Future work and limits</a>
+            <a href={mudra.future} target="_blank" rel="noopener noreferrer">Future work and limits</a>
           </li>
           <li>
-            <a href={mudra.demos}>Demos</a>
+            <a href={mudra.demos} target="_blank" rel="noopener noreferrer">Demos</a>
           </li>
           <li>
-            <a href={mudra.insurance}>Insurance case study</a>
+            <a href={mudra.insurance} target="_blank" rel="noopener noreferrer">Insurance case study</a>
           </li>
           <li>
-            <a href={mudra.fiscal}>Fiscal metering case study</a>
+            <a href={mudra.fiscal} target="_blank" rel="noopener noreferrer">Fiscal metering case study</a>
           </li>
           <li>
-            <a href={mudra.lean}>Lean specification</a>
+            <a href={mudra.lean} target="_blank" rel="noopener noreferrer">Lean specification</a>
           </li>
           <li>
-            <a href={mudra.npm}>npm package</a>
+            <a href={mudra.npm} target="_blank" rel="noopener noreferrer">npm package</a>
           </li>
         </ul>
       </Section>
