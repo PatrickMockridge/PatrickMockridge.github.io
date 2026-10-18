@@ -83,7 +83,7 @@ const NOVEL_ROWS: ComparisonRow[] = [
       <>
         Box is linear capability delegation: Put/Take with nullifier consumption. Purse is a
         fungible capability container with hidden balances via Pedersen commitments. Both are
-        fork-original and ZK-only: I designed them as capability primitives whose state is
+        fork-original and ZK-only: I invented them as capability primitives whose state is
         proved, not merely stored.
       </>,
       'Genesis contracts, labelled proven.',
@@ -105,7 +105,7 @@ const NOVEL_ROWS: ComparisonRow[] = [
     header: 'Pedersen block mass balance',
     cells: [
       <>
-        I designed the block-level Pedersen mass balance after the Orchard-class exploit
+        I invented the block-level Pedersen mass balance after the Orchard-class exploit
         was announced. Every block with native-token calls carries a mass balance and a
         cumulative supply commitment; the Halo2 gadgets cover the ZK side, and the block
         proof closes phantom counterfeit minting at the block boundary.
