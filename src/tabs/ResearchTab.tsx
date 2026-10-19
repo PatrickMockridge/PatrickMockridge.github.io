@@ -100,48 +100,31 @@ export function ResearchTab() {
         <div className="prose">
           <p>
             The framework’s most recent extension is an entry to the 2027 NFL Big Data
-            Bowl. It works from the 2023–2025 draft classes — 510 players, 543
-            player-seasons with movement and performance, 233 with a next season, and a
-            909-player 2025 cap ledger — and asks what the 10 Hz Combine signal
-            measures and whether the people who allocate snaps and dollars use it.
+            Bowl. Using the 2023–2025 draft classes, it asks whether the 10 Hz Combine
+            signal measures something real — and whether the people who allocate
+            playing time and cap dollars act on it.
           </p>
           <p>
-            The pure finding is a pressure signal. For interior defensive linemen, a
-            burst of max speed and first-step acceleration predicts pressure (+0.354 SD
-            per SD; 95% CI 0.143 to 0.565; n = 64) and sacks (+0.317; 0.083 to 0.550; n
-            = 63). The 40-yard dash and 10-yard split do not carry the pressure signal
-            (joint p = 0.998; out-of-sample R² −0.113 versus +0.178 for the burst). The
-            signal is position-specific: the movement composite predicts defensive-line
-            performance (+0.734; 0.461 to 1.007; n = 175), is marginal for receivers
-            (+0.366; p = 0.084), and is not detectable for offensive linemen (+0.058) or
-            tight ends (+0.093); the pooled +0.299 is a defensive-line result. The
-            defensive-line outcome is get-off, so that part is also a validity check.
+            The signal is real, but narrower than the usual story. A burst of speed and
+            acceleration predicts interior pressure and sacks; the 40-yard dash and
+            10-yard split do not. It is a defensive-line result: strong there, marginal
+            at receiver, undetectable on the offensive line and at tight end.
           </p>
           <p>
-            The cap pays for performance: on the full 2025 ledger, one SD of measured
-            performance is associated with +0.328 log points of cap charge (95% CI
-            0.264 to 0.392; n = 909), and +0.143 with playing time added. The depth
-            chart does not: next-season snaps follow current snaps (+0.606) and draft
-            position (+0.785), while performance is −0.011 (95% CI −0.119 to 0.097; n =
-            233) — absence of evidence, not proof of zero. Week to week the same pattern
-            holds (+0.753 for prior snaps; −0.006 for performance). The allocation gap
-            is descriptive: late picks and undrafted players perform 0.59 SD above their
-            role and early picks 0.92 below, with about nine parts role to one part
-            performance. A two-agent model calibrated to the role and pay equations puts
-            the coach’s performance weight at −0.13 and the GM’s at +0.14; aligning them
-            raises the top-performance group’s role by 0.32 SD — model-reproduced, not
-            identified.
+            The allocation gap is the point. The cap pays for performance; the depth
+            chart does not. Next season’s snaps follow this season’s snaps and draft
+            position, not performance. Late picks and undrafted players perform above
+            their playing time, early picks below it. A two-agent model calibrated to
+            the observed playing-time and pay rules shows the same wedge — the coach’s
+            performance weight is marginal, the GM’s positive — and aligning them would
+            move playing time toward the top performers. That is a model result, not an
+            identified cause.
           </p>
           <p>
-            The RJF/Yellow Square lens is offered as a perspective, not as confirmation.
-            The preregistered transition-zone test returned a wide null (Yellow +0.176;
-            p = 0.077; n = 30; 2024–25 +0.144; p = 0.18; n = 23), alongside null Möbius
-            and pond increments. The entry reports it as fallback evidence that rules
-            out only large effects. The claims are observational, not causal; the cap
-            and Combine halves use different performance measures; the offensive-line
-            and tight-end nulls may be attenuation; defensive-back performance is
-            excluded as unidentifiable; and the monthly review is a process choice, not
-            a tested cadence.
+            The RJF/Yellow Square test is offered as a perspective, not confirmation:
+            the preregistered transition-zone result did not find a detectable effect. The
+            claims are observational, the two halves use different performance
+            measures, and defensive backs are excluded as unidentifiable.
           </p>
         </div>
         <ul className="link-list">
