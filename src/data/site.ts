@@ -58,7 +58,7 @@ export const PAGE_META: Record<
   research: {
     title: 'Research & Writing — Patrick Mockridge',
     description:
-      'Research and writing on the Romeo–Juliet critical risk-analysis framework, network influence, secrecy, compromise, the Ingenesist/UNISS simulations, and an NFL allocation-gap analysis for the Big Data Bowl 2027.',
+      'Research and writing on the Romeo–Juliet critical risk-analysis framework, network influence, secrecy, compromise, the Ingenesist/UNISS simulations, and an NFL Big Data Bowl 2027 analysis of the Combine pressure signal and the playing-time allocation gap.',
     path: '/research/',
   },
   contact: {
@@ -109,6 +109,8 @@ export const SITE = {
     nflBigDataBowl: 'https://github.com/PatrickMockridge/nfl-big-data-bowl-2027',
     nflBigDataBowlWriteup:
       'https://github.com/PatrickMockridge/nfl-big-data-bowl-2027/blob/main/writeup/submission.md',
+    nflBigDataBowlNotebook:
+      'https://www.kaggle.com/code/patrickm/nfl-bdb-2027-the-allocation-gap',
     nflBigDataBowlCompetition:
       'https://www.kaggle.com/competitions/nfl-big-data-bowl-2027',
   },
