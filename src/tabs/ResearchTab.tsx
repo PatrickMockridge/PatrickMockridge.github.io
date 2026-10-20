@@ -99,32 +99,39 @@ export function ResearchTab() {
       <Section number="3" title="NFL / Big Data Bowl 2027" id="nfl-big-data-bowl">
         <div className="prose">
           <p>
-            The framework’s most recent extension is an entry to the 2027 NFL Big Data
-            Bowl. Using the 2023–2025 draft classes, it asks whether the 10 Hz Combine
-            signal measures something real — and whether the people who allocate
-            playing time and cap dollars act on it.
+            The NFL work has two parts: a judged Big Data Bowl entry and a follow-on
+            valuation of what the allocation gap is worth.
           </p>
           <p>
-            The signal is real, but narrower than the usual story. A burst of speed and
-            acceleration predicts interior pressure and sacks; the 40-yard dash and
-            10-yard split do not. It is a defensive-line result: strong there, marginal
-            at receiver, undetectable on the offensive line and at tight end.
+            <strong>Big Data Bowl entry.</strong> A judged entry to the 2027
+            competition. It tests the 10 Hz Combine signal against the stopwatch: a
+            burst of speed and acceleration predicts interior pressure and sacks, while
+            the 40-yard dash and 10-yard split do not. The signal is position-specific —
+            real on the defensive line, marginal at receiver, absent on the offensive
+            line and at tight end. The entry’s second finding is an allocation gap: the
+            cap pays for performance, but the depth chart follows prior snaps and draft
+            position, not measured performance. The preregistered RJF/Yellow Square test
+            found no detectable effect; it is reported as a perspective, not
+            confirmation.
           </p>
           <p>
-            The allocation gap is the point. The cap pays for performance; the depth
-            chart does not. Next season’s snaps follow this season’s snaps and draft
-            position, not performance. Late picks and undrafted players perform above
-            their playing time, early picks below it. A two-agent model calibrated to
-            the observed playing-time and pay rules shows the same wedge — the coach’s
-            performance weight is marginal, the GM’s positive — and aligning them would
-            move playing time toward the top performers. That is a model result, not an
-            identified cause.
+            <strong>The dollar findings.</strong> A follow-on valuation prices that gap
+            in the free-agent market. On the actual 2026 class, the median team carries
+            about $7.0M a year of role premium — pay that tracks playing time beyond
+            measured performance — or $6.0M net after a $1M implementation cost. The
+            role premium is +0.179 log points on 2026 APY (95% CI 0.022–0.336, n=306),
+            close to +0.185 on the 2025 cap ledger. The team distribution is wide:
+            $1.8M at P10, $7.0M at the median, $22.5M at P90. Limited to EDGE, safety
+            and corner, the conservative estimate falls to $1.4M gross ($0.4M net); the
+            low case is near zero. The premium is concentrated — the top 10% of
+            contracts carry 51% of it.
           </p>
           <p>
-            The RJF/Yellow Square test is offered as a perspective, not confirmation:
-            the preregistered transition-zone result did not find a detectable effect. The
-            claims are observational, the two halves use different performance
-            measures, and defensive backs are excluded as unidentifiable.
+            These are inferences from the 2026 signing class, not forecasts or causal
+            estimates. The bottom-up figure replaces an earlier top-down $24.9M estimate
+            that described an upper-tail synthetic portfolio, not the median team. The
+            claims are observational, the cap and Combine halves use different
+            performance measures, and defensive backs are excluded as unidentifiable.
           </p>
         </div>
         <ul className="link-list">
@@ -144,6 +151,15 @@ export function ResearchTab() {
               rel="noopener noreferrer"
             >
               Writeup
+            </a>
+          </li>
+          <li>
+            <a
+              href={SITE.links.nflFreeAgency}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Free-agency valuation
             </a>
           </li>
           <li>
