@@ -99,39 +99,26 @@ export function ResearchTab() {
       <Section number="3" title="NFL / Big Data Bowl 2027" id="nfl-big-data-bowl">
         <div className="prose">
           <p>
-            The NFL work has two parts: a judged Big Data Bowl entry and a follow-on
-            valuation of what the allocation gap is worth.
+            <strong>Big Data Bowl entry.</strong> A judged entry to the 2027 NFL Big
+            Data Bowl. A 10 Hz Combine burst of speed and acceleration predicts
+            interior pressure and sacks; the 40-yard dash and 10-yard split do not. The
+            signal is position-specific — real on the defensive line, marginal at
+            receiver, absent on the offensive line and at tight end. The entry’s second
+            finding is an allocation gap: the cap pays for performance, but the depth
+            chart follows prior snaps and draft position, not measured performance. The
+            preregistered RJF/Yellow Square test found no detectable effect and is
+            reported as a perspective, not confirmation.
           </p>
           <p>
-            <strong>Big Data Bowl entry.</strong> A judged entry to the 2027
-            competition. It tests the 10 Hz Combine signal against the stopwatch: a
-            burst of speed and acceleration predicts interior pressure and sacks, while
-            the 40-yard dash and 10-yard split do not. The signal is position-specific —
-            real on the defensive line, marginal at receiver, absent on the offensive
-            line and at tight end. The entry’s second finding is an allocation gap: the
-            cap pays for performance, but the depth chart follows prior snaps and draft
-            position, not measured performance. The preregistered RJF/Yellow Square test
-            found no detectable effect; it is reported as a perspective, not
-            confirmation.
-          </p>
-          <p>
-            <strong>The dollar findings.</strong> A follow-on valuation prices that gap
-            in the free-agent market. On the actual 2026 class, the median team carries
-            about $7.0M a year of role premium — pay that tracks playing time beyond
-            measured performance — or $6.0M net after a $1M implementation cost. The
-            role premium is +0.179 log points on 2026 APY (95% CI 0.022–0.336, n=306),
-            close to +0.185 on the 2025 cap ledger. The team distribution is wide:
-            $1.8M at P10, $7.0M at the median, $22.5M at P90. Limited to EDGE, safety
-            and corner, the conservative estimate falls to $1.4M gross ($0.4M net); the
-            low case is near zero. The premium is concentrated — the top 10% of
-            contracts carry 51% of it.
-          </p>
-          <p>
-            These are inferences from the 2026 signing class, not forecasts or causal
-            estimates. The bottom-up figure replaces an earlier top-down $24.9M estimate
-            that described an upper-tail synthetic portfolio, not the median team. The
-            claims are observational, the cap and Combine halves use different
-            performance measures, and defensive backs are excluded as unidentifiable.
+            <strong>The dollar findings.</strong> The follow-on valuation prices that
+            gap. On the actual 2026 free-agent class, the median team carries about
+            $7.0M a year of role premium — pay that tracks playing time beyond measured
+            performance — or $6.0M net after a $1M implementation cost. The role premium
+            is +0.179 log points on 2026 APY (95% CI 0.022–0.336, n=306), close to
+            +0.185 on the 2025 cap ledger. The team distribution runs from $1.8M at P10
+            to $22.5M at P90, while the conservative EDGE/safety/corner case is $1.4M
+            gross ($0.4M net); the top 10% of contracts carry 51% of the premium. These
+            are inferences from the 2026 class, not forecasts or causal estimates.
           </p>
         </div>
         <ul className="link-list">
