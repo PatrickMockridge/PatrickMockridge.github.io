@@ -10,6 +10,7 @@ export function HeaderLine() {
       <nav className="header-links" aria-label="Contact and links">
         <a href={SITE.links.github} target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href={SITE.links.substack} target="_blank" rel="noopener noreferrer">Substack</a>
+        <a href={SITE.links.fitba} target="_blank" rel="noopener noreferrer">fitba</a>
         <a href={MAILTO}>Email</a>
         <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
         <span className="header-date">{SITE.updated}</span>

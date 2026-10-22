@@ -89,6 +89,7 @@ export const SITE = {
   links: {
     github: 'https://github.com/PatrickMockridge',
     substack: 'https://technologytruth.substack.com/',
+    fitba: 'https://patrickmockridge.github.io/fitba/',
     darkwowRepo: 'https://github.com/PatrickMockridge/DarkWow',
     rnodeRepo: 'https://github.com/rchain-community/rchain-rust',
     azothRepo: 'https://github.com/PatrickMockridge/Azoth',
