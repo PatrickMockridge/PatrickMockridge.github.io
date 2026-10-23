@@ -18,7 +18,7 @@ npm run lint
 - `src/data/` — links, evidence rows, research posts.
 - `src/styles/` — tokens, global styles, window chrome, casework, print.
 
-Project naming: the RChain node record is displayed as **Rholo**; the repository is
+Project naming: the former RChain node record is displayed as **Rholo**; the repository is
 `rhovision-org/rholo`. Legacy queries `?tab=rchain-rust` and `?tab=rnode-rust` resolve to
 `?tab=rholo` and canonicalise the URL; `/rnode-rust/` redirects to `/rholo/`.
 - `public/` — fonts, favicon, social image, printable CV, 404 page.

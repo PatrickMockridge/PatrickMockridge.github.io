@@ -124,7 +124,7 @@ export function RholoTab() {
           {
             label: 'Role',
             value:
-              'Scala-to-Rust port of the RChain node; law-first conformance and agentic assurance',
+              'Scala-to-Rust port of the former RChain node; law-first conformance and agentic assurance',
           },
           {
             label: 'Period',
@@ -157,7 +157,7 @@ export function RholoTab() {
         <WhatWhy
           what={
             <>
-              Rholo is a Rust implementation of the RChain node: Rholang and RSpace, Casper consensus,
+              Rholo is a Rust implementation of the former RChain node: Rholang and RSpace, Casper consensus,
               storage, networking, and OCapN, ported crate by crate from the preserved Scala
               reference.
             </>
@@ -165,7 +165,7 @@ export function RholoTab() {
           why={
             <>
               The common pattern puts concurrency in the runtime and authority in a permission
-              check. RChain makes both structural: processes compose with <code>|</code>, and
+              check. RChain made both structural: processes compose with <code>|</code>, and
               an unforgeable <code>new</code> name is the authority. The port keeps that
               concurrent, replicated state machine running and tests its laws against a
               machine; the organisation dissolved in 2022.
@@ -185,7 +185,7 @@ export function RholoTab() {
         <ComparisonTable
           variant="matrix"
           caption="Table 1. Models of computation, by capability."
-          subtitle="Six formal models scored on six properties. ρ is the only row marked for all six capabilities in this table; the ladder continues into the Calculus of Constructions, where RChain embeds ρ as a base sort."
+          subtitle="Six formal models scored on six properties. ρ is the only row marked for all six capabilities in this table; the ladder continues into the Calculus of Constructions, where RChain embedded ρ as a base sort."
           columns={CALCULUS_COLUMNS}
           rows={CALCULUS_ROWS}
           note={CALCULUS_NOTE}
@@ -193,7 +193,7 @@ export function RholoTab() {
         <div className="prose">
           <p>
             λ is substitution; π adds concurrency and mobility; ρ makes a name a quoted
-            process (<code>@P</code>/<code>*x</code>); RChain embeds ρ as a base sort of a
+            process (<code>@P</code>/<code>*x</code>); RChain embedded ρ as a base sort of a
             Calculus of Constructions (<a href={rholo.typeSystem} target="_blank" rel="noopener noreferrer">type system</a>).
           </p>
         </div>
@@ -237,7 +237,7 @@ export function RholoTab() {
         <div className="prose">
           <p>
             Original: the Rust node, the Lean laws, the conformance corpora, and the assurance
-            record. Inherited: the RChain protocol and the upstream Scala, pinned at{' '}
+            record. Inherited: the former RChain protocol and the upstream Scala, pinned at{' '}
             <code>1b7583649</code> and restorable with{' '}
             <code>git checkout 1b7583649 -- legacy</code>. A code snapshot at{' '}
             <code>14b8b77</code> is timestamped on Arweave, 22 August 2026. Rust is AGPL-3.0;

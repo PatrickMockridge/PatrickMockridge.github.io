@@ -161,7 +161,7 @@ export function CVTab() {
               body: (
                 <>
                   Independent research and writing: network analysis, evidence archiving,
-                  influence/secrecy simulation; RChain continuity: Gorki/BigSur old-node
+                  influence/secrecy simulation; RChain legacy work: Gorki/BigSur old-node
                   fork, RGov/Rhobot recovery proposal with Jim Whitescarver (2024);
                   UNISS/Ingenesist simulations (2026).
                 </>
