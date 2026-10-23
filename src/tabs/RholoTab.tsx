@@ -4,7 +4,7 @@ import { MethodRefrain } from '../components/MethodRefrain'
 import { Section } from '../components/Section'
 import { TitleBlock } from '../components/TitleBlock'
 import { WhatWhy } from '../components/WhatWhy'
-import { rnode, rnodeEvidence } from '../data/projects'
+import { rholo, rholoEvidence } from '../data/projects'
 
 const THE_BLOCK_2018 =
   'https://www.theblock.co/news/markets/2018-12-20-rchain-cooperative-functionally-bankrupt-after-questionable-deals-with-investors-and-developers-losing-faith-5244'
@@ -45,7 +45,7 @@ const CALCULUS_ROWS: ComparisonRow[] = [
 ]
 
 const CALCULUS_NOTE =
-  'Adapted from the rnode-rust README table; Mobility replaces Complexity; the score is an equal-weight capability count, not a ranking. Petri is plain P/T (extensions make Complete true); π/ρ behavioural-type marks denote existing systems, not maturity.'
+  'Adapted from the Rholo README table; Mobility replaces Complexity; the score is an equal-weight capability count, not a ranking. Petri is plain P/T (extensions make Complete true); π/ρ behavioural-type marks denote existing systems, not maturity.'
 
 const CLAIM_COLUMNS = [
   { label: 'Claim' },
@@ -113,12 +113,12 @@ const CLAIM_ROWS: ComparisonRow[] = [
   },
 ]
 
-export function RnodeRustTab() {
+export function RholoTab() {
   return (
     <>
       <TitleBlock
         descriptor="Model and node"
-        title="rnode-rust"
+        title="Rholo"
         subtitle="A Rust node for the ρ-calculus: native object capabilities, horizontal scale-out by design, and laws proved at the model and tied to the node."
         metadata={[
           {
@@ -136,7 +136,7 @@ export function RnodeRustTab() {
             value: (
               <>
                 Pre-release; a community testnet is live at{' '}
-                <a href={rnode.testnetStatus} target="_blank" rel="noopener noreferrer">testnet.rhobot.net/status</a>; the project
+                <a href={rholo.testnetStatus} target="_blank" rel="noopener noreferrer">testnet.rhobot.net/status</a>; the project
                 calls itself pre-testnet because no stable testnet is declared; no
                 production release.
               </>
@@ -145,19 +145,19 @@ export function RnodeRustTab() {
           {
             label: 'Repository',
             value: (
-              <a href={rnode.repo} target="_blank" rel="noopener noreferrer">github.com/rchain-community/rchain-rust</a>
+              <a href={rholo.repo} target="_blank" rel="noopener noreferrer">github.com/rhovision-org/rholo</a>
             ),
           },
           {
             label: 'Documentation',
-            value: <a href={rnode.docs} target="_blank" rel="noopener noreferrer">docs/src</a>,
+            value: <a href={rholo.docs} target="_blank" rel="noopener noreferrer">docs/src</a>,
           },
         ]}
       >
         <WhatWhy
           what={
             <>
-              A Rust implementation of the RChain node: Rholang and RSpace, Casper consensus,
+              Rholo is a Rust implementation of the RChain node: Rholang and RSpace, Casper consensus,
               storage, networking, and OCapN, ported crate by crate from the preserved Scala
               reference.
             </>
@@ -181,7 +181,7 @@ export function RnodeRustTab() {
         />
       </TitleBlock>
 
-      <Section number="1" title="The model" id="rnode-model">
+      <Section number="1" title="The model" id="rholo-model">
         <ComparisonTable
           variant="matrix"
           caption="Table 1. Models of computation, by capability."
@@ -194,7 +194,7 @@ export function RnodeRustTab() {
           <p>
             λ is substitution; π adds concurrency and mobility; ρ makes a name a quoted
             process (<code>@P</code>/<code>*x</code>); RChain embeds ρ as a base sort of a
-            Calculus of Constructions (<a href={rnode.typeSystem} target="_blank" rel="noopener noreferrer">type system</a>).
+            Calculus of Constructions (<a href={rholo.typeSystem} target="_blank" rel="noopener noreferrer">type system</a>).
           </p>
         </div>
         <ComparisonTable
@@ -208,7 +208,7 @@ export function RnodeRustTab() {
 
       <MethodRefrain />
 
-      <Section number="2" title="Design" id="rnode-design">
+      <Section number="2" title="Design" id="rholo-design">
         <ul className="prose">
           <li>
             <strong>A name is a quoted process.</strong> Reflection is primitive:{' '}
@@ -233,7 +233,7 @@ export function RnodeRustTab() {
         </ul>
       </Section>
 
-      <Section number="3" title="Provenance and rescue" id="rnode-provenance">
+      <Section number="3" title="Provenance and rescue" id="rholo-provenance">
         <div className="prose">
           <p>
             Original: the Rust node, the Lean laws, the conformance corpora, and the assurance
@@ -300,11 +300,11 @@ export function RnodeRustTab() {
         <div className="prose">
           <p>
             Earlier continuity work: in 2024 I co-authored the{' '}
-            <a href={rnode.rgovPost} target="_blank" rel="noopener noreferrer">RGov/Rhobot recovery proposal</a> for REV/RChain with
+            <a href={rholo.rgovPost} target="_blank" rel="noopener noreferrer">RGov/Rhobot recovery proposal</a> for REV/RChain with
             Jim Whitescarver; the old RNode was forked into the Gorki/BigSur project. The{' '}
-            <a href={rnode.gorki} target="_blank" rel="noopener noreferrer">Gorki organisation</a>, the{' '}
-            <a href={rnode.gorkiLegacy} target="_blank" rel="noopener noreferrer">old node fork</a>, and the{' '}
-            <a href={rnode.rgov} target="_blank" rel="noopener noreferrer">RGov repository</a> are public.
+            <a href={rholo.gorki} target="_blank" rel="noopener noreferrer">Gorki organisation</a>, the{' '}
+            <a href={rholo.gorkiLegacy} target="_blank" rel="noopener noreferrer">old node fork</a>, and the{' '}
+            <a href={rholo.rgov} target="_blank" rel="noopener noreferrer">RGov repository</a> are public.
           </p>
           <p>
             The port is also a return to the RChain work I left unfinished in 2019–2022;
@@ -312,17 +312,17 @@ export function RnodeRustTab() {
           </p>
           <p>
             I did not design RChain; this record covers the port and verification.{' '}
-            <a href={rnode.arweave} target="_blank" rel="noopener noreferrer">Arweave snapshot</a> ·{' '}
-            <a href={rnode.legacy} target="_blank" rel="noopener noreferrer">Legacy Scala tree</a> ·{' '}
-            <a href={rnode.qucalc} target="_blank" rel="noopener noreferrer">QuCalc research docs</a>.
+            <a href={rholo.arweave} target="_blank" rel="noopener noreferrer">Arweave snapshot</a> ·{' '}
+            <a href={rholo.legacy} target="_blank" rel="noopener noreferrer">Legacy Scala tree</a> ·{' '}
+            <a href={rholo.qucalc} target="_blank" rel="noopener noreferrer">QuCalc research docs</a>.
           </p>
         </div>
       </Section>
 
-      <Section number="4" title="Evidence" id="rnode-evidence">
+      <Section number="4" title="Evidence" id="rholo-evidence">
         <EvidenceTable
-          rows={rnodeEvidence}
-          caption="rnode-rust evidence"
+          rows={rholoEvidence}
+          caption="Rholo evidence"
           note="Sources: repository README and specification documents, as of October 2026. Counts drift; the linked artifact is authoritative."
         />
         <div className="crate-map">
@@ -356,7 +356,7 @@ export function RnodeRustTab() {
         </div>
       </Section>
 
-      <Section number="5" title="Limits" id="rnode-limits">
+      <Section number="5" title="Limits" id="rholo-limits">
         <ul className="prose">
           <li>
             <strong>No external audit firm.</strong> The security record is a written, gated
@@ -370,7 +370,7 @@ export function RnodeRustTab() {
             laws (23 entries) tied to the running node by conformance corpora, 53 laws (69
             entries) over the model. Two of the 72 are vacuous, leaving 70 non-vacuous. Five
             laws are not counted as proved: law 19 is axiomatized by design, law 63a is open,
-            and three are retired or orphaned. The <a href={rnode.coq} target="_blank" rel="noopener noreferrer">Coq track</a> defines
+            and three are retired or orphaned. The <a href={rholo.coq} target="_blank" rel="noopener noreferrer">Coq track</a> defines
             the α-equivalence metatheory but states its laws as axioms.
           </li>
           <li>
@@ -392,42 +392,42 @@ export function RnodeRustTab() {
         </ul>
       </Section>
 
-      <Section number="6" title="Links" id="rnode-links">
+      <Section number="6" title="Links" id="rholo-links">
         <ul className="link-list">
           <li>
-            <a href={rnode.repo} target="_blank" rel="noopener noreferrer">Repository</a>
+            <a href={rholo.repo} target="_blank" rel="noopener noreferrer">Repository</a>
           </li>
           <li>
-            <a href={rnode.testnetStatus} target="_blank" rel="noopener noreferrer">Testnet status</a>
+            <a href={rholo.testnetStatus} target="_blank" rel="noopener noreferrer">Testnet status</a>
           </li>
           <li>
-            <a href={rnode.laws} target="_blank" rel="noopener noreferrer">spec/LAWS.md</a>
+            <a href={rholo.laws} target="_blank" rel="noopener noreferrer">spec/LAWS.md</a>
           </li>
           <li>
-            <a href={rnode.inventory} target="_blank" rel="noopener noreferrer">spec/INVENTORY.md</a>
+            <a href={rholo.inventory} target="_blank" rel="noopener noreferrer">spec/INVENTORY.md</a>
           </li>
           <li>
-            <a href={rnode.securityAudit} target="_blank" rel="noopener noreferrer">Security audit</a>
+            <a href={rholo.securityAudit} target="_blank" rel="noopener noreferrer">Security audit</a>
           </li>
           <li>
-            <a href={rnode.methodology} target="_blank" rel="noopener noreferrer">
+            <a href={rholo.methodology} target="_blank" rel="noopener noreferrer">
               Methodology: law-first port and agentic assurance
             </a>
           </li>
           <li>
-            <a href={rnode.whyRholang} target="_blank" rel="noopener noreferrer">Why Rholang</a>
+            <a href={rholo.whyRholang} target="_blank" rel="noopener noreferrer">Why Rholang</a>
           </li>
           <li>
-            <a href={rnode.objectCapabilities} target="_blank" rel="noopener noreferrer">Object capabilities</a>
+            <a href={rholo.objectCapabilities} target="_blank" rel="noopener noreferrer">Object capabilities</a>
           </li>
           <li>
-            <a href={rnode.scaling} target="_blank" rel="noopener noreferrer">Scaling and performance limits</a>
+            <a href={rholo.scaling} target="_blank" rel="noopener noreferrer">Scaling and performance limits</a>
           </li>
           <li>
-            <a href={rnode.hazop} target="_blank" rel="noopener noreferrer">HAZOP record</a>
+            <a href={rholo.hazop} target="_blank" rel="noopener noreferrer">HAZOP record</a>
           </li>
           <li>
-            <a href={rnode.rustVsScala} target="_blank" rel="noopener noreferrer">Rust vs Scala corpus</a>
+            <a href={rholo.rustVsScala} target="_blank" rel="noopener noreferrer">Rust vs Scala corpus</a>
           </li>
         </ul>
       </Section>

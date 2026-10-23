@@ -282,7 +282,7 @@ export function DarkWowTab() {
           <p>
             The contract design is a direct descendant of the Rholang/RChain work: a name is
             authority, capabilities compose, and the constraints have to be enforced from
-            the beginning. The rnode-rust port is the other side of that lineage; the lessons
+            the beginning. The Rholo port is the other side of that lineage; the lessons
             of what happens when those constraints are not enforced are part of why this
             contract set is ZK-only.
           </p>

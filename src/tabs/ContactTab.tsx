@@ -25,7 +25,7 @@ export function ContactTab() {
         </p>
         <p>
           Work samples: <a href={pathForTab('darkwow')}>DarkWow</a> (protocol),{' '}
-          <a href={pathForTab('rnode-rust')}>rnode-rust</a> (rescue/port),{' '}
+          <a href={pathForTab('rholo')}>Rholo</a> (rescue/port),{' '}
           <a href={pathForTab('azoth')}>Azoth</a> (numerical provenance),{' '}
           <a href={pathForTab('mudra')}>Mudra</a> (proof of trace).
         </p>

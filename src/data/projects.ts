@@ -9,7 +9,7 @@ export interface EvidenceRow {
 }
 
 const darkWowBase = `${SITE.links.darkwowRepo}/blob/linear-master`
-const rnodeBase = `${SITE.links.rnodeRepo}/blob/dev`
+const rholoBase = `${SITE.links.rholoRepo}/blob/dev`
 
 export const darkWow = {
   repo: SITE.links.darkwowRepo,
@@ -28,30 +28,30 @@ export const darkWow = {
   halo2: 'https://z.cash/ecc-releases-code-for-halo-2/',
 }
 
-export const rnode = {
-  repo: SITE.links.rnodeRepo,
-  docs: `${SITE.links.rnodeRepo}/tree/dev/docs/src`,
-  laws: `${rnodeBase}/spec/LAWS.md`,
-  inventory: `${rnodeBase}/spec/INVENTORY.md`,
-  coq: `${rnodeBase}/spec/coq/README.md`,
-  audit: `${rnodeBase}/spec/AUDIT.md`,
-  passes: `${rnodeBase}/spec/audit/passes.md`,
-  hazop: `${rnodeBase}/docs/src/spec/failure-hazop.md`,
-  adversary: `${rnodeBase}/docs/src/spec/adversary.md`,
-  rustVsScala: `${rnodeBase}/spec/RUST-VS-SCALA.md`,
-  coverage: `${rnodeBase}/spec/COVERAGE-LEDGER.md`,
-  testCoverage: `${rnodeBase}/spec/TEST-COVERAGE.md`,
-  qucalc: `${rnodeBase}/docs/src/qucalc`,
-  methodology: `${SITE.links.rnodeRepo}/tree/dev/docs/src/methodology`,
-  securityAudit: `${SITE.links.rnodeRepo}/blob/dev/docs/src/node/security-audit.md`,
-  whyRholang: `${rnodeBase}/docs/src/rholang/why-rholang.md`,
-  objectCapabilities: `${rnodeBase}/docs/src/rholang/object-capabilities.md`,
-  scaling: `${rnodeBase}/docs/src/node/scaling.md`,
-  crossShard: `${rnodeBase}/docs/src/formal/cross-shard-transactions.md`,
-  concurrency: `${rnodeBase}/docs/src/formal/concurrency.md`,
-  typeSystem: `${rnodeBase}/spec/TYPE-SYSTEM.md`,
+export const rholo = {
+  repo: SITE.links.rholoRepo,
+  docs: `${SITE.links.rholoRepo}/tree/dev/docs/src`,
+  laws: `${rholoBase}/spec/LAWS.md`,
+  inventory: `${rholoBase}/spec/INVENTORY.md`,
+  coq: `${rholoBase}/spec/coq/README.md`,
+  audit: `${rholoBase}/spec/AUDIT.md`,
+  passes: `${rholoBase}/spec/audit/passes.md`,
+  hazop: `${rholoBase}/docs/src/spec/failure-hazop.md`,
+  adversary: `${rholoBase}/docs/src/spec/adversary.md`,
+  rustVsScala: `${rholoBase}/spec/RUST-VS-SCALA.md`,
+  coverage: `${rholoBase}/spec/COVERAGE-LEDGER.md`,
+  testCoverage: `${rholoBase}/spec/TEST-COVERAGE.md`,
+  qucalc: `${rholoBase}/docs/src/qucalc`,
+  methodology: `${SITE.links.rholoRepo}/tree/dev/docs/src/methodology`,
+  securityAudit: `${SITE.links.rholoRepo}/blob/dev/docs/src/node/security-audit.md`,
+  whyRholang: `${rholoBase}/docs/src/rholang/why-rholang.md`,
+  objectCapabilities: `${rholoBase}/docs/src/rholang/object-capabilities.md`,
+  scaling: `${rholoBase}/docs/src/node/scaling.md`,
+  crossShard: `${rholoBase}/docs/src/formal/cross-shard-transactions.md`,
+  concurrency: `${rholoBase}/docs/src/formal/concurrency.md`,
+  typeSystem: `${rholoBase}/spec/TYPE-SYSTEM.md`,
   arweave: 'https://arweave.net/MK4WA8w3NTIIFd6iaD06EPyxVbFhoV9MtfhMNcHWWMw',
-  legacy: `${SITE.links.rnodeRepo}/tree/1b7583649/legacy`,
+  legacy: `${SITE.links.rholoRepo}/tree/1b7583649/legacy`,
   testnetStatus: SITE.links.testnetStatus,
   rgovPost: SITE.links.rgovPost,
   gorki: SITE.links.gorki,
@@ -150,66 +150,66 @@ export const darkWowEvidence: EvidenceRow[] = [
   },
 ]
 
-export const rnodeEvidence: EvidenceRow[] = [
+export const rholoEvidence: EvidenceRow[] = [
   {
     measure: 'Rholang laws',
     value: '72 of 77 proved at all',
-    source: { label: 'spec/LAWS.md', href: rnode.laws },
+    source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
     measure: 'Non-vacuous proofs',
     value: '70',
-    source: { label: 'spec/LAWS.md', href: rnode.laws },
+    source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
     measure: 'Laws tied to the node',
     value: '19 (23 entries)',
-    source: { label: 'spec/INVENTORY.md', href: rnode.inventory },
+    source: { label: 'spec/INVENTORY.md', href: rholo.inventory },
   },
   {
     measure: 'Laws proved over the model',
     value: '53 (69 entries)',
-    source: { label: 'spec/INVENTORY.md', href: rnode.inventory },
+    source: { label: 'spec/INVENTORY.md', href: rholo.inventory },
   },
   {
     measure: 'Vacuous proofs',
     value: '2',
-    source: { label: 'spec/LAWS.md', href: rnode.laws },
+    source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
     measure: 'Laws not counted as proved',
     value: '5: law 19 axiomatized, law 63a open, 3 retired/orphaned',
-    source: { label: 'spec/INVENTORY.md', href: rnode.inventory },
+    source: { label: 'spec/INVENTORY.md', href: rholo.inventory },
   },
   {
     measure: 'First-party crates',
     value: '14; 0 unsafe',
-    source: { label: 'README', href: rnode.repo },
+    source: { label: 'README', href: rholo.repo },
   },
   {
     measure: 'Tests',
     value: '2,281 test functions (README, 15 Oct 2026)',
-    source: { label: 'README', href: rnode.repo },
+    source: { label: 'README', href: rholo.repo },
   },
   {
     measure: 'Test ledger',
     value: '1,481 unit + 130 integration',
-    source: { label: 'Test coverage', href: rnode.testCoverage },
+    source: { label: 'Test coverage', href: rholo.testCoverage },
   },
   {
     measure: 'Coverage floor',
     value: '87% (89.97% measured)',
-    source: { label: 'Coverage ledger', href: rnode.coverage },
+    source: { label: 'Coverage ledger', href: rholo.coverage },
   },
   {
     measure: 'Self-adversarial review (T1 scope)',
     value: 'No P0; 3 P1, 4 P2, 14 P3 closed; 204/204 filed findings',
-    source: { label: 'Security audit', href: rnode.securityAudit },
+    source: { label: 'Security audit', href: rholo.securityAudit },
   },
   {
     measure: 'Upstream corpus',
     value: '165 files, run 1:1 (README)',
-    source: { label: 'README', href: rnode.repo },
+    source: { label: 'README', href: rholo.repo },
   },
 ]
 

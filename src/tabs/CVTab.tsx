@@ -16,7 +16,7 @@ export function CVTab() {
       <header className="cv-hero screen-only">
         <h1>Patrick Mockridge</h1>
         <p>Protocol engineer</p>
-        <p className="cv-work-index">DarkWow · rnode-rust · Azoth · Mudra</p>
+        <p className="cv-work-index">DarkWow · Rholo · Azoth · Mudra</p>
         <p>Aberystwyth, Wales</p>
       </header>
 
@@ -35,7 +35,7 @@ export function CVTab() {
           <p>
             The projects are instances of that method. DarkWow is containment: private
             coordination on a public chain, with authority held as an object capability
-            rather than a public administrator. rnode-rust is continuity: a dissolved
+            rather than a public administrator. Rholo is continuity: a dissolved
             network’s node ported to Rust, with its language laws machine-checked at the
             model level and conformance-tested at the node. Azoth is provenance:
             chemical-engineering calculations where every number carries its source and
@@ -52,7 +52,7 @@ export function CVTab() {
           <p>
             The method: specify the failure mode before the architecture; prove what can
             be proved; contain what cannot; record provenance with every result. DarkWow
-            is containment; rnode-rust is continuity; Azoth is provenance; Mudra is
+            is containment; Rholo is continuity; Azoth is provenance; Mudra is
             verification in a familiar form.
           </p>
         </div>
@@ -82,7 +82,7 @@ export function CVTab() {
           </li>
           <li className="work-row">
             <div className="work-main">
-              <span className="work-title">rnode-rust</span>
+              <span className="work-title">Rholo</span>
               <span className="work-subtitle">
                 A Rust node for the ρ-calculus: native object capabilities and
                 machine-checked laws
@@ -96,7 +96,7 @@ export function CVTab() {
               </span>
               <span>Port lead and maintainer</span>
             </div>
-            <a className="work-link" href={pathForTab('rnode-rust')}>
+            <a className="work-link" href={pathForTab('rholo')}>
               Record →
             </a>
           </li>
@@ -141,7 +141,7 @@ export function CVTab() {
           </li>
         </ul>
         <p className="print-only print-urls">
-          Records: patrickmockridge.github.io/darkwow/ · /rnode-rust/ · /azoth/ · /mudra/
+          Records: patrickmockridge.github.io/darkwow/ · /rholo/ · /azoth/ · /mudra/
         </p>
         <p className="print-only">
           Engagements: protocol review, rescue, and verification; a bounded triage with
@@ -154,7 +154,7 @@ export function CVTab() {
           rows={[
             {
               period: '2026',
-              body: 'Delivery: rnode-rust port (August–October), DarkWow redesign (April–October), Azoth, Mudra.',
+              body: 'Delivery: Rholo port (August–October), DarkWow redesign (April–October), Azoth, Mudra.',
             },
             {
               period: '2022–2026',

@@ -26,11 +26,11 @@ const PROJECTS = {
     programmingLanguage: 'Rust',
     license: 'https://www.gnu.org/licenses/agpl-3.0.html',
   },
-  'rnode-rust': {
-    name: 'rnode-rust',
+  rholo: {
+    name: 'Rholo',
     description:
-      'A Rust node for the rho-calculus: native object capabilities, horizontal scale-out by design, and laws proved at the model and tied to the node.',
-    codeRepository: 'https://github.com/rchain-community/rchain-rust',
+      'Rholo is a Rust node for the rho-calculus: native object capabilities, horizontal scale-out by design, and laws proved at the model and tied to the node.',
+    codeRepository: 'https://github.com/rhovision-org/rholo',
     programmingLanguage: 'Rust',
     license: 'https://www.gnu.org/licenses/agpl-3.0.html',
   },

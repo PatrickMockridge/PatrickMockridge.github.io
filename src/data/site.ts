@@ -1,7 +1,7 @@
 export type TabId =
   | 'cv'
   | 'darkwow'
-  | 'rnode-rust'
+  | 'rholo'
   | 'azoth'
   | 'mudra'
   | 'research'
@@ -10,7 +10,7 @@ export type TabId =
 export const TABS: { id: TabId; label: string }[] = [
   { id: 'cv', label: 'CV' },
   { id: 'darkwow', label: 'DarkWow' },
-  { id: 'rnode-rust', label: 'rnode-rust' },
+  { id: 'rholo', label: 'Rholo' },
   { id: 'azoth', label: 'Azoth' },
   { id: 'mudra', label: 'Mudra' },
   { id: 'research', label: 'Research' },
@@ -18,7 +18,8 @@ export const TABS: { id: TabId; label: string }[] = [
 ]
 
 export const LEGACY_TAB_ALIASES: Record<string, TabId> = {
-  'rchain-rust': 'rnode-rust',
+  'rchain-rust': 'rholo',
+  'rnode-rust': 'rholo',
 }
 
 export const PAGE_META: Record<
@@ -28,7 +29,7 @@ export const PAGE_META: Record<
   cv: {
     title: 'Patrick Mockridge — Protocol engineer',
     description:
-      'Independent protocol engineer working on privacy protocols, consensus systems, formal verification, and numerical provenance. Selected work: DarkWow, rnode-rust, Azoth, Mudra.',
+      'Independent protocol engineer working on privacy protocols, consensus systems, formal verification, and numerical provenance. Selected work: DarkWow, Rholo, Azoth, Mudra.',
     path: '/',
   },
   darkwow: {
@@ -37,11 +38,11 @@ export const PAGE_META: Record<
       'A private bearer-note system: the note is the asset, possession is authority, and no protocol-level administrator can freeze or confiscate it. ZK Box and Purse, a ZK-based identity/oracle/attestation/stablecoin suite, a no-freeze Promissory Note, an o-cap bridge, a per-block Pedersen supply audit, and a Lean 4 proof-status ledger.',
     path: '/darkwow/',
   },
-  'rnode-rust': {
-    title: 'rnode-rust — Patrick Mockridge',
+  rholo: {
+    title: 'Rholo — Patrick Mockridge',
     description:
-      'A Rust node for the ρ-calculus: native object capabilities, horizontal scale-out by design, and laws proved at the model and tied to the node.',
-    path: '/rnode-rust/',
+      'Rholo is a Rust node for the ρ-calculus: native object capabilities, horizontal scale-out by design, and laws proved at the model and tied to the node.',
+    path: '/rholo/',
   },
   azoth: {
     title: 'Azoth — Patrick Mockridge',
@@ -91,7 +92,7 @@ export const SITE = {
     substack: 'https://technologytruth.substack.com/',
     fitba: 'https://patrickmockridge.github.io/fitba/',
     darkwowRepo: 'https://github.com/PatrickMockridge/DarkWow',
-    rnodeRepo: 'https://github.com/rchain-community/rchain-rust',
+    rholoRepo: 'https://github.com/rhovision-org/rholo',
     azothRepo: 'https://github.com/PatrickMockridge/Azoth',
     mudraRepo: 'https://github.com/PatrickMockridge/Mudra',
     romeoArchive:

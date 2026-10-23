@@ -9,13 +9,13 @@ import { ContactTab } from './tabs/ContactTab'
 import { CVTab } from './tabs/CVTab'
 import { DarkWowTab } from './tabs/DarkWowTab'
 import { MudraTab } from './tabs/MudraTab'
-import { RnodeRustTab } from './tabs/RnodeRustTab'
+import { RholoTab } from './tabs/RholoTab'
 import { ResearchTab } from './tabs/ResearchTab'
 
 const PANELS: { id: TabId; node: ReactNode }[] = [
   { id: 'cv', node: <CVTab /> },
   { id: 'darkwow', node: <DarkWowTab /> },
-  { id: 'rnode-rust', node: <RnodeRustTab /> },
+  { id: 'rholo', node: <RholoTab /> },
   { id: 'azoth', node: <AzothTab /> },
   { id: 'mudra', node: <MudraTab /> },
   { id: 'research', node: <ResearchTab /> },
