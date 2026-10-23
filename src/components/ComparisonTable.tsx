@@ -22,6 +22,25 @@ interface ComparisonTableProps {
   note?: ReactNode
 }
 
+function CheckMark() {
+  return (
+    <svg
+      className="comparison-check"
+      viewBox="0 0 12 10"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        d="M1 5.5 4.5 9 11 1"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="square"
+      />
+    </svg>
+  )
+}
+
 function Cell({ cell }: { cell: ComparisonCell }) {
   if (
     typeof cell === 'object' &&
@@ -32,7 +51,7 @@ function Cell({ cell }: { cell: ComparisonCell }) {
     const { yes } = cell as { yes: boolean }
     return (
       <>
-        <span aria-hidden="true">{yes ? '✓' : '—'}</span>
+        <span aria-hidden="true">{yes ? <CheckMark /> : '—'}</span>
         <span className="visually-hidden">{yes ? 'Yes' : 'No'}</span>
       </>
     )

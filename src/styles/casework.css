@@ -647,6 +647,13 @@
   text-align: center;
 }
 
+.comparison-check {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.58rem;
+  vertical-align: -0.06em;
+}
+
 .comparison--matrix .comparison-table thead th:first-child,
 .comparison--matrix .comparison-table tbody th {
   position: sticky;
