@@ -41,7 +41,7 @@ export const rholo = {
   rustVsScala: `${rholoBase}/spec/RUST-VS-SCALA.md`,
   coverage: `${rholoBase}/spec/COVERAGE-LEDGER.md`,
   testCoverage: `${rholoBase}/spec/TEST-COVERAGE.md`,
-  qucalc: `${rholoBase}/docs/src/qucalc`,
+  qucalc: `${SITE.links.rholoRepo}/tree/dev/docs/src/qucalc`,
   methodology: `${SITE.links.rholoRepo}/tree/dev/docs/src/methodology`,
   securityAudit: `${SITE.links.rholoRepo}/blob/dev/docs/src/node/security-audit.md`,
   whyRholang: `${rholoBase}/docs/src/rholang/why-rholang.md`,
@@ -105,7 +105,7 @@ produces = [{ name = "creator" }]`
 export const darkWowEvidence: EvidenceRow[] = [
   {
     measure: 'Contract codebases',
-    value: '32 (9 genesis, 23 experimental)',
+    value: '32 (9 genesis, 23 works in progress)',
     source: { label: 'Contract catalog', href: darkWow.contracts },
   },
   {
@@ -129,18 +129,13 @@ export const darkWowEvidence: EvidenceRow[] = [
     source: { label: 'Axiom boundary', href: darkWow.axioms },
   },
   {
-    measure: 'HAZOP tabletop',
-    value: '120 circuits at the time; 15 high-risk fixed',
-    source: { label: 'Verification register', href: darkWow.obligations },
-  },
-  {
     measure: 'Supply audit',
     value: 'Per-block Pedersen mass balance over native-token calls; cumulative supply audit chain',
     source: { label: 'Consensus and supply audit', href: darkWow.consensus },
   },
   {
-    measure: 'Open obligations',
-    value: 'OBL-Z12 (partly open); OBL-Z17, OBL-C21, OBL-C231',
+    measure: 'Obligation status',
+    value: 'OBL-Z12 closed; OBL-C279 deferred to the next release',
     source: { label: 'Obligation register', href: darkWow.obligations },
   },
   {
@@ -153,32 +148,32 @@ export const darkWowEvidence: EvidenceRow[] = [
 export const rholoEvidence: EvidenceRow[] = [
   {
     measure: 'Rholang laws',
-    value: '72 of 77 proved at all',
+    value: '85 laws (109 entries)',
     source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
     measure: 'Non-vacuous proofs',
-    value: '70',
+    value: '100 of 109 entries',
     source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
     measure: 'Laws tied to the node',
-    value: '19 (23 entries)',
+    value: '23 entries',
     source: { label: 'spec/INVENTORY.md', href: rholo.inventory },
   },
   {
     measure: 'Laws proved over the model',
-    value: '53 (69 entries)',
+    value: '77 entries',
     source: { label: 'spec/INVENTORY.md', href: rholo.inventory },
   },
   {
     measure: 'Vacuous proofs',
-    value: '2',
+    value: '2 entries',
     source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
-    measure: 'Laws not counted as proved',
-    value: '5: law 19 axiomatized, law 63a open, 3 retired/orphaned',
+    measure: 'Entries not counted as proved',
+    value: '7: 1 axiom, 1 open, 3 retired, 2 orphaned',
     source: { label: 'spec/INVENTORY.md', href: rholo.inventory },
   },
   {
@@ -216,12 +211,12 @@ export const rholoEvidence: EvidenceRow[] = [
 export const azothEvidence: EvidenceRow[] = [
   {
     measure: 'Upstream issues filed',
-    value: '94 (72 closed, 22 open)',
+    value: '97 (80 closed, 17 open)',
     source: { label: 'NeqSim issue search', href: azoth.issues },
   },
   {
     measure: 'Provenance tests',
-    value: '217',
+    value: '259',
     source: { label: 'Azoth repository', href: azoth.repo },
   },
 ]

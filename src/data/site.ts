@@ -24,48 +24,55 @@ export const LEGACY_TAB_ALIASES: Record<string, TabId> = {
 
 export const PAGE_META: Record<
   TabId,
-  { title: string; description: string; path: string }
+  { title: string; description: string; path: string; updated: string }
 > = {
   cv: {
     title: 'Patrick Mockridge — Protocol engineer',
     description:
       'Independent protocol engineer working on privacy protocols, consensus systems, formal verification, and numerical provenance. Selected work: DarkWow, Rholo, Azoth, Mudra.',
     path: '/',
+    updated: '2026-10-26',
   },
   darkwow: {
     title: 'DarkWow — Patrick Mockridge',
     description:
       'A private bearer-note system: the note is the asset, possession is authority, and no protocol-level administrator can freeze or confiscate it. ZK Box and Purse, a ZK-based identity/oracle/attestation/stablecoin suite, a no-freeze Promissory Note, an o-cap bridge, a per-block Pedersen supply audit, and a Lean 4 proof-status ledger.',
     path: '/darkwow/',
+    updated: '2026-10-26',
   },
   rholo: {
     title: 'Rholo — Patrick Mockridge',
     description:
       'Rholo is a Rust node for the ρ-calculus: native object capabilities, horizontal scale-out by design, and laws proved at the model and tied to the node.',
     path: '/rholo/',
+    updated: '2026-10-26',
   },
   azoth: {
     title: 'Azoth — Patrick Mockridge',
     description:
       'Chemical-engineering calculations in Python and Rust, where every number carries its provenance.',
     path: '/azoth/',
+    updated: '2026-10-26',
   },
   mudra: {
     title: 'Mudra — Patrick Mockridge',
     description:
       'A proof-of-trace system for spreadsheets and small programs: a constant-size proof that a committed calculation trace is unchanged.',
     path: '/mudra/',
+    updated: '2026-10-26',
   },
   research: {
     title: 'Research & Writing — Patrick Mockridge',
     description:
       'Research and writing on the Romeo–Juliet critical risk-analysis framework, network influence, secrecy, compromise, the Ingenesist/UNISS simulations, an NFL Big Data Bowl entry on the Combine pressure signal and playing-time allocation gap, and a free-agent valuation of the role premium.',
     path: '/research/',
+    updated: '2026-10-26',
   },
   contact: {
     title: 'Enquiries — Patrick Mockridge',
     description: 'Protocol review, rescue, verification, and advisory enquiries.',
     path: '/contact/',
+    updated: '2026-10-26',
   },
 }
 
@@ -79,6 +86,26 @@ export function tabForPath(pathname: string): TabId | null {
     ([, meta]) => meta.path === normalized,
   )
   return entry ? entry[0] : null
+}
+
+const MONTHS = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+]
+
+export function formatUpdated(iso: string): string {
+  const [year, month, day] = iso.split('-').map(Number)
+  return `${day} ${MONTHS[month - 1]} ${year}`
 }
 
 export const SITE = {
@@ -105,7 +132,7 @@ export const SITE = {
       'https://github.com/equinor/neqsim/issues?q=author%3APatrickMockridge',
     gorki: 'https://github.com/Gorki-Project',
     gorkiLegacy: 'https://github.com/Gorki-Project/legacy',
-    rgov: 'https://github.com/rchain-community/rgov',
+    rgov: 'https://github.com/rhovision-org/rgov',
     rgovPost: 'https://technologytruth.substack.com/p/rgov-and-rhobot',
     testnetStatus: 'https://testnet.rhobot.net/status',
     nflBigDataBowl: 'https://github.com/PatrickMockridge/nfl-big-data-bowl-2027',
@@ -114,7 +141,7 @@ export const SITE = {
     nflFreeAgency:
       'https://github.com/PatrickMockridge/nfl-big-data-bowl-2027/blob/main/implications/free_agency/README.md',
     nflBigDataBowlNotebook:
-      'https://www.kaggle.com/code/patrickm/nfl-bdb-2027-the-allocation-gap',
+      'https://www.kaggle.com/code/patrickm/nfl-bdb-2027-combine-allocation-price',
     nflBigDataBowlCompetition:
       'https://www.kaggle.com/competitions/nfl-big-data-bowl-2027',
   },

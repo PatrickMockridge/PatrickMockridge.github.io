@@ -106,7 +106,7 @@ const FORK_ROWS: ComparisonRow[] = [
         (halo2-formal, ArkLib). The current contracts use <code>less_than_or_equal</code> and
         a quotient-remainder pattern; <code>base_div</code> and <code>is_not_equal</code> are
         not used. The proofs are evidence, not an enabling layer; <code>OBL-Z12</code> is
-        partly open.
+        closed in the obligation register.
       </>,
     ],
   },
@@ -251,8 +251,8 @@ export function DarkWowTab() {
             and 10 gadget files; the verdict is mixed per opcode. There are 6 assumptions,
             with <code>pallasPrime</code> the only arithmetic one. The gate checks instance
             derivation for 167 contract circuits (179 walked); it does not prove circuit
-            correctness. <code>OBL-Z12</code> is partly open. The proof-status ledger is the
-            authority; counts drift.
+            correctness. <code>OBL-Z12</code> is closed in the obligation register. The
+            proof-status ledger is the authority; counts drift.
           </li>
         </ul>
       </Section>
@@ -383,10 +383,9 @@ export function DarkWowTab() {
           </li>
           <li>
             <strong>The assurance boundary is written down.</strong> Lean covers opcodes and
-            gadgets, not the contract circuits; 6 assumptions remain;{' '}
-            <code>OBL-Z12</code> is partly open; <code>OBL-Z17</code> (Identity capability
-            verification), <code>OBL-C21</code> (bridge default), and{' '}
-            <code>OBL-C231</code> (stablecoin model) are open or partly open. The{' '}
+            gadgets, not the contract circuits; 6 assumptions remain. <code>OBL-Z12</code> is
+            closed in the obligation register; one validator defect (<code>OBL-C279</code>) is
+            deferred to the next release. The{' '}
             <a href={darkWow.obligations} target="_blank" rel="noopener noreferrer">obligation register</a> is the authority.
           </li>
           <li>
@@ -408,8 +407,8 @@ export function DarkWowTab() {
           </li>
           <li>
             <strong>What stands between this and production.</strong> A third-party audit;
-            on-chain manifest hashing; bridge verifiers; closure of OBL-Z12/Z17/C21/C231.
-            Mainnet is TBD.
+            on-chain manifest hashing; bridge verifiers; the deferred validator defect
+            OBL-C279. Mainnet is TBD.
           </li>
         </ul>
       </Section>

@@ -91,8 +91,8 @@ export function CVTab() {
             <div className="work-meta">
               <span>2026; port August–October 2026 (about two months)</span>
               <span>
-                Pre-release; 72/77 laws; 19 laws (23 entries) node-tied; 14 crates, 0
-                unsafe; community testnet live
+                Pre-release; 85 laws (109 entries), 100 proved including 23 node-tied; 14
+                crates, 0 unsafe; community testnet live
               </span>
               <span>Port lead and maintainer</span>
             </div>
@@ -110,7 +110,7 @@ export function CVTab() {
             <div className="work-meta">
               <span>2026</span>
               <span>
-                v0.1.x; 94 upstream issues filed (72 closed); no-op Gibbs minimizer and
+                v0.1.x; 97 upstream issues filed (80 closed); no-op Gibbs minimizer and
                 wrong-unit vapour-pressure curve; not for design work
               </span>
               <span>Author</span>

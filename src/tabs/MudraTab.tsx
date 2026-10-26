@@ -65,7 +65,7 @@ export function MudraTab() {
               'Design, implementation: ZK VM, spreadsheet transpiler, verifier, Arweave receipt',
           },
           { label: 'Period', value: '2026' },
-          { label: 'Status', value: 'Research build; v1.0.x; AGPL-3.0-only' },
+          { label: 'Status', value: 'Research build; v1.0.2; AGPL-3.0-only' },
           {
             label: 'Repository',
             value: <a href={mudra.repo} target="_blank" rel="noopener noreferrer">github.com/PatrickMockridge/Mudra</a>,

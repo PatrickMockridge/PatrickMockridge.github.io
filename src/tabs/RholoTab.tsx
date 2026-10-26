@@ -97,8 +97,7 @@ const CLAIM_ROWS: ComparisonRow[] = [
     cells: [
       <>
         No <code>unsafe</code> in the 14 first-party crates; ρ as the base sort of a CoC;
-        70 of 77 laws non-vacuous; 19 laws (23 entries) tied to the node by conformance
-        corpora.
+        100 of 109 entries non-vacuous; 23 entries tied to the node by conformance corpora.
       </>,
       <>
         Memory-unsafety is unwritable in first-party code; proved laws are machine-checked
@@ -106,8 +105,8 @@ const CLAIM_ROWS: ComparisonRow[] = [
       </>,
       <>
         Not a whole-node proof. Dependencies, leaks, logic errors, denial of service, and
-        consensus bugs remain. 2 laws vacuous; 5 not counted as proved (law 19 axiomatized,
-        law 63a open, 3 retired/orphaned).
+        consensus bugs remain. 2 entries vacuous; 7 not counted as proved (1 axiom, 1 open,
+        3 retired, 2 orphaned).
       </>,
     ],
   },
@@ -366,11 +365,12 @@ export function RholoTab() {
             and the September pass read the T1 roster, not the whole tree.
           </li>
           <li>
-            <strong>Formal assurance is layered.</strong> 72 of 77 laws are proved at all — 19
-            laws (23 entries) tied to the running node by conformance corpora, 53 laws (69
-            entries) over the model. Two of the 72 are vacuous, leaving 70 non-vacuous. Five
-            laws are not counted as proved: law 19 is axiomatized by design, law 63a is open,
-            and three are retired or orphaned. The <a href={rholo.coq} target="_blank" rel="noopener noreferrer">Coq track</a> defines
+            <strong>Formal assurance is layered.</strong> The register covers 85 laws across
+            109 entries. 100 entries are non-vacuously proved — 23 proved and tied to the
+            running node by conformance corpora, 77 over the model. Two further entries are
+            vacuous proof statements; seven are not counted as proved (one axiomatized by
+            design, one open, three retired, two orphaned). The{' '}
+            <a href={rholo.coq} target="_blank" rel="noopener noreferrer">Coq track</a> defines
             the α-equivalence metatheory but states its laws as axioms.
           </li>
           <li>

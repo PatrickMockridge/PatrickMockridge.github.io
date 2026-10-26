@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 import { HeaderLine } from './components/HeaderLine'
 import { TabIndex } from './components/TabIndex'
 import { TabPanel } from './components/TabPanel'
-import { MAILTO, SITE, type TabId } from './data/site'
+import { MAILTO, PAGE_META, SITE, formatUpdated, type TabId } from './data/site'
 import { useTab } from './hooks/useTab'
 import { AzothTab } from './tabs/AzothTab'
 import { ContactTab } from './tabs/ContactTab'
@@ -51,7 +51,10 @@ export default function App({
           </main>
           <footer className="window-footer">
             <span>
-              {SITE.name} · {SITE.location}
+              {SITE.name} · {SITE.location} · Last updated{' '}
+              <time dateTime={PAGE_META[tab].updated}>
+                {formatUpdated(PAGE_META[tab].updated)}
+              </time>
             </span>
             <span>
               <a href={MAILTO}>Enquiries</a> · <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
