@@ -149,12 +149,12 @@ export const darkWowEvidence: EvidenceRow[] = [
 export const rholoEvidence: EvidenceRow[] = [
   {
     measure: 'Rholang laws',
-    value: '90 laws (128 entries)',
+    value: '91 laws (131 entries)',
     source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
     measure: 'Non-vacuous proofs',
-    value: '119 of 128 entries',
+    value: '122 of 131 entries',
     source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
@@ -164,12 +164,12 @@ export const rholoEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Laws proved over the model',
-    value: '83 entries',
+    value: '86 entries',
     source: { label: 'spec/INVENTORY.md', href: rholo.inventory },
   },
   {
     measure: 'Rust witnesses',
-    value: '91 laws; 251 witness entries (231 distinct tests)',
+    value: '94 laws; 263 witness entries (242 distinct tests)',
     source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
@@ -189,7 +189,7 @@ export const rholoEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Tests',
-    value: '~2,593 test functions (README, 30 Oct 2026)',
+    value: '~2,615 test functions (README, 30 Oct 2026)',
     source: { label: 'README', href: rholo.repo },
   },
   {
@@ -204,7 +204,7 @@ export const rholoEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Self-adversarial review (T1 scope)',
-    value: 'No P0; 3 P1, 4 P2, 14 P3 closed; 375 of 379 audit rows done, 4 in progress',
+    value: 'No P0; 3 P1, 4 P2, 14 P3 closed; 385 of 389 audit rows done, 4 in progress',
     source: { label: 'Audit check-off', href: rholo.audit },
   },
   {
@@ -222,7 +222,7 @@ export const azothEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Provenance tests',
-    value: '263',
+    value: '264',
     source: { label: 'Azoth repository', href: azoth.repo },
   },
 ]
