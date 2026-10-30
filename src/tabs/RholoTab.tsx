@@ -97,7 +97,7 @@ const CLAIM_ROWS: ComparisonRow[] = [
     cells: [
       <>
         No <code>unsafe</code> in the 14 first-party crates; ρ as the base sort of a CoC;
-        100 of 109 entries non-vacuous; 23 entries tied to the node by conformance corpora.
+        119 of 128 entries non-vacuous; 36 entries tied to the node by conformance corpora.
       </>,
       <>
         Memory-unsafety is unwritable in first-party code; proved laws are machine-checked
@@ -134,7 +134,9 @@ export function RholoTab() {
             label: 'Status',
             value: (
               <>
-                Pre-release; a community testnet is live at{' '}
+                Pre-release; tagged testnet release{' '}
+                <a href={rholo.testnetRelease} target="_blank" rel="noopener noreferrer">v0.1.0</a>{' '}
+                (25 October 2026); a community testnet is live at{' '}
                 <a href={rholo.testnetStatus} target="_blank" rel="noopener noreferrer">testnet.rhobot.net/status</a>; the project
                 calls itself pre-testnet because no stable testnet is declared; no
                 production release.
@@ -365,9 +367,9 @@ export function RholoTab() {
             and the September pass read the T1 roster, not the whole tree.
           </li>
           <li>
-            <strong>Formal assurance is layered.</strong> The register covers 85 laws across
-            109 entries. 100 entries are non-vacuously proved — 23 proved and tied to the
-            running node by conformance corpora, 77 over the model. Two further entries are
+            <strong>Formal assurance is layered.</strong> The register covers 90 laws across
+            128 entries. 119 entries are non-vacuously proved — 36 proved and tied to the
+            running node by conformance corpora, 83 over the model. Two further entries are
             vacuous proof statements; seven are not counted as proved (one axiomatized by
             design, one open, three retired, two orphaned). The{' '}
             <a href={rholo.coq} target="_blank" rel="noopener noreferrer">Coq track</a> defines

@@ -26,6 +26,11 @@ export const unissPosts: Post[] = [
     href: 'https://technologytruth.substack.com/p/unissgx-a-gaugecovariant-field-model',
   },
   {
+    title: 'UNISS-GX-SD: How Strategic Transparency Bootstraps a Sovereign DEX',
+    date: '2026-03-17',
+    href: 'https://technologytruth.substack.com/p/uniss-gx-sd-how-strategic-transparency',
+  },
+  {
     title: 'The Ingenesist Simulation',
     date: '2026-03-22',
     href: 'https://technologytruth.substack.com/p/the-ingenesist-simulation',
@@ -39,11 +44,6 @@ export const unissPosts: Post[] = [
     title: 'The Darkweave-Ingenesist-Endowment Simulation',
     date: '2026-03-24',
     href: 'https://technologytruth.substack.com/p/the-darkweave-ingenesist-endowment',
-  },
-  {
-    title: 'UNISS-GX-SD: How Strategic Transparency Bootstraps a Sovereign DEX',
-    date: '2026-03-17',
-    href: 'https://technologytruth.substack.com/p/uniss-gx-sd-how-strategic-transparency',
   },
 ]
 
@@ -59,29 +59,9 @@ export const romeoPosts: Post[] = [
     href: 'https://technologytruth.substack.com/p/the-unifying-grammar',
   },
   {
-    title: 'The Romeo-Juliet Four-Square Isomorphism',
-    date: '2025-11-09',
-    href: 'https://technologytruth.substack.com/p/the-romeo-juliet-four-square-isomorphism',
-  },
-  {
-    title: 'Strategic Theorems of the RJF Four-Square Isomorphism',
-    date: '2025-11-10',
-    href: 'https://technologytruth.substack.com/p/strategic-theorems-of-the-rjf-four',
-  },
-  {
-    title: 'The Romeo-Juliet Field Theory (RJF-∞)',
-    date: '2025-11-09',
-    href: 'https://technologytruth.substack.com/p/the-romeo-juliet-field-theory-rjf',
-  },
-  {
     title: 'The Σ₁-Completeness of the RJF',
     date: '2025-10-22',
     href: 'https://technologytruth.substack.com/p/the-completeness-of-the-rjf',
-  },
-  {
-    title: 'The Evolution of RJF from Discrete States to Continuous Group Actions',
-    date: '2025-12-16',
-    href: 'https://technologytruth.substack.com/p/the-evolution-of-rjf-from-discrete',
   },
   {
     title: 'Quantum Romeo-Juliet Framework',
@@ -89,9 +69,29 @@ export const romeoPosts: Post[] = [
     href: 'https://technologytruth.substack.com/p/quantum-romeo-juliet-framework',
   },
   {
+    title: 'The Romeo-Juliet Four-Square Isomorphism',
+    date: '2025-11-09',
+    href: 'https://technologytruth.substack.com/p/the-romeo-juliet-four-square-isomorphism',
+  },
+  {
+    title: 'The Romeo-Juliet Field Theory (RJF-∞)',
+    date: '2025-11-09',
+    href: 'https://technologytruth.substack.com/p/the-romeo-juliet-field-theory-rjf',
+  },
+  {
     title: 'The Romeo-Juliet Lunarpunk Theorem',
     date: '2025-11-09',
     href: 'https://technologytruth.substack.com/p/the-romeo-juliet-lunarpunk-theorem',
+  },
+  {
+    title: 'Strategic Theorems of the RJF Four-Square Isomorphism',
+    date: '2025-11-10',
+    href: 'https://technologytruth.substack.com/p/strategic-theorems-of-the-rjf-four',
+  },
+  {
+    title: 'The Evolution of RJF from Discrete States to Continuous Group Actions',
+    date: '2025-12-16',
+    href: 'https://technologytruth.substack.com/p/the-evolution-of-rjf-from-discrete',
   },
 ]
 

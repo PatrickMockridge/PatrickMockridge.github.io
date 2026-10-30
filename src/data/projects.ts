@@ -36,6 +36,7 @@ export const rholo = {
   coq: `${rholoBase}/spec/coq/README.md`,
   audit: `${rholoBase}/spec/AUDIT.md`,
   passes: `${rholoBase}/spec/audit/passes.md`,
+  testnetRelease: `${SITE.links.rholoRepo}/releases/tag/v0.1.0`,
   hazop: `${rholoBase}/docs/src/spec/failure-hazop.md`,
   adversary: `${rholoBase}/docs/src/spec/adversary.md`,
   rustVsScala: `${rholoBase}/spec/RUST-VS-SCALA.md`,
@@ -110,7 +111,7 @@ export const darkWowEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Manifests',
-    value: '32; on-chain hash pending',
+    value: '31 (8 of 9 genesis + 23 post-genesis); no on-chain manifest hash',
     source: { label: 'Manifest specification', href: darkWow.manifest },
   },
   {
@@ -148,23 +149,28 @@ export const darkWowEvidence: EvidenceRow[] = [
 export const rholoEvidence: EvidenceRow[] = [
   {
     measure: 'Rholang laws',
-    value: '85 laws (109 entries)',
+    value: '90 laws (128 entries)',
     source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
     measure: 'Non-vacuous proofs',
-    value: '100 of 109 entries',
+    value: '119 of 128 entries',
     source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
     measure: 'Laws tied to the node',
-    value: '23 entries',
+    value: '36 entries',
     source: { label: 'spec/INVENTORY.md', href: rholo.inventory },
   },
   {
     measure: 'Laws proved over the model',
-    value: '77 entries',
+    value: '83 entries',
     source: { label: 'spec/INVENTORY.md', href: rholo.inventory },
+  },
+  {
+    measure: 'Rust witnesses',
+    value: '91 laws; 251 witness entries (231 distinct tests)',
+    source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
     measure: 'Vacuous proofs',
@@ -183,7 +189,7 @@ export const rholoEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Tests',
-    value: '2,281 test functions (README, 15 Oct 2026)',
+    value: '~2,593 test functions (README, 30 Oct 2026)',
     source: { label: 'README', href: rholo.repo },
   },
   {
@@ -198,8 +204,8 @@ export const rholoEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Self-adversarial review (T1 scope)',
-    value: 'No P0; 3 P1, 4 P2, 14 P3 closed; 204/204 filed findings',
-    source: { label: 'Security audit', href: rholo.securityAudit },
+    value: 'No P0; 3 P1, 4 P2, 14 P3 closed; 375 of 379 audit rows done, 4 in progress',
+    source: { label: 'Audit check-off', href: rholo.audit },
   },
   {
     measure: 'Upstream corpus',
@@ -216,7 +222,7 @@ export const azothEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Provenance tests',
-    value: '259',
+    value: '263',
     source: { label: 'Azoth repository', href: azoth.repo },
   },
 ]

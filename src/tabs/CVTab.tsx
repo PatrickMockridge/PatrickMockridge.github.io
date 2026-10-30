@@ -91,8 +91,8 @@ export function CVTab() {
             <div className="work-meta">
               <span>2026; port August–October 2026 (about two months)</span>
               <span>
-                Pre-release; 85 laws (109 entries), 100 proved including 23 node-tied; 14
-                crates, 0 unsafe; community testnet live
+                Pre-release; v0.1.0 testnet tag; 90 laws (128 entries), 119 proved
+                including 36 node-tied; 14 crates, 0 unsafe; community testnet live
               </span>
               <span>Port lead and maintainer</span>
             </div>

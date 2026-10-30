@@ -101,26 +101,28 @@ export function ResearchTab() {
           <p>
             <strong>Big Data Bowl entry.</strong> A judged entry to the 2027 NFL Big
             Data Bowl. A 10 Hz Combine burst of speed and acceleration predicts
-            interior pressure and sacks; the 40-yard dash and 10-yard split do not. The
-            signal is position-specific — real on the defensive line, marginal at
-            receiver, absent on the offensive line and at tight end. The entry’s second
-            finding is an allocation gap: the cap pays for performance, but the depth
-            chart follows prior snaps and draft position, not measured performance. The
-            preregistered RJF/Yellow Square test found no detectable effect and is
-            reported as a perspective, not confirmation.
+            interior pressure; the 40-yard dash and 10-yard split do not. The burst also
+            shows a sack association, but the stopwatch is the stronger out-of-sample sack
+            model and the sack outcome sits below the reliability gate. The signal is
+            position-specific — real on the defensive line, marginal at receiver, absent
+            on the offensive line and at tight end. The entry’s second finding is an
+            allocation gap: the cap pays for performance, but the depth chart follows
+            prior snaps and draft position, not measured performance. The preregistered
+            RJF/Yellow Square test found no detectable effect and is reported as a
+            perspective, not confirmation.
           </p>
           <p>
             <strong>The dollar findings.</strong> The follow-on valuation prices that
             gap. On the actual 2026 free-agent class, the median team carries about
-            $7.0M a year of uncut role premium — pay that tracks playing time beyond
-            measured performance. At a 0.40 capture assumption, that is $2.8M gross /
-            $1.8M net after a $1M implementation cost; the conservative
+            $7.05M a year of uncut role premium — pay that tracks playing time beyond
+            measured performance. At a 0.40 capture assumption, that is $2.82M gross /
+            $1.82M net after a $1M implementation cost; the conservative
             EDGE/safety/corner case is −$0.45M net. The role premium is +0.179 log
             points on 2026 APY (95% CI 0.022–0.336, n=306), close to +0.185 on the 2025
             cap ledger, but it falls to +0.049 with contract-length and guarantee
-            controls. The team distribution runs from $1.8M at P10 to $22.5M at P90, and
-            the top 10% of contracts carry 51% of the premium. These are inferences from
-            the 2026 class, not forecasts or causal estimates.
+            controls (n=253). The team distribution runs from $1.81M at P10 to $22.51M at
+            P90, and the top 10% of contracts carry 51% of the premium. These are
+            inferences from the 2026 class, not forecasts or causal estimates.
           </p>
         </div>
         <ul className="link-list">

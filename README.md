@@ -20,7 +20,8 @@ npm run lint
 
 Project naming: the former RChain node record is displayed as **Rholo**; the repository is
 `rhovision-org/rholo`. Legacy queries `?tab=rchain-rust` and `?tab=rnode-rust` resolve to
-`?tab=rholo` and canonicalise the URL; `/rnode-rust/` redirects to `/rholo/`.
+`?tab=rholo` and canonicalise the URL; `/rnode-rust/` and `/rchain-rust/` redirect to
+`/rholo/`.
 - `public/` — fonts, favicon, social image, printable CV, 404 page.
 
 ## CV PDF

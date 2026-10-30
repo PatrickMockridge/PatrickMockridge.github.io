@@ -241,10 +241,10 @@ export function DarkWowTab() {
           </li>
           <li>
             <strong>The wallet and manifests make it composable.</strong> Each contract
-            declares its functions, circuits, capability types, and actions in a TOML
-            manifest. The wallet reads manifests, scans the chain, and composes capability
-            types from the primitives it finds; keys stay in the AccountManager and never
-            reach the daemon.
+            with a manifest declares its functions, circuits, capability types, and actions
+            in a TOML manifest. The wallet reads manifests, scans the chain, and composes
+            capability types from the primitives it finds; keys stay in the AccountManager
+            and never reach the daemon.
           </li>
           <li>
             <strong>The assurance layer is explicit.</strong> Lean 4 models 32 zkVM opcodes
@@ -401,14 +401,15 @@ export function DarkWowTab() {
             the design, not a missing feature.
           </li>
           <li>
-            <strong>Manifests and wallet.</strong> On-chain manifest hashing is pending; the
+            <strong>Manifests and wallet.</strong> Manifests are declarations, not an
+            on-chain hash: seven of the nine genesis manifests travel in the genesis
+            payload, post-genesis manifests are wallet-side, and Deployooor has none. The
             shipping wallet implements a subset of the ρ-calculus specification; there is no
             third-party audit and mainnet is TBD.
           </li>
           <li>
             <strong>What stands between this and production.</strong> A third-party audit;
-            on-chain manifest hashing; bridge verifiers; the deferred validator defect
-            OBL-C279. Mainnet is TBD.
+            bridge verifiers; the deferred validator defect OBL-C279. Mainnet is TBD.
           </li>
         </ul>
       </Section>

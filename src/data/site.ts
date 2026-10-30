@@ -31,28 +31,28 @@ export const PAGE_META: Record<
     description:
       'Independent protocol engineer working on privacy protocols, consensus systems, formal verification, and numerical provenance. Selected work: DarkWow, Rholo, Azoth, Mudra.',
     path: '/',
-    updated: '2026-10-26',
+    updated: '2026-10-30',
   },
   darkwow: {
     title: 'DarkWow — Patrick Mockridge',
     description:
       'A private bearer-note system: the note is the asset, possession is authority, and no protocol-level administrator can freeze or confiscate it. ZK Box and Purse, a ZK-based identity/oracle/attestation/stablecoin suite, a no-freeze Promissory Note, an o-cap bridge, a per-block Pedersen supply audit, and a Lean 4 proof-status ledger.',
     path: '/darkwow/',
-    updated: '2026-10-26',
+    updated: '2026-10-30',
   },
   rholo: {
     title: 'Rholo — Patrick Mockridge',
     description:
       'Rholo is a Rust node for the ρ-calculus: native object capabilities, horizontal scale-out by design, and laws proved at the model and tied to the node.',
     path: '/rholo/',
-    updated: '2026-10-26',
+    updated: '2026-10-30',
   },
   azoth: {
     title: 'Azoth — Patrick Mockridge',
     description:
       'Chemical-engineering calculations in Python and Rust, where every number carries its provenance.',
     path: '/azoth/',
-    updated: '2026-10-26',
+    updated: '2026-10-30',
   },
   mudra: {
     title: 'Mudra — Patrick Mockridge',
@@ -66,7 +66,7 @@ export const PAGE_META: Record<
     description:
       'Research and writing on the Romeo–Juliet critical risk-analysis framework, network influence, secrecy, compromise, the Ingenesist/UNISS simulations, an NFL Big Data Bowl entry on the Combine pressure signal and playing-time allocation gap, and a free-agent valuation of the role premium.',
     path: '/research/',
-    updated: '2026-10-26',
+    updated: '2026-10-30',
   },
   contact: {
     title: 'Enquiries — Patrick Mockridge',
