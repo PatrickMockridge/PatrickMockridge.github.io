@@ -136,7 +136,7 @@ export const darkWowEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Obligation status',
-    value: 'OBL-Z12 closed for known quotient circuits (proofs ledger: partly open); OBL-C279 deferred to the next release',
+    value: 'OBL-Z12 closed for known circuits; OBL-C279 deferred',
     source: { label: 'Obligation register', href: darkWow.obligations },
   },
   {
@@ -194,7 +194,7 @@ export const rholoEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Test ledger',
-    value: '1,481 unit + 130 integration (test-register ledger)',
+    value: '1,481 unit + 130 integration',
     source: { label: 'Test coverage', href: rholo.testCoverage },
   },
   {
@@ -204,12 +204,12 @@ export const rholoEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Self-adversarial review (October 2026)',
-    value: 'No P0; 3 P1, 3 P2, 2 P3/assurance; C345–C352 addressed (C348 residual)',
+    value: 'No P0; 3 P1, 3 P2, 2 P3/assurance; C345–C352 addressed',
     source: { label: 'Security audit', href: rholo.securityAudit },
   },
   {
     measure: 'Audit check-off',
-    value: '385 of 389 rows done; 4 in progress; all 89 T1 modules read',
+    value: '385 of 389 rows done; 4 in progress',
     source: { label: 'spec/AUDIT.md', href: rholo.audit },
   },
   {

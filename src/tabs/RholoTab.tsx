@@ -333,7 +333,7 @@ export function RholoTab() {
           {[
             {
               title: 'Language and runtime',
-              crates: ['rholang', 'rspace', 'graphz'],
+              crates: ['rholang', 'rspace', 'qucalc (original Rust)', 'graphz'],
             },
             {
               title: 'Consensus and storage',
@@ -341,15 +341,11 @@ export function RholoTab() {
             },
             {
               title: 'Networking and crypto',
-              crates: ['comm', 'crypto'],
+              crates: ['comm', 'ocapn (original Rust)', 'crypto'],
             },
             {
               title: 'Tools',
               crates: ['sdk', 'node', 'rspace-bench'],
-            },
-            {
-              title: 'Original Rust',
-              crates: ['ocapn', 'qucalc'],
             },
           ].map((group) => (
             <div className="crate-group" key={group.title}>
