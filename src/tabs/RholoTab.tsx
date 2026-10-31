@@ -13,7 +13,7 @@ const GEEKWIRE_2019 =
 const MAINNET_2020 =
   'https://rholang.github.io/blog/2020/02/25/rchain-announcement/'
 const DISSOLUTION =
-  'https://web.archive.org/web/2022/https://rchain.coop/home.html'
+  'https://web.archive.org/web/20221222223846/https://rchain.coop/home.html'
 
 const CALCULUS_COLUMNS = [
   { label: 'Model' },
@@ -45,7 +45,7 @@ const CALCULUS_ROWS: ComparisonRow[] = [
 ]
 
 const CALCULUS_NOTE =
-  'Adapted from the Rholo README table; Mobility replaces Complexity; the score is an equal-weight capability count, not a ranking. Petri is plain P/T (extensions make Complete true); π/ρ behavioural-type marks denote existing systems, not maturity.'
+  'Adapted from the Rholo README table. Mobility replaces Complexity, so this table recomputes the score: Turing is 1/6 here (README 2/6) and Petri 1/6 (README 3/6). The score is an equal-weight capability count, not a ranking. Petri is plain P/T (extensions make Complete true); π/ρ behavioural-type marks denote existing systems, not maturity.'
 
 const CLAIM_COLUMNS = [
   { label: 'Claim' },
@@ -123,7 +123,7 @@ export function RholoTab() {
           {
             label: 'Role',
             value:
-              'Scala-to-Rust port of the former RChain node; law-first conformance and agentic assurance',
+              'Rust port of the former RChain node (twelve crates ported from Scala; OCapN and qucalc original); law-first conformance and agentic assurance',
           },
           {
             label: 'Period',
@@ -158,9 +158,10 @@ export function RholoTab() {
         <WhatWhy
           what={
             <>
-              Rholo is a Rust implementation of the former RChain node: Rholang and RSpace, Casper consensus,
-              storage, networking, and OCapN, ported crate by crate from the preserved Scala
-              reference.
+              Rholo is a Rust implementation of the former RChain node: Rholang and RSpace,
+              Casper consensus, storage, and networking, ported crate by crate from the
+              preserved Scala reference, plus OCapN interop and the qucalc governance crate,
+              which are original Rust.
             </>
           }
           why={
@@ -243,7 +244,9 @@ export function RholoTab() {
             <code>git checkout 1b7583649 -- legacy</code>. A code snapshot at{' '}
             <code>14b8b77</code> is timestamped on Arweave, 22 August 2026. Rust is AGPL-3.0;
             upstream Scala is Apache-2.0. The port is a rescue in the plain sense: the code was
-            preserved and the protocol continued. No ownership is claimed.
+            preserved and the protocol continued. No ownership is claimed. OCapN
+            interoperability and <code>qucalc</code> are original Rust crates, not ports; the
+            other twelve crates are ported from the pinned Scala tree.
           </p>
         </div>
         <p className="source-note">
@@ -292,7 +295,7 @@ export function RholoTab() {
                 logistical issues; the network is left without a steward.
               </td>
               <td>
-                <a href={DISSOLUTION} target="_blank" rel="noopener noreferrer">RChain Cooperative (Wayback, 2022)</a>
+                <a href={DISSOLUTION} target="_blank" rel="noopener noreferrer">RChain Cooperative (Wayback, 22 Dec 2022)</a>
               </td>
             </tr>
           </tbody>
@@ -324,13 +327,13 @@ export function RholoTab() {
         <EvidenceTable
           rows={rholoEvidence}
           caption="Rholo evidence"
-          note="Sources: repository README and specification documents, as of October 2026. Counts drift; the linked artifact is authoritative."
+          note="Sources: repository README and specification documents, as of October 2026. Counts drift; the linked artifact is authoritative. The README's ~2,615 is a count of test functions; the ledger's 1,481 + 130 is its test-register inventory."
         />
         <div className="crate-map">
           {[
             {
               title: 'Language and runtime',
-              crates: ['rholang', 'rspace', 'qucalc', 'graphz'],
+              crates: ['rholang', 'rspace', 'graphz'],
             },
             {
               title: 'Consensus and storage',
@@ -338,11 +341,15 @@ export function RholoTab() {
             },
             {
               title: 'Networking and crypto',
-              crates: ['comm', 'ocapn', 'crypto'],
+              crates: ['comm', 'crypto'],
             },
             {
               title: 'Tools',
               crates: ['sdk', 'node', 'rspace-bench'],
+            },
+            {
+              title: 'Original Rust',
+              crates: ['ocapn', 'qucalc'],
             },
           ].map((group) => (
             <div className="crate-group" key={group.title}>
@@ -361,10 +368,12 @@ export function RholoTab() {
         <ul className="prose">
           <li>
             <strong>No external audit firm.</strong> The security record is a written, gated
-            self-adversarial programme: the September 2026 pass found no P0 (chain split, fund
-            loss, or remote code execution); three P1s, four P2s, and fourteen P3s were
-            confirmed and closed. The review ledger still carries 507 deferred rows of 626,
-            and the September pass read the T1 roster, not the whole tree.
+            self-adversarial programme. The October 2026 re-audit found no P0 (chain split,
+            fund loss, or remote code execution); three P1s, three P2s, and two P3/assurance
+            findings (C345–C352) were confirmed and addressed in PR #514, with C348 kept as an
+            accepted residual. The September 2026 pass is preserved as historical context. The
+            review ledger still carries 507 deferred rows of 626, and the October pass read the
+            T1 roster, not the whole tree.
           </li>
           <li>
             <strong>Formal assurance is layered.</strong> The register covers 91 laws across

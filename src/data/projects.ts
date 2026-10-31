@@ -25,7 +25,7 @@ export const darkWow = {
   contracts: `${darkWowBase}/doc/src/contracts.md`,
   obligations: `${darkWowBase}/doc/src/arch/verification-hazop.md`,
   rhoPaper: 'https://doi.org/10.1016/j.entcs.2005.05.016',
-  halo2: 'https://z.cash/ecc-releases-code-for-halo-2/',
+  halo2: 'https://zodl.com/ecc-releases-code-for-halo-2/',
 }
 
 export const rholo = {
@@ -136,7 +136,7 @@ export const darkWowEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Obligation status',
-    value: 'OBL-Z12 closed; OBL-C279 deferred to the next release',
+    value: 'OBL-Z12 closed for known quotient circuits (proofs ledger: partly open); OBL-C279 deferred to the next release',
     source: { label: 'Obligation register', href: darkWow.obligations },
   },
   {
@@ -194,7 +194,7 @@ export const rholoEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Test ledger',
-    value: '1,481 unit + 130 integration',
+    value: '1,481 unit + 130 integration (test-register ledger)',
     source: { label: 'Test coverage', href: rholo.testCoverage },
   },
   {
@@ -203,9 +203,14 @@ export const rholoEvidence: EvidenceRow[] = [
     source: { label: 'Coverage ledger', href: rholo.coverage },
   },
   {
-    measure: 'Self-adversarial review (T1 scope)',
-    value: 'No P0; 3 P1, 4 P2, 14 P3 closed; 385 of 389 audit rows done, 4 in progress',
-    source: { label: 'Audit check-off', href: rholo.audit },
+    measure: 'Self-adversarial review (October 2026)',
+    value: 'No P0; 3 P1, 3 P2, 2 P3/assurance; C345–C352 addressed (C348 residual)',
+    source: { label: 'Security audit', href: rholo.securityAudit },
+  },
+  {
+    measure: 'Audit check-off',
+    value: '385 of 389 rows done; 4 in progress; all 89 T1 modules read',
+    source: { label: 'spec/AUDIT.md', href: rholo.audit },
   },
   {
     measure: 'Upstream corpus',

@@ -38,14 +38,14 @@ export const PAGE_META: Record<
     description:
       'A private bearer-note system: the note is the asset, possession is authority, and no protocol-level administrator can freeze or confiscate it. ZK Box and Purse, a ZK-based identity/oracle/attestation/stablecoin suite, a no-freeze Promissory Note, an o-cap bridge, a per-block Pedersen supply audit, and a Lean 4 proof-status ledger.',
     path: '/darkwow/',
-    updated: '2026-10-30',
+    updated: '2026-10-31',
   },
   rholo: {
     title: 'Rholo — Patrick Mockridge',
     description:
       'Rholo is a Rust node for the ρ-calculus: native object capabilities, horizontal scale-out by design, and laws proved at the model and tied to the node.',
     path: '/rholo/',
-    updated: '2026-10-30',
+    updated: '2026-10-31',
   },
   azoth: {
     title: 'Azoth — Patrick Mockridge',

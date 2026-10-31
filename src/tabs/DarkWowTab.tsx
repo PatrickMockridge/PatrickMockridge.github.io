@@ -86,9 +86,10 @@ const FORK_ROWS: ComparisonRow[] = [
       </>,
       <>
         IBC, atomic swaps, and trustless ZK bridges predate the non-custodial property. The
-        current default refuses every deposit; with <code>bridge-verify</code> on, Ethereum,
-        Monero, and Litecoin verify while Zcash and Aztec return errors. External release is
-        relayer-executed.
+        current default refuses every deposit. With <code>bridge-verify</code> on, Monero
+        DLEq and Litecoin SHA-256d Merkle proofs are implemented; Litecoin MWEB Bulletproof
+        range proofs are deferred; Ethereum (OBL-C21), Zcash, and Aztec fail closed. External
+        release is relayer-executed.
       </>,
     ],
   },
@@ -106,7 +107,8 @@ const FORK_ROWS: ComparisonRow[] = [
         (halo2-formal, ArkLib). The current contracts use <code>less_than_or_equal</code> and
         a quotient-remainder pattern; <code>base_div</code> and <code>is_not_equal</code> are
         not used. The proofs are evidence, not an enabling layer; <code>OBL-Z12</code> is
-        closed in the obligation register.
+        closed for the known quotient circuits in the obligation register, while the
+        proof-status ledger still marks the general range-check discharge as partly open.
       </>,
     ],
   },
@@ -251,8 +253,10 @@ export function DarkWowTab() {
             and 10 gadget files; the verdict is mixed per opcode. There are 6 assumptions,
             with <code>pallasPrime</code> the only arithmetic one. The gate checks instance
             derivation for 167 contract circuits (179 walked); it does not prove circuit
-            correctness. <code>OBL-Z12</code> is closed in the obligation register. The
-            proof-status ledger is the authority; counts drift.
+            correctness. <code>OBL-Z12</code> is closed for the known quotient circuits in
+            the obligation register; the proof-status ledger still marks the general
+            range-check discharge as partly open. Both artifacts are linked; where they
+            differ, this scoped claim is the one stated here. Counts drift.
           </li>
         </ul>
       </Section>
@@ -305,7 +309,7 @@ export function DarkWowTab() {
         <EvidenceTable
           rows={darkWowEvidence}
           caption="DarkWow evidence"
-          note="Sources: repository README and architecture documents, as of October 2026. Counts drift; the linked artifact and proof-status ledger are authoritative."
+          note="Sources: repository README and architecture documents, as of October 2026. Counts drift; the linked artifacts are authoritative."
         />
         <Figure id="darkwow-architecture" caption="Figure 1. DarkWow architecture, abridged.">
           <svg
@@ -372,9 +376,11 @@ export function DarkWowTab() {
           </li>
           <li>
             <strong>The bridge is deferred by default.</strong> With{' '}
-            <code>bridge-verify</code> off, every deposit is refused. With it on, Ethereum,
-            Monero, and Litecoin have verifiers; Zcash and Aztec still return errors. The
-            wrapped note is user-held; external release is relayer-executed.
+            <code>bridge-verify</code> off, every deposit is refused. With it on, Monero DLEq
+            and Litecoin Merkle proofs verify; Litecoin MWEB range proofs are deferred;
+            Ethereum, Zcash, and Aztec are fail-closed or stubbed (Ethereum has no trie
+            traversal, receipt binding, or receipts-root check — OBL-C21). The wrapped note is
+            user-held; external release is relayer-executed.
           </li>
           <li>
             <strong>Contract-level gates are explicit counterparties.</strong> Identity
@@ -384,9 +390,12 @@ export function DarkWowTab() {
           <li>
             <strong>The assurance boundary is written down.</strong> Lean covers opcodes and
             gadgets, not the contract circuits; 6 assumptions remain. <code>OBL-Z12</code> is
-            closed in the obligation register; one validator defect (<code>OBL-C279</code>) is
-            deferred to the next release. The{' '}
-            <a href={darkWow.obligations} target="_blank" rel="noopener noreferrer">obligation register</a> is the authority.
+            closed for the known quotient circuits in the obligation register, while the
+            proof-status ledger still marks the general case partly open; one validator defect
+            (<code>OBL-C279</code>) is deferred to the next release. The{' '}
+            <a href={darkWow.obligations} target="_blank" rel="noopener noreferrer">obligation register</a>{' '}
+            and <a href={darkWow.proofs} target="_blank" rel="noopener noreferrer">proof-status ledger</a>{' '}
+            are both linked; where they differ, this scoped claim is the one stated here.
           </li>
           <li>
             <strong>Known defects.</strong> The mass-balance check was inert until a
