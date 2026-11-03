@@ -179,8 +179,7 @@ export function RholoTab() {
             each, and carries long-lived workflows between organisations; unrelated tenants should
             not contend for one global state. A name-passing calculus describes that shape natively,
             and a node designed to shard horizontally means tenants need not serialize on one
-            ledger. That is the structural case, not a measured one: sharding is untested at scale,
-            as Section 5 records.
+            ledger.
           </p>
           <p className="source-note">
             Roles from public profiles:{' '}
