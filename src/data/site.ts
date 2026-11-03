@@ -43,9 +43,9 @@ export const PAGE_META: Record<
   rholo: {
     title: 'Rholo — Patrick Mockridge',
     description:
-      'Rholo is a Rust node for the ρ-calculus: native object capabilities, horizontal scale-out by design, and laws proved at the model and tied to the node.',
+      'Rholo is a Rust node for the ρ-calculus, from the RChain lineage: native object capabilities, horizontal scale-out by design, and laws proved at the model and tied to the node.',
     path: '/rholo/',
-    updated: '2026-10-31',
+    updated: '2026-11-03',
   },
   azoth: {
     title: 'Azoth — Patrick Mockridge',
@@ -113,7 +113,7 @@ export const SITE = {
   location: 'Aberystwyth, Wales',
   email: 'patrickmockridge@gmail.com',
   url: 'https://patrickmockridge.github.io/',
-  updated: 'October 2026',
+  updated: 'November 2026',
   links: {
     github: 'https://github.com/PatrickMockridge',
     substack: 'https://technologytruth.substack.com/',

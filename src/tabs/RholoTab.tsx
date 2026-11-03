@@ -118,7 +118,7 @@ export function RholoTab() {
       <TitleBlock
         descriptor="Model and node"
         title="Rholo"
-        subtitle="A Rust node for the ρ-calculus: native object capabilities, horizontal scale-out by design, and laws proved at the model and tied to the node."
+        subtitle="A Rust node for the ρ-calculus, from the lineage of enterprise messaging: native object capabilities, horizontal scale-out by design, and laws proved at the model and tied to the node."
         metadata={[
           {
             label: 'Role',
@@ -155,6 +155,40 @@ export function RholoTab() {
           },
         ]}
       >
+        <div className="lede prose">
+          <p>
+            The model’s lineage runs through the enterprise systems that predate Bitcoin. Greg
+            Meredith, who founded the RChain Cooperative, was Principal Architect of Microsoft’s
+            BizTalk process orchestration and of an ATM network management solution for AT&T/NCR.
+            BizTalk coordinates business processes across separate systems and organisations; the
+            ATM software manages the network that carries cash-machine transactions. Both belong to
+            the message-driven infrastructure that consumers and businesses already rely on without
+            seeing it. RChain carried that model into a blockchain; Rholo is the Rust port of the
+            former RChain node.
+          </p>
+          <p>
+            The ρ-calculus, set out by Meredith and Radestock in 2005, treats concurrency, mobility,
+            and reflection as primitive: processes compose, names move between processes, and a name
+            can quote a process. Rholang makes possession of an unforgeable name the authority to
+            communicate and delegate. Rholo keeps the resulting laws in a machine-checked register
+            and ties the marked subset to the node by conformance corpora.
+          </p>
+          <p>
+            Those properties fit multi-tenant software more directly than a single-ledger DeFi
+            design. A SaaS platform runs many independent tenants, delegates narrow authority to
+            each, and carries long-lived workflows between organisations; unrelated tenants should
+            not contend for one global state. A name-passing calculus describes that shape natively,
+            and a node designed to shard horizontally means tenants need not serialize on one
+            ledger. That is the structural case, not a measured one: sharding is untested at scale,
+            as Section 5 records.
+          </p>
+          <p className="source-note">
+            Roles from public profiles:{' '}
+            <a href={rholo.meredithCrunchbase} target="_blank" rel="noopener noreferrer">Crunchbase</a> ·{' '}
+            <a href={rholo.meredithCypherhunter} target="_blank" rel="noopener noreferrer">CypherHunter</a>. Calculus:{' '}
+            <a href={rholo.rhoPaper} target="_blank" rel="noopener noreferrer">Meredith &amp; Radestock (2005)</a>.
+          </p>
+        </div>
         <WhatWhy
           what={
             <>
@@ -168,16 +202,20 @@ export function RholoTab() {
             <>
               The common pattern puts concurrency in the runtime and authority in a permission
               check. RChain made both structural: processes compose with <code>|</code>, and
-              an unforgeable <code>new</code> name is the authority. The port keeps that
-              concurrent, replicated state machine running and tests its laws against a
-              machine; the organisation dissolved in 2022.
+              an unforgeable <code>new</code> name is the authority. That suits multi-tenant
+              software better than a single shared ledger, where unrelated applications contend
+              for one state and authority is an account or an admin role. The port keeps that
+              concurrent, replicated state machine running and tests its laws against a machine;
+              the organisation dissolved in 2022.
             </>
           }
           combination={
             <>
               A ρ-calculus language where authority is a name and concurrency is native; a Rust
               node designed to shard horizontally; and a law register that ties machine-checked
-              models to the running node by conformance corpora.
+              models to the running node by conformance corpora. The combination is the structural
+              case for a service blockchain rather than only an asset ledger: many tenants, narrow
+              delegated authority, and long-running workflows that need not serialize on one ledger.
             </>
           }
         />
@@ -300,7 +338,7 @@ export function RholoTab() {
             </tr>
           </tbody>
         </table>
-        <p className="source-note">No individuals are named in this record.</p>
+        <p className="source-note">No individuals are named in the table above.</p>
         <div className="prose">
           <p>
             Earlier continuity work: in 2024 I co-authored the{' '}

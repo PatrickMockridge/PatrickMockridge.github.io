@@ -59,6 +59,8 @@ If the site is ever hosted under a project path, change `base` in
 - DarkWow is a DarkFi fork; fork-original layers are named explicitly.
 - Rholo proof scope is stated: Lean 4 laws, conformance-tied entries,
   model-level proofs, and named axioms.
-- RChain public record is attributed; no individuals are named and no court
-  opinion is linked.
+- RChain public record is attributed; no individuals are named in the contested
+  record and no court opinion is linked.
+- The rho-calculus lineage is credited: Greg Meredith's prior roles and the
+  Meredith & Radestock paper, with sources on the Rholo page.
 - The site has no analytics, cookies, forms, or third-party requests.
