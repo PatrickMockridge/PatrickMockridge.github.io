@@ -10,6 +10,7 @@ export interface EvidenceRow {
 
 const darkWowBase = `${SITE.links.darkwowRepo}/blob/linear-master`
 const rholoBase = `${SITE.links.rholoRepo}/blob/dev`
+const rcashBase = `${SITE.links.rcashRepo}/blob/main`
 
 export const darkWow = {
   repo: SITE.links.darkwowRepo,
@@ -61,6 +62,25 @@ export const rholo = {
   gorki: SITE.links.gorki,
   gorkiLegacy: SITE.links.gorkiLegacy,
   rgov: SITE.links.rgov,
+}
+
+export const rcash = {
+  repo: SITE.links.rcashRepo,
+  book: `${rcashBase}/book/src/index.md`,
+  northStar: `${rcashBase}/book/src/orientation/north-star.md`,
+  whyRholo: `${rcashBase}/book/src/orientation/why-rholo.md`,
+  status: `${rcashBase}/book/src/orientation/status-and-scope.md`,
+  spec: `${rcashBase}/docs/SPEC.md`,
+  calculus: `${rcashBase}/docs/spec/00-CALCULUS.md`,
+  hazop: `${rcashBase}/docs/spec/HAZOP.md`,
+  campaign: `${rcashBase}/docs/spec/flows/CAMPAIGN.md`,
+  verification: `${rcashBase}/book/src/trust/verification.md`,
+  testing: `${rcashBase}/book/src/trust/testing.md`,
+  lean: `${SITE.links.rcashRepo}/tree/main/spec/lean`,
+  tla: `${SITE.links.rcashRepo}/tree/main/spec/tla`,
+  components: `${rcashBase}/contracts/components.json`,
+  checkCaptures: `${rcashBase}/tools/check_captures.py`,
+  docs: `${SITE.links.rcashRepo}/tree/main/docs`,
 }
 
 export const azoth = {
@@ -219,6 +239,44 @@ export const rholoEvidence: EvidenceRow[] = [
     measure: 'Upstream corpus',
     value: '165 files, run 1:1 (README)',
     source: { label: 'README', href: rholo.repo },
+  },
+]
+
+export const rcashEvidence: EvidenceRow[] = [
+  {
+    measure: 'Behavioural suites',
+    value: '13/13 plus CLI demo, fixed-node devnet, 27 October 2026',
+    source: { label: 'Testing record', href: rcash.testing },
+  },
+  {
+    measure: 'Specification',
+    value: '929 lines; 221 requirements, 206 MUST, 19 areas',
+    source: { label: 'docs/SPEC.md', href: rcash.spec },
+  },
+  {
+    measure: 'Components',
+    value: '40 catalogued',
+    source: { label: 'Component catalogue', href: rcash.components },
+  },
+  {
+    measure: 'Calculus record',
+    value: 'L1–L8, N1–N7, S1–S18, WF1–WF8, P1–P6, C1–C3',
+    source: { label: 'docs/spec/00-CALCULUS.md', href: rcash.calculus },
+  },
+  {
+    measure: 'Lean 4',
+    value: 'S1–S12; rejects D1–D6; axiom audit',
+    source: { label: 'spec/lean', href: rcash.lean },
+  },
+  {
+    measure: 'TLA+',
+    value: '5 models; TLC over bounded domains',
+    source: { label: 'spec/tla', href: rcash.tla },
+  },
+  {
+    measure: 'Capture checks',
+    value: 'Replies, stored maps, bundles, attestations',
+    source: { label: 'tools/check_captures.py', href: rcash.checkCaptures },
   },
 ]
 

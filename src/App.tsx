@@ -9,6 +9,7 @@ import { ContactTab } from './tabs/ContactTab'
 import { CVTab } from './tabs/CVTab'
 import { DarkWowTab } from './tabs/DarkWowTab'
 import { MudraTab } from './tabs/MudraTab'
+import { RCashTab } from './tabs/RCashTab'
 import { RholoTab } from './tabs/RholoTab'
 import { ResearchTab } from './tabs/ResearchTab'
 
@@ -16,6 +17,7 @@ const PANELS: { id: TabId; node: ReactNode }[] = [
   { id: 'cv', node: <CVTab /> },
   { id: 'darkwow', node: <DarkWowTab /> },
   { id: 'rholo', node: <RholoTab /> },
+  { id: 'rcash', node: <RCashTab /> },
   { id: 'azoth', node: <AzothTab /> },
   { id: 'mudra', node: <MudraTab /> },
   { id: 'research', node: <ResearchTab /> },

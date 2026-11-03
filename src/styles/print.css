@@ -90,7 +90,7 @@
     display: grid;
     grid-template-columns: 26mm 1fr;
     column-gap: 8mm;
-    margin-top: 8pt;
+    margin-top: 6pt;
     break-inside: auto;
   }
 
@@ -135,7 +135,7 @@
     display: grid;
     grid-template-columns: 1.4fr 1fr;
     gap: 8pt;
-    padding: 3pt 0;
+    padding: 2pt 0;
     border-bottom: 1px solid #ccc;
     break-inside: avoid;
   }
@@ -145,12 +145,12 @@
   }
 
   .work-subtitle {
-    font-size: 8pt;
+    font-size: 7.5pt;
   }
 
   .work-meta {
     display: block;
-    font-size: 7pt;
+    font-size: 6.5pt;
   }
 
   .work-meta span {
@@ -178,7 +178,7 @@
   .chronology td,
   .record-table td,
   .evidence-table td {
-    padding: 2.5pt 0;
+    padding: 2pt 0;
   }
 
   .chronology tr,

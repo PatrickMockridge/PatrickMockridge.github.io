@@ -34,6 +34,14 @@ const PROJECTS = {
     programmingLanguage: 'Rust',
     license: 'https://www.gnu.org/licenses/agpl-3.0.html',
   },
+  rcash: {
+    name: 'R-Cash',
+    description:
+      'A permissionless multi-currency account and cross-border payments network on Rholo: direct FX pools, local stablecoins, and a transfer contract with one terminal state.',
+    codeRepository: 'https://github.com/rhovision-org/r-cash',
+    programmingLanguage: ['Rholang', 'Python', 'Rust', 'TypeScript', 'Lean 4', 'TLA+'],
+    license: 'https://www.gnu.org/licenses/agpl-3.0.html',
+  },
   azoth: {
     name: 'Azoth',
     description:

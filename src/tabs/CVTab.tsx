@@ -16,7 +16,7 @@ export function CVTab() {
       <header className="cv-hero screen-only">
         <h1>Patrick Mockridge</h1>
         <p>Protocol engineer</p>
-        <p className="cv-work-index">DarkWow · Rholo · Azoth · Mudra</p>
+        <p className="cv-work-index">DarkWow · Rholo · R-Cash · Azoth · Mudra</p>
         <p>Aberystwyth, Wales</p>
       </header>
 
@@ -37,7 +37,8 @@ export function CVTab() {
             coordination on a public chain, with authority held as an object capability
             rather than a public administrator. Rholo is continuity: a dissolved
             network’s node ported to Rust, with its language laws machine-checked at the
-            model level and conformance-tested at the node. Azoth is provenance:
+            model level and conformance-tested at the node. R-Cash is composition: Rholo’s
+            capabilities assembled into a multi-currency account and payments rail. Azoth is provenance:
             chemical-engineering calculations where every number carries its source and
             verification state, and unsupported answers are refused. Mudra is
             verification in a familiar form: a spreadsheet calculation proved correct
@@ -51,9 +52,9 @@ export function CVTab() {
           </p>
           <p>
             The method: specify the failure mode before the architecture; prove what can
-            be proved; contain what cannot; record provenance with every result. DarkWow
-            is containment; Rholo is continuity; Azoth is provenance; Mudra is
-            verification in a familiar form.
+            be proved; contain what cannot; record provenance with every result. DarkWow is
+            containment; Rholo is continuity; R-Cash is composition; Azoth is provenance;
+            Mudra is verification in a familiar form.
           </p>
         </div>
       </Section>
@@ -102,6 +103,24 @@ export function CVTab() {
           </li>
           <li className="work-row">
             <div className="work-main">
+              <span className="work-title">R-Cash</span>
+              <span className="work-subtitle">
+                A Wise-shaped multi-currency account and payments rail on Rholo
+              </span>
+            </div>
+            <div className="work-meta">
+              <span>2026; October–November (v0.5)</span>
+              <span>
+                Devnet-only prototype; 13/13 devnet suites; Lean 4 and five TLA+ models
+              </span>
+              <span>Design, contracts, formal models</span>
+            </div>
+            <a className="work-link" href={pathForTab('rcash')}>
+              Record →
+            </a>
+          </li>
+          <li className="work-row">
+            <div className="work-main">
               <span className="work-title">Azoth</span>
               <span className="work-subtitle">
                 A process calculation library where every number carries its provenance
@@ -141,7 +160,7 @@ export function CVTab() {
           </li>
         </ul>
         <p className="print-only print-urls">
-          Records: patrickmockridge.github.io/darkwow/ · /rholo/ · /azoth/ · /mudra/
+          Records: patrickmockridge.github.io/darkwow/ · /rholo/ · /r-cash/ · /azoth/ · /mudra/
         </p>
         <p className="print-only">
           Engagements: protocol review, rescue, and verification; a bounded triage with
@@ -154,7 +173,7 @@ export function CVTab() {
           rows={[
             {
               period: '2026',
-              body: 'Delivery: Rholo port (August–October), DarkWow redesign (April–October), Azoth, Mudra.',
+              body: 'Delivery: Rholo port (August–October), DarkWow redesign (April–October), R-Cash (October–November), Azoth, Mudra.',
             },
             {
               period: '2022–2026',

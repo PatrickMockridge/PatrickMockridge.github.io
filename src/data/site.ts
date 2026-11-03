@@ -2,6 +2,7 @@ export type TabId =
   | 'cv'
   | 'darkwow'
   | 'rholo'
+  | 'rcash'
   | 'azoth'
   | 'mudra'
   | 'research'
@@ -11,6 +12,7 @@ export const TABS: { id: TabId; label: string }[] = [
   { id: 'cv', label: 'CV' },
   { id: 'darkwow', label: 'DarkWow' },
   { id: 'rholo', label: 'Rholo' },
+  { id: 'rcash', label: 'R-Cash' },
   { id: 'azoth', label: 'Azoth' },
   { id: 'mudra', label: 'Mudra' },
   { id: 'research', label: 'Research' },
@@ -29,7 +31,7 @@ export const PAGE_META: Record<
   cv: {
     title: 'Patrick Mockridge — Protocol engineer',
     description:
-      'Independent protocol engineer working on privacy protocols, consensus systems, formal verification, and numerical provenance. Selected work: DarkWow, Rholo, Azoth, Mudra.',
+      'Independent protocol engineer working on privacy protocols, consensus systems, formal verification, and numerical provenance. Selected work: DarkWow, Rholo, R-Cash, Azoth, Mudra.',
     path: '/',
     updated: '2026-10-30',
   },
@@ -45,6 +47,13 @@ export const PAGE_META: Record<
     description:
       'Rholo is a Rust node for the ρ-calculus, from the RChain lineage: native object capabilities, horizontal scale-out by design, and laws proved at the model and tied to the node.',
     path: '/rholo/',
+    updated: '2026-11-03',
+  },
+  rcash: {
+    title: 'R-Cash — Patrick Mockridge',
+    description:
+      'A permissionless multi-currency account and cross-border payments network on Rholo: direct FX pools, local stablecoins, and a transfer contract with one terminal state.',
+    path: '/r-cash/',
     updated: '2026-11-03',
   },
   azoth: {
@@ -120,6 +129,7 @@ export const SITE = {
     fitba: 'https://patrickmockridge.github.io/fitba/',
     darkwowRepo: 'https://github.com/PatrickMockridge/DarkWow',
     rholoRepo: 'https://github.com/rhovision-org/rholo',
+    rcashRepo: 'https://github.com/rhovision-org/r-cash',
     azothRepo: 'https://github.com/PatrickMockridge/Azoth',
     mudraRepo: 'https://github.com/PatrickMockridge/Mudra',
     romeoArchive:
