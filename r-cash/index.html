@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R-Cash — Patrick Mockridge</title>
+    <meta name="description" content="A permissionless multi-currency account and cross-border payments network on Rholo: direct FX pools, local stablecoins, and a transfer contract with one terminal state.">
+    <meta name="author" content="Patrick Mockridge">
+    <meta name="theme-color" content="#fcfbf7">
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light';
+          document.documentElement.dataset.theme = theme;
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) {
+            meta.setAttribute('content', theme === 'dark' ? '#151513' : '#fcfbf7');
+          }
+        } catch (error) {
+          // Default to the light palette.
+        }
+      })();
+    </script>
+    <link rel="canonical" href="https://patrickmockridge.github.io/r-cash/">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link
+      rel="preload"
+      href="/fonts/ibm-plex-mono-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+   >
+    <link
+      rel="preload"
+      href="/fonts/ibm-plex-mono-500.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+   >
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="R-Cash — Patrick Mockridge">
+    <meta property="og:description" content="A permissionless multi-currency account and cross-border payments network on Rholo: direct FX pools, local stablecoins, and a transfer contract with one terminal state.">
+    <meta property="og:url" content="https://patrickmockridge.github.io/r-cash/">
+    <meta property="og:image" content="https://patrickmockridge.github.io/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta
+      property="og:image:alt"
+      content="Patrick Mockridge — a record of work in privacy protocols, consensus systems, and formal verification."
+   >
+    <meta property="profile:first_name" content="Patrick">
+    <meta property="profile:last_name" content="Mockridge">
+    <meta property="profile:username" content="PatrickMockridge">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="R-Cash — Patrick Mockridge">
+    <meta name="twitter:description" content="A permissionless multi-currency account and cross-border payments network on Rholo: direct FX pools, local stablecoins, and a transfer contract with one terminal state.">
+    <meta name="twitter:image" content="https://patrickmockridge.github.io/og.png">
+    <style>.noscript{color:#1a1a1a;background:#fcfbf7;max-width:68ch;margin:3rem auto;padding:0 1.25rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;line-height:1.65}.noscript h1{font-size:2rem;font-weight:500}</style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "url": "https://patrickmockridge.github.io/",
+        "name": "Patrick Mockridge — Protocol engineer",
+        "dateModified": "2026-11-03",
+        "mainEntity": {
+          "@type": "Person",
+          "@id": "https://patrickmockridge.github.io/#person",
+          "name": "Patrick Mockridge",
+          "url": "https://patrickmockridge.github.io/",
+          "jobTitle": "Protocol engineer",
+          "description": "Independent protocol engineer working on privacy protocols, consensus systems, formal verification, and numerical provenance.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Aberystwyth",
+            "addressRegion": "Wales",
+            "addressCountry": "GB"
+          },
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Edinburgh"
+          },
+          "sameAs": [
+            "https://github.com/PatrickMockridge",
+            "https://technologytruth.substack.com/",
+            "https://www.youtube.com/playlist?list=PLS0PrDysL4A3r9Ntdb159vsT2lmQK3zAW"
+          ],
+          "knowsAbout": [
+            "Privacy protocols",
+            "Consensus systems",
+            "Formal verification",
+            "Rust",
+            "Zero-knowledge proofs",
+            "Process safety",
+            "Romeo-Juliet Framework",
+            "Critical risk analysis",
+            "Rholang",
+            "RChain",
+            "Lean 4",
+            "Halo 2",
+            "OCapN",
+            "Distributed systems",
+            "HAZOP"
+          ]
+        },
+        "hasPart": {
+          "@type": "ItemList",
+          "name": "Selected work",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "DarkWow",
+                "description": "A private bearer-note system: the note is the asset, possession is authority, and no protocol-level administrator can freeze or confiscate it. ZK Box and Purse, a ZK-based identity/oracle/attestation/stablecoin suite, a no-freeze Promissory Note, an o-cap bridge, Uncle Merkle consensus, a per-block Pedersen supply audit, and a Lean 4 proof-status ledger.",
+                "codeRepository": "https://github.com/PatrickMockridge/DarkWow",
+                "programmingLanguage": "Rust",
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "Rholo",
+                "description": "A Rust node for the rho-calculus, from the RChain lineage: native object capabilities, horizontal scale-out by design, and laws proved at the model and tied to the node.",
+                "codeRepository": "https://github.com/rhovision-org/rholo",
+                "programmingLanguage": "Rust",
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "R-Cash",
+                "description": "A permissionless multi-currency account and cross-border payments network on Rholo: direct FX pools, local stablecoins, and a transfer contract with one terminal state.",
+                "codeRepository": "https://github.com/rhovision-org/r-cash",
+                "programmingLanguage": ["Rholang", "Python", "Rust", "TypeScript", "Lean 4", "TLA+"],
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "Azoth",
+                "description": "Chemical-engineering calculations in Python and Rust, where every number carries its provenance.",
+                "codeRepository": "https://github.com/PatrickMockridge/Azoth",
+                "programmingLanguage": ["Rust", "Python"],
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "Mudra",
+                "description": "A proof-of-trace system for spreadsheets and small programs: a constant-size proof that a committed calculation trace is unchanged.",
+                "codeRepository": "https://github.com/PatrickMockridge/Mudra",
+                "programmingLanguage": "Rust",
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            }
+          ]
+        }
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-CydY4jMD.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BLQes5Hf.css">
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"R-Cash","description":"A permissionless multi-currency account and cross-border payments network on Rholo: direct FX pools, local stablecoins, and a transfer contract with one terminal state.","url":"https://patrickmockridge.github.io/r-cash/","codeRepository":"https://github.com/rhovision-org/r-cash","programmingLanguage":["Rholang","Python","Rust","TypeScript","Lean 4","TLA+"],"license":"https://www.gnu.org/licenses/agpl-3.0.html","author":{"@type":"Person","@id":"https://patrickmockridge.github.io/#person"}}</script>
+  </head>
+  <body>
+    <div id="root"><a class="skip-link" href="#main">Skip to content</a><div class="site"><div class="window"><header class="window-header"><a class="brand" href="/">Patrick Mockridge</a><nav class="header-links" aria-label="Contact and links"><a href="https://github.com/PatrickMockridge" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://technologytruth.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a><a href="https://patrickmockridge.github.io/fitba/" target="_blank" rel="noopener noreferrer">fitba</a><a href="mailto:patrickmockridge@gmail.com">Email</a><a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a><span class="header-date">November 2026</span><button type="button" class="theme-toggle" aria-label="Switch to dark theme">Dark</button></nav></header><nav class="tab-index" aria-label="Sections"><a class="tab" id="tab-cv" href="/">CV</a><a class="tab" id="tab-darkwow" href="/darkwow/">DarkWow</a><a class="tab" id="tab-rholo" href="/rholo/">Rholo</a><a class="tab" id="tab-rcash" href="/r-cash/" aria-current="page">R-Cash</a><a class="tab" id="tab-azoth" href="/azoth/">Azoth</a><a class="tab" id="tab-mudra" href="/mudra/">Mudra</a><a class="tab" id="tab-research" href="/research/">Research</a><a class="tab" id="tab-contact" href="/contact/">Contact</a></nav><main id="main"><section class="panel" id="panel-rcash" aria-labelledby="tab-rcash"><header class="title-block"><p class="descriptor">Payments on Rholo</p><h1 class="case-title">R-Cash</h1><p class="case-subtitle">A permissionless multi-currency account and cross-border payments network on Rholo: hold, receive, convert, and pay in the user’s own currency, with liquidity providers rather than correspondent banks earning the spread.</p><dl class="what-why"><div class="what-why-row"><dt>What</dt><dd>A permissionless account and payments rail: one non-custodial balance per currency, a direct mesh of FX pools between currencies, and a transfer contract with memo, claim, expiry, refund, and one terminal state. Liquidity providers earn the spread; there is no router and no mandatory USD hop.</dd></div><div class="what-why-row"><dt>Why</dt><dd>Payments is not a trading venue. It is a high-volume, multi-tenant, long-running operation: many small transfers, many currencies, narrow delegated authority, and workflows that outlive a block. A single global ledger makes unrelated tenants contend for one state; an approval-based token puts a global<!-- --> <code>transferFrom</code> surface in front of every balance; concurrency becomes a scheduler problem. R-Cash places each currency, market, and transfer lane in its own contract and composes them by capability, on a node designed to shard horizontally. That is the architecture consumer payments needed and did not get.</dd></div><div class="what-why-row what-why-combination"><dt>The combination</dt><dd>Rholo’s native capabilities on a shardable node, composed into per-currency issuer clusters, one FX pool per market, a transfer book with terminal states, and a 2-of-3 governor with per-domain nonces and a timelock.</dd></div></dl><dl class="metadata"><div class="metadata-row"><dt>Role</dt><dd>Contracts, clients, specification, Lean 4 and TLA+ models; sole contributor</dd></div><div class="metadata-row"><dt>Period</dt><dd>2026; created 22 October; v0.5 dated 27 October; active to 3 November</dd></div><div class="metadata-row"><dt>Status</dt><dd>v0.5 devnet-only prototype; no fiat custody or real value on chain; no external audit or mainnet; Rholo is pre-testnet.</dd></div><div class="metadata-row"><dt>Repository</dt><dd><a href="https://github.com/rhovision-org/r-cash" target="_blank" rel="noopener noreferrer">github.com/rhovision-org/r-cash</a></dd></div><div class="metadata-row"><dt>Documentation</dt><dd><a href="https://github.com/rhovision-org/r-cash/blob/main/book/src/index.md" target="_blank" rel="noopener noreferrer">book/src</a></dd></div><div class="metadata-row"><dt>Built on</dt><dd><a href="/rholo/">Rholo</a> node; Rholang contracts</dd></div></dl></header><aside class="method-refrain" aria-label="Method"><span class="method-label">Method</span><p>Specify the failure mode before the architecture; prove what can be proved; contain what cannot; record provenance with every result. Where proof stops is stated in the limits.</p></aside><section class="section" id="rcash-gap" aria-labelledby="rcash-gap-heading"><h2 class="section-heading" id="rcash-gap-heading"><span class="section-number" aria-hidden="true">1</span><span>The gap</span></h2><div class="prose"><p>The first public-chain applications settled trading. A trading venue is one market, one order book, and a small number of large participants. A payments network is many currencies, many tenants, many small flows, and a regulatory boundary around every corridor. The design that suits a venue — one global state, one approval surface, one execution queue — becomes contention and coupling when applied to consumer payments. A design optimised for a venue is not a design for a utility.</p><p>The gap is architectural. A consumer account needs authority that can be delegated narrowly and revoked. A transfer needs exactly-once semantics and a terminal state. A currency needs its own issuance and risk controls. A market needs independent liquidity. A corridor needs to fail without stopping the rest. Each is a boundary. A single-ledger, account-and-approval design cannot express those boundaries without rebuilding them off-chain.</p><p>The primitives existed; the composition did not. R-Cash is the case study for the alternative: a permissionless multi-currency account and cross-border payments network on Rholo. The loop is hold, receive, convert, pay, get paid. Liquidity providers, not correspondent banks, earn the FX spread. The aim is narrower than a bank and larger than an app: a direct, non-custodial balance in the user’s own currency, and a settlement layer other businesses can depend on. Invoicing, payroll, logistics, accounting, and letters of credit live in other repositories. R-Cash is the base layer.</p></div></section><section class="section" id="rcash-product" aria-labelledby="rcash-product-heading"><h2 class="section-heading" id="rcash-product-heading"><span class="section-number" aria-hidden="true">2</span><span>The product</span></h2><p class="lede">The product is an account with a payment rail attached, not a wallet with a swap button.</p><ul class="prose"><li><strong>Account.</strong> Each key controls its own ERTP purses. Transfers are owner-gated operations recorded against an <code>opId</code> ledger. There is no global <code>approve</code> or <code>transferFrom</code> surface.</li><li><strong>FX mesh.</strong> Every market is an FxPool with a LiquidityLock. Pairs are direct; there is no router and no mandatory USD hop. Pricing is oracle-anchored with spread and skew. Liquidity providers earn the spread.</li><li><strong>Payment.</strong> TransferBook and TransferContract measure the send, carry a memo and <code>opId</code>, and support claim, expiry, and refund, with exactly one terminal state. Claim links reach a recipient who does not yet have a wallet.</li><li><strong>Boundary.</strong> R-Cash is the on-chain payments core of a Wise-shaped product. Fiat ramps, cards, custody, and the surrounding business software are off-chain or in other repositories.</li></ul><div class="prose"><p>The account is the unit of authority; the pool is the unit of liquidity; the transfer is the unit of settlement. Those three boundaries let the system grow by addition rather than by re-architecture.</p></div></section><section class="section" id="rcash-architecture" aria-labelledby="rcash-architecture-heading"><h2 class="section-heading" id="rcash-architecture-heading"><span class="section-number" aria-hidden="true">3</span><span>Architecture</span></h2><div class="prose"><p>Each cluster owns one kind of state and exposes capabilities rather than an admin API.</p></div><ul class="prose"><li><strong>Per-currency issuer cluster.</strong> Stablecoin, CollateralCustody, RiskParameters, VaultBook, LiquidationEngine, SurplusBuffer, SavingsPool, and PegStabilityModule deploy in one signed transaction, because mint, burn, and settlement capabilities cannot cross a deploy boundary. Collateral is native REV: no wrapped token, bridge, or redemption queue.</li><li><strong>FX market cluster.</strong> FxPool and LiquidityLock per market: oracle-anchored pricing, LP tokens, spread and skew, and a one-shot seed lock.</li><li><strong>OracleHub.</strong> Three allowlisted reporters, median, freshness and spread checks, and a signed policy.</li><li><strong>Transfer lane.</strong> TransferBook and TransferContract: measured send, memo and <code>opId</code>, claim, expiry, refund, and one terminal state.</li><li><strong>Root and governance.</strong> Registries, directories, and ListingViews; a 2-of-3 secp256k1 governor with per-domain nonces and a 100-block timelock. Emergency pause and market status are immediate.</li><li><strong>Platform fit.</strong> Deploys are atomic with rollback. The deploy term is capped at 65,536 bytes, parser depth at 128, and a deploy lives for 50 blocks; the contracts are sized to those limits.</li></ul><div class="prose"><p>Composition protocols P1–P6 specify how the clusters interact, so a failed conversion does not strand a transfer and a paused market does not pause a currency.</p></div></section><section class="section" id="rcash-calculus" aria-labelledby="rcash-calculus-heading"><h2 class="section-heading" id="rcash-calculus-heading"><span class="section-number" aria-hidden="true">4</span><span>Why the calculus matters here</span></h2><div class="prose"><p>The calculus matters because the product needs its properties, not because formalism is a virtue in itself. Each row is a payment requirement first and a language property second.</p></div><div class="comparison comparison--contrast"><div class="comparison-head"><span class="comparison-caption">Table 1. Payment requirements, and what the calculus supplies.</span><span class="comparison-subtitle">The requirement, the Rholo or Rholang mechanism, and the R-Cash use.</span></div><div class="comparison-scroll" role="region" aria-label="Table 1. Payment requirements, and what the calculus supplies." tabindex="0"><table class="comparison-table"><caption class="visually-hidden">Table 1. Payment requirements, and what the calculus supplies.</caption><thead><tr><th scope="col">Requirement</th><th scope="col">Rholo and Rholang supply</th><th scope="col">R-Cash uses it for</th></tr></thead><tbody><tr><th scope="row">Authority</th><td>Unforgeable <code>new</code> names; bundles as read/write facets; forwarders and revocation; no ambient authority.</td><td>Owner-gated purses; per-domain governor authority; mint and settlement capabilities that cannot cross a deploy boundary.</td></tr><tr><th scope="row">Exactly-once payment</th><td>Linear-cell discipline; one-shot consumption; capability-provenance rules C1–C3.</td><td>Transfer claim and refund; one terminal state; no double claim.</td></tr><tr><th scope="row">Collateral and solvency</th><td>Compositional state; capability-scoped mint and burn; conservation checked over the model.</td><td>Issuer cluster deployed atomically; vault, liquidation, and surplus buffer composed per currency.</td></tr><tr><th scope="row">Failure atomicity</th><td>Atomic deploys with rollback; concurrent composition.</td><td>A conversion or claim either completes or leaves no partial state.</td></tr><tr><th scope="row">Concurrency and scale</th><td>Process composition; shard routing and cross-shard invocation; no global execution queue.</td><td>One currency or market per cluster; capacity added per market, not by serialising every payment.</td></tr><tr><th scope="row">Verification</th><td>Lean transition relation and arithmetic; TLA+ models; tests.</td><td>S1–S12 invariants, five TLA+ models, and an axiom audit; traceability plus tests link model to code.</td></tr></tbody></table></div><p class="source-note">The calculus record and its formal checks are linked in Section 6.</p></div></section><section class="section" id="rcash-operations" aria-labelledby="rcash-operations-heading"><h2 class="section-heading" id="rcash-operations-heading"><span class="section-number" aria-hidden="true">5</span><span>SaaS-shaped operations</span></h2><div class="prose"><p>A payments product is operated like SaaS even when it is not sold like SaaS. The same list applies to any dapp that grows from a single action into an offering: accounts, idempotency, request objects, metadata, delegation, change control, isolation, and workflows that outlive a block. R-Cash makes those operations first-class contract boundaries.</p></div><div class="comparison comparison--contrast"><div class="comparison-head"><span class="comparison-caption">Table 2. The operations a payments product needs.</span><span class="comparison-subtitle">Contract boundaries that make SaaS-shaped operations native rather than reconstructed off-chain.</span></div><div class="comparison-scroll" role="region" aria-label="Table 2. The operations a payments product needs." tabindex="0"><table class="comparison-table"><caption class="visually-hidden">Table 2. The operations a payments product needs.</caption><thead><tr><th scope="col">SaaS operation</th><th scope="col">Mechanism in R-Cash</th><th scope="col">Contract boundary</th></tr></thead><tbody><tr><th scope="row">Accounts and entitlements</th><td>Per-key account; owner-gated purses; capability facets.</td><td>A tenant receives authority, not a row in an admin database.</td></tr><tr><th scope="row">Idempotency</th><td><code>opId</code> ledger; one terminal state per transfer.</td><td>A retry does not double-pay.</td></tr><tr><th scope="row">Payment requests</th><td>TransferContract with memo, claim, expiry, refund.</td><td>A claim link is a capability, not a hosted checkout session.</td></tr><tr><th scope="row">Wallet-less recipient</th><td>Native-REV stipend in the same deploy as the transfer.</td><td>A recipient can claim without holding gas.</td></tr><tr><th scope="row">Delegation</th><td>Bundles, forwarders, and revocation.</td><td>An operator acts through a narrow facet, not the user’s key.</td></tr><tr><th scope="row">Change control</th><td>2-of-3 governor, per-domain nonces, 100-block timelock; immediate pause.</td><td>Parameter changes are delayed; safety stops are not.</td></tr><tr><th scope="row">Tenant isolation</th><td>Per-currency and per-market clusters on a shardable node.</td><td>One market’s congestion does not serialise every payment.</td></tr><tr><th scope="row">Long-running workflows</th><td>Claims with expiry and refund; contract state persists across deploys.</td><td>A payment can outlive a block without ambiguous state.</td></tr><tr><th scope="row">Settlement record</th><td>Registries, directories, and ListingViews.</td><td>On-chain balances and transfer states are queryable without an off-chain ledger.</td></tr></tbody></table></div></div><div class="prose"><p>None of these is payments-specific. They are the operations a dapp needs when it grows from a single action into an offering; R-Cash is an early worked example.</p></div></section><section class="section" id="rcash-evidence" aria-labelledby="rcash-evidence-heading"><h2 class="section-heading" id="rcash-evidence-heading"><span class="section-number" aria-hidden="true">6</span><span>Evidence and provenance</span></h2><div class="prose"><p>R-Cash is built on Rholo and written in Rholang. The code through<!-- --> <code>d5d613b</code> was Apache-2.0; the repository is now AGPL-3.0-only, and the earlier grants are not revoked. One contributor wrote the contracts, tooling, specification, and models.</p><p>The specification is 929 lines: v0.5, dated 27 October 2026, with 221 requirement rows, 206 MUST rows, and 19 areas. The component catalogue holds 40 components. The calculus record defines 8 laws (L1–L8), 7 non-laws (N1–N7), 18 safety rules (S1–S18), 8 well-formedness rules (WF1–WF8), 6 composition protocols (P1–P6), and 3 capability-provenance rules (C1–C3).</p><p>The formal chain has three links. Lean 4 project <code>rholphin</code>, without Mathlib, models the transition relation, arithmetic, and linear-cell discipline; it proves S1–S12 and rejects six linear-cell defect shapes (D1–D6). Its axiom audit rejects <code>sorry</code>, <code>admit</code>, <code>native_decide</code>, and project-local axioms. Five TLA+ models — CellLinearity, TransferExclusivity, PoolConservation, CapabilityProvenance, and AdminNonce — are checked with TLC over deliberately small bounded domains. <code>tools/check_captures.py</code> rejects capabilities in replies, stored maps, bundles, and attestations.</p></div><div class="evidence"><table class="evidence-table"><caption class="visually-hidden">R-Cash evidence</caption><thead><tr><th scope="col">Measure</th><th scope="col">Value</th><th scope="col">Source</th></tr></thead><tbody><tr><td>Behavioural suites</td><td class="numeric">13/13 plus CLI demo, fixed-node devnet, 27 October 2026</td><td><a href="https://github.com/rhovision-org/r-cash/blob/main/book/src/trust/testing.md" target="_blank" rel="noopener noreferrer">Testing record</a></td></tr><tr><td>Specification</td><td class="numeric">929 lines; 221 requirements, 206 MUST, 19 areas</td><td><a href="https://github.com/rhovision-org/r-cash/blob/main/docs/SPEC.md" target="_blank" rel="noopener noreferrer">docs/SPEC.md</a></td></tr><tr><td>Components</td><td class="numeric">40 catalogued</td><td><a href="https://github.com/rhovision-org/r-cash/blob/main/contracts/components.json" target="_blank" rel="noopener noreferrer">Component catalogue</a></td></tr><tr><td>Calculus record</td><td class="numeric">L1–L8, N1–N7, S1–S18, WF1–WF8, P1–P6, C1–C3</td><td><a href="https://github.com/rhovision-org/r-cash/blob/main/docs/spec/00-CALCULUS.md" target="_blank" rel="noopener noreferrer">docs/spec/00-CALCULUS.md</a></td></tr><tr><td>Lean 4</td><td class="numeric">S1–S12; rejects D1–D6; axiom audit</td><td><a href="https://github.com/rhovision-org/r-cash/tree/main/spec/lean" target="_blank" rel="noopener noreferrer">spec/lean</a></td></tr><tr><td>TLA+</td><td class="numeric">5 models; TLC over bounded domains</td><td><a href="https://github.com/rhovision-org/r-cash/tree/main/spec/tla" target="_blank" rel="noopener noreferrer">spec/tla</a></td></tr><tr><td>Capture checks</td><td class="numeric">Replies, stored maps, bundles, attestations</td><td><a href="https://github.com/rhovision-org/r-cash/blob/main/tools/check_captures.py" target="_blank" rel="noopener noreferrer">tools/check_captures.py</a></td></tr></tbody></table><p class="source-note">Sources: repository, specification, and models, as of 3 November 2026. The 13/13 result is the recorded fixed-node devnet run on 27 October 2026; the mesh and external-asset suites were added later and are not part of that count. Counts drift; the linked artifact is authoritative.</p></div></section><section class="section" id="rcash-limits" aria-labelledby="rcash-limits-heading"><h2 class="section-heading" id="rcash-limits-heading"><span class="section-number" aria-hidden="true">7</span><span>Limits</span></h2><ul class="prose"><li><strong>Maturity.</strong> v0.5, devnet-only prototype. No fiat custody or real value on chain, no external audit, no mainnet; Rholo is pre-testnet.</li><li><strong>Oracle committee.</strong> Three allowlisted reporters, median and freshness checks. Two compromised reporters can produce a wrong price; the design reduces that risk but does not remove it.</li><li><strong>Collateral.</strong> Native REV only. Volatility can create bad debt; the surplus buffer is the only backstop.</li><li><strong>Ramps.</strong> Fiat on- and off-ramps are off-chain and unbonded. R-Cash does not custody fiat and cannot enforce an off-chain leg.</li><li><strong>Claim secrets.</strong> A claim is bearer authority. Whoever holds the secret can claim it; there is no identity check.</li><li><strong>Scale.</strong> Horizontal scale-out is inherited from Rholo’s design, not a benchmark result for R-Cash. The public testnet was rebuilt on 29 October 2026; the 28 October campaign was blocked by operator resource admission and a full campaign has not been re-run.</li><li><strong>Verification boundary.</strong> Lean models the transition relation, arithmetic, and linear-cell discipline. It does not formalise Rholang syntax, the node scheduler, or phlo; the link to deployed code is traceability plus tests, not extraction. The HAZOP of shared channels is a design review, not a proof.</li></ul></section><section class="section" id="rcash-links" aria-labelledby="rcash-links-heading"><h2 class="section-heading" id="rcash-links-heading"><span class="section-number" aria-hidden="true">8</span><span>Links</span></h2><ul class="link-list"><li><a href="https://github.com/rhovision-org/r-cash" target="_blank" rel="noopener noreferrer">Repository</a></li><li><a href="https://github.com/rhovision-org/r-cash/blob/main/book/src/index.md" target="_blank" rel="noopener noreferrer">Book</a></li><li><a href="https://github.com/rhovision-org/r-cash/blob/main/book/src/orientation/north-star.md" target="_blank" rel="noopener noreferrer">North star</a></li><li><a href="https://github.com/rhovision-org/r-cash/blob/main/book/src/orientation/why-rholo.md" target="_blank" rel="noopener noreferrer">Why Rholo</a></li><li><a href="https://github.com/rhovision-org/r-cash/blob/main/book/src/orientation/status-and-scope.md" target="_blank" rel="noopener noreferrer">Status and scope</a></li><li><a href="https://github.com/rhovision-org/r-cash/blob/main/docs/SPEC.md" target="_blank" rel="noopener noreferrer">Specification</a></li><li><a href="https://github.com/rhovision-org/r-cash/blob/main/docs/spec/00-CALCULUS.md" target="_blank" rel="noopener noreferrer">Calculus record</a></li><li><a href="https://github.com/rhovision-org/r-cash/blob/main/docs/spec/HAZOP.md" target="_blank" rel="noopener noreferrer">HAZOP</a></li><li><a href="https://github.com/rhovision-org/r-cash/blob/main/docs/spec/flows/CAMPAIGN.md" target="_blank" rel="noopener noreferrer">Campaign</a></li><li><a href="https://github.com/rhovision-org/r-cash/blob/main/book/src/trust/verification.md" target="_blank" rel="noopener noreferrer">Verification</a></li><li><a href="https://github.com/rhovision-org/r-cash/tree/main/spec/lean" target="_blank" rel="noopener noreferrer">Lean 4 models</a></li><li><a href="https://github.com/rhovision-org/r-cash/tree/main/spec/tla" target="_blank" rel="noopener noreferrer">TLA+ models</a></li><li><a href="https://github.com/rhovision-org/r-cash/blob/main/contracts/components.json" target="_blank" rel="noopener noreferrer">Component catalogue</a></li><li><a href="/rholo/">Rholo node record</a></li></ul></section></section></main><footer class="window-footer"><span>Patrick Mockridge<!-- --> · <!-- -->Aberystwyth, Wales<!-- --> · Last updated<!-- --> <time dateTime="2026-11-03">3 November 2026</time></span><span><a href="mailto:patrickmockridge@gmail.com">Enquiries</a> · <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a></span></footer></div></div></div>
+    <noscript>
+        <div class="noscript">
+          <h1>Patrick Mockridge</h1>
+          <p>
+            Independent protocol engineer working on privacy protocols, consensus
+            systems, formal verification, and numerical provenance.
+          </p>
+          <p>
+            Selected work: <a href="/darkwow/">DarkWow</a> ·
+            <a href="/rholo/">Rholo</a> ·
+            <a href="/r-cash/">R-Cash</a> ·
+            <a href="/azoth/">Azoth</a> · <a href="/mudra/">Mudra</a>.
+          </p>
+          <p>
+            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a> ·
+            <a href="mailto:patrickmockridge@gmail.com">patrickmockridge@gmail.com</a>
+          </p>
+          <p>
+            <a href="https://github.com/PatrickMockridge" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+            <a href="https://technologytruth.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a>
+          </p>
+        </div>
+    </noscript>
+  </body>
+</html>
