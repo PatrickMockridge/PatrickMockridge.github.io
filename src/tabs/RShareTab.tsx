@@ -65,9 +65,9 @@ export function RShareTab() {
   return (
     <>
       <TitleBlock
-        descriptor="Shared booking infrastructure on Rholo"
+        descriptor="Shared booking contracts on Rholo"
         title="R-Share"
-        subtitle="Holiday letting, events, ticketing, bike share, car rental, and robotics-as-a-service all run the same flow: booking, escrow, settlement. R-Share makes that flow one set of shared chain primitives, so each vertical reuses one contract path instead of rebuilding a booking engine."
+        subtitle="Holiday letting, events, ticketing, bike share, car rental, and robotics-as-a-service all run the same flow: booking, escrow, settlement."
         metadata={[
           {
             label: 'Role',
@@ -111,45 +111,40 @@ export function RShareTab() {
         ]}
       >
         <p className="lede">
-          Two guests try to book the same room for the same three nights. In the usual
-          setup the operator’s database decides who wins, and the guest has to trust a
-          screenshot. R-Share makes availability and booking one shared state: the first
-          valid booking takes the slots in a single commit, the second gets a clean refusal,
-          and the deposit sits in escrow neither side controls alone. The chain is the
-          backend; the client is a reference, not a marketplace.
+          Every rental market runs the same flow: booking, escrow, settlement. The unit
+          changes — room, seat, bike, car, machine — and so do the interval and the policy;
+          the flow does not. Web3 has barely entered this market because most projects build
+          vertical products that do not scale, not shared concurrent components. R-Share is
+          the shared component set: one contract path across holiday letting, events,
+          ticketing, bike share, car rental, and robotics-as-a-service.
         </p>
         <WhatWhy
           what={
             <>
-              A set of concurrent booking and rental contracts. A provider publishes a
-              listing; the listing owns units; each unit owns slots. A slot is one bookable
-              unit of time — a room-night, a seat at a show, an hour with a machine. A
-              booking takes one or more slots over an interval and carries escrow,
-              cancellation, deposit, dispute, and ticket state. Thirteen deploy terms, one
-              allocation cell per listing, one booking cell and one bond (the contract-held
-              deposit purse) per booking, with settlement through R-Cash.
+              A set of concurrent booking and rental contracts on Rholo, settled through
+              R-Cash. A provider publishes a listing; the listing owns units; each unit owns
+              slots. A slot is one bookable unit of time: a room-night, a seat at a show, an
+              hour with a machine. A booking takes one or more slots over an interval and
+              carries escrow, cancellation, deposit, dispute, and ticket state.
             </>
           }
           why={
             <>
-              A rental is a multi-party state machine with money in the middle, and every
-              one of these businesses runs the same flow: booking, escrow, settlement. What
-              differs is the unit, the interval, and the policy. Most rental software
-              rebuilds the flow inside a proprietary database and a payment integration,
-              which gives one operator the book and the money. Web3 has barely touched this
-              market because the usual answers are vertical products that do not scale, not
-              shared concurrent components. R-Share is the missing thread: one booking and
-              escrow path that every vertical reuses.
+              A rental is a multi-party state machine with money at stake. Every one of these
+              businesses runs the same flow: booking, escrow, settlement. What differs is the
+              unit, the interval, and the policy. Most rental software rebuilds that flow
+              inside a proprietary database and a payment integration, so one operator
+              controls the record and the funds, and every new vertical needs a new booking
+              engine. R-Share is one booking and escrow path that every vertical reuses.
             </>
           }
           combination={
             <>
               Four primitives — capacity, interval, escrow, and policy — on Rholo’s object
-              capabilities (unforgeable references that grant exactly the authority they
-              name), with R-Cash settlement and a per-listing allocator whose atomic
-              acquisition is proved in Lean. The same contract path carries holiday letting,
-              events, ticketing, bike share, car rental, and robotics-as-a-service; the
-              product and the off-chain facts stay in the fork.
+              capabilities, with R-Cash settlement and a per-listing allocator. The same
+              contract path carries holiday letting, events, ticketing, bike share, car
+              rental, and robotics-as-a-service. The product and the off-chain facts stay in
+              the fork.
             </>
           }
         />
@@ -160,50 +155,47 @@ export function RShareTab() {
       <Section number="1" title="The same flow, six markets" id="rshare-model">
         <div className="prose">
           <p>
-            The businesses look different; the flow does not. A room for three nights, a
-            seat at a show, a bike for an hour, a car for a day, a machine for an operating
-            window: each is capacity over an interval, paid before use and settled after.
-            The flow is booking, escrow, settlement. What changes is the unit, the interval,
-            and the policy.
+            Each business books capacity over an interval: a room for three nights, a seat at
+            a show, a bike for an hour, a car for a day, a machine for an operating window.
+            Each is paid before use and settled after. The unit, the interval, and the policy
+            change; the flow is booking, escrow, settlement.
           </p>
           <p>
-            Rental software usually rebuilds that flow per vertical, inside one operator’s
-            database with a payment integration beside it. That gives the operator the book
-            and the money, and makes every new vertical a new booking engine. On-chain
-            attempts have mostly repeated the vertical product rather than the shared flow.
+            Most rental software rebuilds that flow per vertical, inside one operator’s
+            database with a payment integration beside it. That gives the operator the record
+            and the funds, and makes every new vertical a new booking engine. Most on-chain
+            projects have repeated the vertical product rather than the shared flow.
           </p>
           <p>
-            R-Share is the missing thread: one set of concurrent booking, escrow, and
-            settlement contracts that every vertical reuses by changing <code>kind</code>,{' '}
-            <code>attrs</code>, slot IDs, terms, and at most one pure <code>Remedy</code>{' '}
-            branch. Not a new booking arm per vertical.
+            R-Share is one set of concurrent booking, escrow, and settlement contracts that
+            every vertical reuses by changing <code>kind</code>, <code>attrs</code>, slot IDs,
+            terms, and at most one pure <code>Remedy</code> branch. No vertical adds a booking
+            arm.
           </p>
           <p>
-            A two-room house for three nights makes the shape concrete. The listing has two
-            units and six nightly slots. A guest booking both rooms for the full stay asks
-            for all six; the allocator writes all six in one commit or writes none. There is
-            no partial hold that leaves one room stranded.
+            The listing has two units and six nightly slots. A guest booking both rooms for
+            the full stay asks for all six; the allocator writes all six in one commit or
+            writes none. No partial hold is possible.
           </p>
           <p>
-            The booking carries terms, hold, escrow, confirm, check-in, check-out, settle;
-            each booking also has its own state cell, ticket projection, operation map, and
-            a bond holding the escrow purse. Cancellation, no-show, deposit claims, disputes,
-            and arbitration are arms on the shared path, and settlement runs through R-Cash.
-            The model stays small: capacity, interval, escrow, policy. Calendar, identity,
+            The booking carries terms, hold, escrow, confirm, check-in, check-out, settle.
+            Each booking has its own state cell, ticket projection, operation map, and a bond
+            holding the escrow purse. Cancellation, no-show, deposit claims, disputes, and
+            arbitration are on the same path, and settlement runs through R-Cash. The core is
+            four primitives: capacity, interval, escrow, and policy. Calendar, identity,
             support, insurance, telemetry, and regulation are the fork’s product.
           </p>
         </div>
       </Section>
 
-      <Section number="2" title="The ladder is the evidence" id="rshare-ladder">
+      <Section number="2" title="The ladder" id="rshare-ladder">
         <div className="prose">
           <p>
-            The ladder is the evidence for that claim, not a feature list. Each rung adds a
-            real-world constraint; the question is whether listing to unit to slot to
+            Each rung adds a real-world constraint: whether listing to unit to slot to
             booking still fits. A new rung changes <code>kind</code>, <code>attrs</code>,
             slot IDs, and at most one pure <code>Remedy</code> branch. It does not change the
-            booking machine, escrow, settlement buckets, or authority model. If it needs a
-            new booking arm, the primitive is wrong or the requirement is a new primitive.
+            booking machine, escrow, settlement buckets, or authority model. A rung that
+            needs a new booking arm means the primitive set is wrong.
           </p>
         </div>
         <ComparisonTable
@@ -218,11 +210,11 @@ export function RShareTab() {
           <p>
             Holiday letting is the reference path: a two-room house, three nights, one
             deposit, one cancellation policy, followed from terms to settlement.
-            Robotics-as-a-service is the north star: machine windows, operators,
+            Robotics-as-a-service is the furthest case: machine windows, operators,
             certification, session evidence, and SLAs. The shared path is implemented; the
             RaaS-specific evidence and safety pieces are design. In the table, “pass” means a
             recorded suite or arm; “mapping only” means the use case rides the shared path
-            without a dedicated suite.
+            without its own suite.
           </p>
         </div>
       </Section>
@@ -230,10 +222,9 @@ export function RShareTab() {
       <Section number="3" title="Concurrency and the allocator" id="rshare-concurrency">
         <div className="prose">
           <p>
-            The doctrine is one sentence: make the tuple space do the arbitration, not a lock
-            or a global cell. The tuple space is the shared pool of messages Rholang
-            processes take from and put back. The allocator checks whether a set of slots can
-            be taken together; if they can, it claims them all in one take/commit.
+            The allocator uses the tuple space — the shared pool of messages Rholang processes
+            take from and put back — to arbitrate, with no lock and no global cell. A booking
+            takes all requested slots in one commit or none.
           </p>
         </div>
         <ul className="prose">
@@ -247,7 +238,7 @@ export function RShareTab() {
             writes every requested slot in one take/commit. No partial state is reachable.
           </li>
           <li>
-            <strong>Peek is a hint, never a lock.</strong> A stale peek causes a clean
+            <strong>A peek is a hint, not a lock.</strong> A stale peek causes a clean
             refusal, not a double booking.
           </li>
           <li>
@@ -261,19 +252,16 @@ export function RShareTab() {
           </li>
           <li>
             <strong>Per-listing serialization is accepted.</strong> Different listings never
-            share a cell; different slots of one listing serialize. That is the price of
-            atomic multi-slot acquisition, and the named hotspot.
+            share a cell; different slots of one listing serialize. This is the cost of
+            atomic multi-slot acquisition and the known hotspot.
           </li>
         </ul>
         <div className="prose">
           <p>
-            Lean proves the cornerstone:{' '}
-            <code>RShare.Model.Allocator.acquire_no_double_owner</code>. After a successful
-            acquire, every active reservation containing a requested slot key belongs to the
-            acquiring booking. <code>acquire_none_or_reservation</code> and{' '}
-            <code>acquire_is_one_reservation</code> state the shape: refuse and leave the
-            state unchanged, or append exactly one reservation. The proof is over the model,
-            not a Rholang refinement.
+            Lean proves that after a successful acquire, every active reservation containing
+            a requested slot belongs to the acquiring booking. It also proves that an acquire
+            either refuses and leaves the state unchanged, or appends exactly one reservation.
+            The proof is over the model, not a Rholang refinement.
           </p>
         </div>
       </Section>
@@ -281,11 +269,10 @@ export function RShareTab() {
       <Section number="4" title="The client, and the fork" id="rshare-client">
         <div className="prose">
           <p>
-            The client exists to show the contracts can be used, not to be the product. The
-            repository ships the contracts, a Rust SDK, a CLI, a WASM wallet, and a React
-            reference client; there is no backend server, indexer, or off-chain database. The
-            client uses a curated catalogue and share links, with no provider inbox, search,
-            notifications, or fiat ramp. The chain is the backend.
+            The client shows how to use the contracts; it is not the product. The repository
+            ships the contracts, a Rust SDK, a CLI, a WASM wallet, and a React reference
+            client. There is no backend server, indexer, or off-chain database. The chain is
+            the backend.
           </p>
           <p>
             The campaign covers the same surface from three directions: a CLI journey (quote,
@@ -298,8 +285,8 @@ export function RShareTab() {
             Fork it: keep the AGPL notices, copy the contracts, harness, tools, crates, and
             web app, and change the <code>kind</code>, the <code>attrs</code>, the slot IDs,
             the terms, and at most one pure <code>Remedy</code> branch. The off-chain parts
-            are yours. R-Share is the settlement core; R-Cash is the money; neither is a
-            marketplace.
+            are yours. R-Share is the settlement core; R-Cash is the payment rail; neither is
+            a marketplace.
           </p>
         </div>
       </Section>
@@ -308,10 +295,10 @@ export function RShareTab() {
         <div className="prose">
           <p>
             On 3 November 2026, a fresh devnet built from Rholo <code>e2d073d</code> with
-            R-Cash <code>49b441d</code> recorded 16 passing suites, from root and payments
-            through lifecycle, claims, pricing, guestbook, booking, pause, allocator, admin,
-            events, generality, provider, listing, behaviour, and conservation. Claim
-            coverage is 20 of 30 cells; four claim classes run across five kinds.
+            R-Cash <code>49b441d</code> recorded 16 passing suites, covering root, payments,
+            lifecycle, claims, pricing, booking, pause, allocator, admin, events, provider,
+            listing, and conservation. Claim coverage is 20 of 30 cells; four claim classes
+            run across five kinds.
           </p>
           <p>
             The allocator suite checks atomic multi-slot acquisition, token-gated confirm and
@@ -344,7 +331,7 @@ export function RShareTab() {
             core.
           </li>
           <li>
-            <strong>Unrun breadth.</strong> <code>providerDeliveryBreach</code> and{' '}
+            <strong>Not yet run.</strong> <code>providerDeliveryBreach</code> and{' '}
             <code>partialPerformance</code> have no code. Fleet-scale allocation, station
             capacity, provider-bond legs, obligation objects, generalized claims, and
             evidence enforcement are not run.
