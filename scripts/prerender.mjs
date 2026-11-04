@@ -53,7 +53,7 @@ const PROJECTS = {
   rshare: {
     name: 'R-Share',
     description:
-      'On-chain booking and rental primitives for Rholo, settled through R-Cash: listings own units, units own slots, and bookings hold capacity over an interval with escrow, cancellation, deposits, disputes, and tickets.',
+      'On-chain booking and rental primitives for Rholo, settled through R-Cash: one booking, escrow, and settlement path for holiday letting, events, ticketing, bike share, car rental, and robotics-as-a-service.',
     codeRepository: 'https://github.com/rhovision-org/r-share',
     programmingLanguage: ['Rholang', 'Rust', 'Python', 'TypeScript', 'Lean 4'],
     license: 'https://www.gnu.org/licenses/agpl-3.0.html',
