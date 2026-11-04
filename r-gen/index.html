@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R-Gen — Patrick Mockridge</title>
+    <meta name="description" content="Rholang contracts and Lean 4 proofs for engineering claims: a claim records quantity, validation records quality, and the pair is a K-Asset that keeps its qualifications, adjudication, and provenance.">
+    <meta name="author" content="Patrick Mockridge">
+    <meta name="theme-color" content="#fcfbf7">
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light';
+          document.documentElement.dataset.theme = theme;
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) {
+            meta.setAttribute('content', theme === 'dark' ? '#151513' : '#fcfbf7');
+          }
+        } catch (error) {
+          // Default to the light palette.
+        }
+      })();
+    </script>
+    <link rel="canonical" href="https://patrickmockridge.github.io/r-gen/">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link
+      rel="preload"
+      href="/fonts/ibm-plex-mono-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+   >
+    <link
+      rel="preload"
+      href="/fonts/ibm-plex-mono-500.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+   >
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="R-Gen — Patrick Mockridge">
+    <meta property="og:description" content="Rholang contracts and Lean 4 proofs for engineering claims: a claim records quantity, validation records quality, and the pair is a K-Asset that keeps its qualifications, adjudication, and provenance.">
+    <meta property="og:url" content="https://patrickmockridge.github.io/r-gen/">
+    <meta property="og:image" content="https://patrickmockridge.github.io/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta
+      property="og:image:alt"
+      content="Patrick Mockridge — a record of work in privacy protocols, consensus systems, and formal verification."
+   >
+    <meta property="profile:first_name" content="Patrick">
+    <meta property="profile:last_name" content="Mockridge">
+    <meta property="profile:username" content="PatrickMockridge">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="R-Gen — Patrick Mockridge">
+    <meta name="twitter:description" content="Rholang contracts and Lean 4 proofs for engineering claims: a claim records quantity, validation records quality, and the pair is a K-Asset that keeps its qualifications, adjudication, and provenance.">
+    <meta name="twitter:image" content="https://patrickmockridge.github.io/og.png">
+    <style>.noscript{color:#1a1a1a;background:#fcfbf7;max-width:68ch;margin:3rem auto;padding:0 1.25rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;line-height:1.65}.noscript h1{font-size:2rem;font-weight:500}</style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "url": "https://patrickmockridge.github.io/",
+        "name": "Patrick Mockridge — Protocol engineer",
+        "dateModified": "2026-11-04",
+        "mainEntity": {
+          "@type": "Person",
+          "@id": "https://patrickmockridge.github.io/#person",
+          "name": "Patrick Mockridge",
+          "url": "https://patrickmockridge.github.io/",
+          "jobTitle": "Protocol engineer",
+          "description": "Independent protocol engineer working on privacy protocols, consensus systems, formal verification, and numerical provenance.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Aberystwyth",
+            "addressRegion": "Wales",
+            "addressCountry": "GB"
+          },
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Edinburgh"
+          },
+          "sameAs": [
+            "https://github.com/PatrickMockridge",
+            "https://technologytruth.substack.com/",
+            "https://www.youtube.com/playlist?list=PLS0PrDysL4A3r9Ntdb159vsT2lmQK3zAW"
+          ],
+          "knowsAbout": [
+            "Privacy protocols",
+            "Consensus systems",
+            "Formal verification",
+            "Rust",
+            "Zero-knowledge proofs",
+            "Process safety",
+            "Romeo-Juliet Framework",
+            "Critical risk analysis",
+            "Rholang",
+            "RChain",
+            "Lean 4",
+            "Halo 2",
+            "OCapN",
+            "Distributed systems",
+            "HAZOP"
+          ]
+        },
+        "hasPart": {
+          "@type": "ItemList",
+          "name": "Selected work",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "DarkWow",
+                "description": "A private bearer-note system: the note is the asset, possession is authority, and no protocol-level administrator can freeze or confiscate it. ZK Box and Purse, a ZK-based identity/oracle/attestation/stablecoin suite, a no-freeze Promissory Note, an o-cap bridge, Uncle Merkle consensus, a per-block Pedersen supply audit, and a Lean 4 proof-status ledger.",
+                "codeRepository": "https://github.com/PatrickMockridge/DarkWow",
+                "programmingLanguage": "Rust",
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "Rholo",
+                "description": "A Rust node for the rho-calculus, from the RChain lineage: native object capabilities, horizontal scale-out by design, and laws proved at the model and tied to the node.",
+                "codeRepository": "https://github.com/rhovision-org/rholo",
+                "programmingLanguage": "Rust",
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "R-Cash",
+                "description": "A permissionless multi-currency account and cross-border payments network on Rholo: direct FX pools, local stablecoins, and a transfer contract with one terminal state.",
+                "codeRepository": "https://github.com/rhovision-org/r-cash",
+                "programmingLanguage": ["Rholang", "Python", "Rust", "TypeScript", "Lean 4", "TLA+"],
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "R-Gen",
+                "description": "Rholang contracts and Lean 4 proofs for engineering claims: a claim records quantity, validation records quality, and the pair is a K-Asset that keeps its qualifications, adjudication, and provenance.",
+                "codeRepository": "https://github.com/rhovision-org/r-gen",
+                "programmingLanguage": ["Rholang", "Lean 4", "Python", "Rust"],
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "R-Share",
+                "description": "On-chain booking and rental primitives for Rholo, settled through R-Cash: listings own units, units own slots, and bookings hold capacity over an interval with escrow, cancellation, deposits, disputes, and tickets.",
+                "codeRepository": "https://github.com/rhovision-org/r-share",
+                "programmingLanguage": ["Rholang", "Rust", "Python", "TypeScript", "Lean 4"],
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "Azoth",
+                "description": "Chemical-engineering calculations in Python and Rust, where every number carries its provenance.",
+                "codeRepository": "https://github.com/PatrickMockridge/Azoth",
+                "programmingLanguage": ["Rust", "Python"],
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "Mudra",
+                "description": "A proof-of-trace system for spreadsheets and small programs: a constant-size proof that a committed calculation trace is unchanged.",
+                "codeRepository": "https://github.com/PatrickMockridge/Mudra",
+                "programmingLanguage": "Rust",
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            }
+          ]
+        }
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-BvZPxX9q.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-a_1XBK1Y.css">
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"R-Gen","description":"Rholang contracts and Lean 4 proofs for engineering claims: a claim records quantity, validation records quality, and the pair is a K-Asset that keeps its qualifications, adjudication, and provenance.","url":"https://patrickmockridge.github.io/r-gen/","codeRepository":"https://github.com/rhovision-org/r-gen","programmingLanguage":["Rholang","Lean 4","Python","Rust"],"license":"https://www.gnu.org/licenses/agpl-3.0.html","author":{"@type":"Person","@id":"https://patrickmockridge.github.io/#person"}}</script>
+  </head>
+  <body>
+    <div id="root"><a class="skip-link" href="#main">Skip to content</a><div class="site"><div class="window"><header class="window-header"><a class="brand" href="/">Patrick Mockridge</a><nav class="header-links" aria-label="Contact and links"><a href="https://github.com/PatrickMockridge" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://technologytruth.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a><a href="https://patrickmockridge.github.io/fitba/" target="_blank" rel="noopener noreferrer">fitba</a><a href="mailto:patrickmockridge@gmail.com">Email</a><a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a><span class="header-date">November 2026</span><button type="button" class="theme-toggle" aria-label="Switch to dark theme">Dark</button></nav></header><nav class="tab-index" aria-label="Sections"><a class="tab" id="tab-cv" href="/">CV</a><a class="tab" id="tab-darkwow" href="/darkwow/">DarkWow</a><a class="tab" id="tab-rholo" href="/rholo/">Rholo</a><a class="tab" id="tab-rcash" href="/r-cash/">R-Cash</a><a class="tab" id="tab-rgen" href="/r-gen/" aria-current="page">R-Gen</a><a class="tab" id="tab-rshare" href="/r-share/">R-Share</a><a class="tab" id="tab-azoth" href="/azoth/">Azoth</a><a class="tab" id="tab-mudra" href="/mudra/">Mudra</a><a class="tab" id="tab-research" href="/research/">Research</a><a class="tab" id="tab-contact" href="/contact/">Contact</a></nav><main id="main"><section class="panel" id="panel-rgen" aria-labelledby="tab-rgen"><header class="title-block"><p class="descriptor">Claims and proofs on Rholo</p><h1 class="case-title">R-Gen</h1><p class="case-subtitle">Rholang contracts and Lean 4 proofs for the CoEngineers and Ingenesist vision: engineering work becomes a claim, validation is its quality, and the pair is a K-Asset that keeps its qualifications, adjudication, and provenance.</p><dl class="what-why"><div class="what-why-row"><dt>What</dt><dd>A seven-term Rholang core for engineering claims: identity and credentials, a per-claim cell that creates a K-Asset on validation, a value-proposition cell, a single-adjudicator oracle, and per-asset provenance. Sixteen components, ten state cells, acyclic. One writer per entity; independent entities share no mutable state.</dd></div><div class="what-why-row"><dt>Why</dt><dd>A claim without validation is an assertion; validation without a claim has nothing to measure. Splitting work, credentials, payment, and disputes across separate systems loses the link between the work and the judgement about it. Pairing quantity with quality makes the record durable; attaching qualification, adjudication, and provenance keeps it with the asset.</dd></div><div class="what-why-row what-why-combination"><dt>The combination</dt><dd>Paper-derived primitives, object capabilities on Rholo, per-entity linear cells, and a Lean 4 model with a 32-pair race matrix. The core stops at approval and decision facts; pricing, payments, risk, panels, governance, handles, metrics, and the client consume them from outside.</dd></div></dl><dl class="metadata"><div class="metadata-row"><dt>Role</dt><dd>Contracts, Lean 4 model, paper mapping, specification; sole author</dd></div><div class="metadata-row"><dt>Period</dt><dd>2026; created 4 November; core and proofs dated 4 November</dd></div><div class="metadata-row"><dt>Status</dt><dd>Devnet-only, unaudited; no real value; seven-term core; extensions not implemented.</dd></div><div class="metadata-row"><dt>Paper basis</dt><dd>Dan Robles and colleagues, CoEngineers and Ingenesist Project (2016–2020)</dd></div><div class="metadata-row"><dt>Repository</dt><dd><a href="https://github.com/rhovision-org/r-gen" target="_blank" rel="noopener noreferrer">github.com/rhovision-org/r-gen</a></dd></div><div class="metadata-row"><dt>Documentation</dt><dd><a href="https://rhovision-org.github.io/r-gen/" target="_blank" rel="noopener noreferrer">rhovision-org.github.io/r-gen</a></dd></div><div class="metadata-row"><dt>Built on</dt><dd><a href="/rholo/">Rholo</a> node; Rholang contracts; no R-Cash or ERTP dependency</dd></div></dl></header><aside class="method-refrain" aria-label="Method"><span class="method-label">Method</span><p>Specify the failure mode before the architecture; prove what can be proved; contain what cannot; record provenance with every result. Where proof stops is stated in the limits.</p></aside><section class="section" id="rgen-idea" aria-labelledby="rgen-idea-heading"><h2 class="section-heading" id="rgen-idea-heading"><span class="section-number" aria-hidden="true">1</span><span>The problem</span></h2><div class="prose"><p>The premise is a sentence from the CoEngineers and Ingenesist papers: “The fundamental problem is that the value of engineering is invisible.” Dan Robles and colleagues wrote in 2017 that there is little accounting of true engineering value because there are few tools that measure it. The papers propose a handshake: a claim states the work, definition, quantity, and criteria; a validation states quality and carries evidence; approval marks acceptable completion. The pair is a K-Asset.</p><p>Software splits that handshake across a tracker, a credential registry, a bank, email, and a folder. Each boundary loses the link between the work and the judgement about it. The asset cannot say who validated it, under what credential, against which definition, or what happened when it was disputed.</p><p>R-Gen puts the handshake on chain and keeps the record with the asset. Qualification, adjudication, and provenance are cells the claim participates in.</p></div></section><section class="section" id="rgen-core" aria-labelledby="rgen-core-heading"><h2 class="section-heading" id="rgen-core-heading"><span class="section-number" aria-hidden="true">2</span><span>The core</span></h2><p class="lede">Seven deploy terms. Each primitive passes a removal test: if the remaining set can still express claim, validation, value proposition, and K-Asset, the removed primitive was not core.</p><ul class="prose"><li><strong>Root.</strong> <code>GenRoot</code>, an installer-gated client directory; wired at install, never resolved at runtime.</li><li><strong>Identity.</strong> Per-address identity cell; first-writer-wins directory.</li><li><strong>Credentials.</strong> Genesis <code>Issuer</code>, per-credential cell, issued registry; proof of subject, scope, and active state.</li><li><strong>Claim.</strong> Per-claim cell: work element, selection criteria, quantity and definition, clock, comments, value-proposition reference. Validation creates the K-Asset; the K-Asset library is private.</li><li><strong>Value proposition.</strong> Per-proposition cell: propose, validate, comment, withdraw, dispute.</li><li><strong>Oracle.</strong> Per-case cell: one credential-proved adjudicator, evidence, decision, execution through the subject’s private <code>applyDecision</code> <!-- -->capability.</li><li><strong>Provenance.</strong> Per-asset anchors, comments, verify.</li></ul><div class="prose"><p>Sixteen catalogue components, ten state cells, acyclic. The core mints and transfers nothing and has no R-Cash or ERTP dependency. KAT, pricing, payments, risk, panels, governance, handles, metrics, and the web client are extensions that consume approval and decision facts; the core never calls them.</p></div></section><section class="section" id="rgen-paper-to-code" aria-labelledby="rgen-paper-to-code-heading"><h2 class="section-heading" id="rgen-paper-to-code-heading"><span class="section-number" aria-hidden="true">3</span><span>Paper to code</span></h2><div class="prose"><p>The mapping is literal. Each primitive page carries the paper quote and page, the Rholang arm, the Lean theorem, and the suite or corpus row that exercises it. The row-by-row matrix is <code>docs/src/reference/paper-to-code.md</code>; code headers repeat the citation keys and page numbers. A reader can start at a sentence in Robles &amp; Layton and end at a theorem name.</p><p>The Pareto ledger is a design test, not a claim about the papers. “Pareto” does not appear in the seven papers; the word is the author’s framing. The ledger labels each primitive paper-derived, paper-adjacent, a user decision, or engineering infrastructure, and records what was removed and why.</p><p>The papers are third-party copyrighted reference material, indexed at<!-- --> <code>docs/papers/README.md</code> and not covered by the AGPL. The contracts, model, and book are original work. The attribution is specific: Dan Robles’ CoEngineers and Ingenesist Project. The repository is <code>r-gen</code>; the Lean namespace is<!-- --> <code>RGen</code> because Lean identifiers cannot contain a hyphen.</p></div></section><section class="section" id="rgen-concurrency" aria-labelledby="rgen-concurrency-heading"><h2 class="section-heading" id="rgen-concurrency-heading"><span class="section-number" aria-hidden="true">4</span><span>Concurrency and proof</span></h2><div class="prose"><p>Every entity is a factory-created linear cell with one writer. A mutating arm consumes the state first, evaluates every guard on the post-consume state, and re-posts exactly once on every path. A second operation on the same entity sees the new state and refuses. Two operations cannot both observe the same pre-state and both commit.</p><p>Independent entities share no mutable cell. Identity creation and credential issuance are the only serialization points, neither on the claim/validation hot path. Oracle cases receive the subject’s private <code>applyDecision</code> capability in closure, so a decision cannot be applied to another K-Asset.</p><p>The Lean model states the general result:<!-- --> <code>RGen.core_races_not_representable</code> says no two events on one cell in any run share an expected generation; <code>RGen.core_arm_authority</code> says every arm’s decision factors through its consumed cell.</p></div><div class="comparison comparison--contrast"><div class="comparison-head"><span class="comparison-caption">Table 1. The 32-pair race matrix.</span><span class="comparison-subtitle">Every proved arm pair, its class, and the boundary of the claim.</span></div><div class="comparison-scroll" role="region" aria-label="Table 1. The 32-pair race matrix." tabindex="0"><table class="comparison-table"><caption class="visually-hidden">Table 1. The 32-pair race matrix.</caption><thead><tr><th scope="col">Race class</th><th scope="col">Meaning</th><th scope="col">Pairs</th></tr></thead><tbody><tr><th scope="row">Exclusive</th><td>Whichever arm runs first, the second refuses on the post-state.</td><td>19</td></tr><tr><th scope="row">Ordered</th><td>One direction refuses; the other is the serialized, non-retroactive order.</td><td>12</td></tr><tr><th scope="row">Independent</th><td>The arms touch different cells and do not interact.</td><td>1</td></tr></tbody></table></div><p class="source-note">Every pair names a Lean theorem in spec/flows/races.yaml; tools/check_race_matrix.py checks the class vocabulary and declaration existence.</p></div></section><section class="section" id="rgen-evidence" aria-labelledby="rgen-evidence-heading"><h2 class="section-heading" id="rgen-evidence-heading"><span class="section-number" aria-hidden="true">5</span><span>Evidence</span></h2><div class="prose"><p>On 4 November 2026, against Rholo node <code>e2d073d</code>, the seven-term core installed on a fresh isolated devnet. Ten behavioural suites passed: identity, credentials, claim, K-Asset, value, oracle, provenance, integration, the core vertical slice, and the race regression. They printed 291 <code>ok</code> <!-- -->assertions.</p><p>The Lean project builds 36 files without Mathlib. The audit covers 131 public theorems and reports only <code>propext</code> and <code>Quot.sound</code>; no<!-- --> <code>Classical.choice</code> appears in the audited set, and there is no<!-- --> <code>sorry</code>, <code>admit</code>, <code>native_decide</code>, or declared axiom. The flow manifest maps 66 arms: 35 proved-model, 0 proved-conformance, 31 owed. The model emits 21 corpus rows; 35 mutating arms are tied to a consumed cell. The adversarial review records four P0 defects in the legacy 12-term prototype and their removal.</p></div><div class="evidence"><table class="evidence-table"><caption class="visually-hidden">R-Gen evidence</caption><thead><tr><th scope="col">Measure</th><th scope="col">Value</th><th scope="col">Source</th></tr></thead><tbody><tr><td>Core terms</td><td class="numeric">7 deploy terms; 16 components; 10 state cells; acyclic</td><td><a href="https://github.com/rhovision-org/r-gen/blob/main/docs/src/reference/verification.md" target="_blank" rel="noopener noreferrer">Verification record</a></td></tr><tr><td>Behavioural suites</td><td class="numeric">10/10; 291 ok assertions; Rholo e2d073d; 4 November 2026</td><td><a href="https://github.com/rhovision-org/r-gen/blob/main/docs/src/reference/verification.md" target="_blank" rel="noopener noreferrer">Verification record</a></td></tr><tr><td>Lean 4 build</td><td class="numeric">36 files; no Mathlib; no sorry, admit, native_decide, or declared axiom</td><td><a href="https://github.com/rhovision-org/r-gen/blob/main/docs/src/reference/formal-model.md" target="_blank" rel="noopener noreferrer">Formal model</a></td></tr><tr><td>Theorem audit</td><td class="numeric">131 public theorems; propext and Quot.sound only</td><td><a href="https://github.com/rhovision-org/r-gen/blob/main/docs/src/reference/formal-model.md" target="_blank" rel="noopener noreferrer">Formal model</a></td></tr><tr><td>Race matrix</td><td class="numeric">32 pairs: 19 exclusive, 12 ordered, 1 independent</td><td><a href="https://github.com/rhovision-org/r-gen/blob/main/docs/src/reference/race-freedom-proof.md" target="_blank" rel="noopener noreferrer">Race-freedom proof</a></td></tr><tr><td>Arm map</td><td class="numeric">66 arms: 35 proved-model, 0 proved-conformance, 31 owed</td><td><a href="https://github.com/rhovision-org/r-gen/blob/main/docs/src/reference/formal-model.md" target="_blank" rel="noopener noreferrer">Formal model</a></td></tr><tr><td>Conformance corpus</td><td class="numeric">21 emitted rows; 35 mutating arms tied to a consumed cell</td><td><a href="https://github.com/rhovision-org/r-gen/blob/main/docs/src/reference/verification.md" target="_blank" rel="noopener noreferrer">Verification record</a></td></tr><tr><td>Adversarial review</td><td class="numeric">4 P0 defects removed from the legacy 12-term prototype</td><td><a href="https://github.com/rhovision-org/r-gen/blob/main/docs/src/reference/adversarial-review.md" target="_blank" rel="noopener noreferrer">Adversarial review</a></td></tr></tbody></table><p class="source-note">Sources: verification record, formal model, race matrix, and adversarial review, as of 4 November 2026. Counts drift; the linked artifact is authoritative. The suites are behavioural evidence; the race results are model theorems.</p></div></section><section class="section" id="rgen-limits" aria-labelledby="rgen-limits-heading"><h2 class="section-heading" id="rgen-limits-heading"><span class="section-number" aria-hidden="true">6</span><span>Limits</span></h2><ul class="prose"><li><strong>Maturity.</strong> Devnet-only, unaudited; no real value. There is no token sale, pricing, transfer, or ERTP in the core.</li><li><strong>Extensions absent.</strong> Receipt/KAT, payments/R-Cash, risk/SPE, panels, governance, handles, metrics, and the web client are not implemented in this tree.</li><li><strong>Proof boundary.</strong> Lean proves the model, not a mechanized Rholang refinement. The arm map is hand-transcribed; <code>proved-conformance</code> is zero and 31 arms are owed.</li><li><strong>Concurrency wording.</strong> “Maximal concurrency” means no shared mutable cell across independent entities and one writer per entity. It is not an absolute optimality theorem. Identity creation and credential issuance serialize deliberately.</li><li><strong>Oracle.</strong> Selection is deterministic and named by the parties; it is not a random beacon.</li><li><strong>Attribution.</strong> The seven bundled papers are third-party copyrighted works, not AGPL. The repository is AGPL-3.0-only.</li><li><strong>Scope.</strong> The core records approval and decision facts. It does not price, pay, score risk, run panels, or administer governance.</li></ul></section><section class="section" id="rgen-links" aria-labelledby="rgen-links-heading"><h2 class="section-heading" id="rgen-links-heading"><span class="section-number" aria-hidden="true">7</span><span>Links</span></h2><ul class="link-list"><li><a href="https://github.com/rhovision-org/r-gen" target="_blank" rel="noopener noreferrer">Repository</a></li><li><a href="https://rhovision-org.github.io/r-gen/" target="_blank" rel="noopener noreferrer">Book</a></li><li><a href="https://github.com/rhovision-org/r-gen/blob/main/README.md" target="_blank" rel="noopener noreferrer">README</a></li><li><a href="https://github.com/rhovision-org/r-gen/blob/main/docs/src/SUMMARY.md" target="_blank" rel="noopener noreferrer">Book contents</a></li><li><a href="https://github.com/rhovision-org/r-gen/blob/main/docs/src/orientation/north-star.md" target="_blank" rel="noopener noreferrer">North star</a></li><li><a href="https://github.com/rhovision-org/r-gen/blob/main/docs/src/reference/pareto-ledger.md" target="_blank" rel="noopener noreferrer">Pareto ledger</a></li><li><a href="https://github.com/rhovision-org/r-gen/blob/main/docs/src/reference/paper-to-code.md" target="_blank" rel="noopener noreferrer">Paper to code</a></li><li><a href="https://github.com/rhovision-org/r-gen/blob/main/docs/src/reference/formal-model.md" target="_blank" rel="noopener noreferrer">Formal model</a></li><li><a href="https://github.com/rhovision-org/r-gen/blob/main/docs/src/reference/race-freedom-proof.md" target="_blank" rel="noopener noreferrer">Race-freedom proof</a></li><li><a href="https://github.com/rhovision-org/r-gen/blob/main/docs/src/reference/verification.md" target="_blank" rel="noopener noreferrer">Verification record</a></li><li><a href="https://github.com/rhovision-org/r-gen/blob/main/docs/src/appendix/status.md" target="_blank" rel="noopener noreferrer">Status and limits</a></li><li><a href="https://github.com/rhovision-org/r-gen/blob/main/docs/src/reference/adversarial-review.md" target="_blank" rel="noopener noreferrer">Adversarial review</a></li><li><a href="https://github.com/rhovision-org/r-gen/blob/main/spec/pareto.yaml" target="_blank" rel="noopener noreferrer">Pareto manifest</a></li><li><a href="https://github.com/rhovision-org/r-gen/blob/main/spec/lean/RGen/RaceFreedom.lean" target="_blank" rel="noopener noreferrer">Race freedom in Lean</a></li><li><a href="https://github.com/rhovision-org/r-gen/blob/main/docs/papers/README.md" target="_blank" rel="noopener noreferrer">Papers and copyright</a></li><li><a href="/rholo/">Rholo node record</a></li></ul></section></section></main><footer class="window-footer"><span>Patrick Mockridge<!-- --> · <!-- -->Aberystwyth, Wales<!-- --> · Last updated<!-- --> <time dateTime="2026-11-04">4 November 2026</time></span><span><a href="mailto:patrickmockridge@gmail.com">Enquiries</a> · <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a></span></footer></div></div></div>
+    <noscript>
+        <div class="noscript">
+          <h1>Patrick Mockridge</h1>
+          <p>
+            Independent protocol engineer working on privacy protocols, consensus
+            systems, formal verification, and numerical provenance.
+          </p>
+          <p>
+            Selected work: <a href="/darkwow/">DarkWow</a> ·
+            <a href="/rholo/">Rholo</a> ·
+            <a href="/r-cash/">R-Cash</a> ·
+            <a href="/r-gen/">R-Gen</a> ·
+            <a href="/r-share/">R-Share</a> ·
+            <a href="/azoth/">Azoth</a> · <a href="/mudra/">Mudra</a>.
+          </p>
+          <p>
+            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a> ·
+            <a href="mailto:patrickmockridge@gmail.com">patrickmockridge@gmail.com</a>
+          </p>
+          <p>
+            <a href="https://github.com/PatrickMockridge" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+            <a href="https://technologytruth.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a>
+          </p>
+        </div>
+    </noscript>
+  </body>
+</html>
