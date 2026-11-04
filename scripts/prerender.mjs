@@ -42,6 +42,22 @@ const PROJECTS = {
     programmingLanguage: ['Rholang', 'Python', 'Rust', 'TypeScript', 'Lean 4', 'TLA+'],
     license: 'https://www.gnu.org/licenses/agpl-3.0.html',
   },
+  rgen: {
+    name: 'R-Gen',
+    description:
+      'Rholang contracts and Lean 4 proofs for engineering claims: a claim records quantity, validation records quality, and the pair is a K-Asset that keeps its qualifications, adjudication, and provenance.',
+    codeRepository: 'https://github.com/rhovision-org/r-gen',
+    programmingLanguage: ['Rholang', 'Lean 4', 'Python', 'Rust'],
+    license: 'https://www.gnu.org/licenses/agpl-3.0.html',
+  },
+  rshare: {
+    name: 'R-Share',
+    description:
+      'On-chain booking and rental primitives for Rholo, settled through R-Cash: listings own units, units own slots, and bookings hold capacity over an interval with escrow, cancellation, deposits, disputes, and tickets.',
+    codeRepository: 'https://github.com/rhovision-org/r-share',
+    programmingLanguage: ['Rholang', 'Rust', 'Python', 'TypeScript', 'Lean 4'],
+    license: 'https://www.gnu.org/licenses/agpl-3.0.html',
+  },
   azoth: {
     name: 'Azoth',
     description:

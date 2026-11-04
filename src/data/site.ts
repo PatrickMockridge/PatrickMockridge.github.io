@@ -3,6 +3,8 @@ export type TabId =
   | 'darkwow'
   | 'rholo'
   | 'rcash'
+  | 'rgen'
+  | 'rshare'
   | 'azoth'
   | 'mudra'
   | 'research'
@@ -13,6 +15,8 @@ export const TABS: { id: TabId; label: string }[] = [
   { id: 'darkwow', label: 'DarkWow' },
   { id: 'rholo', label: 'Rholo' },
   { id: 'rcash', label: 'R-Cash' },
+  { id: 'rgen', label: 'R-Gen' },
+  { id: 'rshare', label: 'R-Share' },
   { id: 'azoth', label: 'Azoth' },
   { id: 'mudra', label: 'Mudra' },
   { id: 'research', label: 'Research' },
@@ -31,9 +35,9 @@ export const PAGE_META: Record<
   cv: {
     title: 'Patrick Mockridge — Protocol engineer',
     description:
-      'Independent protocol engineer working on privacy protocols, consensus systems, formal verification, and numerical provenance. Selected work: DarkWow, Rholo, R-Cash, Azoth, Mudra.',
+      'Independent protocol engineer working on privacy protocols, consensus systems, formal verification, and numerical provenance. Selected work: DarkWow, Rholo, R-Cash, R-Gen, R-Share, Azoth, Mudra.',
     path: '/',
-    updated: '2026-10-30',
+    updated: '2026-11-04',
   },
   darkwow: {
     title: 'DarkWow — Patrick Mockridge',
@@ -55,6 +59,20 @@ export const PAGE_META: Record<
       'A permissionless multi-currency account and cross-border payments network on Rholo: direct FX pools, local stablecoins, and a transfer contract with one terminal state.',
     path: '/r-cash/',
     updated: '2026-11-03',
+  },
+  rgen: {
+    title: 'R-Gen — Patrick Mockridge',
+    description:
+      'Rholang contracts and Lean 4 proofs for engineering claims: a claim records quantity, validation records quality, and the pair is a K-Asset that keeps its qualifications, adjudication, and provenance.',
+    path: '/r-gen/',
+    updated: '2026-11-04',
+  },
+  rshare: {
+    title: 'R-Share — Patrick Mockridge',
+    description:
+      'On-chain booking and rental primitives for Rholo, settled through R-Cash: listings own units, units own slots, and bookings hold capacity over an interval with escrow, cancellation, deposits, disputes, and tickets.',
+    path: '/r-share/',
+    updated: '2026-11-04',
   },
   azoth: {
     title: 'Azoth — Patrick Mockridge',
@@ -130,6 +148,8 @@ export const SITE = {
     darkwowRepo: 'https://github.com/PatrickMockridge/DarkWow',
     rholoRepo: 'https://github.com/rhovision-org/rholo',
     rcashRepo: 'https://github.com/rhovision-org/r-cash',
+    rgenRepo: 'https://github.com/rhovision-org/r-gen',
+    rshareRepo: 'https://github.com/rhovision-org/r-share',
     azothRepo: 'https://github.com/PatrickMockridge/Azoth',
     mudraRepo: 'https://github.com/PatrickMockridge/Mudra',
     romeoArchive:

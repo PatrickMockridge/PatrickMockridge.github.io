@@ -11,6 +11,8 @@ export interface EvidenceRow {
 const darkWowBase = `${SITE.links.darkwowRepo}/blob/linear-master`
 const rholoBase = `${SITE.links.rholoRepo}/blob/dev`
 const rcashBase = `${SITE.links.rcashRepo}/blob/main`
+const rgenBase = `${SITE.links.rgenRepo}/blob/main`
+const rshareBase = `${SITE.links.rshareRepo}/blob/main`
 
 export const darkWow = {
   repo: SITE.links.darkwowRepo,
@@ -81,6 +83,42 @@ export const rcash = {
   components: `${rcashBase}/contracts/components.json`,
   checkCaptures: `${rcashBase}/tools/check_captures.py`,
   docs: `${SITE.links.rcashRepo}/tree/main/docs`,
+}
+
+export const rgen = {
+  repo: SITE.links.rgenRepo,
+  readme: `${rgenBase}/README.md`,
+  book: 'https://rhovision-org.github.io/r-gen/',
+  summary: `${rgenBase}/docs/src/SUMMARY.md`,
+  northStar: `${rgenBase}/docs/src/orientation/north-star.md`,
+  paretoLedger: `${rgenBase}/docs/src/reference/pareto-ledger.md`,
+  paperToCode: `${rgenBase}/docs/src/reference/paper-to-code.md`,
+  formalModel: `${rgenBase}/docs/src/reference/formal-model.md`,
+  raceProof: `${rgenBase}/docs/src/reference/race-freedom-proof.md`,
+  verification: `${rgenBase}/docs/src/reference/verification.md`,
+  status: `${rgenBase}/docs/src/appendix/status.md`,
+  adversarial: `${rgenBase}/docs/src/reference/adversarial-review.md`,
+  pareto: `${rgenBase}/spec/pareto.yaml`,
+  raceLean: `${rgenBase}/spec/lean/RGen/RaceFreedom.lean`,
+  papers: `${rgenBase}/docs/papers/README.md`,
+}
+
+export const rshare = {
+  repo: SITE.links.rshareRepo,
+  readme: `${rshareBase}/README.md`,
+  docs: `${rshareBase}/docs/index.md`,
+  summary: `${rshareBase}/docs/SUMMARY.md`,
+  northStar: `${rshareBase}/docs/orientation/north-star.md`,
+  ladder: `${rshareBase}/docs/orientation/use-case-ladder.md`,
+  whyPrimitives: `${rshareBase}/docs/orientation/why-primitives.md`,
+  doctrine: `${rshareBase}/docs/concepts/concurrency-doctrine.md`,
+  contractMap: `${rshareBase}/docs/reference/contract-map.md`,
+  verification: `${rshareBase}/docs/reference/verification.md`,
+  formalModel: `${rshareBase}/docs/reference/formal-model.md`,
+  status: `${rshareBase}/docs/orientation/status-and-scope.md`,
+  holiday: `${rshareBase}/docs/case-studies/holiday-letting/index.md`,
+  flows: `${rshareBase}/spec/flows/core.yaml`,
+  notices: `${rshareBase}/THIRD_PARTY_NOTICES.md`,
 }
 
 export const azoth = {
@@ -277,6 +315,92 @@ export const rcashEvidence: EvidenceRow[] = [
     measure: 'Capture checks',
     value: 'Replies, stored maps, bundles, attestations',
     source: { label: 'tools/check_captures.py', href: rcash.checkCaptures },
+  },
+]
+
+export const rgenEvidence: EvidenceRow[] = [
+  {
+    measure: 'Core terms',
+    value: '7 deploy terms; 16 components; 10 state cells; acyclic',
+    source: { label: 'Verification record', href: rgen.verification },
+  },
+  {
+    measure: 'Behavioural suites',
+    value: '10/10; 291 ok assertions; Rholo e2d073d; 4 November 2026',
+    source: { label: 'Verification record', href: rgen.verification },
+  },
+  {
+    measure: 'Lean 4 build',
+    value: '36 files; no Mathlib; no sorry, admit, native_decide, or declared axiom',
+    source: { label: 'Formal model', href: rgen.formalModel },
+  },
+  {
+    measure: 'Theorem audit',
+    value: '131 public theorems; propext and Quot.sound only',
+    source: { label: 'Formal model', href: rgen.formalModel },
+  },
+  {
+    measure: 'Race matrix',
+    value: '32 pairs: 19 exclusive, 12 ordered, 1 independent',
+    source: { label: 'Race-freedom proof', href: rgen.raceProof },
+  },
+  {
+    measure: 'Arm map',
+    value: '66 arms: 35 proved-model, 0 proved-conformance, 31 owed',
+    source: { label: 'Formal model', href: rgen.formalModel },
+  },
+  {
+    measure: 'Conformance corpus',
+    value: '21 emitted rows; 35 mutating arms tied to a consumed cell',
+    source: { label: 'Verification record', href: rgen.verification },
+  },
+  {
+    measure: 'Adversarial review',
+    value: '4 P0 defects removed from the legacy 12-term prototype',
+    source: { label: 'Adversarial review', href: rgen.adversarial },
+  },
+]
+
+export const rshareEvidence: EvidenceRow[] = [
+  {
+    measure: 'Behavioural suites',
+    value: '16/16; fresh devnet; 3 November 2026',
+    source: { label: 'Verification record', href: rshare.verification },
+  },
+  {
+    measure: 'Deploy terms',
+    value: '13; build, measure, and parse with the target node parser',
+    source: { label: 'Contract map', href: rshare.contractMap },
+  },
+  {
+    measure: 'Claim coverage',
+    value: '20 of 30 cells; four claim classes across five kinds',
+    source: { label: 'Verification record', href: rshare.verification },
+  },
+  {
+    measure: 'Conservation',
+    value: '7 settlement scenarios; closed balance set; negative control',
+    source: { label: 'Verification record', href: rshare.verification },
+  },
+  {
+    measure: 'Lean 4',
+    value: '37 axiom audits; 21 vectors; no sorry, admit, axiom, or native_decide',
+    source: { label: 'Formal model', href: rshare.formalModel },
+  },
+  {
+    measure: 'Flow manifest',
+    value: '33 rules; 29 arms; 13 core arms proved-model',
+    source: { label: 'Formal model', href: rshare.formalModel },
+  },
+  {
+    measure: 'Allocator theorem',
+    value: 'acquire_no_double_owner; single-owner, atomic acquisition, bounded holds',
+    source: { label: 'Formal model', href: rshare.formalModel },
+  },
+  {
+    measure: 'Client campaign',
+    value: 'CLI journey plus guest, provider, and admin-multisig browser journeys; 3–4 November 2026',
+    source: { label: 'Status and scope', href: rshare.status },
   },
 ]
 

@@ -16,7 +16,7 @@ export function CVTab() {
       <header className="cv-hero screen-only">
         <h1>Patrick Mockridge</h1>
         <p>Protocol engineer</p>
-        <p className="cv-work-index">DarkWow · Rholo · R-Cash · Azoth · Mudra</p>
+        <p className="cv-work-index">DarkWow · Rholo · R-Cash · R-Gen · R-Share · Azoth · Mudra</p>
         <p>Aberystwyth, Wales</p>
       </header>
 
@@ -38,7 +38,11 @@ export function CVTab() {
             rather than a public administrator. Rholo is continuity: a dissolved
             network’s node ported to Rust, with its language laws machine-checked at the
             model level and conformance-tested at the node. R-Cash is composition: Rholo’s
-            capabilities assembled into a multi-currency account and payments rail. Azoth is provenance:
+            capabilities assembled into a multi-currency account and payments rail. R-Gen is
+            claim and validation: engineering work recorded as a claim, its validation as
+            quality, and the pair as a K-Asset that keeps its own qualifications and provenance.
+            R-Share is allocation: capacity over an interval, booked and settled through R-Cash.
+            Azoth is provenance:
             chemical-engineering calculations where every number carries its source and
             verification state, and unsupported answers are refused. Mudra is
             verification in a familiar form: a spreadsheet calculation proved correct
@@ -53,8 +57,8 @@ export function CVTab() {
           <p>
             The method: specify the failure mode before the architecture; prove what can
             be proved; contain what cannot; record provenance with every result. DarkWow is
-            containment; Rholo is continuity; R-Cash is composition; Azoth is provenance;
-            Mudra is verification in a familiar form.
+            containment; Rholo is continuity; R-Cash is composition; R-Gen is claims; R-Share is
+            capacity; Azoth is provenance; Mudra is verification in a familiar form.
           </p>
         </div>
       </Section>
@@ -121,6 +125,38 @@ export function CVTab() {
           </li>
           <li className="work-row">
             <div className="work-main">
+              <span className="work-title">R-Gen</span>
+              <span className="work-subtitle">
+                Rholang contracts and Lean 4 proofs for engineering claims and K-Assets
+              </span>
+            </div>
+            <div className="work-meta">
+              <span>2026; November</span>
+              <span>Devnet-only; 7 terms; 10/10 suites; 131 Lean theorems</span>
+              <span>Contracts, Lean model, paper mapping</span>
+            </div>
+            <a className="work-link" href={pathForTab('rgen')}>
+              Record →
+            </a>
+          </li>
+          <li className="work-row">
+            <div className="work-main">
+              <span className="work-title">R-Share</span>
+              <span className="work-subtitle">
+                On-chain booking and rental primitives, settled through R-Cash
+              </span>
+            </div>
+            <div className="work-meta">
+              <span>2026; November</span>
+              <span>Devnet-only; 13 terms; 16/16 suites; Lean allocator</span>
+              <span>Contracts, client, formal model</span>
+            </div>
+            <a className="work-link" href={pathForTab('rshare')}>
+              Record →
+            </a>
+          </li>
+          <li className="work-row">
+            <div className="work-main">
               <span className="work-title">Azoth</span>
               <span className="work-subtitle">
                 A process calculation library where every number carries its provenance
@@ -160,11 +196,8 @@ export function CVTab() {
           </li>
         </ul>
         <p className="print-only print-urls">
-          Records: patrickmockridge.github.io/darkwow/ · /rholo/ · /r-cash/ · /azoth/ · /mudra/
-        </p>
-        <p className="print-only">
-          Engagements: protocol review, rescue, and verification; a bounded triage with
-          written findings, then a scoped remediation. Remote from Aberystwyth, Wales.
+          Records: patrickmockridge.github.io/darkwow/ · /rholo/ · /r-cash/ · /r-gen/ ·
+          /r-share/ · /azoth/ · /mudra/
         </p>
       </Section>
 
@@ -173,30 +206,29 @@ export function CVTab() {
           rows={[
             {
               period: '2026',
-              body: 'Delivery: Rholo port (August–October), DarkWow redesign (April–October), R-Cash (October–November), Azoth, Mudra.',
+              body: 'Delivery: Rholo port (August–October), DarkWow redesign (April–October), R-Cash (October–November), R-Gen/R-Share (November), Azoth, Mudra.',
             },
             {
               period: '2022–2026',
               body: (
                 <>
                   Independent research and writing: network analysis, evidence archiving,
-                  influence/secrecy simulation; RChain legacy work: Gorki/BigSur old-node
-                  fork, RGov/Rhobot recovery proposal with Jim Whitescarver (2024);
-                  UNISS/Ingenesist simulations (2026).
+                  influence/secrecy simulation; RChain legacy work: Gorki/BigSur fork,
+                  RGov/Rhobot proposal with Jim Whitescarver (2024); UNISS/Ingenesist
+                  simulations (2026).
                 </>
               ),
             },
             {
               period: '2019–2022',
-              body: 'Created the Romeo–Juliet Framework; continued RChain work; independent research through COVID; property purchase and renovation; crypto investments.',
+              body: 'Created the Romeo–Juliet Framework; continued RChain work; independent research through COVID; property renovation; crypto investments.',
             },
             {
               period: '2016–2019',
               body: (
                 <>
-                  Treehouse AI and Robotics software nanodegrees; early ERC-1155 context
-                  at Enjin (2016); named advisor, Enjin Coin ICO (2017); CoEngineers, early
-                  investor (2017–2019).
+                  Treehouse AI and Robotics nanodegrees; early ERC-1155 at Enjin (2016);
+                  named advisor, Enjin Coin ICO (2017); CoEngineers investor (2017–2019).
                 </>
               ),
             },

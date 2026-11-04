@@ -25,7 +25,7 @@
   body {
     font-size: 9pt;
     line-height: 1.35;
-    zoom: 0.95;
+    zoom: 0.94;
   }
 
   .site {
@@ -65,8 +65,8 @@
 
   .print-header {
     border-bottom: 1px solid #000;
-    padding-bottom: 5pt;
-    margin-bottom: 9pt;
+    padding-bottom: 4pt;
+    margin-bottom: 7pt;
   }
 
   .print-header .print-name {
@@ -90,7 +90,7 @@
     display: grid;
     grid-template-columns: 26mm 1fr;
     column-gap: 8mm;
-    margin-top: 6pt;
+    margin-top: 2pt;
     break-inside: auto;
   }
 
@@ -135,7 +135,7 @@
     display: grid;
     grid-template-columns: 1.4fr 1fr;
     gap: 8pt;
-    padding: 2pt 0;
+    padding: 0;
     border-bottom: 1px solid #ccc;
     break-inside: avoid;
   }
@@ -172,13 +172,13 @@
   .chronology,
   .record-table,
   .evidence-table {
-    font-size: 8.5pt;
+    font-size: 8pt;
   }
 
   .chronology td,
   .record-table td,
   .evidence-table td {
-    padding: 2pt 0;
+    padding: 0.5pt 0;
   }
 
   .chronology tr,

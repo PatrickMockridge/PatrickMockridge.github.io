@@ -14,13 +14,15 @@ npm run lint
 
 ## Content
 
-- `src/tabs/` — page content: CV, DarkWow, Rholo, R-Cash, Azoth, Mudra, Research, Contact.
+- `src/tabs/` — page content: CV, DarkWow, Rholo, R-Cash, R-Gen, R-Share, Azoth, Mudra, Research, Contact.
 - `src/data/` — links, evidence rows, research posts.
 - `src/styles/` — tokens, global styles, window chrome, casework, print.
 
 Project naming: the former RChain node record is displayed as **Rholo**; the repository is
 `rhovision-org/rholo`. **R-Cash** is displayed with the hyphen; the repository is
-`rhovision-org/r-cash`. Legacy queries `?tab=rchain-rust` and `?tab=rnode-rust` resolve to
+`rhovision-org/r-cash`. **R-Gen** is displayed with the hyphen; the repository is
+`rhovision-org/r-gen`, and the Lean namespace remains `RGen`. **R-Share** is displayed
+with the hyphen; the repository is `rhovision-org/r-share`. Legacy queries `?tab=rchain-rust` and `?tab=rnode-rust` resolve to
 the Rholo tab and canonicalise the URL to `/rholo/`; `/rnode-rust/` and `/rchain-rust/`
 redirect to `/rholo/`.
 - `public/` — fonts, favicon, social image, printable CV, 404 page.
