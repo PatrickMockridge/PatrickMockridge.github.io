@@ -63,7 +63,7 @@ export const PAGE_META: Record<
   rgen: {
     title: 'R-Gen — Patrick Mockridge',
     description:
-      'Rholang contracts and Lean 4 proofs for engineering claims: a claim records quantity, validation records quality, and the pair is a K-Asset that keeps its qualifications, adjudication, and provenance.',
+      'On-chain records for engineering work: a claim records what was done, a credentialed reviewer validates it, and the approved K-Asset keeps its credentials, disputes, and provenance.',
     path: '/r-gen/',
     updated: '2026-11-04',
   },

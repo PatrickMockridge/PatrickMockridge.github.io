@@ -43,7 +43,7 @@ export function RGenTab() {
       <TitleBlock
         descriptor="Engineering records on Rholo"
         title="R-Gen"
-        subtitle="R-Gen records engineering work as a claim, its validation as quality, and the pair as a K-Asset that carries its credentials, disputes, and provenance."
+        subtitle="R-Gen records engineering work as a claim, the reviewer’s validation, and the approved K-Asset on chain."
         metadata={[
           {
             label: 'Role',
@@ -57,12 +57,12 @@ export function RGenTab() {
           {
             label: 'Origin',
             value:
-              'CoEngineers, early investor (2017–2019); involved since 2017. R-Gen continues that line of work.',
+              'CoEngineers, early investor (2017–2019); involved since 2017. R-Gen continues that work.',
           },
           {
             label: 'Status',
             value:
-              'Devnet-only, unaudited; no real value; seven-term core; extension suites not implemented.',
+              'Devnet-only, unaudited; no real value; seven-contract core; extensions not implemented.',
           },
           {
             label: 'Paper basis',
@@ -89,44 +89,47 @@ export function RGenTab() {
             value: (
               <>
                 <a href={pathForTab('rholo')}>Rholo</a> node; Rholang contracts; no
-                R-Cash or ERTP dependency in the core
+                R-Cash or token dependency in the core
               </>
             ),
           },
         ]}
       >
         <p className="lede">
-          I invested in CoEngineers in 2017 and have been involved since. R-Gen continues
-          that work: Dan Robles’ CoEngineers and Ingenesist model, built as Rholang
-          contracts on Rholo and modelled in Lean 4. The core contains only the primitives
-          that flow needs; pricing, payments, risk, panels, governance, and the client are
-          extensions.
+          CoEngineers is Dan Robles’ initiative around the Ingenesist Project: a published
+          body of work on how engineering value should be measured, validated, and turned
+          into an asset. I invested in 2017 and have stayed involved because there is no
+          other published suite or coherent body of thought on this problem. R-Gen is the
+          continuation: the on-chain primitives an engineering business needs to record its
+          work and its sign-off.
         </p>
         <WhatWhy
           what={
             <>
-              A Rholang contract set for engineering claims. A claim records the work,
-              definition, quantity, and criteria. A validation records quality and evidence
-              from a credentialed validator. Approval creates a K-Asset that carries its
-              qualifications, adjudication, and provenance.
+              An engineering business runs on work orders, sign-offs, credentials, and
+              disputes. R-Gen puts that sequence on chain. A claim records the work: what was
+              done, the standard it is judged against, the quantity, and the deadline. A
+              validation records a credentialed reviewer’s judgement that the work meets the
+              claim, with the evidence. A K-Asset is the approved pair: the work, its
+              reviewer, the credential, the dispute history, and the provenance kept
+              together.
             </>
           }
           why={
             <>
-              A claim without validation is an assertion; validation without a claim has
-              nothing to measure. When the work, the credential, the payment, and the
-              evidence live in separate systems, the record of who validated what, against
-              which definition, and what happened in a dispute is lost. R-Gen keeps those
-              records with the asset.
+              Those records usually sit in project files, emails, and individual reviewers’
+              files. The work cannot prove who checked it, against which version, or what
+              happened when it was disputed. A blockchain can hold the record as shared
+              state, so the work carries its own certified history. R-Gen provides the
+              primitives for that integration. It does not price the work, pay it, or score
+              it.
             </>
           }
           combination={
             <>
-              The core is the minimal primitive set for that flow. The implementation uses
-              Rholo’s object capabilities (references that grant authority), one linear cell
-              per entity (single-writer state), and a Lean 4 model with a proved race-freedom
-              result. Pricing, payments, risk, panels, governance, and the client sit outside
-              the core.
+              Three primitives — claim, validation, and K-Asset — plus the credentials,
+              adjudication, and provenance around them. Seven contracts. Pricing, payments,
+              risk, panels, governance, and the client are extensions.
             </>
           }
         />
@@ -134,63 +137,79 @@ export function RGenTab() {
 
       <MethodRefrain />
 
-      <Section number="1" title="Why engineering value is invisible" id="rgen-idea">
+      <Section number="1" title="What R-Gen does" id="rgen-idea">
         <div className="prose">
           <p>
-            The papers open with the problem: the value of engineering is invisible because
-            almost nothing records the judgement about the work. Their model is a three-part
-            record: a claim states the work, definition, quantity, and criteria; a validation
-            states quality and carries evidence; approval marks acceptable completion. The
-            pair is a K-Asset.
+            An engineering firm does work, a qualified reviewer checks it, and the approval
+            becomes part of the record. R-Gen models that sequence on chain.
           </p>
           <p>
-            A load calculation shows the problem. The calculation is the claim; a second
-            engineer checks the assumptions and signs it, and their credential makes the
-            signature count. Today the calculation, the check, and the fee sit in different
-            systems, so months later the record cannot say who checked it, against which
-            version, or what happened in a dispute.
+            A <strong>claim</strong> is the work. It records what was done, the definition and
+            standard it is judged against, the quantity, the deadline, and any comments or
+            value-proposition reference.
           </p>
           <p>
-            R-Gen records the claim, the validation, and the asset on one chain. The K-Asset
-            carries its qualifications, adjudication, and provenance.
+            A <strong>validation</strong> is the reviewer’s judgement. It records quality, the
+            evidence, and the credential that made the reviewer qualified to sign.
+          </p>
+          <p>
+            A <strong>K-Asset</strong> is the approved pair. It keeps the claim, the
+            validation, the credential, the adjudication, and the provenance together as one
+            asset.
+          </p>
+          <p>
+            That is the point: the engineering business can put its work, sign-off, and
+            dispute record on chain, and the asset carries that history. The core does not
+            price the work, pay it, or score it; those are extensions.
           </p>
         </div>
       </Section>
 
-      <Section number="2" title="The core" id="rgen-core">
+      <Section number="2" title="Why CoEngineers" id="rgen-coengineers">
         <div className="prose">
           <p>
-            Seven deploy terms cover the flow: root, identity, credentials, claim, value
-            proposition, oracle, provenance. The claim holds the work, criteria, quantity
-            and definition, comments, and value-proposition reference; validation creates the
+            The model comes from Dan Robles’ CoEngineers and Ingenesist Project. The papers
+            start with a problem: the value of engineering is invisible because almost
+            nothing records the judgement about the work.
+          </p>
+          <p>
+            The papers are the only published suite that sets out this model end to end.
+            There is no other coherent body of thought on how engineering work should be
+            accounted for on a shared ledger. That is why I invested in CoEngineers in 2017
+            and why I have stayed with it.
+          </p>
+          <p>
+            A load calculation shows the problem. The calculation is the claim; a second
+            engineer checks the assumptions and signs it; their credential makes the
+            signature count. Today the calculation, the check, and the fee sit in different
+            systems, so the record cannot say who checked it, against which version, or what
+            happened in a dispute.
+          </p>
+          <p>
+            Each primitive is traceable to a paper quote and page, a Rholang implementation, a
+            Lean theorem, and a suite or corpus row. The matrix is{' '}
+            <code>docs/src/reference/paper-to-code.md</code>. The papers are third-party
+            copyrighted reference material; the contracts, model, and book are original work.
+          </p>
+        </div>
+      </Section>
+
+      <Section number="3" title="The core" id="rgen-core">
+        <div className="prose">
+          <p>
+            Seven contracts cover the flow: root, identity, credentials, claim, value
+            proposition, oracle, provenance. The claim holds the work, criteria, quantity and
+            definition, comments, and value-proposition reference; validation creates the
             K-Asset; the oracle holds one credentialed adjudicator and executes through the
             subject’s private <code>applyDecision</code> capability.
           </p>
           <p>
             Pareto here is a removal test: take a primitive out; if the rest can still
             express a claim, a validation, and a K-Asset, it was an extension, not core. That
-            leaves seven deploy terms, sixteen components, and ten state cells, with no
-            cycles. The core mints and transfers nothing and has no R-Cash or ERTP
-            dependency. Pricing, payments, risk scoring, panels, governance, handles,
-            metrics, and the client consume the core’s facts; the core does not call them.
-          </p>
-        </div>
-      </Section>
-
-      <Section number="3" title="From paper to theorem" id="rgen-paper-to-code">
-        <div className="prose">
-          <p>
-            Each primitive is traceable: paper quote and page, Rholang implementation, Lean
-            theorem, and the suite or corpus row that exercises it. The matrix is{' '}
-            <code>docs/src/reference/paper-to-code.md</code>; code headers carry the citation
-            keys and page numbers.
-          </p>
-          <p>
-            Each primitive in the Pareto ledger is labelled by source, and removed primitives
-            are recorded. The seven papers are third-party copyrighted reference material,
-            indexed at <code>docs/papers/README.md</code>, and not AGPL. The contracts, model,
-            and book are original work. The attribution is Dan Robles’ CoEngineers and
-            Ingenesist Project.
+            leaves seven contracts, with no cycles. The core mints and transfers nothing and
+            has no R-Cash dependency. Pricing, payments, risk scoring, panels, governance,
+            handles, metrics, and the client consume the core’s facts; the core does not call
+            them.
           </p>
         </div>
       </Section>
@@ -232,8 +251,8 @@ export function RGenTab() {
       <Section number="5" title="Evidence" id="rgen-evidence">
         <div className="prose">
           <p>
-            On 4 November 2026, against Rholo node <code>e2d073d</code>, the seven-term core
-            installed on a fresh isolated devnet. Ten behavioural suites passed, from
+            On 4 November 2026, against Rholo node <code>e2d073d</code>, the seven-contract
+            core installed on a fresh isolated devnet. Ten behavioural suites passed, from
             identity and credentials through claim, K-Asset, value, oracle, provenance,
             integration, a core vertical slice, and the race regression, with 291 passing
             assertions.
@@ -260,7 +279,7 @@ export function RGenTab() {
         <ul className="prose">
           <li>
             <strong>Maturity.</strong> Devnet-only, unaudited; no real value. There is no
-            token sale, pricing, transfer, or ERTP in the core.
+            token sale, pricing, transfer, or token minting in the core.
           </li>
           <li>
             <strong>Extensions.</strong> Receipts, pricing, R-Cash payments, risk scoring,

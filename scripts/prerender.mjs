@@ -45,7 +45,7 @@ const PROJECTS = {
   rgen: {
     name: 'R-Gen',
     description:
-      'Rholang contracts and Lean 4 proofs for engineering claims: a claim records quantity, validation records quality, and the pair is a K-Asset that keeps its qualifications, adjudication, and provenance.',
+      'On-chain records for engineering work: a claim records what was done, a credentialed reviewer validates it, and the approved K-Asset keeps its credentials, disputes, and provenance.',
     codeRepository: 'https://github.com/rhovision-org/r-gen',
     programmingLanguage: ['Rholang', 'Lean 4', 'Python', 'Rust'],
     license: 'https://www.gnu.org/licenses/agpl-3.0.html',

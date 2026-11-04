@@ -320,8 +320,8 @@ export const rcashEvidence: EvidenceRow[] = [
 
 export const rgenEvidence: EvidenceRow[] = [
   {
-    measure: 'Core terms',
-    value: '7 deploy terms; 16 components; 10 state cells; acyclic',
+    measure: 'Core',
+    value: '7 contracts; 16 components; 10 state cells; acyclic',
     source: { label: 'Verification record', href: rgen.verification },
   },
   {
