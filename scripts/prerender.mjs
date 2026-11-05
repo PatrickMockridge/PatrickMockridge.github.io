@@ -58,6 +58,14 @@ const PROJECTS = {
     programmingLanguage: ['Rholang', 'Rust', 'Python', 'TypeScript', 'Lean 4'],
     license: 'https://www.gnu.org/licenses/agpl-3.0.html',
   },
+  rsure: {
+    name: 'R-Sure',
+    description:
+      'On-chain insurance market primitives for Rholo: Lloyd’s-style syndicates, brokers, placing slips, policies, and claims, settled through R-Cash and evidenced by R-Gen.',
+    codeRepository: 'https://github.com/rhovision-org/r-sure',
+    programmingLanguage: ['Rholang', 'Lean 4', 'Rust', 'Python', 'TypeScript'],
+    license: 'https://www.gnu.org/licenses/agpl-3.0.html',
+  },
   azoth: {
     name: 'Azoth',
     description:

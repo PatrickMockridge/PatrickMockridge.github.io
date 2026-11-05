@@ -5,6 +5,7 @@ export type TabId =
   | 'rcash'
   | 'rgen'
   | 'rshare'
+  | 'rsure'
   | 'azoth'
   | 'mudra'
   | 'research'
@@ -17,6 +18,7 @@ export const TABS: { id: TabId; label: string }[] = [
   { id: 'rcash', label: 'R-Cash' },
   { id: 'rgen', label: 'R-Gen' },
   { id: 'rshare', label: 'R-Share' },
+  { id: 'rsure', label: 'R-Sure' },
   { id: 'azoth', label: 'Azoth' },
   { id: 'mudra', label: 'Mudra' },
   { id: 'research', label: 'Research' },
@@ -35,9 +37,9 @@ export const PAGE_META: Record<
   cv: {
     title: 'Patrick Mockridge — Protocol engineer',
     description:
-      'Independent protocol engineer working on privacy protocols, consensus systems, formal verification, and numerical provenance. Selected work: DarkWow, Rholo, R-Cash, R-Gen, R-Share, Azoth, Mudra.',
+      'Independent protocol engineer working on privacy protocols, consensus systems, formal verification, and numerical provenance. Selected work: DarkWow, Rholo, R-Cash, R-Gen, R-Share, R-Sure, Azoth, Mudra.',
     path: '/',
-    updated: '2026-11-04',
+    updated: '2026-11-05',
   },
   darkwow: {
     title: 'DarkWow — Patrick Mockridge',
@@ -73,6 +75,13 @@ export const PAGE_META: Record<
       'On-chain booking and rental primitives for Rholo, settled through R-Cash: one booking, escrow, and settlement path for holiday letting, events, ticketing, bike share, car rental, and robotics-as-a-service.',
     path: '/r-share/',
     updated: '2026-11-04',
+  },
+  rsure: {
+    title: 'R-Sure — Patrick Mockridge',
+    description:
+      'On-chain insurance market primitives for Rholo: Lloyd’s-style syndicates, brokers, placing slips, policies, and claims, settled through R-Cash and evidenced by R-Gen.',
+    path: '/r-sure/',
+    updated: '2026-11-05',
   },
   azoth: {
     title: 'Azoth — Patrick Mockridge',
@@ -150,6 +159,7 @@ export const SITE = {
     rcashRepo: 'https://github.com/rhovision-org/r-cash',
     rgenRepo: 'https://github.com/rhovision-org/r-gen',
     rshareRepo: 'https://github.com/rhovision-org/r-share',
+    rsureRepo: 'https://github.com/rhovision-org/r-sure',
     azothRepo: 'https://github.com/PatrickMockridge/Azoth',
     mudraRepo: 'https://github.com/PatrickMockridge/Mudra',
     romeoArchive:

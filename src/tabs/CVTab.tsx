@@ -16,7 +16,7 @@ export function CVTab() {
       <header className="cv-hero screen-only">
         <h1>Patrick Mockridge</h1>
         <p>Protocol engineer</p>
-        <p className="cv-work-index">DarkWow · Rholo · R-Cash · R-Gen · R-Share · Azoth · Mudra</p>
+        <p className="cv-work-index">DarkWow · Rholo · R-Cash · R-Gen · R-Share · R-Sure · Azoth · Mudra</p>
         <p>Aberystwyth, Wales</p>
       </header>
 
@@ -42,7 +42,8 @@ export function CVTab() {
             claim and validation: engineering work recorded as a claim, its validation as
             quality, and the pair as a K-Asset that keeps its own qualifications and provenance.
             R-Share is allocation: capacity over an interval, booked and settled through R-Cash.
-            Azoth is provenance:
+            R-Sure is risk: a Lloyd’s-style insurance market settled through R-Cash and
+            evidenced by R-Gen. Azoth is provenance:
             chemical-engineering calculations where every number carries its source and
             verification state, and unsupported answers are refused. Mudra is
             verification in a familiar form: a spreadsheet calculation proved correct
@@ -58,7 +59,8 @@ export function CVTab() {
             The method: specify the failure mode before the architecture; prove what can
             be proved; contain what cannot; record provenance with every result. DarkWow is
             containment; Rholo is continuity; R-Cash is composition; R-Gen is claims; R-Share is
-            capacity; Azoth is provenance; Mudra is verification in a familiar form.
+            capacity; R-Sure is risk; Azoth is provenance; Mudra is verification in a familiar
+            form.
           </p>
         </div>
       </Section>
@@ -157,6 +159,22 @@ export function CVTab() {
           </li>
           <li className="work-row">
             <div className="work-main">
+              <span className="work-title">R-Sure</span>
+              <span className="work-subtitle">
+                A Lloyd’s-style insurance market on Rholo, settled through R-Cash
+              </span>
+            </div>
+            <div className="work-meta">
+              <span>2026; November</span>
+              <span>Devnet-only; 17 contracts; 37 suites; 261 Lean theorems</span>
+              <span>Contracts, Lean model, audit, clients</span>
+            </div>
+            <a className="work-link" href={pathForTab('rsure')}>
+              Record →
+            </a>
+          </li>
+          <li className="work-row">
+            <div className="work-main">
               <span className="work-title">Azoth</span>
               <span className="work-subtitle">
                 A process calculation library where every number carries its provenance
@@ -197,7 +215,7 @@ export function CVTab() {
         </ul>
         <p className="print-only print-urls">
           Records: patrickmockridge.github.io/darkwow/ · /rholo/ · /r-cash/ · /r-gen/ ·
-          /r-share/ · /azoth/ · /mudra/
+          /r-share/ · /r-sure/ · /azoth/ · /mudra/
         </p>
       </Section>
 
@@ -206,16 +224,15 @@ export function CVTab() {
           rows={[
             {
               period: '2026',
-              body: 'Delivery: Rholo port (August–October), DarkWow redesign (April–October), R-Cash (October–November), R-Gen/R-Share (November), Azoth, Mudra.',
+              body: 'Delivery: Rholo port (August–October), DarkWow redesign (April–October), R-Cash (October–November), R-Gen/R-Share/R-Sure (November), Azoth, Mudra.',
             },
             {
               period: '2022–2026',
               body: (
                 <>
-                  Independent research and writing: network analysis, evidence archiving,
-                  influence/secrecy simulation; RChain legacy work: Gorki/BigSur fork,
-                  RGov/Rhobot proposal with Jim Whitescarver (2024); UNISS/Ingenesist
-                  simulations (2026).
+                  Independent research and writing: network analysis, influence/secrecy
+                  simulation; RChain legacy work: Gorki/BigSur fork, RGov/Rhobot proposal
+                  with Jim Whitescarver (2024); UNISS/Ingenesist simulations (2026).
                 </>
               ),
             },
@@ -244,16 +261,18 @@ export function CVTab() {
         />
       </Section>
 
-      <Section number="4" title="Research and writing" id="research">
-        <div className="prose">
-          <p>
-            Romeo–Juliet critical risk-analysis framework; UNISS/Ingenesist
-            simulations; DarkFi stack analyses.{' '}
-            <a href={pathForTab('research')}>Selected writing</a> ·{' '}
-            <a href={SITE.links.ingenesistArchive} target="_blank" rel="noopener noreferrer">Ingenesist archive</a>.
-          </p>
-        </div>
-      </Section>
+      <div className="print-hide">
+        <Section number="4" title="Research and writing" id="research">
+          <div className="prose">
+            <p>
+              Romeo–Juliet critical risk-analysis framework; UNISS/Ingenesist
+              simulations; DarkFi stack analyses.{' '}
+              <a href={pathForTab('research')}>Selected writing</a> ·{' '}
+              <a href={SITE.links.ingenesistArchive} target="_blank" rel="noopener noreferrer">Ingenesist archive</a>.
+            </p>
+          </div>
+        </Section>
+      </div>
 
       <div className="print-hide">
         <Section number="5" title="Enquiries" id="enquiries">

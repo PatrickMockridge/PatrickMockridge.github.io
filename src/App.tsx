@@ -13,6 +13,7 @@ import { RCashTab } from './tabs/RCashTab'
 import { RGenTab } from './tabs/RGenTab'
 import { RholoTab } from './tabs/RholoTab'
 import { RShareTab } from './tabs/RShareTab'
+import { RSureTab } from './tabs/RSureTab'
 import { ResearchTab } from './tabs/ResearchTab'
 
 const PANELS: { id: TabId; node: ReactNode }[] = [
@@ -22,6 +23,7 @@ const PANELS: { id: TabId; node: ReactNode }[] = [
   { id: 'rcash', node: <RCashTab /> },
   { id: 'rgen', node: <RGenTab /> },
   { id: 'rshare', node: <RShareTab /> },
+  { id: 'rsure', node: <RSureTab /> },
   { id: 'azoth', node: <AzothTab /> },
   { id: 'mudra', node: <MudraTab /> },
   { id: 'research', node: <ResearchTab /> },

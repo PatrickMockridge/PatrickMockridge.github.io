@@ -13,6 +13,7 @@ const rholoBase = `${SITE.links.rholoRepo}/blob/dev`
 const rcashBase = `${SITE.links.rcashRepo}/blob/main`
 const rgenBase = `${SITE.links.rgenRepo}/blob/main`
 const rshareBase = `${SITE.links.rshareRepo}/blob/main`
+const rsureBase = `${SITE.links.rsureRepo}/blob/main`
 
 export const darkWow = {
   repo: SITE.links.darkwowRepo,
@@ -119,6 +120,26 @@ export const rshare = {
   holiday: `${rshareBase}/docs/case-studies/holiday-letting/index.md`,
   flows: `${rshareBase}/spec/flows/core.yaml`,
   notices: `${rshareBase}/THIRD_PARTY_NOTICES.md`,
+}
+
+export const rsure = {
+  repo: SITE.links.rsureRepo,
+  readme: `${rsureBase}/README.md`,
+  docs: `${rsureBase}/docs/index.md`,
+  summary: `${rsureBase}/docs/SUMMARY.md`,
+  status: `${rsureBase}/docs/orientation/project-status.md`,
+  insuranceBasics: `${rsureBase}/docs/primer/insurance-basics.md`,
+  lloyds: `${rsureBase}/docs/primer/lloyds-for-dummies.md`,
+  designPhilosophy: `${rsureBase}/docs/primer/design-philosophy.md`,
+  engineeringCover: `${rsureBase}/docs/case-studies/engineering-cover.md`,
+  damageWaiver: `${rsureBase}/docs/case-studies/share-damage-waiver.md`,
+  formalModel: `${rsureBase}/docs/reference/formal-model.md`,
+  verification: `${rsureBase}/docs/reference/verification.md`,
+  contractMap: `${rsureBase}/docs/reference/contract-map.md`,
+  audit: `${rsureBase}/audit/report.md`,
+  lean: `${SITE.links.rsureRepo}/tree/main/spec/lean`,
+  flows: `${rsureBase}/spec/flows`,
+  notices: `${rsureBase}/THIRD_PARTY_NOTICES.md`,
 }
 
 export const azoth = {
@@ -401,6 +422,49 @@ export const rshareEvidence: EvidenceRow[] = [
     measure: 'Client campaign',
     value: 'CLI journey plus guest, provider, and admin-multisig browser journeys; 3–4 November 2026',
     source: { label: 'Status and scope', href: rshare.status },
+  },
+]
+
+export const rsureEvidence: EvidenceRow[] = [
+  {
+    measure: 'Contracts',
+    value: '17 deploy terms; 30 components; 19 state cells',
+    source: { label: 'Project status', href: rsure.status },
+  },
+  {
+    measure: 'Behavioural campaign',
+    value: '37 runs; 375 assertions; 0 failures; 5 November 2026',
+    source: { label: 'Project status', href: rsure.status },
+  },
+  {
+    measure: 'Registered suites',
+    value: '39; 36 passing, 3 process gates not run',
+    source: { label: 'Project status', href: rsure.status },
+  },
+  {
+    measure: 'Lean',
+    value: '261 theorems; 33 vectors; 51 flow rules; 11 proved-model core arms',
+    source: { label: 'Formal model', href: rsure.formalModel },
+  },
+  {
+    measure: 'Audit',
+    value: '25 findings: 22 fixed, 3 accepted; 35 hazards; 25 improvements',
+    source: { label: 'Audit report', href: rsure.audit },
+  },
+  {
+    measure: 'Concurrency and interfaces',
+    value: '30/30 reviews; 42/42 composition interfaces',
+    source: { label: 'Project status', href: rsure.status },
+  },
+  {
+    measure: 'Coverage',
+    value: '120/145 public arms (82.8%); 133/162 registered (82.1%)',
+    source: { label: 'Project status', href: rsure.status },
+  },
+  {
+    measure: 'Clients',
+    value: 'React/Vite and Rust workspace tests pass; Playwright journey passes',
+    source: { label: 'Verification', href: rsure.verification },
   },
 ]
 
