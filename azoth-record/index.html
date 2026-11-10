@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azoth — Patrick Mockridge</title>
+    <meta name="description" content="Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor for chemical engineers and AI agents.">
+    <meta name="author" content="Patrick Mockridge">
+    <meta name="theme-color" content="#fcfbf7">
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light';
+          document.documentElement.dataset.theme = theme;
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) {
+            meta.setAttribute('content', theme === 'dark' ? '#151513' : '#fcfbf7');
+          }
+        } catch (error) {
+          // Default to the light palette.
+        }
+      })();
+    </script>
+    <link rel="canonical" href="https://patrickmockridge.github.io/azoth-record/">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link
+      rel="preload"
+      href="/fonts/ibm-plex-mono-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+   >
+    <link
+      rel="preload"
+      href="/fonts/ibm-plex-mono-500.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+   >
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Azoth — Patrick Mockridge">
+    <meta property="og:description" content="Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor for chemical engineers and AI agents.">
+    <meta property="og:url" content="https://patrickmockridge.github.io/azoth-record/">
+    <meta property="og:image" content="https://patrickmockridge.github.io/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta
+      property="og:image:alt"
+      content="Patrick Mockridge — a record of work in privacy protocols, consensus systems, and formal verification."
+   >
+    <meta property="profile:first_name" content="Patrick">
+    <meta property="profile:last_name" content="Mockridge">
+    <meta property="profile:username" content="PatrickMockridge">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Azoth — Patrick Mockridge">
+    <meta name="twitter:description" content="Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor for chemical engineers and AI agents.">
+    <meta name="twitter:image" content="https://patrickmockridge.github.io/og.png">
+    <style>.noscript{color:#1a1a1a;background:#fcfbf7;max-width:68ch;margin:3rem auto;padding:0 1.25rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;line-height:1.65}.noscript h1{font-size:2rem;font-weight:500}</style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "url": "https://patrickmockridge.github.io/",
+        "name": "Patrick Mockridge — Protocol engineer",
+        "dateModified": "2026-11-07",
+        "mainEntity": {
+          "@type": "Person",
+          "@id": "https://patrickmockridge.github.io/#person",
+          "name": "Patrick Mockridge",
+          "url": "https://patrickmockridge.github.io/",
+          "jobTitle": "Protocol engineer",
+          "description": "Independent protocol engineer working on privacy protocols, consensus systems, formal verification, and numerical provenance.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Aberystwyth",
+            "addressRegion": "Wales",
+            "addressCountry": "GB"
+          },
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Edinburgh"
+          },
+          "sameAs": [
+            "https://github.com/PatrickMockridge",
+            "https://technologytruth.substack.com/",
+            "https://www.youtube.com/playlist?list=PLS0PrDysL4A3r9Ntdb159vsT2lmQK3zAW"
+          ],
+          "knowsAbout": [
+            "Privacy protocols",
+            "Consensus systems",
+            "Formal verification",
+            "Rust",
+            "Zero-knowledge proofs",
+            "Process safety",
+            "Romeo-Juliet Framework",
+            "Critical risk analysis",
+            "Rholang",
+            "RChain",
+            "Lean 4",
+            "Halo 2",
+            "OCapN",
+            "Distributed systems",
+            "HAZOP"
+          ]
+        },
+        "hasPart": {
+          "@type": "ItemList",
+          "name": "Selected work",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "DarkWow",
+                "description": "A private bearer-note system: the note is the asset, possession is authority, and no protocol-level administrator can freeze or confiscate it. ZK Box and Purse, a ZK-based identity/oracle/attestation/stablecoin suite, a no-freeze Promissory Note, an o-cap bridge, Uncle Merkle consensus, a per-block Pedersen supply audit, and a Lean 4 proof-status ledger.",
+                "codeRepository": "https://github.com/PatrickMockridge/DarkWow",
+                "programmingLanguage": "Rust",
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "Rholo",
+                "description": "A Rust node for the rho-calculus, from the RChain lineage: native object capabilities, horizontal scale-out by design, and laws proved at the model and tied to the node.",
+                "codeRepository": "https://github.com/rhovision-org/rholo",
+                "programmingLanguage": "Rust",
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "R-Cash",
+                "description": "A permissionless multi-currency account and cross-border payments network on Rholo: direct FX pools, local stablecoins, and a transfer contract with one terminal state.",
+                "codeRepository": "https://github.com/rhovision-org/r-cash",
+                "programmingLanguage": ["Rholang", "Python", "Rust", "TypeScript", "Lean 4", "TLA+"],
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "R-Gen",
+                "description": "On-chain records for engineering work: a claim records what was done, a credentialed reviewer validates it, and the approved K-Asset keeps its credentials, disputes, and provenance.",
+                "codeRepository": "https://github.com/rhovision-org/r-gen",
+                "programmingLanguage": ["Rholang", "Lean 4", "Python", "Rust"],
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "R-Share",
+                "description": "On-chain booking and rental primitives for Rholo, settled through R-Cash: one booking, escrow, and settlement path for holiday letting, events, ticketing, bike share, car rental, and robotics-as-a-service.",
+                "codeRepository": "https://github.com/rhovision-org/r-share",
+                "programmingLanguage": ["Rholang", "Rust", "Python", "TypeScript", "Lean 4"],
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "R-Sure",
+                "description": "On-chain insurance market primitives for Rholo: Lloyd’s-style syndicates, brokers, placing slips, policies, and claims, settled through R-Cash and evidenced by R-Gen.",
+                "codeRepository": "https://github.com/rhovision-org/r-sure",
+                "programmingLanguage": ["Rholang", "Lean 4", "Rust", "Python", "TypeScript"],
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "Azoth",
+                "description": "Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor for chemical engineers and AI agents.",
+                "codeRepository": "https://github.com/PatrickMockridge/Azoth",
+                "sameAs": "https://patrickmockridge.github.io/azoth/",
+                "programmingLanguage": ["Rust", "Python"],
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "item": {
+                "@type": "SoftwareSourceCode",
+                "name": "Mudra",
+                "description": "A proof-of-trace system for spreadsheets and small programs: a constant-size proof that a committed calculation trace is unchanged.",
+                "codeRepository": "https://github.com/PatrickMockridge/Mudra",
+                "programmingLanguage": "Rust",
+                "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+              }
+            }
+          ]
+        }
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-DlTYBluH.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DVCZV4p3.css">
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Azoth","description":"Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor for chemical engineers and AI agents.","url":"https://patrickmockridge.github.io/azoth-record/","codeRepository":"https://github.com/PatrickMockridge/Azoth","sameAs":"https://patrickmockridge.github.io/azoth/","programmingLanguage":["Rust","Python"],"license":"https://www.gnu.org/licenses/agpl-3.0.html","author":{"@type":"Person","@id":"https://patrickmockridge.github.io/#person"}}</script>
+  </head>
+  <body>
+    <div id="root"><a class="skip-link" href="#main">Skip to content</a><div class="site"><div class="window"><header class="window-header"><a class="brand" href="/">Patrick Mockridge</a><nav class="header-links" aria-label="Contact and links"><a href="https://github.com/PatrickMockridge" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://technologytruth.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a><a href="https://patrickmockridge.github.io/fitba/" target="_blank" rel="noopener noreferrer">fitba</a><a href="mailto:patrickmockridge@gmail.com">Email</a><a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a><span class="header-date">November 2026</span><button type="button" class="theme-toggle" aria-label="Switch to dark theme">Dark</button></nav></header><nav class="tab-index" aria-label="Sections"><a class="tab" id="tab-cv" href="/">CV</a><a class="tab" id="tab-darkwow" href="/darkwow/">DarkWow</a><a class="tab" id="tab-rholo" href="/rholo/">Rholo</a><a class="tab" id="tab-rcash" href="/r-cash/">R-Cash</a><a class="tab" id="tab-rgen" href="/r-gen/">R-Gen</a><a class="tab" id="tab-rshare" href="/r-share/">R-Share</a><a class="tab" id="tab-rsure" href="/r-sure/">R-Sure</a><a class="tab" id="tab-azoth" href="/azoth-record/" aria-current="page">Azoth</a><a class="tab" id="tab-mudra" href="/mudra/">Mudra</a><a class="tab" id="tab-research" href="/research/">Research</a><a class="tab" id="tab-contact" href="/contact/">Contact</a></nav><main id="main"><section class="panel" id="panel-azoth" aria-labelledby="tab-azoth"><header class="title-block"><p class="descriptor">Specification</p><h1 class="case-title">Azoth</h1><p class="case-subtitle">Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor for chemical engineers and AI agents.</p><dl class="what-why"><div class="what-why-row"><dt>What</dt><dd>A chemical-engineering calculation library in Python and Rust, written twice by hand from one declaration, where every result carries its provenance.</dd></div><div class="what-why-row"><dt>Why</dt><dd>In process safety, the dangerous number is rarely obviously wrong. It is reasonable, it is in the right units, and it has no history — so it gets used. A library that returns a bare float is optimised for that failure. Azoth makes a number unable to be anonymous: it carries its source and verification state, and a calculation that cannot be supported refuses instead of returning a plausible default. The library is built so the unsourced number cannot exist.</dd></div><div class="what-why-row what-why-combination"><dt>The combination</dt><dd>One declaration → two hand-written kernels (Rust and Python) compared in CI → per-result provenance → typed refusal as a first-class outcome; a disagreement is a finding, not a fallback.</dd></div></dl><dl class="metadata"><div class="metadata-row"><dt>Role</dt><dd>Design, implementation</dd></div><div class="metadata-row"><dt>Period</dt><dd>2026</dd></div><div class="metadata-row"><dt>Status</dt><dd>v0.1.x (currently 0.1.1); not on PyPI; not for design work yet</dd></div><div class="metadata-row"><dt>Editor</dt><dd><a href="https://patrickmockridge.github.io/azoth/" target="_blank" rel="noopener noreferrer">patrickmockridge.github.io/azoth</a></dd></div><div class="metadata-row"><dt>Repository</dt><dd><a href="https://github.com/PatrickMockridge/Azoth" target="_blank" rel="noopener noreferrer">github.com/PatrickMockridge/Azoth</a></dd></div><div class="metadata-row"><dt>Documentation</dt><dd><a href="https://github.com/PatrickMockridge/Azoth/tree/main/docs" target="_blank" rel="noopener noreferrer">docs/src</a></dd></div></dl></header><aside class="method-refrain" aria-label="Method"><span class="method-label">Method</span><p>Specify the failure mode before the architecture; prove what can be proved; contain what cannot; record provenance with every result. Where proof stops is stated in the limits.</p></aside><section class="section" id="azoth-difference" aria-labelledby="azoth-difference-heading"><h2 class="section-heading" id="azoth-difference-heading"><span class="section-number" aria-hidden="true">1</span><span>The difference</span></h2><div class="comparison comparison--contrast"><div class="comparison-head"><span class="comparison-caption">Table 1. A number, with and without a record.</span><span class="comparison-subtitle">What changes when the result carries its own history.</span></div><div class="comparison-scroll" role="region" aria-label="Table 1. A number, with and without a record." tabindex="0"><table class="comparison-table"><caption class="visually-hidden">Table 1. A number, with and without a record.</caption><thead><tr><th scope="col">Measure</th><th scope="col">A plain calculation</th><th scope="col">An Azoth result</th></tr></thead><tbody><tr><th scope="row">Value</th><td>A float.</td><td>A float plus its identity, source, verification state, skipped checks, and kernel hashes.</td></tr><tr><th scope="row">Implementation</th><td>One code path.</td><td>Two hand-written kernels (Rust and Python) from one declaration, compared in CI.</td></tr><tr><th scope="row">Disagreement</th><td>A fallback, or unnoticed.</td><td>Recorded as a finding.</td></tr><tr><th scope="row">Unsupported input</th><td>A plausible default, or an exception with no field.</td><td>A typed refusal naming the field.</td></tr></tbody></table></div><p class="source-note">Design intent, not current coverage: v0.1.1, not on PyPI, not for design work yet; everything ported ships as unverified.</p></div></section><section class="section" id="azoth-design" aria-labelledby="azoth-design-heading"><h2 class="section-heading" id="azoth-design-heading"><span class="section-number" aria-hidden="true">2</span><span>Design</span></h2><ul class="prose"><li><strong>A disagreement is a finding, not a fallback.</strong> Two hand-written kernels from one declaration are compared in CI; a difference is recorded rather than resolved by choosing one. This catches implementation drift, not a shared specification error.</li><li><strong>No result is anonymous.</strong> Each result carries its identity, source, verification state, skipped checks, and kernel hashes.</li><li><strong>Unsupported answers are refused.</strong> Typed errors name the offending field rather than returning a plausible default.</li><li><strong>Agent-exposed results keep their provenance.</strong> Data access is sealed at load, not at use, and results exposed over MCP carry the same record.</li></ul></section><section class="section" id="azoth-editor" aria-labelledby="azoth-editor-heading"><h2 class="section-heading" id="azoth-editor-heading"><span class="section-number" aria-hidden="true">3</span><span>Using it</span></h2><div class="prose"><p>Azoth opens in a browser at<!-- --> <a href="https://patrickmockridge.github.io/azoth/" target="_blank" rel="noopener noreferrer">patrickmockridge.github.io/azoth</a>. The flowsheet editor loads a worked case — a feed, pump, heater, separator and recycle, joined by streams — and pressing <strong>Solve</strong> puts temperatures, pressures and flows on the drawing; the Workbook lists every stream. Case → Examples opens a rich gas compressed, cooled and split into sales gas and condensate, or a pipeline dropping pressure through a valve. Click any unit operation — a pump, heater or separator — or any stream to read its inputs, results and where the model came from.</p><p>Nothing is installed and no case is uploaded: the calculation engine is compiled to WebAssembly and runs inside the page, with no server behind it. The editor is the human door into the same engine: a chemical engineer who does not write code or use an LLM can build and solve a process by hand, with the same calculations and provenance as the library. An agent reaches that engine through the CLI and MCP, and receives each result as JSON with its provenance attached, so it cannot present a number without its source and verification state. Neither audience has to adopt the other&#x27;s toolchain.</p></div></section><section class="section" id="azoth-provenance" aria-labelledby="azoth-provenance-heading"><h2 class="section-heading" id="azoth-provenance-heading"><span class="section-number" aria-hidden="true">4</span><span>Provenance</span></h2><div class="prose"><p>Port of NeqSim (Apache-2.0), with documented divergences. Original to this work: the specification, dual generation, provenance layer, typed refusal, sealed data access, and the Lean-checked foundations. Azoth is AGPL-3.0-or-later.</p></div></section><section class="section" id="azoth-evidence" aria-labelledby="azoth-evidence-heading"><h2 class="section-heading" id="azoth-evidence-heading"><span class="section-number" aria-hidden="true">5</span><span>Evidence</span></h2><div class="evidence"><table class="evidence-table"><caption class="visually-hidden">Azoth upstream evidence</caption><thead><tr><th scope="col">Measure</th><th scope="col">Value</th><th scope="col">Source</th></tr></thead><tbody><tr><td>Upstream issues filed</td><td class="numeric">97 (80 closed, 17 open)</td><td><a href="https://github.com/equinor/neqsim/issues?q=author%3APatrickMockridge" target="_blank" rel="noopener noreferrer">NeqSim issue search</a></td></tr><tr><td>Provenance tests</td><td class="numeric">264</td><td><a href="https://github.com/PatrickMockridge/Azoth" target="_blank" rel="noopener noreferrer">Azoth repository</a></td></tr></tbody></table><p class="source-note">As of October 2026. These are upstream issues filed against NeqSim, not an Equinor engagement.</p></div><figure class="figure" aria-labelledby="azoth-pipeline-caption"><div class="pipeline" role="img" aria-label="Pipeline: TOML specification; generated Rust and Python; dual kernels; provenance record; CLI, UI, MCP, and agents."><span class="pipeline-step">TOML specification</span><span class="pipeline-arrow" aria-hidden="true">→</span><span class="pipeline-step">Generated Rust and Python</span><span class="pipeline-arrow" aria-hidden="true">→</span><span class="pipeline-step">Dual kernels</span><span class="pipeline-arrow" aria-hidden="true">→</span><span class="pipeline-step">Provenance record</span><span class="pipeline-arrow" aria-hidden="true">→</span><span class="pipeline-step">CLI · UI · MCP · agents</span></div><figcaption id="azoth-pipeline-caption">Figure 1. Azoth pipeline, abridged.</figcaption></figure><ul class="link-list"><li><a href="https://github.com/equinor/neqsim/issues/3993" target="_blank" rel="noopener noreferrer">#<!-- -->3993</a> <!-- -->— <code>performGibbsMinimization</code> performs no minimization and logs that it completed. Closed, fix PR #4002.</li><li><a href="https://github.com/equinor/neqsim/issues/3994" target="_blank" rel="noopener noreferrer">#<!-- -->3994</a> <!-- -->— <!-- -->A zero-filled vapour-pressure row is given a synthetic curve from its normal boiling point, in the wrong unit. Open.</li></ul></section><section class="section" id="azoth-limits" aria-labelledby="azoth-limits-heading"><h2 class="section-heading" id="azoth-limits-heading"><span class="section-number" aria-hidden="true">6</span><span>Limits</span></h2><ul class="prose"><li>v0.1.1; not on PyPI; incomplete port coverage; everything ported ships as<!-- --> <code>unverified</code>; the standalone simulator is an aim, not a status.</li><li>Not for design work yet: shipped Crane K-factor coefficients are estimated dummy values; a pressure drop can be wrong by a factor of two while looking reasonable.</li><li>Lean covers foundations only — dimensional calculus, unit vocabulary, two derivative formulas, keycard non-amplification. Physics kernels are measured, not proved.</li><li>One upstream issue did not reproduce in situ. This is a self-audit, not a third-party audit.</li><li>AGPL-3.0-or-later has commercial implications for proprietary integration.</li></ul></section><section class="section" id="azoth-links" aria-labelledby="azoth-links-heading"><h2 class="section-heading" id="azoth-links-heading"><span class="section-number" aria-hidden="true">7</span><span>Links</span></h2><ul class="link-list"><li><a href="https://patrickmockridge.github.io/azoth/" target="_blank" rel="noopener noreferrer">Flowsheet editor</a></li><li><a href="https://github.com/PatrickMockridge/Azoth" target="_blank" rel="noopener noreferrer">Repository</a></li><li><a href="https://github.com/PatrickMockridge/Azoth/blob/main/docs/src/safety.md" target="_blank" rel="noopener noreferrer">Safety record</a></li><li><a href="https://github.com/equinor/neqsim/issues?q=author%3APatrickMockridge" target="_blank" rel="noopener noreferrer">NeqSim issue search</a></li><li><a href="https://github.com/PatrickMockridge/Azoth/blob/main/AGENTS.md" target="_blank" rel="noopener noreferrer">Agent guidance</a></li></ul></section></section></main><footer class="window-footer"><span>Patrick Mockridge<!-- --> · <!-- -->Aberystwyth, Wales<!-- --> · Last updated<!-- --> <time dateTime="2026-11-10">10 November 2026</time></span><span><a href="mailto:patrickmockridge@gmail.com">Enquiries</a> · <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a></span></footer></div></div></div>
+    <noscript>
+        <div class="noscript">
+          <h1>Patrick Mockridge</h1>
+          <p>
+            Independent protocol engineer working on privacy protocols, consensus
+            systems, formal verification, and numerical provenance.
+          </p>
+          <p>
+            Selected work: <a href="/darkwow/">DarkWow</a> ·
+            <a href="/rholo/">Rholo</a> ·
+            <a href="/r-cash/">R-Cash</a> ·
+            <a href="/r-gen/">R-Gen</a> ·
+            <a href="/r-share/">R-Share</a> ·
+            <a href="/r-sure/">R-Sure</a> ·
+            <a href="/azoth-record/">Azoth</a> · <a href="/mudra/">Mudra</a>.
+          </p>
+          <p>
+            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a> ·
+            <a href="mailto:patrickmockridge@gmail.com">patrickmockridge@gmail.com</a>
+          </p>
+          <p>
+            <a href="https://github.com/PatrickMockridge" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+            <a href="https://technologytruth.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a>
+          </p>
+        </div>
+    </noscript>
+  </body>
+</html>
