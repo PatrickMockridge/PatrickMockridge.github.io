@@ -39,7 +39,7 @@ export const PAGE_META: Record<
     description:
       'Independent protocol engineer working on privacy protocols, consensus systems, formal verification, and numerical provenance. Selected work: DarkWow, Rholo, R-Cash, R-Gen, R-Share, R-Sure, Azoth, Mudra.',
     path: '/',
-    updated: '2026-11-05',
+    updated: '2026-11-07',
   },
   darkwow: {
     title: 'DarkWow — Patrick Mockridge',
@@ -60,35 +60,35 @@ export const PAGE_META: Record<
     description:
       'A permissionless multi-currency account and cross-border payments network on Rholo: direct FX pools, local stablecoins, and a transfer contract with one terminal state.',
     path: '/r-cash/',
-    updated: '2026-11-03',
+    updated: '2026-11-07',
   },
   rgen: {
     title: 'R-Gen — Patrick Mockridge',
     description:
       'On-chain records for engineering work: a claim records what was done, a credentialed reviewer validates it, and the approved K-Asset keeps its credentials, disputes, and provenance.',
     path: '/r-gen/',
-    updated: '2026-11-04',
+    updated: '2026-11-07',
   },
   rshare: {
     title: 'R-Share — Patrick Mockridge',
     description:
       'On-chain booking and rental primitives for Rholo, settled through R-Cash: one booking, escrow, and settlement path for holiday letting, events, ticketing, bike share, car rental, and robotics-as-a-service.',
     path: '/r-share/',
-    updated: '2026-11-04',
+    updated: '2026-11-07',
   },
   rsure: {
     title: 'R-Sure — Patrick Mockridge',
     description:
       'On-chain insurance market primitives for Rholo: Lloyd’s-style syndicates, brokers, placing slips, policies, and claims, settled through R-Cash and evidenced by R-Gen.',
     path: '/r-sure/',
-    updated: '2026-11-05',
+    updated: '2026-11-07',
   },
   azoth: {
     title: 'Azoth — Patrick Mockridge',
     description:
-      'Chemical-engineering calculations in Python and Rust, where every number carries its provenance.',
-    path: '/azoth/',
-    updated: '2026-10-30',
+      'Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor for chemical engineers and AI agents.',
+    path: '/azoth-record/',
+    updated: '2026-11-10',
   },
   mudra: {
     title: 'Mudra — Patrick Mockridge',
@@ -161,6 +161,7 @@ export const SITE = {
     rshareRepo: 'https://github.com/rhovision-org/r-share',
     rsureRepo: 'https://github.com/rhovision-org/r-sure',
     azothRepo: 'https://github.com/PatrickMockridge/Azoth',
+    azothEditor: 'https://patrickmockridge.github.io/azoth/',
     mudraRepo: 'https://github.com/PatrickMockridge/Mudra',
     romeoArchive:
       'https://app.ardrive.io/#/drives/3783e4d5-2ce0-405c-854a-94eb5a4f4b1a?name=Romeo+Juliet+Framework',

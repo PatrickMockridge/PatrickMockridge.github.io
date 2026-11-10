@@ -76,6 +76,10 @@ export const rcash = {
   spec: `${rcashBase}/docs/SPEC.md`,
   calculus: `${rcashBase}/docs/spec/00-CALCULUS.md`,
   hazop: `${rcashBase}/docs/spec/HAZOP.md`,
+  primitivesHazop: `${rcashBase}/docs/spec/PRIMITIVES-HAZOP.md`,
+  auditPrimitives: `${rcashBase}/docs/spec/AUDIT-PRIMITIVES.md`,
+  matchReview: `${rcashBase}/docs/spec/MATCH-REVIEW.md`,
+  claims: `${rcashBase}/spec/lean/claims.yaml`,
   campaign: `${rcashBase}/docs/spec/flows/CAMPAIGN.md`,
   verification: `${rcashBase}/book/src/trust/verification.md`,
   testing: `${rcashBase}/book/src/trust/testing.md`,
@@ -101,6 +105,11 @@ export const rgen = {
   adversarial: `${rgenBase}/docs/src/reference/adversarial-review.md`,
   pareto: `${rgenBase}/spec/pareto.yaml`,
   raceLean: `${rgenBase}/spec/lean/RGen/RaceFreedom.lean`,
+  conventions: `${rgenBase}/docs/src/reference/kasset-conventions.md`,
+  objectCapabilities: `${rgenBase}/docs/src/reference/object-capabilities.md`,
+  redTeam: `${rgenBase}/docs/src/reference/red-team.md`,
+  auditFindings: `${rgenBase}/spec/audit/findings.yaml`,
+  arms: `${rgenBase}/docs/src/reference/arms.md`,
   papers: `${rgenBase}/docs/papers/README.md`,
 }
 
@@ -119,6 +128,9 @@ export const rshare = {
   status: `${rshareBase}/docs/orientation/status-and-scope.md`,
   holiday: `${rshareBase}/docs/case-studies/holiday-letting/index.md`,
   flows: `${rshareBase}/spec/flows/core.yaml`,
+  audit: `${rshareBase}/audit/report.md`,
+  hazards: `${rshareBase}/audit/registers/hazards.yaml`,
+  profiles: `${rshareBase}/harness/profiles.py`,
   notices: `${rshareBase}/THIRD_PARTY_NOTICES.md`,
 }
 
@@ -136,6 +148,7 @@ export const rsure = {
   formalModel: `${rsureBase}/docs/reference/formal-model.md`,
   verification: `${rsureBase}/docs/reference/verification.md`,
   contractMap: `${rsureBase}/docs/reference/contract-map.md`,
+  variance: `${rsureBase}/docs/concepts/variance-is-risk.md`,
   audit: `${rsureBase}/audit/report.md`,
   lean: `${SITE.links.rsureRepo}/tree/main/spec/lean`,
   flows: `${rsureBase}/spec/flows`,
@@ -144,6 +157,7 @@ export const rsure = {
 
 export const azoth = {
   repo: SITE.links.azothRepo,
+  editor: SITE.links.azothEditor,
   docs: `${SITE.links.azothRepo}/tree/main/docs`,
   safety: `${SITE.links.azothRepo}/blob/main/docs/src/safety.md`,
   agents: `${SITE.links.azothRepo}/blob/main/AGENTS.md`,
@@ -309,7 +323,7 @@ export const rcashEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Specification',
-    value: '929 lines; 221 requirements, 206 MUST, 19 areas',
+    value: '932 lines; 207 requirements, 207 MUST, 19 areas',
     source: { label: 'docs/SPEC.md', href: rcash.spec },
   },
   {
@@ -328,8 +342,13 @@ export const rcashEvidence: EvidenceRow[] = [
     source: { label: 'spec/lean', href: rcash.lean },
   },
   {
+    measure: 'Lean claims',
+    value: '44 claims; 17 covered (review 4 November 2026)',
+    source: { label: 'spec/lean/claims.yaml', href: rcash.claims },
+  },
+  {
     measure: 'TLA+',
-    value: '5 models; TLC over bounded domains',
+    value: '7 models; TLC over bounded domains',
     source: { label: 'spec/tla', href: rcash.tla },
   },
   {
@@ -347,32 +366,37 @@ export const rgenEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Behavioural suites',
-    value: '10/10; 291 ok assertions; Rholo e2d073d; 4 November 2026',
+    value: '10/10; 307 ok assertions; Rholo e2d073d; 7 November 2026',
     source: { label: 'Verification record', href: rgen.verification },
   },
   {
     measure: 'Lean 4 build',
-    value: '36 files; no Mathlib; no sorry, admit, native_decide, or declared axiom',
+    value: '45 files; no Mathlib; no sorry, admit, native_decide, or declared axiom',
     source: { label: 'Formal model', href: rgen.formalModel },
   },
   {
     measure: 'Theorem audit',
-    value: '131 public theorems; propext and Quot.sound only',
+    value: '241 public theorems; propext and Quot.sound only',
     source: { label: 'Formal model', href: rgen.formalModel },
   },
   {
     measure: 'Race matrix',
-    value: '32 pairs: 19 exclusive, 12 ordered, 1 independent',
+    value: '32 pairs: 19 exclusive, 11 ordered, 2 independent',
     source: { label: 'Race-freedom proof', href: rgen.raceProof },
   },
   {
     measure: 'Arm map',
-    value: '66 arms: 35 proved-model, 0 proved-conformance, 31 owed',
+    value: '67 arms: 0 proved-model, 35 proved-conformance, 32 owed',
     source: { label: 'Formal model', href: rgen.formalModel },
   },
   {
     measure: 'Conformance corpus',
-    value: '21 emitted rows; 35 mutating arms tied to a consumed cell',
+    value: '46 emitted rows; 37 mutating arms tied to a consumed cell',
+    source: { label: 'Verification record', href: rgen.verification },
+  },
+  {
+    measure: 'Audit',
+    value: '62 findings; 38-row capability audit; RT-004–RT-037',
     source: { label: 'Verification record', href: rgen.verification },
   },
   {
@@ -385,12 +409,12 @@ export const rgenEvidence: EvidenceRow[] = [
 export const rshareEvidence: EvidenceRow[] = [
   {
     measure: 'Behavioural suites',
-    value: '16/16; fresh devnet; 3 November 2026',
+    value: '24/24 recorded; 27 defined, 3 pending; 7 November 2026',
     source: { label: 'Verification record', href: rshare.verification },
   },
   {
     measure: 'Deploy terms',
-    value: '13; build, measure, and parse with the target node parser',
+    value: '15 safe / 20 cover-demo; build, measure, and parse with the target node parser',
     source: { label: 'Contract map', href: rshare.contractMap },
   },
   {
@@ -400,18 +424,23 @@ export const rshareEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Conservation',
-    value: '7 settlement scenarios; closed balance set; negative control',
+    value: '8 settlement scenarios; closed balance set; negative control',
     source: { label: 'Verification record', href: rshare.verification },
   },
   {
     measure: 'Lean 4',
-    value: '37 axiom audits; 21 vectors; no sorry, admit, axiom, or native_decide',
+    value: '105 axiom audits; 21 vectors; 101 registered theorems; no sorry, admit, axiom, or native_decide',
     source: { label: 'Formal model', href: rshare.formalModel },
   },
   {
     measure: 'Flow manifest',
-    value: '33 rules; 29 arms; 13 core arms proved-model',
+    value: '43 rules; 39 arms; 13 core arms proved-model',
     source: { label: 'Formal model', href: rshare.formalModel },
+  },
+  {
+    measure: 'Audit',
+    value: '21 findings (5 P0, 5 P1); 63 hazards; 23 improvements',
+    source: { label: 'Audit report', href: rshare.audit },
   },
   {
     measure: 'Allocator theorem',
@@ -420,7 +449,7 @@ export const rshareEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Client campaign',
-    value: 'CLI journey plus guest, provider, and admin-multisig browser journeys; 3–4 November 2026',
+    value: 'CLI journey plus guest, provider, and admin-multisig browser journeys; 3–7 November 2026',
     source: { label: 'Status and scope', href: rshare.status },
   },
 ]
@@ -433,37 +462,42 @@ export const rsureEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Behavioural campaign',
-    value: '37 runs; 375 assertions; 0 failures; 5 November 2026',
+    value: '38 runs; 410 assertions; 0 failures; 7 November 2026',
     source: { label: 'Project status', href: rsure.status },
   },
   {
     measure: 'Registered suites',
-    value: '39; 36 passing, 3 process gates not run',
+    value: '42: 37 passing, 3 process gates not run, 2 implemented',
     source: { label: 'Project status', href: rsure.status },
   },
   {
     measure: 'Lean',
-    value: '261 theorems; 33 vectors; 51 flow rules; 11 proved-model core arms',
+    value: '285 theorems; 48 vectors; 58 flow rules; 11 proved-model core arms; 15 critical primitives',
     source: { label: 'Formal model', href: rsure.formalModel },
   },
   {
     measure: 'Audit',
-    value: '25 findings: 22 fixed, 3 accepted; 35 hazards; 25 improvements',
+    value: '28 findings: 25 fixed, 3 accepted; 37 hazards; 30 improvements',
     source: { label: 'Audit report', href: rsure.audit },
   },
   {
     measure: 'Concurrency and interfaces',
-    value: '30/30 reviews; 42/42 composition interfaces',
+    value: '30/30 reviews; 46/46 composition interfaces',
     source: { label: 'Project status', href: rsure.status },
   },
   {
     measure: 'Coverage',
-    value: '120/145 public arms (82.8%); 133/162 registered (82.1%)',
+    value: '126/151 public arms (83.4%); 139/168 registered (82.7%)',
     source: { label: 'Project status', href: rsure.status },
   },
   {
+    measure: 'Variance',
+    value: 'K-Asset engineering variance; liability share excluded',
+    source: { label: 'Variance is risk', href: rsure.variance },
+  },
+  {
     measure: 'Clients',
-    value: 'React/Vite and Rust workspace tests pass; Playwright journey passes',
+    value: '3 Playwright journeys; 8 Vitest; 13 Rust tests pass',
     source: { label: 'Verification', href: rsure.verification },
   },
 ]

@@ -80,7 +80,7 @@ const CALCULUS_ROWS: ComparisonRow[] = [
     cells: [
       <>Lean transition relation and arithmetic; TLA+ models; tests.</>,
       <>
-        S1–S12 invariants, five TLA+ models, and an axiom audit; traceability plus tests
+        S1–S12 invariants, seven TLA+ models, and an axiom audit; traceability plus tests
         link model to code.
       </>,
     ],
@@ -185,7 +185,7 @@ export function RCashTab() {
           },
           {
             label: 'Period',
-            value: '2026; created 22 October; v0.5 dated 27 October; active to 3 November',
+            value: '2026; created 22 October; v0.5 dated 27 October; active to 7 November',
           },
           {
             label: 'Status',
@@ -413,8 +413,8 @@ export function RCashTab() {
             specification, and models.
           </p>
           <p>
-            The specification is 929 lines: v0.5, dated 27 October 2026, with 221 requirement
-            rows, 206 MUST rows, and 19 areas. The component catalogue holds 40 components. The
+            The specification is 932 lines: v0.5, dated 27 October 2026, with 207 requirement
+            rows, 207 MUST rows, and 19 areas. The component catalogue holds 40 components. The
             calculus record defines 8 laws (L1–L8), 7 non-laws (N1–N7), 18 safety rules (S1–S18),
             8 well-formedness rules (WF1–WF8), 6 composition protocols (P1–P6), and 3
             capability-provenance rules (C1–C3).
@@ -424,16 +424,17 @@ export function RCashTab() {
             Mathlib, models the transition relation, arithmetic, and linear-cell discipline; it
             proves S1–S12 and rejects six linear-cell defect shapes (D1–D6). Its axiom audit
             rejects <code>sorry</code>, <code>admit</code>, <code>native_decide</code>, and
-            project-local axioms. Five TLA+ models — CellLinearity, TransferExclusivity,
-            PoolConservation, CapabilityProvenance, and AdminNonce — are checked with TLC over
-            deliberately small bounded domains. <code>tools/check_captures.py</code> rejects
-            capabilities in replies, stored maps, bundles, and attestations.
+            project-local axioms. Seven TLA+ models — CellLinearity, TransferExclusivity,
+            PoolConservation, CapabilityProvenance, AdminNonce, MarketCreateAtomicity, and
+            PoolCriticalSection — are checked with TLC over deliberately small bounded domains.{' '}
+            <code>tools/check_captures.py</code> rejects capabilities in replies, stored maps,
+            bundles, and attestations.
           </p>
         </div>
         <EvidenceTable
           rows={rcashEvidence}
           caption="R-Cash evidence"
-          note="Sources: repository, specification, and models, as of 3 November 2026. The 13/13 result is the recorded fixed-node devnet run on 27 October 2026; the mesh and external-asset suites were added later and are not part of that count. Counts drift; the linked artifact is authoritative."
+          note="Sources: repository, specification, and models, as of 7 November 2026. The 13/13 result is the recorded fixed-node devnet run on 27 October 2026; the mesh and external-asset suites were added later and are not part of that count. Counts drift; the linked artifact is authoritative."
         />
       </Section>
 
@@ -500,6 +501,18 @@ export function RCashTab() {
           </li>
           <li>
             <a href={rcash.hazop} target="_blank" rel="noopener noreferrer">HAZOP</a>
+          </li>
+          <li>
+            <a href={rcash.primitivesHazop} target="_blank" rel="noopener noreferrer">Primitives HAZOP</a>
+          </li>
+          <li>
+            <a href={rcash.auditPrimitives} target="_blank" rel="noopener noreferrer">Primitives audit</a>
+          </li>
+          <li>
+            <a href={rcash.matchReview} target="_blank" rel="noopener noreferrer">Match review</a>
+          </li>
+          <li>
+            <a href={rcash.claims} target="_blank" rel="noopener noreferrer">Lean claims</a>
           </li>
           <li>
             <a href={rcash.campaign} target="_blank" rel="noopener noreferrer">Campaign</a>

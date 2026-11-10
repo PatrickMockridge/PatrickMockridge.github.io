@@ -27,13 +27,13 @@ const RACE_ROWS: ComparisonRow[] = [
     header: 'Ordered',
     cells: [
       'One direction refuses; the other is the serialized, non-retroactive order.',
-      '12',
+      '11',
     ],
   },
   {
     key: 'independent',
     header: 'Independent',
-    cells: ['The arms touch different cells and do not interact.', '1'],
+    cells: ['The arms touch different cells and do not interact.', '2'],
   },
 ]
 
@@ -52,7 +52,7 @@ export function RGenTab() {
           },
           {
             label: 'Period',
-            value: '2026; created 4 November; core and proofs dated 4 November',
+            value: '2026; created 4 November; conventions 6 November; audit 7 November',
           },
           {
             label: 'Origin',
@@ -62,7 +62,7 @@ export function RGenTab() {
           {
             label: 'Status',
             value:
-              'Devnet-only, unaudited; no real value; seven-contract core; extensions not implemented.',
+              'Devnet-only; Phase 1 audit recorded, not independently reviewed; no real value; seven-contract core; extensions not implemented.',
           },
           {
             label: 'Paper basis',
@@ -211,6 +211,12 @@ export function RGenTab() {
             handles, metrics, and the client consume the core’s facts; the core does not call
             them.
           </p>
+          <p>
+            The K-Asset state shape is published as <code>kasset.conventions/v1</code>:
+            quantity, the four-dimension quality rubric, verdict, the full status lifecycle,
+            and approval liability. It is a convention, not core-enforced; a consumer validates
+            it. The conventions page and schema are linked below.
+          </p>
         </div>
       </Section>
 
@@ -232,8 +238,8 @@ export function RGenTab() {
           </p>
           <p>
             A 32-pair matrix records the outcome for every pair of arms. Nineteen pairs are
-            exclusive: whichever runs first, the second refuses. Twelve are ordered: one
-            direction refuses, the other is the legal serialized order. One is independent.
+            exclusive: whichever runs first, the second refuses. Eleven are ordered: one
+            direction refuses, the other is the legal serialized order. Two are independent.
             Every pair names the theorem that covers it, and a check script verifies the
             mapping.
           </p>
@@ -241,7 +247,7 @@ export function RGenTab() {
         <ComparisonTable
           variant="contrast"
           caption="Table 1. The 32 arm pairs, by race class."
-          subtitle="Nineteen pairs exclude each other, twelve have one legal order, and one does not interact."
+          subtitle="Nineteen pairs exclude each other, eleven have one legal order, and two do not interact."
           columns={RACE_COLUMNS}
           rows={RACE_ROWS}
           note="Every pair names a Lean theorem in spec/flows/races.yaml; tools/check_race_matrix.py checks the class vocabulary and declaration existence."
@@ -251,21 +257,22 @@ export function RGenTab() {
       <Section number="5" title="Evidence" id="rgen-evidence">
         <div className="prose">
           <p>
-            On 4 November 2026, against Rholo node <code>e2d073d</code>, the seven-contract
-            core installed on a fresh isolated devnet. Ten behavioural suites passed, from
+            The core installed on 4 November 2026 against Rholo node <code>e2d073d</code>. The
+            ten behavioural suites passed on the 7 November run with 307 assertions, from
             identity and credentials through claim, K-Asset, value, oracle, provenance,
-            integration, a core vertical slice, and the race regression, with 291 passing
-            assertions.
+            integration, a core vertical slice, and the race regression.
           </p>
           <p>
-            The Lean project builds 36 files without Mathlib. The audit covers 131 public
-            theorems and reports only <code>propext</code> and <code>Quot.sound</code>;
-            there is no <code>sorry</code>, <code>admit</code>, <code>native_decide</code>,
-            or declared axiom. The flow manifest maps 66 arms: 35 proved-model, 0
-            proved-conformance, 31 owed. Proved-model means the theorem is about the model.
-            Proved-conformance would tie a deployed arm to an emitted row and a passing
-            suite; none is claimed. The model emits 21 corpus rows. The adversarial review
-            records four P0 defects in the legacy 12-term prototype and their removal.
+            The Lean project builds 45 files without Mathlib. The audit covers 241 public
+            theorems and reports only <code>propext</code> and <code>Quot.sound</code>; there
+            is no <code>sorry</code>, <code>admit</code>, <code>native_decide</code>, or
+            declared axiom. The flow manifest maps 67 arms: 0 proved-model, 35
+            proved-conformance, 32 owed. Proved-conformance means the theorem, an emitted
+            corpus row, and a suite assertion agree; proved-model is a theorem about the model
+            without that tie. The model emits 46 corpus rows, and 37 mutating arms are tied to
+            a consumed cell. The 7 November audit adds 62 findings, a 38-row capability audit,
+            and red-team probes RT-004–RT-037. The adversarial review records four P0 defects
+            in the legacy 12-term prototype and their removal.
           </p>
         </div>
         <EvidenceTable
@@ -278,8 +285,9 @@ export function RGenTab() {
       <Section number="6" title="Limits" id="rgen-limits">
         <ul className="prose">
           <li>
-            <strong>Maturity.</strong> Devnet-only, unaudited; no real value. There is no
-            token sale, pricing, transfer, or token minting in the core.
+            <strong>Maturity.</strong> Devnet-only; Phase 1 audit recorded, not independently
+            reviewed; no real value. There is no token sale, pricing, transfer, or token
+            minting in the core.
           </li>
           <li>
             <strong>Extensions.</strong> Receipts, pricing, R-Cash payments, risk scoring,
@@ -288,8 +296,8 @@ export function RGenTab() {
           </li>
           <li>
             <strong>Proof boundary.</strong> Lean proves the model, not a mechanized Rholang
-            refinement. The arm map is hand-transcribed; <code>proved-conformance</code> is
-            zero and 31 arms are owed.
+            refinement. The arm map is hand-transcribed; 35 arms claim
+            <code>proved-conformance</code> and 32 are owed.
           </li>
           <li>
             <strong>Concurrency.</strong> The claim is one writer per entity and no shared
@@ -332,7 +340,19 @@ export function RGenTab() {
             <a href={rgen.paretoLedger} target="_blank" rel="noopener noreferrer">Pareto ledger</a>
           </li>
           <li>
+            <a href={rgen.conventions} target="_blank" rel="noopener noreferrer">K-Asset conventions</a>
+          </li>
+          <li>
             <a href={rgen.paperToCode} target="_blank" rel="noopener noreferrer">Paper to code</a>
+          </li>
+          <li>
+            <a href={rgen.objectCapabilities} target="_blank" rel="noopener noreferrer">Object capabilities</a>
+          </li>
+          <li>
+            <a href={rgen.redTeam} target="_blank" rel="noopener noreferrer">Red team</a>
+          </li>
+          <li>
+            <a href={rgen.auditFindings} target="_blank" rel="noopener noreferrer">Audit findings</a>
           </li>
           <li>
             <a href={rgen.formalModel} target="_blank" rel="noopener noreferrer">Formal model</a>
@@ -342,6 +362,9 @@ export function RGenTab() {
           </li>
           <li>
             <a href={rgen.verification} target="_blank" rel="noopener noreferrer">Verification record</a>
+          </li>
+          <li>
+            <a href={rgen.arms} target="_blank" rel="noopener noreferrer">Core arm reference</a>
           </li>
           <li>
             <a href={rgen.status} target="_blank" rel="noopener noreferrer">Status and limits</a>

@@ -72,12 +72,12 @@ export function RSureTab() {
           {
             label: 'Period',
             value:
-              '2026; created 5 November; contracts, model, and campaign dated 5 November',
+              '2026; created 5 November; install 5 November; campaign re-run 7 November',
           },
           {
             label: 'Status',
             value:
-              'Devnet-only, unaudited; not an insurer and no regulatory approval; no real funds; 17 contracts; 37-run campaign.',
+              'Devnet-only, unaudited; not an insurer and no regulatory approval; no real funds; 17 contracts; 38-run campaign.',
           },
           {
             label: 'Paper basis',
@@ -232,6 +232,13 @@ export function RSureTab() {
             pieces are Distribution, Line, and Policy, which{' '}
             <a href={pathForTab('rshare')}>R-Share</a> can use for rentals and staged payments.
           </p>
+          <p>
+            R-Sure also carries the engineering variance. <code>SureMath</code> computes a
+            variance rate from the K-Asset’s quality and verdict; <code>Risk</code> records the
+            insurer’s estimate, the signed gap, the flag, and the loaded minimum premium;{' '}
+            <code>RgenAdapter</code> reads the K-Asset. The approval’s liability share is
+            recorded but excluded from the engineering rate.
+          </p>
         </div>
       </Section>
 
@@ -258,25 +265,25 @@ export function RSureTab() {
       <Section number="5" title="Evidence" id="rsure-evidence">
         <div className="prose">
           <p>
-            On 5 November 2026, the devnet install completed all 17 contracts and the node
-            proposed blocks. The campaign records 37 runs, 375 assertions, and 0 assertion
-            failures. The registered test set has 39 suites: 36 pass and 3 process gates are not
-            run. Coverage is 120 of 145 public arms (82.8%) and 133 of 162 registered arms
-            (82.1%).
+            The devnet install completed all 17 contracts on 5 November 2026 and the node
+            proposed blocks. The campaign was re-run on 7 November: 38 runs, 410 assertions,
+            and 0 assertion failures. The registered test set has 42 suites: 37 pass, 3 process
+            gates are not run, and 2 static gates are implemented. Coverage is 126 of 151 public
+            arms (83.4%) and 139 of 168 registered arms (82.7%).
           </p>
           <p>
-            The Lean model has 261 theorems, 33 vectors, 51 flow rules, and 11 proved-model core
-            arms across 14 critical primitives. The audit records 25 findings: 22 fixed and 3
-            accepted boundaries, with 35 hazards and 25 improvements; 30 of 30 concurrency
-            reviews and 42 of 42 composition interfaces are complete. The React/Vite client and
-            the Rust workspace tests pass, and the Playwright journey covers placement through
-            claim settlement.
+            The Lean model has 285 theorems, 48 vectors, 58 flow rules, and 11 proved-model core
+            arms across 15 critical primitives. The audit records 28 findings: 25 fixed and 3
+            accepted boundaries, with 37 hazards and 30 improvements; 30 of 30 concurrency
+            reviews and 46 of 46 composition interfaces are complete. The React/Vite client, the
+            Rust workspace, and the browser journeys pass: 3 Playwright journeys, 8 Vitest, and
+            13 Rust tests.
           </p>
         </div>
         <EvidenceTable
           rows={rsureEvidence}
           caption="R-Sure evidence"
-          note="Sources: project status, formal model, audit report, and verification record, as of 5 November 2026. Counts drift; the linked artifact is authoritative. The audit is internal and is not an independent audit."
+          note="Sources: verification record, formal model, audit report, and coverage report, as of 7 November 2026. Counts drift; the linked artifact is authoritative. The audit is internal and is not an independent audit."
         />
       </Section>
 
@@ -299,7 +306,12 @@ export function RSureTab() {
           <li>
             <strong>Process gates.</strong> Three process gates — install pipeline, deep codec,
             and no-manual-propose — are registered <code>not_run</code> rather than claimed as
-            passing suites.
+            passing suites. Two static gates (match style and call arity) are implemented.
+          </li>
+          <li>
+            <strong>Variance estimator.</strong> The quality mapping is an implied variance
+            rate, not a statistical moment. The estimator boundary is explicit; the liability
+            share is not an engineering signal.
           </li>
           <li>
             <strong>Settlement.</strong> The R-Cash installer stops at its pool step with a
@@ -355,6 +367,9 @@ export function RSureTab() {
           </li>
           <li>
             <a href={rsure.contractMap} target="_blank" rel="noopener noreferrer">Contract map</a>
+          </li>
+          <li>
+            <a href={rsure.variance} target="_blank" rel="noopener noreferrer">Variance is risk</a>
           </li>
           <li>
             <a href={rsure.audit} target="_blank" rel="noopener noreferrer">Audit report</a>

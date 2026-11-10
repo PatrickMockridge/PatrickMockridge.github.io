@@ -1,4 +1,5 @@
 import { Enquiries } from '../components/Enquiries'
+import { azoth } from '../data/projects'
 import { pathForTab } from '../data/site'
 
 export function ContactTab() {
@@ -30,7 +31,8 @@ export function ContactTab() {
           <a href={pathForTab('rgen')}>R-Gen</a> (claims/proofs),{' '}
           <a href={pathForTab('rshare')}>R-Share</a> (booking),{' '}
           <a href={pathForTab('rsure')}>R-Sure</a> (insurance),{' '}
-          <a href={pathForTab('azoth')}>Azoth</a> (numerical provenance),{' '}
+          <a href={pathForTab('azoth')}>Azoth</a> (numerical provenance;{' '}
+          <a href={azoth.editor} target="_blank" rel="noopener noreferrer">browser flowsheet editor</a>),{' '}
           <a href={pathForTab('mudra')}>Mudra</a> (proof of trace).
         </p>
       </div>

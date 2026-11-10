@@ -1,6 +1,7 @@
 import { ChronologyTable } from '../components/ChronologyTable'
 import { Enquiries } from '../components/Enquiries'
 import { Section } from '../components/Section'
+import { azoth } from '../data/projects'
 import { SITE, pathForTab } from '../data/site'
 
 export function CVTab() {
@@ -117,7 +118,7 @@ export function CVTab() {
             <div className="work-meta">
               <span>2026; October–November (v0.5)</span>
               <span>
-                Devnet-only prototype; 13/13 devnet suites; Lean 4 and five TLA+ models
+                Devnet-only prototype; 13/13 devnet suites; Lean 4 and seven TLA+ models
               </span>
               <span>Design, contracts, formal models</span>
             </div>
@@ -134,7 +135,7 @@ export function CVTab() {
             </div>
             <div className="work-meta">
               <span>2026; November</span>
-              <span>Devnet-only; 7 terms; 10/10 suites; 131 Lean theorems</span>
+              <span>Devnet-only; 7 terms; 10/10 suites; 241 Lean theorems</span>
               <span>Contracts, Lean model, paper mapping</span>
             </div>
             <a className="work-link" href={pathForTab('rgen')}>
@@ -150,7 +151,7 @@ export function CVTab() {
             </div>
             <div className="work-meta">
               <span>2026; November</span>
-              <span>Devnet-only; 13 terms; 16/16 suites; Lean allocator</span>
+              <span>Devnet-only; 15/20 terms; 24/24 suites; Lean allocator</span>
               <span>Contracts, client, formal model</span>
             </div>
             <a className="work-link" href={pathForTab('rshare')}>
@@ -166,7 +167,7 @@ export function CVTab() {
             </div>
             <div className="work-meta">
               <span>2026; November</span>
-              <span>Devnet-only; 17 contracts; 37 suites; 261 Lean theorems</span>
+              <span>Devnet-only; 17 contracts; 38-run campaign; 285 Lean theorems</span>
               <span>Contracts, Lean model, audit, clients</span>
             </div>
             <a className="work-link" href={pathForTab('rsure')}>
@@ -177,7 +178,11 @@ export function CVTab() {
             <div className="work-main">
               <span className="work-title">Azoth</span>
               <span className="work-subtitle">
-                A process calculation library where every number carries its provenance
+                A process calculation library and{' '}
+                <a href={azoth.editor} target="_blank" rel="noopener noreferrer">
+                  browser flowsheet editor
+                </a>{' '}
+                where every number carries its provenance
               </span>
             </div>
             <div className="work-meta">
@@ -215,7 +220,10 @@ export function CVTab() {
         </ul>
         <p className="print-only print-urls">
           Records: patrickmockridge.github.io/darkwow/ · /rholo/ · /r-cash/ · /r-gen/ ·
-          /r-share/ · /r-sure/ · /azoth/ · /mudra/
+          /r-share/ · /r-sure/ · /azoth-record/ · /mudra/
+        </p>
+        <p className="print-only print-urls">
+          Azoth editor: patrickmockridge.github.io/azoth/
         </p>
       </Section>
 

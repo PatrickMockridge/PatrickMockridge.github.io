@@ -76,12 +76,13 @@ export function RShareTab() {
           },
           {
             label: 'Period',
-            value: '2026; created 3 November; suites and client campaign 3–4 November',
+            value:
+              '2026; created 3 November; suites and client campaign 3–7 November; cover engine 6 November; hold deposit 7 November',
           },
           {
             label: 'Status',
             value:
-              'Devnet-only, unaudited; pinned to R-Cash v0.5 (49b441d); no real value; 16/16 suites; two claim classes remain design.',
+              'Devnet-only; baseline audit and P0/P1 remediation recorded, not independently certified; pinned to R-Cash v0.5 (49b441d); no real value; 24/24 recorded suites; two claim classes remain design.',
           },
           {
             label: 'Repository',
@@ -288,37 +289,44 @@ export function RShareTab() {
             are yours. R-Share is the settlement core; R-Cash is the payment rail; neither is
             a marketplace.
           </p>
+          <p>
+            The default install is the plain-escrow <code>safe</code> profile: 15 contracts.
+            The experimental <code>cover-demo</code> profile adds cover terms, an offer, a
+            pool, a policy, and a covered guest ledger: 20 contracts.{' '}
+            <code>41_hold_deposit.rho</code> is in both profiles and gates a booking on a
+            funded hold; it closes HZ-061.
+          </p>
         </div>
       </Section>
 
       <Section number="5" title="Evidence" id="rshare-evidence">
         <div className="prose">
           <p>
-            On 3 November 2026, a fresh devnet built from Rholo <code>e2d073d</code> with
-            R-Cash <code>49b441d</code> recorded 16 passing suites, covering root, payments,
-            lifecycle, claims, pricing, booking, pause, allocator, admin, events, provider,
-            listing, and conservation. Claim coverage is 20 of 30 cells; four claim classes
-            run across five kinds.
+            On 7 November 2026, the v2 campaign records 24 of 24 selected suites on a fresh
+            devnet built from Rholo <code>e2d073d</code> with R-Cash <code>49b441d</code>. The
+            suite tree defines 27; three are pending. Claim coverage is 20 of 30 cells; four
+            claim classes run across five kinds.
           </p>
           <p>
             The allocator suite checks atomic multi-slot acquisition, token-gated confirm and
             release, pause gates, expiry takeover, and no slot-capability leak. Conservation
-            covers seven settlement scenarios with a closed balance set and a negative
-            control. Lean records 37 axiom audits, 21 vectors, 33 rules, 29 arms, and 13 core
+            covers eight settlement scenarios with a closed balance set and a negative
+            control. Lean records 105 axiom audits, 21 vectors, 43 rules, 39 arms, and 13 core
             arms proved-model; these are internal checks, not a security audit.
           </p>
         </div>
         <EvidenceTable
           rows={rshareEvidence}
           caption="R-Share evidence"
-          note="Sources: verification record, formal model, and status chapter, as of 3–4 November 2026. Counts drift; the linked artifact is authoritative. The 37 axiom audits are an internal Lean check, not a security audit."
+          note="Sources: verification record, formal model, and status chapter, as of 7 November 2026. Counts drift; the linked artifact is authoritative. The 105 axiom audits are an internal Lean check, not a security audit."
         />
       </Section>
 
       <Section number="6" title="Limits" id="rshare-limits">
         <ul className="prose">
           <li>
-            <strong>Maturity.</strong> Devnet-only, unaudited, pinned to R-Cash v0.5 at{' '}
+            <strong>Maturity.</strong> Devnet-only; baseline audit and P0/P1 remediation
+            recorded, not independently certified; pinned to R-Cash v0.5 at{' '}
             <code>49b441d</code>; no real value.
           </li>
           <li>
@@ -342,7 +350,12 @@ export function RShareTab() {
             timelock.
           </li>
           <li>
-            <strong>Verification.</strong> The 37 axiom audits are an internal Lean check, not
+            <strong>Profiles.</strong> The default install is the plain-escrow{' '}
+            <code>safe</code> profile. <code>cover-demo</code> is experimental and is not the
+            default. Three of 27 defined suites are pending.
+          </li>
+          <li>
+            <strong>Verification.</strong> The 105 axiom audits are an internal Lean check, not
             a security audit. Lean is model-level, not a Rholang refinement.
           </li>
           <li>
@@ -377,6 +390,15 @@ export function RShareTab() {
           </li>
           <li>
             <a href={rshare.contractMap} target="_blank" rel="noopener noreferrer">Contract map</a>
+          </li>
+          <li>
+            <a href={rshare.audit} target="_blank" rel="noopener noreferrer">Audit report</a>
+          </li>
+          <li>
+            <a href={rshare.hazards} target="_blank" rel="noopener noreferrer">Hazards register</a>
+          </li>
+          <li>
+            <a href={rshare.profiles} target="_blank" rel="noopener noreferrer">Install profiles</a>
           </li>
           <li>
             <a href={rshare.verification} target="_blank" rel="noopener noreferrer">Verification record</a>

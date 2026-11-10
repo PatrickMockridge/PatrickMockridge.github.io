@@ -75,7 +75,7 @@ export function AzothTab() {
       <TitleBlock
         descriptor="Specification"
         title="Azoth"
-        subtitle="Chemical-engineering calculations in Python and Rust, where every number carries its provenance."
+        subtitle="Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor for chemical engineers and AI agents."
         metadata={[
           { label: 'Role', value: 'Design, implementation' },
           { label: 'Period', value: '2026' },
@@ -83,6 +83,10 @@ export function AzothTab() {
             label: 'Status',
             value:
               'v0.1.x (currently 0.1.1); not on PyPI; not for design work yet',
+          },
+          {
+            label: 'Editor',
+            value: <a href={azoth.editor} target="_blank" rel="noopener noreferrer">patrickmockridge.github.io/azoth</a>,
           },
           {
             label: 'Repository',
@@ -158,7 +162,32 @@ export function AzothTab() {
         </ul>
       </Section>
 
-      <Section number="3" title="Provenance" id="azoth-provenance">
+      <Section number="3" title="Using it" id="azoth-editor">
+        <div className="prose">
+          <p>
+            Azoth opens in a browser at{' '}
+            <a href={azoth.editor} target="_blank" rel="noopener noreferrer">patrickmockridge.github.io/azoth</a>. The flowsheet editor loads a worked case — a feed, pump, heater, separator and
+            recycle, joined by streams — and pressing <strong>Solve</strong> puts
+            temperatures, pressures and flows on the drawing; the Workbook lists every
+            stream. Case → Examples opens a rich gas compressed, cooled and split into
+            sales gas and condensate, or a pipeline dropping pressure through a valve. Click
+            any unit operation — a pump, heater or separator — or any stream to read its
+            inputs, results and where the model came from.
+          </p>
+          <p>
+            Nothing is installed and no case is uploaded: the calculation engine is compiled
+            to WebAssembly and runs inside the page, with no server behind it. The editor is
+            the human door into the same engine: a chemical engineer who does not write code
+            or use an LLM can build and solve a process by hand, with the same calculations
+            and provenance as the library. An agent reaches that engine through the CLI and
+            MCP, and receives each result as JSON with its provenance attached, so it cannot
+            present a number without its source and verification state. Neither audience has
+            to adopt the other's toolchain.
+          </p>
+        </div>
+      </Section>
+
+      <Section number="4" title="Provenance" id="azoth-provenance">
         <div className="prose">
           <p>
             Port of NeqSim (Apache-2.0), with documented divergences. Original to this
@@ -169,7 +198,7 @@ export function AzothTab() {
         </div>
       </Section>
 
-      <Section number="4" title="Evidence" id="azoth-evidence">
+      <Section number="5" title="Evidence" id="azoth-evidence">
         <EvidenceTable
           rows={azothEvidence}
           caption="Azoth upstream evidence"
@@ -212,7 +241,7 @@ export function AzothTab() {
         </ul>
       </Section>
 
-      <Section number="5" title="Limits" id="azoth-limits">
+      <Section number="6" title="Limits" id="azoth-limits">
         <ul className="prose">
           <li>
             v0.1.1; not on PyPI; incomplete port coverage; everything ported ships as{' '}
@@ -238,8 +267,11 @@ export function AzothTab() {
         </ul>
       </Section>
 
-      <Section number="6" title="Links" id="azoth-links">
+      <Section number="7" title="Links" id="azoth-links">
         <ul className="link-list">
+          <li>
+            <a href={azoth.editor} target="_blank" rel="noopener noreferrer">Flowsheet editor</a>
+          </li>
           <li>
             <a href={azoth.repo} target="_blank" rel="noopener noreferrer">Repository</a>
           </li>
