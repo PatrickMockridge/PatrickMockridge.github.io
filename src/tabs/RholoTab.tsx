@@ -97,7 +97,7 @@ const CLAIM_ROWS: ComparisonRow[] = [
     cells: [
       <>
         No <code>unsafe</code> in the 14 first-party crates; ρ as the base sort of a CoC;
-        122 of 131 entries non-vacuous; 36 entries tied to the node by conformance corpora.
+        120 of 134 entries non-vacuous; 31 entries tied to the node by conformance corpora.
       </>,
       <>
         Memory-unsafety is unwritable in first-party code; proved laws are machine-checked
@@ -105,8 +105,8 @@ const CLAIM_ROWS: ComparisonRow[] = [
       </>,
       <>
         Not a whole-node proof. Dependencies, leaks, logic errors, denial of service, and
-        consensus bugs remain. 2 entries vacuous; 7 not counted as proved (1 axiom, 1 open,
-        3 retired, 2 orphaned).
+        consensus bugs remain. 2 entries vacuous; 12 not counted as proved (1 axiom, 1 open,
+        8 retired, 2 orphaned).
       </>,
     ],
   },
@@ -123,7 +123,7 @@ export function RholoTab() {
           {
             label: 'Role',
             value:
-              'Rust port of the former RChain node (twelve crates ported from Scala; OCapN and qucalc original); law-first conformance and agentic assurance',
+              'Rust port of the former RChain node (fourteen first-party crates: twelve ported from Scala, OCapN and qucalc original); law-first conformance and agentic assurance',
           },
           {
             label: 'Period',
@@ -148,6 +148,10 @@ export function RholoTab() {
             value: (
               <a href={rholo.repo} target="_blank" rel="noopener noreferrer">github.com/rhovision-org/rholo</a>
             ),
+          },
+          {
+            label: 'Website',
+            value: <a href={rholo.site} target="_blank" rel="noopener noreferrer">rholo.org</a>,
           },
           {
             label: 'Documentation',
@@ -364,7 +368,7 @@ export function RholoTab() {
         <EvidenceTable
           rows={rholoEvidence}
           caption="Rholo evidence"
-          note="Sources: repository README and specification documents, as of October 2026. Counts drift; the linked artifact is authoritative. The README's ~2,615 is a count of test functions; the ledger's 1,481 + 130 is its test-register inventory."
+          note="Sources: repository README and specification documents, as of 11 November 2026. Counts drift; the linked artifact is authoritative. The README's ~2,615 is a count of test functions; the ledger's 1,481 + 130 is its test-register inventory."
         />
         <div className="crate-map">
           {[
@@ -409,11 +413,11 @@ export function RholoTab() {
             T1 roster, not the whole tree.
           </li>
           <li>
-            <strong>Formal assurance is layered.</strong> The register covers 91 laws across
-            131 entries. 122 entries are non-vacuously proved — 36 proved and tied to the
-            running node by conformance corpora, 86 over the model. Two further entries are
-            vacuous proof statements; seven are not counted as proved (one axiomatized by
-            design, one open, three retired, two orphaned). The{' '}
+            <strong>Formal assurance is layered.</strong> The register covers 94 laws across
+            134 entries. 120 entries are non-vacuously proved — 31 proved and tied to the
+            running node by conformance corpora, 89 over the model. Two further entries are
+            vacuous proof statements; twelve are not counted as proved (one axiomatized by
+            design, one open, eight retired, two orphaned). The{' '}
             <a href={rholo.coq} target="_blank" rel="noopener noreferrer">Coq track</a> defines
             the α-equivalence metatheory but states its laws as axioms.
           </li>
@@ -438,6 +442,9 @@ export function RholoTab() {
 
       <Section number="6" title="Links" id="rholo-links">
         <ul className="link-list">
+          <li>
+            <a href={rholo.site} target="_blank" rel="noopener noreferrer">Website</a>
+          </li>
           <li>
             <a href={rholo.repo} target="_blank" rel="noopener noreferrer">Repository</a>
           </li>

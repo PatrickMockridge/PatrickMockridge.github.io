@@ -34,6 +34,7 @@ export const darkWow = {
 
 export const rholo = {
   repo: SITE.links.rholoRepo,
+  site: SITE.links.rholoSite,
   docs: `${SITE.links.rholoRepo}/tree/dev/docs/src`,
   laws: `${rholoBase}/spec/LAWS.md`,
   inventory: `${rholoBase}/spec/INVENTORY.md`,
@@ -246,27 +247,27 @@ export const darkWowEvidence: EvidenceRow[] = [
 export const rholoEvidence: EvidenceRow[] = [
   {
     measure: 'Rholang laws',
-    value: '91 laws (131 entries)',
+    value: '94 laws (134 entries)',
     source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
     measure: 'Non-vacuous proofs',
-    value: '122 of 131 entries',
+    value: '120 of 134 entries',
     source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
     measure: 'Laws tied to the node',
-    value: '36 entries',
+    value: '31 entries',
     source: { label: 'spec/INVENTORY.md', href: rholo.inventory },
   },
   {
     measure: 'Laws proved over the model',
-    value: '86 entries',
+    value: '89 entries',
     source: { label: 'spec/INVENTORY.md', href: rholo.inventory },
   },
   {
     measure: 'Rust witnesses',
-    value: '94 laws; 263 witness entries (242 distinct tests)',
+    value: '92 laws; 251 witness entries (234 distinct tests)',
     source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
@@ -276,12 +277,17 @@ export const rholoEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Entries not counted as proved',
-    value: '7: 1 axiom, 1 open, 3 retired, 2 orphaned',
+    value: '12: 1 axiom, 1 open, 8 retired, 2 orphaned',
     source: { label: 'spec/INVENTORY.md', href: rholo.inventory },
   },
   {
     measure: 'First-party crates',
     value: '14; 0 unsafe',
+    source: { label: 'README', href: rholo.repo },
+  },
+  {
+    measure: 'Node size',
+    value: '232,773 Rust lines / 515 files; 47.0 MiB binary (README, 1 November 2026)',
     source: { label: 'README', href: rholo.repo },
   },
   {
@@ -306,7 +312,7 @@ export const rholoEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Audit check-off',
-    value: '385 of 389 rows done; 4 in progress',
+    value: '390 of 400 findings done; 10 in progress',
     source: { label: 'spec/AUDIT.md', href: rholo.audit },
   },
   {

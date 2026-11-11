@@ -31,6 +31,7 @@ const PROJECTS = {
     description:
       'Rholo is a Rust node for the rho-calculus, from the RChain lineage: native object capabilities, horizontal scale-out by design, and laws proved at the model and tied to the node.',
     codeRepository: 'https://github.com/rhovision-org/rholo',
+    site: 'https://rholo.org/',
     programmingLanguage: 'Rust',
     license: 'https://www.gnu.org/licenses/agpl-3.0.html',
   },
@@ -137,7 +138,7 @@ for (const { id } of TABS) {
         description: project.description,
         url,
         codeRepository: project.codeRepository,
-        sameAs: project.editor && [project.editor, project.pypi].filter(Boolean),
+        sameAs: project.site ?? (project.editor ? [project.editor, project.pypi].filter(Boolean) : undefined),
         programmingLanguage: project.programmingLanguage,
         license: project.license,
         author: { '@type': 'Person', '@id': PERSON_ID },
