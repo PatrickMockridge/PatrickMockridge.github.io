@@ -158,6 +158,7 @@ export const rsure = {
 export const azoth = {
   repo: SITE.links.azothRepo,
   editor: SITE.links.azothEditor,
+  pypi: SITE.links.azothPyPI,
   docs: `${SITE.links.azothRepo}/tree/main/docs`,
   safety: `${SITE.links.azothRepo}/blob/main/docs/src/safety.md`,
   agents: `${SITE.links.azothRepo}/blob/main/AGENTS.md`,

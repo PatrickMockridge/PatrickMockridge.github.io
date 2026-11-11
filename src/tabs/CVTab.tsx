@@ -188,8 +188,8 @@ export function CVTab() {
             <div className="work-meta">
               <span>2026</span>
               <span>
-                v0.1.x; 97 upstream issues filed (80 closed); no-op Gibbs minimizer and
-                wrong-unit vapour-pressure curve; not for design work
+                v0.1.x; azoth-engine on PyPI; 97 upstream issues filed (80 closed); no-op
+                Gibbs minimizer and wrong-unit vapour-pressure curve; not for design work
               </span>
               <span>Author</span>
             </div>

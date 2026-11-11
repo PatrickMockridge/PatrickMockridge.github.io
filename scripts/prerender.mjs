@@ -69,9 +69,10 @@ const PROJECTS = {
   azoth: {
     name: 'Azoth',
     description:
-      'Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor for chemical engineers and AI agents.',
+      'Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor and an installable Python package for chemical engineers and AI agents.',
     codeRepository: 'https://github.com/PatrickMockridge/Azoth',
     editor: 'https://patrickmockridge.github.io/azoth/',
+    pypi: 'https://pypi.org/project/azoth-engine/',
     programmingLanguage: ['Rust', 'Python'],
     license: 'https://www.gnu.org/licenses/agpl-3.0.html',
   },
@@ -136,7 +137,7 @@ for (const { id } of TABS) {
         description: project.description,
         url,
         codeRepository: project.codeRepository,
-        sameAs: project.editor,
+        sameAs: project.editor && [project.editor, project.pypi].filter(Boolean),
         programmingLanguage: project.programmingLanguage,
         license: project.license,
         author: { '@type': 'Person', '@id': PERSON_ID },

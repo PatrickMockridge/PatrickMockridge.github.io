@@ -86,9 +86,9 @@ export const PAGE_META: Record<
   azoth: {
     title: 'Azoth — Patrick Mockridge',
     description:
-      'Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor for chemical engineers and AI agents.',
+      'Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor and an installable Python package for chemical engineers and AI agents.',
     path: '/azoth-record/',
-    updated: '2026-11-10',
+    updated: '2026-11-11',
   },
   mudra: {
     title: 'Mudra — Patrick Mockridge',
@@ -162,6 +162,7 @@ export const SITE = {
     rsureRepo: 'https://github.com/rhovision-org/r-sure',
     azothRepo: 'https://github.com/PatrickMockridge/Azoth',
     azothEditor: 'https://patrickmockridge.github.io/azoth/',
+    azothPyPI: 'https://pypi.org/project/azoth-engine/',
     mudraRepo: 'https://github.com/PatrickMockridge/Mudra',
     romeoArchive:
       'https://app.ardrive.io/#/drives/3783e4d5-2ce0-405c-854a-94eb5a4f4b1a?name=Romeo+Juliet+Framework',

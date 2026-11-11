@@ -1,6 +1,7 @@
 import { ComparisonTable, type ComparisonRow } from '../components/ComparisonTable'
 import { EvidenceTable } from '../components/EvidenceTable'
 import { Figure } from '../components/Figure'
+import { Listing } from '../components/Listing'
 import { MethodRefrain } from '../components/MethodRefrain'
 import { Section } from '../components/Section'
 import { TitleBlock } from '../components/TitleBlock'
@@ -46,7 +47,17 @@ const CONTRAST_ROWS: ComparisonRow[] = [
 ]
 
 const CONTRAST_NOTE =
-  'Design intent, not current coverage: v0.1.1, not on PyPI, not for design work yet; everything ported ships as unverified.'
+  'Design intent, not current coverage: v0.1.3, on PyPI as azoth-engine, not for design work yet; everything ported ships as unverified.'
+
+const PYTHON_EXAMPLE = `import azoth
+
+q = azoth.ureg.Quantity
+r = azoth.hydraulics.darcy_weisbach(
+    0.02, q(100.0, "m"), q(0.1, "m"), q(998.0, "kg/m**3"), q(1.5, "m/s")
+)
+
+r.dp                       # 22455.0 pascal
+r.provenance.verification  # 'source_needed'`
 
 const NEQSIM_ISSUES = [
   {
@@ -75,14 +86,18 @@ export function AzothTab() {
       <TitleBlock
         descriptor="Specification"
         title="Azoth"
-        subtitle="Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor for chemical engineers and AI agents."
+        subtitle="Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor and an installable Python package for chemical engineers and AI agents."
         metadata={[
           { label: 'Role', value: 'Design, implementation' },
           { label: 'Period', value: '2026' },
           {
             label: 'Status',
             value:
-              'v0.1.x (currently 0.1.1); not on PyPI; not for design work yet',
+              'v0.1.x (currently 0.1.3); on PyPI as azoth-engine; not for design work yet',
+          },
+          {
+            label: 'Package',
+            value: <a href={azoth.pypi} target="_blank" rel="noopener noreferrer">azoth-engine on PyPI</a>,
           },
           {
             label: 'Editor',
@@ -184,7 +199,19 @@ export function AzothTab() {
             present a number without its source and verification state. Neither audience has
             to adopt the other's toolchain.
           </p>
+          <p>
+            From Python, the same engine is the{' '}
+            <a href={azoth.pypi} target="_blank" rel="noopener noreferrer">azoth-engine</a>{' '}
+            package: <code>pip install azoth-engine</code> installs it (Python 3.12 or
+            later), and the import is <code>import azoth</code>. The distribution name
+            differs because <code>azoth</code> was already taken on PyPI. It works the same
+            in a script or a Jupyter notebook: units arrive as <code>pint</code> quantities,
+            results are ordinary Python objects, and each one still carries its provenance —
+            so a notebook can loop over a sweep or plot a profile without dropping the
+            record.
+          </p>
         </div>
+        <Listing caption="Listing 1. Azoth from Python." code={PYTHON_EXAMPLE} />
       </Section>
 
       <Section number="4" title="Provenance" id="azoth-provenance">
@@ -244,7 +271,7 @@ export function AzothTab() {
       <Section number="6" title="Limits" id="azoth-limits">
         <ul className="prose">
           <li>
-            v0.1.1; not on PyPI; incomplete port coverage; everything ported ships as{' '}
+            v0.1.3; incomplete port coverage; everything ported ships as{' '}
             <code>unverified</code>; the standalone simulator is an aim, not a status.
           </li>
           <li>
@@ -271,6 +298,9 @@ export function AzothTab() {
         <ul className="link-list">
           <li>
             <a href={azoth.editor} target="_blank" rel="noopener noreferrer">Flowsheet editor</a>
+          </li>
+          <li>
+            <a href={azoth.pypi} target="_blank" rel="noopener noreferrer">Python package (PyPI)</a>
           </li>
           <li>
             <a href={azoth.repo} target="_blank" rel="noopener noreferrer">Repository</a>
