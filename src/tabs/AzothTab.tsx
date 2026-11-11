@@ -194,10 +194,8 @@ export function AzothTab() {
             to WebAssembly and runs inside the page, with no server behind it. The editor is
             the human door into the same engine: a chemical engineer who does not write code
             or use an LLM can build and solve a process by hand, with the same calculations
-            and provenance as the library. An agent reaches that engine through the CLI and
-            MCP, and receives each result as JSON with its provenance attached, so it cannot
-            present a number without its source and verification state. Neither audience has
-            to adopt the other's toolchain.
+            and provenance as the library. The other doors — Python, the CLI, a code
+            assistant, or MCP — reach the same engine and the same record.
           </p>
           <p>
             From Python, the same engine is the{' '}
@@ -209,6 +207,18 @@ export function AzothTab() {
             results are ordinary Python objects, and each one still carries its provenance —
             so a notebook can loop over a sweep or plot a profile without dropping the
             record.
+          </p>
+          <p>
+            Code assistants and shell scripts get the same object. A shell script can call
+            the CLI with <code>--json</code>; a code assistant can call the Python API or
+            the CLI from its editor. What comes back is not a bare number but an Azoth
+            result: the calculation, its source, its verification state, the checks that
+            ran and the ones that could not, and the hashes of the kernels that produced
+            it. The result serialises with <code>to_json()</code>, so it survives a file, an
+            MCP call, or a pipe, and any other AI or human can validate it without repeating
+            the conversation that produced it. In the agentic AI era, where one model's
+            number becomes the next model's input, that is the difference between a handoff
+            and a plausible guess.
           </p>
         </div>
         <Listing caption="Listing 1. Azoth from Python." code={PYTHON_EXAMPLE} />
