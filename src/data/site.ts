@@ -53,7 +53,7 @@ export const PAGE_META: Record<
     description:
       'Rholo is a Rust node for the ρ-calculus, from the RChain lineage: native object capabilities, horizontal scale-out by design, and laws proved at the model and tied to the node.',
     path: '/rholo/',
-    updated: '2026-11-11',
+    updated: '2026-11-14',
   },
   rcash: {
     title: 'R-Cash — Patrick Mockridge',
