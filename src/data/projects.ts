@@ -247,12 +247,12 @@ export const darkWowEvidence: EvidenceRow[] = [
 export const rholoEvidence: EvidenceRow[] = [
   {
     measure: 'Rholang laws',
-    value: '112 laws (167 entries)',
+    value: '119 laws (178 entries)',
     source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
     measure: 'Non-vacuous proofs',
-    value: '153 of 167 entries',
+    value: '164 of 178 entries',
     source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
@@ -262,12 +262,12 @@ export const rholoEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Laws proved over the model',
-    value: '122 entries',
+    value: '133 entries',
     source: { label: 'spec/INVENTORY.md', href: rholo.inventory },
   },
   {
     measure: 'Rust witnesses',
-    value: '125 laws; 330 witness entries (305 distinct tests)',
+    value: '136 laws; 389 witness entries (357 distinct tests)',
     source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
@@ -279,6 +279,11 @@ export const rholoEvidence: EvidenceRow[] = [
     measure: 'Entries not counted as proved',
     value: '12: 1 axiom, 1 open, 8 retired, 2 orphaned',
     source: { label: 'spec/INVENTORY.md', href: rholo.inventory },
+  },
+  {
+    measure: 'Witness coverage',
+    value: '143 proved rows prose-only; 16 with neither corpus nor Rust witness',
+    source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
     measure: 'First-party crates',
@@ -312,7 +317,7 @@ export const rholoEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Audit check-off',
-    value: '430 of 434 findings done; 4 in progress',
+    value: '437 of 439 findings done; 2 in progress',
     source: { label: 'spec/AUDIT.md', href: rholo.audit },
   },
   {
