@@ -99,7 +99,7 @@ export function CVTab() {
             <div className="work-meta">
               <span>2026; port August–October 2026 (about two months)</span>
               <span>
-                Pre-release; v0.1.0 testnet tag; 119 laws (178 entries), 164 proved
+                Pre-release; v0.1.0 testnet tag; 128 laws (187 entries), 173 proved
                 including 31 node-tied; 14 crates, 0 unsafe; community testnet live
               </span>
               <span>Port lead and maintainer</span>
@@ -188,7 +188,7 @@ export function CVTab() {
             <div className="work-meta">
               <span>2026</span>
               <span>
-                v0.1.x; azoth-engine on PyPI; 97 upstream issues filed (80 closed); no-op
+                v0.1.x; azoth-engine on PyPI; 109 upstream issues filed (95 closed); no-op
                 Gibbs minimizer and wrong-unit vapour-pressure curve; not for design work
               </span>
               <span>Author</span>

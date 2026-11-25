@@ -47,7 +47,7 @@ const CONTRAST_ROWS: ComparisonRow[] = [
 ]
 
 const CONTRAST_NOTE =
-  'Design intent, not current coverage: v0.1.3, on PyPI as azoth-engine, not for design work yet; everything ported ships as unverified.'
+  'Design intent, not current coverage: v0.1.4, on PyPI as azoth-engine, not for design work yet; everything ported ships as unverified.'
 
 const PYTHON_EXAMPLE = `import azoth
 
@@ -93,7 +93,7 @@ export function AzothTab() {
           {
             label: 'Status',
             value:
-              'v0.1.x (currently 0.1.3); on PyPI as azoth-engine; not for design work yet',
+              'v0.1.x (currently 0.1.4); on PyPI as azoth-engine; not for design work yet',
           },
           {
             label: 'Package',
@@ -239,7 +239,7 @@ export function AzothTab() {
         <EvidenceTable
           rows={azothEvidence}
           caption="Azoth upstream evidence"
-          note="As of October 2026. These are upstream issues filed against NeqSim, not an Equinor engagement."
+          note="As of 25 November 2026. These are upstream issues filed against NeqSim, not an Equinor engagement."
         />
         <Figure id="azoth-pipeline" caption="Figure 1. Azoth pipeline, abridged.">
           <div
@@ -281,7 +281,7 @@ export function AzothTab() {
       <Section number="6" title="Limits" id="azoth-limits">
         <ul className="prose">
           <li>
-            v0.1.3; incomplete port coverage; everything ported ships as{' '}
+            v0.1.4; incomplete port coverage; everything ported ships as{' '}
             <code>unverified</code>; the standalone simulator is an aim, not a status.
           </li>
           <li>

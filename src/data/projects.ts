@@ -247,12 +247,12 @@ export const darkWowEvidence: EvidenceRow[] = [
 export const rholoEvidence: EvidenceRow[] = [
   {
     measure: 'Rholang laws',
-    value: '119 laws (178 entries)',
+    value: '128 laws (187 entries)',
     source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
     measure: 'Non-vacuous proofs',
-    value: '164 of 178 entries',
+    value: '173 of 187 entries',
     source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
@@ -262,12 +262,12 @@ export const rholoEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Laws proved over the model',
-    value: '133 entries',
+    value: '142 entries',
     source: { label: 'spec/INVENTORY.md', href: rholo.inventory },
   },
   {
     measure: 'Rust witnesses',
-    value: '136 laws; 389 witness entries (357 distinct tests)',
+    value: '145 laws; 420 witness entries (388 distinct tests)',
     source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
@@ -282,7 +282,7 @@ export const rholoEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Witness coverage',
-    value: '143 proved rows prose-only; 16 with neither corpus nor Rust witness',
+    value: '139 proved rows prose-only; 16 with neither corpus nor Rust witness',
     source: { label: 'spec/LAWS.md', href: rholo.laws },
   },
   {
@@ -292,7 +292,7 @@ export const rholoEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Node size',
-    value: '232,773 Rust lines / 515 files; 47.0 MiB binary (README, 1 November 2026)',
+    value: '275,478 Rust lines / 561 files; 54.8 MiB binary (README, 22 November 2026)',
     source: { label: 'README', href: rholo.repo },
   },
   {
@@ -317,7 +317,7 @@ export const rholoEvidence: EvidenceRow[] = [
   },
   {
     measure: 'Audit check-off',
-    value: '437 of 439 findings done; 2 in progress',
+    value: '445 of 447 findings done; 2 in progress',
     source: { label: 'spec/AUDIT.md', href: rholo.audit },
   },
   {
@@ -517,12 +517,12 @@ export const rsureEvidence: EvidenceRow[] = [
 export const azothEvidence: EvidenceRow[] = [
   {
     measure: 'Upstream issues filed',
-    value: '97 (80 closed, 17 open)',
+    value: '109 (95 closed, 14 open)',
     source: { label: 'NeqSim issue search', href: azoth.issues },
   },
   {
     measure: 'Provenance tests',
-    value: '264',
+    value: '398',
     source: { label: 'Azoth repository', href: azoth.repo },
   },
 ]
