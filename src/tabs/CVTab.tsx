@@ -178,18 +178,18 @@ export function CVTab() {
             <div className="work-main">
               <span className="work-title">Azoth</span>
               <span className="work-subtitle">
-                A process calculation library and{' '}
+                A process calculation library,{' '}
                 <a href={azoth.editor} target="_blank" rel="noopener noreferrer">
                   browser flowsheet editor
                 </a>{' '}
-                where every number carries its provenance
+                and HAZOP agent team where every number carries its provenance
               </span>
             </div>
             <div className="work-meta">
               <span>2026</span>
               <span>
-                v0.1.x; azoth-engine on PyPI; 109 upstream issues filed (95 closed); no-op
-                Gibbs minimizer and wrong-unit vapour-pressure curve; not for design work
+                v0.1.x; azoth-engine on PyPI; 109 upstream issues filed (95 closed);
+                DeepSeek Harness agent team and FEED case study; not for design work
               </span>
               <span>Author</span>
             </div>

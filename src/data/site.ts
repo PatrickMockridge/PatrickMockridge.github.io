@@ -86,9 +86,9 @@ export const PAGE_META: Record<
   azoth: {
     title: 'Azoth — Patrick Mockridge',
     description:
-      'Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor and an installable Python package for chemical engineers and AI agents.',
+      'Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor, an installable Python package, and an agent layer that runs HAZOP studies on the DeepSeek Harness.',
     path: '/azoth-record/',
-    updated: '2026-11-25',
+    updated: '2026-11-27',
   },
   mudra: {
     title: 'Mudra — Patrick Mockridge',
@@ -153,7 +153,6 @@ export const SITE = {
   links: {
     github: 'https://github.com/PatrickMockridge',
     substack: 'https://technologytruth.substack.com/',
-    fitba: 'https://patrickmockridge.github.io/fitba/',
     darkwowRepo: 'https://github.com/PatrickMockridge/DarkWow',
     rholoRepo: 'https://github.com/rhovision-org/rholo',
     rholoSite: 'https://rholo.org/',

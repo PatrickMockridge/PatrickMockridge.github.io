@@ -59,6 +59,10 @@ r = azoth.hydraulics.darcy_weisbach(
 r.dp                       # 22455.0 pascal
 r.provenance.verification  # 'source_needed'`
 
+const HARNESS_EXAMPLE = `python tools/launch_dsh.py web --permission-mode read-only --study hazop
+# exports the HAZOP skill subset to .dsh/skills/, mounts the four presets,
+# and opens the harness's browser UI on loopback`
+
 const NEQSIM_ISSUES = [
   {
     id: '3993',
@@ -86,7 +90,7 @@ export function AzothTab() {
       <TitleBlock
         descriptor="Specification"
         title="Azoth"
-        subtitle="Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor and an installable Python package for chemical engineers and AI agents."
+        subtitle="Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor, an installable Python package, and an agent layer that runs HAZOP studies on the DeepSeek Harness."
         metadata={[
           { label: 'Role', value: 'Design, implementation' },
           { label: 'Period', value: '2026' },
@@ -102,6 +106,10 @@ export function AzothTab() {
           {
             label: 'Editor',
             value: <a href={azoth.editor} target="_blank" rel="noopener noreferrer">patrickmockridge.github.io/azoth</a>,
+          },
+          {
+            label: 'Agent runtime',
+            value: <a href={azoth.harness} target="_blank" rel="noopener noreferrer">DeepSeek Harness</a>,
           },
           {
             label: 'Repository',
@@ -224,7 +232,45 @@ export function AzothTab() {
         <Listing caption="Listing 1. Azoth from Python." code={PYTHON_EXAMPLE} />
       </Section>
 
-      <Section number="4" title="Provenance" id="azoth-provenance">
+      <Section number="4" title="Agents and a worked study" id="azoth-agents">
+        <div className="prose">
+          <p>
+            Azoth also ships an agent layer: ninety self-contained skills that teach a
+            model which units, calculation ids and warnings matter, and two teams that
+            chain them. HAZOP — a hazard and operability study — has four roles: chair,
+            process, safety and scribe, passing each node and guideword through deviation,
+            cause, consequence and safeguard. An intake team triages the specification
+            before a study starts. The teams run on DeepSeek Harness, DeepSeek's
+            plugin-first agent runtime, through a launcher that supplies the engineering
+            persona, the skill catalogue and the calculation tools, and opens either a
+            browser or a headless session. The model is chosen per run: DeepSeek, OpenAI,
+            Anthropic, Kimi or MiniMax.
+          </p>
+          <p>
+            The worked output is a screening-level front-end engineering design (FEED)
+            study. Starting from the repository's offshore-debottlenecking notebook, one
+            harness session produced equipment and materials specifications, 32,600
+            manhours, a 54.1 million US dollar capital estimate, a process flow diagram in
+            DEXPI (the standard exchange format for process drawings), a 57-page report
+            and a 42-week plan — then an independent HAZOP that a second round closed out:
+            all 16 actions dispositioned, and the relief basis reversed because a 35%
+            credit for a high-integrity pressure protection system could not be proven.
+            The session took about half an hour and roughly 12 million tokens. It is an
+            illustrative asset, a screening study and not for construction, and its Azoth
+            results are <code>partially_verified</code>.
+          </p>
+          <p>
+            The layer's formal claim — that a team is the parallel composition of its
+            roles over message channels — is stated in the rho-calculus, the process
+            calculus the library's orchestration model reuses, and is not yet proved. The
+            harness is a 0.2 developer preview; the execution is a mapping of that
+            composition, not a proof.
+          </p>
+        </div>
+        <Listing caption="Listing 2. Starting the HAZOP team." code={HARNESS_EXAMPLE} />
+      </Section>
+
+      <Section number="5" title="Provenance" id="azoth-provenance">
         <div className="prose">
           <p>
             Port of NeqSim (Apache-2.0), with documented divergences. Original to this
@@ -235,11 +281,11 @@ export function AzothTab() {
         </div>
       </Section>
 
-      <Section number="5" title="Evidence" id="azoth-evidence">
+      <Section number="6" title="Evidence" id="azoth-evidence">
         <EvidenceTable
           rows={azothEvidence}
-          caption="Azoth upstream evidence"
-          note="As of 25 November 2026. These are upstream issues filed against NeqSim, not an Equinor engagement."
+          caption="Azoth evidence"
+          note="As of 27 November 2026. The issue counts are upstream issues filed against NeqSim, not an Equinor engagement."
         />
         <Figure id="azoth-pipeline" caption="Figure 1. Azoth pipeline, abridged.">
           <div
@@ -278,7 +324,7 @@ export function AzothTab() {
         </ul>
       </Section>
 
-      <Section number="6" title="Limits" id="azoth-limits">
+      <Section number="7" title="Limits" id="azoth-limits">
         <ul className="prose">
           <li>
             v0.1.4; incomplete port coverage; everything ported ships as{' '}
@@ -299,12 +345,21 @@ export function AzothTab() {
             third-party audit.
           </li>
           <li>
+            Agent orchestration is specified, not proved: the team-composition claim has
+            no proof, and the DeepSeek Harness runtime is a 0.2 developer preview.
+          </li>
+          <li>
+            The worked FEED study is an illustrative screen; its numbers are{' '}
+            <code>partially_verified</code>, and it is neither a design deliverable nor a
+            certified DEXPI exchange.
+          </li>
+          <li>
             AGPL-3.0-or-later has commercial implications for proprietary integration.
           </li>
         </ul>
       </Section>
 
-      <Section number="7" title="Links" id="azoth-links">
+      <Section number="8" title="Links" id="azoth-links">
         <ul className="link-list">
           <li>
             <a href={azoth.editor} target="_blank" rel="noopener noreferrer">Flowsheet editor</a>
@@ -323,6 +378,15 @@ export function AzothTab() {
           </li>
           <li>
             <a href={azoth.agents} target="_blank" rel="noopener noreferrer">Agent guidance</a>
+          </li>
+          <li>
+            <a href={azoth.harness} target="_blank" rel="noopener noreferrer">DeepSeek Harness manual</a>
+          </li>
+          <li>
+            <a href={azoth.harnessSetup} target="_blank" rel="noopener noreferrer">Harness setup</a>
+          </li>
+          <li>
+            <a href={azoth.caseStudy} target="_blank" rel="noopener noreferrer">AZ-FEED-08 case study</a>
           </li>
         </ul>
       </Section>

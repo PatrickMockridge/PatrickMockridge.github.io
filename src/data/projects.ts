@@ -163,6 +163,9 @@ export const azoth = {
   docs: `${SITE.links.azothRepo}/tree/main/docs`,
   safety: `${SITE.links.azothRepo}/blob/main/docs/src/safety.md`,
   agents: `${SITE.links.azothRepo}/blob/main/AGENTS.md`,
+  harness: `${SITE.links.azothRepo}/blob/main/docs/src/agentic/harness.md`,
+  harnessSetup: `${SITE.links.azothRepo}/blob/main/agents/deepseek/README.md`,
+  caseStudy: `${SITE.links.azothRepo}/tree/main/case-studies/azoth-feed-08`,
   issues: SITE.links.neqsimIssues,
 }
 
@@ -524,6 +527,21 @@ export const azothEvidence: EvidenceRow[] = [
     measure: 'Provenance tests',
     value: '398',
     source: { label: 'Azoth repository', href: azoth.repo },
+  },
+  {
+    measure: 'Agent skills',
+    value: '90, in one SKILL.md catalogue',
+    source: { label: 'Agent guidance', href: azoth.agents },
+  },
+  {
+    measure: 'Agent teams',
+    value: 'HAZOP (4 roles) and intake, on the DeepSeek Harness',
+    source: { label: 'Harness manual', href: azoth.harness },
+  },
+  {
+    measure: 'Worked study',
+    value: 'AZ-FEED-08 Rev C; 16/16 HAZOP actions closed out; one session, about 30 minutes and 12M tokens',
+    source: { label: 'Case study', href: azoth.caseStudy },
   },
 ]
 

@@ -70,7 +70,7 @@ const PROJECTS = {
   azoth: {
     name: 'Azoth',
     description:
-      'Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor and an installable Python package for chemical engineers and AI agents.',
+      'Chemical-engineering calculations in Python and Rust, where every number carries its provenance, with a browser flowsheet editor, an installable Python package, and an agent layer that runs HAZOP studies on the DeepSeek Harness.',
     codeRepository: 'https://github.com/PatrickMockridge/Azoth',
     editor: 'https://patrickmockridge.github.io/azoth/',
     pypi: 'https://pypi.org/project/azoth-engine/',
