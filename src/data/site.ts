@@ -153,6 +153,7 @@ export const SITE = {
   links: {
     github: 'https://github.com/PatrickMockridge',
     substack: 'https://technologytruth.substack.com/',
+    geocymru: 'https://patrickmockridge.github.io/geocymru/',
     darkwowRepo: 'https://github.com/PatrickMockridge/DarkWow',
     rholoRepo: 'https://github.com/rhovision-org/rholo',
     rholoSite: 'https://rholo.org/',
